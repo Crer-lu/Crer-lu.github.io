@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="PTA基础题错题集">
+<meta property="og:url" content="http://fengjielu.top/2022/08/31/PTA%E5%9F%BA%E7%A1%80%E9%A2%98%E9%94%99%E9%A2%98%E9%9B%86/index.html">
+<meta property="og:site_name" content="Blog by Crer_lu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0fba5450ce50413fbdd20f743893eb45.jpg?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c34833ec5a0d4b9db1e4df4794feaf64.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/40bb82d3af4345b7a1305eb34843d76a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2022-08-31T11:15:45.904Z">
+<meta property="article:modified_time" content="2022-08-31T04:48:48.868Z">
+<meta property="article:author" content="Fengjie Lu">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="course">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/0fba5450ce50413fbdd20f743893eb45.jpg?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16">
+
+<link rel="canonical" href="http://fengjielu.top/2022/08/31/PTA%E5%9F%BA%E7%A1%80%E9%A2%98%E9%94%99%E9%A2%98%E9%9B%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>PTA基础题错题集 | Blog by Crer_lu</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog by Crer_lu</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">recording my learning and life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://fengjielu.top/2022/08/31/PTA%E5%9F%BA%E7%A1%80%E9%A2%98%E9%94%99%E9%A2%98%E9%9B%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mouse.jpg">
+      <meta itemprop="name" content="Fengjie Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog by Crer_lu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PTA基础题错题集
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-08-31 19:15:45 / Modified: 12:48:48" itemprop="dateCreated datePublished" datetime="2022-08-31T19:15:45+08:00">2022-08-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center></center>
+<span id="more"></span>
+# 1
+>语句int *p; *p=50;执行时，不会有任何错误
+分析：有错误，这个指针是空指针，没有对应的地址，直接赋值会出现错误。
+
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><blockquote>
+<p>二维数组定义的一般形式如下，其中的类型名指定数组名的类型。 类型名 数组名[行长度][列长度]；<br>分析：错误，类型名指定的是数组中的元素类型。</p>
+</blockquote>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><blockquote>
+<p>若变量已正确定义并赋值，符合C语言语法的表达式是 __.<br>A.a&#x3D;2++；<br>B.a&#x3D;3,5；<br>C.a&#x3D;a+1&#x3D;3；<br>D.12.3%4；<br>分析：选B<br>A 2++, 常量不能自加, 错误.<br>B a&#x3D;3,5等效于a&#x3D;3, 正确.<br>C a+1&#x3D;3错误.<br>D%取余运算只能用于整型. 错误</p>
+</blockquote>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><blockquote>
+<p>运算符“+”不能作为单目运算符。<br>分析：错误，是可以的，表正数的意思</p>
+</blockquote>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><blockquote>
+<p>表达式 <del>( ~2&lt;&lt;1)的值是5。<br>分析：正确，</del>的优先级高于&lt;&lt;</p>
+</blockquote>
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><blockquote>
+<p>函数f定义如下，执行语句“sum&#x3D;f(5)+f(3);”后，sum的值应为（ ）。<br>int f(int m)<br>{  static int i&#x3D;0;<br>   int s&#x3D;0;<br>     for(;i&lt;&#x3D;m;i++)<br>     s+&#x3D;i;<br>return s;<br>}<br>解析：答案为15，原因是静态局部变量的生存周期为整个程序。</p>
+</blockquote>
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><blockquote>
+<p>在定义嵌套的结构类型时，必须先定义成员的结构类型，再定义主结构类型。<br>解析：非常正确。不过有点难懂是什么意思，这里我再讲明白一点。定义嵌套的结构类型，在内部的结构必须在外部结构定义之前被定义一下，否则会报错。<br><img src="https://img-blog.csdnimg.cn/0fba5450ce50413fbdd20f743893eb45.jpg?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/c34833ec5a0d4b9db1e4df4794feaf64.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</blockquote>
+<h1 id="8"><a href="#8" class="headerlink" title="8"></a>8</h1><blockquote>
+<p>全局变量只能定义在程序的最前面，即第一个函数的前面。<br>分析：错误，原因如下：<br><img src="https://img-blog.csdnimg.cn/40bb82d3af4345b7a1305eb34843d76a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>原文链接：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1858.html">http://c.biancheng.net/view/1858.html</a></p>
+</blockquote>
+<h1 id="9"><a href="#9" class="headerlink" title="9"></a>9</h1><blockquote>
+<p>若变量已正确定义，执行以下while语句将陷入死循环。<br>i &#x3D; 1;<br>while (i &lt;&#x3D; 10) ;<br>    i++;<br>   分析：注意第二行末尾的；（阴间考法）</p>
+</blockquote>
+<h1 id="10"><a href="#10" class="headerlink" title="10"></a>10</h1><blockquote>
+<p>下列程序输出结果为？<br>int main(void)<br>{<br>      int  a &#x3D; 2, b &#x3D; -1, c &#x3D; 2;<br>      if(a &lt; b)<br>            if(b &lt; 0)<br>                  c &#x3D; 0;<br>      else  c++;<br>      printf(“%d\n”,c);<br>      return 0;<br>}<br>解析：else与离他最近的且尚未配对的if配对，因此结果为2</p>
+</blockquote>
+<h1 id="11"><a href="#11" class="headerlink" title="11"></a>11</h1><blockquote>
+<p>设计几组样例？<br>解析：这一类题保证每一个分支和单个条件的每一种都跑到就可以了。（虽然我觉得没有必要）</p>
+</blockquote>
+<h1 id="12"><a href="#12" class="headerlink" title="12"></a>12</h1><blockquote>
+<p>执行以下程序段，输入1.1 0.01 365，输出1.1#0.010#365。<br>int day;<br>double factor, initial;<br>scanf(“%lf %d %lf”, &amp;initial, &amp;factor, &amp;day);<br>printf(“%.1f#%.3f#%d”, initial, factor, day);<br>解析：读入类型不匹配，出错。</p>
+</blockquote>
+<h1 id="13"><a href="#13" class="headerlink" title="13"></a>13</h1><blockquote>
+<p>c语言源程序是文本文件，目标文件和可执行文件是二进制文件。<br>解析：正确。</p>
+</blockquote>
+<h1 id="14"><a href="#14" class="headerlink" title="14"></a>14</h1><blockquote>
+<p>定义FILE *fp; 则文件指针fp 指向的是（）。(2分)<br>A,文件在磁盘上的读写位置<br>B,文件在缓冲区上的读写位置<br>C,整个磁盘文件<br>D,文件类型结构体<br>答案：D</p>
+</blockquote>
+<h1 id="15"><a href="#15" class="headerlink" title="15"></a>15</h1><blockquote>
+<p>在定义结构类型时，关键字struct和它后面的结构名共同组成一个新的数据类型名。<br>正确（不过好像仅限于C，C++里面是可以不写struct的）</p>
+</blockquote>
+<h1 id="16"><a href="#16" class="headerlink" title="16"></a>16</h1><blockquote>
+<p>一个结构类型变量所占的内存空间是其各个成员所占内存空间之和。<br>错误，解析见下面那篇博客。</p>
+</blockquote>
+<p><font color=red>我转载过一篇博客，说明了这个问题（<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34771124/article/details/121959579">戳这里</a>）</p>
+<h1 id="17"><a href="#17" class="headerlink" title="17"></a>17</h1><blockquote>
+<p>C语言 随机操作只适用于文本文件<br>错误。随机操作文本指的是用seek函数重新定位文件指针进行读写操作，访问数组中的元素也是随机的，知道下标就可以，所以说随机操作不只是针对于文件来讲。</p>
+</blockquote>
+<h1 id="18"><a href="#18" class="headerlink" title="18"></a>18</h1><blockquote>
+<p>缓冲文件系统的文件缓冲区位于（）。<br>A.磁盘缓冲区中<br>B.磁盘文件中<br>C.内存数据区中<br>D.程序文件中<br>正确答案：C。文件缓冲区是用以暂时存放读写期间的文件数据而在内存区预留的一定空间</p>
+</blockquote>
+<h1 id="19"><a href="#19" class="headerlink" title="19"></a>19</h1><blockquote>
+<p>函数fgetc的作用是从指定文件读入一个字符，该文件的打开方式必须是（ ）。<br>A.只写<br>B.追加<br>C.读或读写<br>D.答案B和C都正确<br>正确答案：D</p>
+</blockquote>
+<h1 id="20"><a href="#20" class="headerlink" title="20"></a>20</h1><blockquote>
+<p>int *p &#x3D; 1000;请判断这个语句的正确性<br>答案：错误。在内存中常量的地址不能赋给指针。</p>
+</blockquote>
+<h1 id="21"><a href="#21" class="headerlink" title="21"></a>21</h1><blockquote>
+<p>执行以下程序段，sum的值是1.5。<br>int i, sum;<br>sum &#x3D; 0;<br>for (i &#x3D; 1; i &lt;&#x3D; 2; i++){<br>    sum &#x3D; sum + 1.0&#x2F;i;<br>}<br>答案：错误。因为sum定义的类型为int</p>
+</blockquote>
+<h1 id="22"><a href="#22" class="headerlink" title="22"></a>22</h1><blockquote>
+<p>对于以下结构定义，(*p)-&gt;str++中的++加在（）。<br>struct {<br>  int len;<br>  char *str<br>} *p;<br>答案：语法错误</p>
+</blockquote>
+<h1 id="23"><a href="#23" class="headerlink" title="23"></a>23</h1><blockquote>
+<p>以下程序运行后的输出结果是<br>#include&lt;stdio.h&gt;<br>void point(char  *p)<br>{   p +&#x3D; 3;   }<br>int main( )<br>{<br>  char  b[4] &#x3D; {‘a’, ‘b’, ‘c’, ‘d’}, *p &#x3D; b;<br>  point(p);<br>  printf(“%c\n”, *p);<br>  return 0;<br>}<br>答案：‘a’。形参和实参的问题。</p>
+</blockquote>
+<h1 id="24"><a href="#24" class="headerlink" title="24"></a>24</h1><blockquote>
+<p>对于 int 型的二级指针变量，它既可以指向同类型的一级指针变量，也可以指向同类型的普通（非指针）变量。<br>答案：错误<br>解析：二级指针间接引用一次后必须是地址值。</p>
+</blockquote>
+<h1 id="25"><a href="#25" class="headerlink" title="25"></a>25</h1><p>下列程序的运行结果为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x[<span class="number">5</span>] = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>&#125;, *p, **pp;</span><br><span class="line">    </span><br><span class="line">    p = x;</span><br><span class="line">    pp = &amp;p;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,&quot;</span> , *(++p));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span> , (**pp)+<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案：4,5</p>
+<h1 id="26"><a href="#26" class="headerlink" title="26"></a>26</h1><p>写出下列程序段的运行结果</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span> *st[] = &#123;<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;world&quot;</span>, <span class="string">&quot;!&quot;</span>&#125;, **p = st; </span><br><span class="line"></span><br><span class="line">p++;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s-%c\n&quot;</span>, *p, **p);</span><br><span class="line">(*p)++; </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s-%c-%c\n&quot;</span>, *p, **p, (**p)+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>第一行：world-w<br>第二行：orld-o-p<br>解析：关键就在（*p）++的理解，其实就是把p指向的地址从原来的world的首地址改为次首地址。</p>
+<h1 id="27"><a href="#27" class="headerlink" title="27"></a>27</h1><p>下列程序的输出结果为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a[<span class="number">4</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">	<span class="type">int</span> *ptr1 = (<span class="type">int</span> *)(&amp;a + <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>( <span class="string">&quot;%x&quot;</span>, ptr1[<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案：4<br>解析：&amp;a是一个4大小的数组指针，加一后指向4的下一个位置</p>
+<h1 id="28"><a href="#28" class="headerlink" title="28"></a>28</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span>  s[ ]=<span class="string">&quot;159&quot;</span>,*p;</span><br><span class="line">    p=s;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*p++);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*p++);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序的运行结果为：15<br>解析：++加在距离它最近的变量上（从右往左）</p>
+<h1 id="29"><a href="#29" class="headerlink" title="29"></a>29</h1><p>若有函数max(a,b)，并且已使函数指针变量p指向函数max，当调用函数时，正确的调用方法是（ ）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">A.</span><br><span class="line">(*p)<span class="built_in">max</span>(a+b);</span><br><span class="line">B.</span><br><span class="line">*<span class="built_in">pmax</span>(a,b);</span><br><span class="line">C.</span><br><span class="line">(*p)(a,b);</span><br><span class="line">D.</span><br><span class="line">*<span class="built_in">p</span>(a,b);</span><br></pre></td></tr></table></figure>
+<p>答案：C<br>解析：定义和调用均需要小括号</p>
+<h1 id="30"><a href="#30" class="headerlink" title="30"></a>30</h1><p>假设有定义如下： int array[10]; 则该语句定义了一个数组array。其中array的类型是整型指针（即： int *）。<br>答案：F<br>原因：应当是数组指针 (int *)[10]</p>
+<h1 id="31"><a href="#31" class="headerlink" title="31"></a>31</h1><p>对于以下程序，能够正确表示二维数组 t 的元素地址的表达式是（ ）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k, t[<span class="number">3</span>][<span class="number">2</span>], *pt[<span class="number">3</span>];</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span> ( k = <span class="number">0</span>; k &lt; <span class="number">3</span>; k++) &#123;</span><br><span class="line">        pt[k] = t[k];</span><br><span class="line">        &#125;</span><br><span class="line">                </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>A.&amp;t[3][2]<br>B.<em>pt[0]<br>C.</em>(pt+1)<br>D.&amp;pt[2]<br>选择：C<br>t的元素即是t[0] t[1] t[2]……</p>
+<h1 id="32"><a href="#32" class="headerlink" title="32"></a>32</h1><p>在 C 程序中，函数既可以嵌套定义，也可以嵌套调用。</p>
+<p>答案：F<br>分析：可以嵌套调用，不能嵌套定义</p>
+<h1 id="33"><a href="#33" class="headerlink" title="33"></a>33</h1><p>有一段程序如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">getSum</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> s;</span><br><span class="line">    s = <span class="built_in">getSum</span>(k+<span class="number">1</span>) + k;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum;</span><br><span class="line">    sum = <span class="built_in">getSum</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>递归函数getSum设计不合理，这段程序将无限递归，始终不能结束。</p>
+<p>答案：F<br>分析：当堆栈满了之后就会停下来</p>
+<h1 id="34"><a href="#34" class="headerlink" title="34"></a>34</h1><p>对于以下程序，能够正确表示二维数组 t 的元素地址的表达式是（ ）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k, t[<span class="number">3</span>][<span class="number">2</span>], *pt[<span class="number">3</span>];</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span> ( k = <span class="number">0</span>; k &lt; <span class="number">3</span>; k++) &#123;</span><br><span class="line">        pt[k] = t[k];</span><br><span class="line">        &#125;</span><br><span class="line">                </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>A. &amp;t[3][2]</p>
+<p>B.*pt[0]</p>
+<p>C.*(pt+1)</p>
+<p>D.&amp;pt[2]</p>
+<p>答案：C<br>解析：题目要求找到一个一级指针<br>        Ａ越界<br>        Ｂ元素的值<br>        Ｃpt[1]一级指针<br>         D 二级指针</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Fengjie Lu WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Fengjie Lu Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/course/" rel="tag"># course</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/31/printf%E8%BE%93%E5%87%BA%E6%97%B6%E5%A6%82%E4%BD%95%E7%94%A8%E5%8F%98%E9%87%8F%E6%8E%A7%E5%88%B6%E4%BD%8D%E5%AE%BD_/" rel="prev" title="printf输出如何用变量控制位宽">
+      <i class="fa fa-chevron-left"></i> printf输出如何用变量控制位宽
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/31/windows%E6%89%B9%E5%A4%84%E7%90%86/" rel="next" title="windows批处理学习">
+      windows批处理学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">1.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">2.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">3.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5"><span class="nav-number">4.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6"><span class="nav-number">5.</span> <span class="nav-text">6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7"><span class="nav-number">6.</span> <span class="nav-text">7</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8"><span class="nav-number">7.</span> <span class="nav-text">8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">8.</span> <span class="nav-text">9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">9.</span> <span class="nav-text">10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11"><span class="nav-number">10.</span> <span class="nav-text">11</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12"><span class="nav-number">11.</span> <span class="nav-text">12</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13"><span class="nav-number">12.</span> <span class="nav-text">13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14"><span class="nav-number">13.</span> <span class="nav-text">14</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15"><span class="nav-number">14.</span> <span class="nav-text">15</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16"><span class="nav-number">15.</span> <span class="nav-text">16</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17"><span class="nav-number">16.</span> <span class="nav-text">17</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18"><span class="nav-number">17.</span> <span class="nav-text">18</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19"><span class="nav-number">18.</span> <span class="nav-text">19</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20"><span class="nav-number">19.</span> <span class="nav-text">20</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21"><span class="nav-number">20.</span> <span class="nav-text">21</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22"><span class="nav-number">21.</span> <span class="nav-text">22</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23"><span class="nav-number">22.</span> <span class="nav-text">23</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24"><span class="nav-number">23.</span> <span class="nav-text">24</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25"><span class="nav-number">24.</span> <span class="nav-text">25</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26"><span class="nav-number">25.</span> <span class="nav-text">26</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27"><span class="nav-number">26.</span> <span class="nav-text">27</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28"><span class="nav-number">27.</span> <span class="nav-text">28</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29"><span class="nav-number">28.</span> <span class="nav-text">29</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#30"><span class="nav-number">29.</span> <span class="nav-text">30</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31"><span class="nav-number">30.</span> <span class="nav-text">31</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32"><span class="nav-number">31.</span> <span class="nav-text">32</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33"><span class="nav-number">32.</span> <span class="nav-text">33</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34"><span class="nav-number">33.</span> <span class="nav-text">34</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fengjie Lu"
+      src="/images/mouse.jpg">
+  <p class="site-author-name" itemprop="name">Fengjie Lu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Crer-lu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Crer-lu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1290174724@qq.com" title="E-Mail → 1290174724@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fengjie Lu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
