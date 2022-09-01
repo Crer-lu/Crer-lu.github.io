@@ -65,21 +65,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C语言中的内部名和外部名</title>
-    <url>/2022/08/31/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E5%90%8D%E4%B8%8E%E5%A4%96%E9%83%A8%E5%90%8D/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-​	最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：
-
-<p>​	A N S I标准规定，标识符可以为任意长度，但外部名必须至少能由前6个字符唯一地区分，并且不区分大小写。这里外部名指的是在链接过程中所涉及的标识符，其中包括文件间共享的函数名和全局变量名。因此外部名abcdefgh和abcdef将被当作同一个标识符处理，而且abcd和ABCD会当作一样处理。</p>
-<p>​	A N S I标准还规定内部名必须至少能由前31个字符唯一地区分。内部名指的是仅出现于定义该标识符的文件中的那些标识符。C语言中的字母是有大小写区别的，因此count Count COUNT是三个不同的标识符。标识符不能和C语言的关键字相同，也不能和用户已编制的函数或C语言库函数同名。</p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>CS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Chrome的headless配置语句（可粘贴）</title>
     <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -92,28 +77,18 @@
       </tags>
   </entry>
   <entry>
-    <title>N个有理分数求和</title>
-    <url>/2022/08/31/N%E4%B8%AA%E6%9C%89%E7%90%86%E5%88%86%E6%95%B0%E6%95%B0%E6%B1%82%E5%92%8C%20/</url>
+    <title>C语言中的内部名和外部名</title>
+    <url>/2022/08/31/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E5%90%8D%E4%B8%8E%E5%A4%96%E9%83%A8%E5%90%8D/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-# N个有理分数求和 (20 分)
-## 题目描述
-本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数分子/分母的形式给出的，你输出的和也必须是有理数的形式。
+​	最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：
 
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数N（≤100）。随后一行按格式a1&#x2F;b1 a2&#x2F;b2 …给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出上述数字和的最简形式 —— 即将结果写成整数部分 分数部分，其中分数部分写成分子&#x2F;分母，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
-<p><strong>输入样例1</strong>：<br>5<br>2&#x2F;5 4&#x2F;15 1&#x2F;30 -2&#x2F;60 8&#x2F;3</p>
-<p>输出样例1：<br>3 1&#x2F;3</p>
-<p><strong>输入样例2</strong>：<br>2<br>4&#x2F;3 2&#x2F;3</p>
-<p><strong>输入样例3</strong><br>3<br>1&#x2F;3 -1&#x2F;6 1&#x2F;8</p>
-<p>输出样例3<br>7&#x2F;24</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于是有理数加法，这里可以参照Basic level中的<strong>有理数四则运算</strong><br>（<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805287624491008">题目链接</a>）（<a href="https://blog.csdn.net/qq_34771124/article/details/121479148">题解博客</a>）<br>两个核心：求最大公约数和特殊情况的判断</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>我这个题卡在测试点五<br><strong>运行超时</strong>：那么你在求最大公约数代码中加上这个就好了<br><img src="https://img-blog.csdnimg.cn/417908b7d5aa48548f7136e60cdd7434.png" alt="在这里插入图片描述"><br><strong>浮点错误</strong>：那么你是没有考虑0的情况，一个是求公约数不能出现0，另一个是如果结果为0，只输出一个0就好。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans_up, ans_down;<span class="comment">//分子和分母</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span>(a == b)</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">		<span class="type">int</span> c = a;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="built_in">lcd</span>(a - b, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span>&#123;<span class="comment">//计算两个有理数计算的结果</span></span><br><span class="line">	ans_up = a * d + c * b;</span><br><span class="line">	ans_down = b * d;</span><br><span class="line">	<span class="keyword">if</span>(ans_up == <span class="number">0</span>)	<span class="keyword">return</span> ;</span><br><span class="line">	<span class="type">int</span> ld = <span class="built_in">lcd</span>(<span class="built_in">abs</span>(ans_up), ans_down);</span><br><span class="line">	ans_up /= ld;</span><br><span class="line">	ans_down /= ld;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//输出结果</span></span><br><span class="line">	<span class="keyword">if</span>(ans_up &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">		ans_up *= <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(ans_up == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans_up &gt;= ans_down)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ans_up % ans_down == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans_up / ans_down);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d %d/%d&quot;</span>, ans_up / ans_down, ans_up % ans_down, ans_down);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, ans_up, ans_down);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ans_up = <span class="number">0</span>, ans_down = <span class="number">1</span>;<span class="comment">//初始化结果</span></span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">		<span class="built_in">cal</span>(ans_up, ans_down, x, y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
+<p>​	A N S I标准规定，标识符可以为任意长度，但外部名必须至少能由前6个字符唯一地区分，并且不区分大小写。这里外部名指的是在链接过程中所涉及的标识符，其中包括文件间共享的函数名和全局变量名。因此外部名abcdefgh和abcdef将被当作同一个标识符处理，而且abcd和ABCD会当作一样处理。</p>
+<p>​	A N S I标准还规定内部名必须至少能由前31个字符唯一地区分。内部名指的是仅出现于定义该标识符的文件中的那些标识符。C语言中的字母是有大小写区别的，因此count Count COUNT是三个不同的标识符。标识符不能和C语言的关键字相同，也不能和用户已编制的函数或C语言库函数同名。</p>
 ]]></content>
       <tags>
-        <tag>algorithm</tag>
+        <tag>C</tag>
+        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
@@ -165,6 +140,21 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>printf输出如何用变量控制位宽</title>
+    <url>/2022/08/31/printf%E8%BE%93%E5%87%BA%E6%97%B6%E5%A6%82%E4%BD%95%E7%94%A8%E5%8F%98%E9%87%8F%E6%8E%A7%E5%88%B6%E4%BD%8D%E5%AE%BD_/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 看代码
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">2</span>, y = <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%*d %0*d&quot;</span>, x, y, x, y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>tips</tag>
+      </tags>
   </entry>
   <entry>
     <title>PTA基础题错题集</title>
@@ -286,18 +276,47 @@
       </tags>
   </entry>
   <entry>
-    <title>printf输出如何用变量控制位宽</title>
-    <url>/2022/08/31/printf%E8%BE%93%E5%87%BA%E6%97%B6%E5%A6%82%E4%BD%95%E7%94%A8%E5%8F%98%E9%87%8F%E6%8E%A7%E5%88%B6%E4%BD%8D%E5%AE%BD_/</url>
+    <title>N个有理分数求和</title>
+    <url>/2022/08/31/N%E4%B8%AA%E6%9C%89%E7%90%86%E5%88%86%E6%95%B0%E6%95%B0%E6%B1%82%E5%92%8C%20/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-# 看代码
+# N个有理分数求和 (20 分)
+## 题目描述
+本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数分子/分母的形式给出的，你输出的和也必须是有理数的形式。
 
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">2</span>, y = <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%*d %0*d&quot;</span>, x, y, x, y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数N（≤100）。随后一行按格式a1&#x2F;b1 a2&#x2F;b2 …给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出上述数字和的最简形式 —— 即将结果写成整数部分 分数部分，其中分数部分写成分子&#x2F;分母，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
+<p><strong>输入样例1</strong>：<br>5<br>2&#x2F;5 4&#x2F;15 1&#x2F;30 -2&#x2F;60 8&#x2F;3</p>
+<p>输出样例1：<br>3 1&#x2F;3</p>
+<p><strong>输入样例2</strong>：<br>2<br>4&#x2F;3 2&#x2F;3</p>
+<p><strong>输入样例3</strong><br>3<br>1&#x2F;3 -1&#x2F;6 1&#x2F;8</p>
+<p>输出样例3<br>7&#x2F;24</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于是有理数加法，这里可以参照Basic level中的<strong>有理数四则运算</strong><br>（<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805287624491008">题目链接</a>）（<a href="https://blog.csdn.net/qq_34771124/article/details/121479148">题解博客</a>）<br>两个核心：求最大公约数和特殊情况的判断</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>我这个题卡在测试点五<br><strong>运行超时</strong>：那么你在求最大公约数代码中加上这个就好了<br><img src="https://img-blog.csdnimg.cn/417908b7d5aa48548f7136e60cdd7434.png" alt="在这里插入图片描述"><br><strong>浮点错误</strong>：那么你是没有考虑0的情况，一个是求公约数不能出现0，另一个是如果结果为0，只输出一个0就好。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans_up, ans_down;<span class="comment">//分子和分母</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span>(a == b)</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">		<span class="type">int</span> c = a;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="built_in">lcd</span>(a - b, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span>&#123;<span class="comment">//计算两个有理数计算的结果</span></span><br><span class="line">	ans_up = a * d + c * b;</span><br><span class="line">	ans_down = b * d;</span><br><span class="line">	<span class="keyword">if</span>(ans_up == <span class="number">0</span>)	<span class="keyword">return</span> ;</span><br><span class="line">	<span class="type">int</span> ld = <span class="built_in">lcd</span>(<span class="built_in">abs</span>(ans_up), ans_down);</span><br><span class="line">	ans_up /= ld;</span><br><span class="line">	ans_down /= ld;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//输出结果</span></span><br><span class="line">	<span class="keyword">if</span>(ans_up &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">		ans_up *= <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(ans_up == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans_up &gt;= ans_down)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ans_up % ans_down == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans_up / ans_down);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d %d/%d&quot;</span>, ans_up / ans_down, ans_up % ans_down, ans_down);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, ans_up, ans_down);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ans_up = <span class="number">0</span>, ans_down = <span class="number">1</span>;<span class="comment">//初始化结果</span></span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">		<span class="built_in">cal</span>(ans_up, ans_down, x, y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一文搞懂结构体变量占用多大的内存空间</title>
+    <url>/2022/08/31/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 一、首先做一道例题感受一下
+请问下面定义的结构体变量aa在计算机内存中占用多少字节？
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="type">float</span>    height;</span><br><span class="line">    <span class="type">short</span> <span class="type">int</span>  age ;</span><br><span class="line">    <span class="type">char</span>     sex ;</span><br><span class="line">&#125;aa;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(aa));  <span class="comment">//屏幕上将显示多少？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+**错误解答**：我们都知道，char类型占用1个字节，float型占用4个字节，short int类型占用2个字节，int型在VC6.0中占用4个字节（TC2.0中占用2个字节），long占用8个字节，double占用8个字节。因此，我们可能会犯一个错误就是直接4+2+1=7，结构体aa占用7个字节。这是错的。
+
+<p><strong>错误分析</strong>：计算结构体大小时需要考虑其内存布局，编译系统为了提高计算机访问数据的效率，在安排结构体每个成员的时候采用了内存对齐的方法，具体是：结构体在内存中的存放按单元进行存放，每个单元的大小取决于<font color=red>结构体中最大基本类型的大小。</p>
+<h1 id="二、为解释清楚，我们列出以下几种格式"><a href="#二、为解释清楚，我们列出以下几种格式" class="headerlink" title="二、为解释清楚，我们列出以下几种格式"></a>二、为解释清楚，我们列出以下几种格式</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">格式一：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line"> <span class="type">short</span>  C;    </span><br><span class="line">&#125;Phone1;  </span><br><span class="line"></span><br><span class="line">格式二：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">short</span>  C;   </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line">&#125;Phone2;   </span><br><span class="line"></span><br><span class="line">格式三：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">char</span>   B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone3;   </span><br><span class="line"></span><br><span class="line">格式四：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">double</span>  B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone4;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><font size=5>然后我们一一分析<br><img src="https://img-blog.csdnimg.cn/e08eaeeff49e4bb9b8898214f94590b4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b53b2ef7e0234d1eb14c2076db3e51dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/07bc4d274ece44978ae05d013451b9dc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ae67bfa5de134532bdbbebf75d7c7729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>综上所述，作为一个优秀的程序员，有必要在声明结构体变量时考虑如何才能节省空间，因为这之间的差异是非常大的。</p>
+<p>原文链接：<a href="http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html">http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html</a></p>
+]]></content>
+      <tags>
         <tag>C</tag>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -368,22 +387,44 @@
       </tags>
   </entry>
   <entry>
-    <title>一文搞懂结构体变量占用多大的内存空间</title>
-    <url>/2022/08/31/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/</url>
+    <title>栈和队列（手动与STL实现）</title>
+    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-# 一、首先做一道例题感受一下
-请问下面定义的结构体变量aa在计算机内存中占用多少字节？
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="type">float</span>    height;</span><br><span class="line">    <span class="type">short</span> <span class="type">int</span>  age ;</span><br><span class="line">    <span class="type">char</span>     sex ;</span><br><span class="line">&#125;aa;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(aa));  <span class="comment">//屏幕上将显示多少？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-**错误解答**：我们都知道，char类型占用1个字节，float型占用4个字节，short int类型占用2个字节，int型在VC6.0中占用4个字节（TC2.0中占用2个字节），long占用8个字节，double占用8个字节。因此，我们可能会犯一个错误就是直接4+2+1=7，结构体aa占用7个字节。这是错的。
 
-<p><strong>错误分析</strong>：计算结构体大小时需要考虑其内存布局，编译系统为了提高计算机访问数据的效率，在安排结构体每个成员的时候采用了内存对齐的方法，具体是：结构体在内存中的存放按单元进行存放，每个单元的大小取决于<font color=red>结构体中最大基本类型的大小。</p>
-<h1 id="二、为解释清楚，我们列出以下几种格式"><a href="#二、为解释清楚，我们列出以下几种格式" class="headerlink" title="二、为解释清楚，我们列出以下几种格式"></a>二、为解释清楚，我们列出以下几种格式</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">格式一：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line"> <span class="type">short</span>  C;    </span><br><span class="line">&#125;Phone1;  </span><br><span class="line"></span><br><span class="line">格式二：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">short</span>  C;   </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line">&#125;Phone2;   </span><br><span class="line"></span><br><span class="line">格式三：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">char</span>   B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone3;   </span><br><span class="line"></span><br><span class="line">格式四：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">double</span>  B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone4;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><font size=5>然后我们一一分析<br><img src="https://img-blog.csdnimg.cn/e08eaeeff49e4bb9b8898214f94590b4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b53b2ef7e0234d1eb14c2076db3e51dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/07bc4d274ece44978ae05d013451b9dc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ae67bfa5de134532bdbbebf75d7c7729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>综上所述，作为一个优秀的程序员，有必要在声明结构体变量时考虑如何才能节省空间，因为这之间的差异是非常大的。</p>
-<p>原文链接：<a href="http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html">http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html</a></p>
+<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
+<ol>
+<li><p>库函数的栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
+<li><p>手写栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
+<p><strong>二.队列</strong></p>
+</li>
+<li><p>库函数的队列</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手写队列</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
+
+<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
 ]]></content>
       <tags>
         <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复数变量的声明</title>
+    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -480,47 +521,6 @@ fputs(s, fp2);<br>
       </tags>
   </entry>
   <entry>
-    <title>栈和队列（手动与STL实现）</title>
-    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
-<ol>
-<li><p>库函数的栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
-<li><p>手写栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
-<p><strong>二.队列</strong></p>
-</li>
-<li><p>库函数的队列</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>手写队列</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
-
-<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复数变量的声明</title>
-    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>复杂度的渐进表示</title>
     <url>/2022/08/31/%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E6%B8%90%E8%BF%9B%E8%A1%A8%E7%A4%BA/</url>
     <content><![CDATA[<center></center>
@@ -543,23 +543,6 @@ $$T(n)=Θ(f(n))$$
       <tags>
         <tag>tips</tag>
         <tag>course</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何解决爬虫爬取的不是高清图</title>
-    <url>/2022/08/31/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%9A%84%E4%B8%8D%E6%98%AF%E9%AB%98%E6%B8%85%E5%9B%BE/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<font color=red>
-只要把url中的‘_s’删掉即可<br>
-使用以下代码：
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
-<p><font color=red>快去试试吧！QWQ</p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -653,6 +636,23 @@ $$T(n)=Θ(f(n))$$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何解决爬虫爬取的不是高清图</title>
+    <url>/2022/08/31/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%9A%84%E4%B8%8D%E6%98%AF%E9%AB%98%E6%B8%85%E5%9B%BE/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<font color=red>
+只要把url中的‘_s’删掉即可<br>
+使用以下代码：
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+<p><font color=red>快去试试吧！QWQ</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -888,6 +888,19 @@ $000,001,010,011,100,101,110,111$
       </tags>
   </entry>
   <entry>
+    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
+    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+## 转载两篇博客，说的很清楚。
+ [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
+ [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>获取Xpath的两种方法</title>
     <url>/2022/08/31/%E8%8E%B7%E5%8F%96Xpath%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<center></center>
@@ -912,29 +925,6 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑运算符的性能优化（短路问题）</title>
-    <url>/2022/08/31/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 逻辑运算符的性能优化（短路问题）
-<font color=orange>在Python中存在这样的规则
-我们举个例子
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<font color=red>
-从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
-a and b 如果a为false，则b直接跳过<br>
-a or b 如果a为true，则b直接跳过<br>
-
-<font color=green>
-其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
-希望这篇文章能给你带来帮助！
-]]></content>
-      <tags>
-        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
@@ -972,16 +962,26 @@ a or b 如果a为true，则b直接跳过<br>
       </tags>
   </entry>
   <entry>
-    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
-    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <title>逻辑运算符的性能优化（短路问题）</title>
+    <url>/2022/08/31/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-## 转载两篇博客，说的很清楚。
- [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
- [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
+# 逻辑运算符的性能优化（短路问题）
+<font color=orange>在Python中存在这样的规则
+我们举个例子
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<font color=red>
+从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
+a and b 如果a为false，则b直接跳过<br>
+a or b 如果a为true，则b直接跳过<br>
+
+<font color=green>
+其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
+希望这篇文章能给你带来帮助！
 ]]></content>
       <tags>
-        <tag>C</tag>
+        <tag>CS</tag>
       </tags>
   </entry>
 </search>
