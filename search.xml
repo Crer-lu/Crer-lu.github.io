@@ -35,33 +35,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++ 引用和传参的区别</title>
-    <url>/2022/08/31/C++%20%E5%BC%95%E7%94%A8%E5%92%8C%E4%BC%A0%E5%8F%82%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# C++ 引用和传参的区别
-直接看代码
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span> &amp;a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func3</span><span class="params">(<span class="type">int</span> *a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">func1</span>(a);</span><br><span class="line">	<span class="built_in">func2</span>(b);</span><br><span class="line">	<span class="built_in">func3</span>(&amp;c);</span><br><span class="line">	cout&lt;&lt; a&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; b&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; c&lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序运行结果<br><img src="https://img-blog.csdnimg.cn/20c10e183dc34558afbd940b3e290bfd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chrome的headless配置语句（可粘贴）</title>
-    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++ string 的substr的使用方法</title>
     <url>/2022/08/31/C++%20string%20%E7%9A%84substr%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<center></center>
@@ -71,6 +44,21 @@
 
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string s = <span class="string">&quot;Hello world !&quot;</span>;</span><br><span class="line">	cout&lt;&lt; s.<span class="built_in">substr</span>(<span class="number">1</span>)&lt;&lt; endl;<span class="comment">//下标从1开始到结束</span></span><br><span class="line">	cout&lt;&lt; s.<span class="built_in">substr</span>(<span class="number">1</span>, <span class="number">4</span>);<span class="comment">//下标从1开始后4个字符</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出结果<br><img src="https://img-blog.csdnimg.cn/ac658afbfa6043528de6cb364d11c7ef.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ 引用和传参的区别</title>
+    <url>/2022/08/31/C++%20%E5%BC%95%E7%94%A8%E5%92%8C%E4%BC%A0%E5%8F%82%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# C++ 引用和传参的区别
+直接看代码
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span> &amp;a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func3</span><span class="params">(<span class="type">int</span> *a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">func1</span>(a);</span><br><span class="line">	<span class="built_in">func2</span>(b);</span><br><span class="line">	<span class="built_in">func3</span>(&amp;c);</span><br><span class="line">	cout&lt;&lt; a&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; b&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; c&lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果<br><img src="https://img-blog.csdnimg.cn/20c10e183dc34558afbd940b3e290bfd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 ]]></content>
       <tags>
         <tag>C++</tag>
@@ -89,18 +77,6 @@
       <tags>
         <tag>C</tag>
         <tag>CS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PAT题解</title>
-    <url>/2022/09/07/PAT%20BasicLevel%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<p>之前在CSDN上写过PAT一些题目的题解，这里写一个传送门过去</p>
-<p><a href="%5B(6%E6%9D%A1%E6%B6%88%E6%81%AF">传送门</a> PTA Basic Level_Crer_lu的博客-CSDN博客](<a href="https://blog.csdn.net/qq_34771124/category_11523126.html?spm=1001.2014.3001.5482">https://blog.csdn.net/qq_34771124/category_11523126.html?spm=1001.2014.3001.5482</a>))</p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
-]]></content>
-      <tags>
-        <tag>PAT</tag>
-        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -136,6 +112,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Chrome的headless配置语句（可粘贴）</title>
+    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>N个有理分数求和</title>
     <url>/2022/08/31/N%E4%B8%AA%E6%9C%89%E7%90%86%E5%88%86%E6%95%B0%E6%95%B0%E6%B1%82%E5%92%8C%20/</url>
     <content><![CDATA[<center></center>
@@ -159,24 +147,6 @@
       <tags>
         <tag>algorithm</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/31/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>PTA基础题错题集</title>
@@ -298,12 +268,33 @@
       </tags>
   </entry>
   <entry>
-    <title>windows批处理学习</title>
-    <url>/2022/08/31/windows%E6%89%B9%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-[转载链接](https://www.cnblogs.com/xpwi/p/9626959.html)
-[转载链接](https://blog.csdn.net/qq_38199187/article/details/84642491)
+    <title>PAT题解</title>
+    <url>/2022/09/07/PAT%20BasicLevel%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<p>之前在CSDN上写过PAT一些题目的题解，这里写一个传送门过去</p>
+<p><a href="%5B(6%E6%9D%A1%E6%B6%88%E6%81%AF">传送门</a> PTA Basic Level_Crer_lu的博客-CSDN博客](<a href="https://blog.csdn.net/qq_34771124/category_11523126.html?spm=1001.2014.3001.5482">https://blog.csdn.net/qq_34771124/category_11523126.html?spm=1001.2014.3001.5482</a>))</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
+]]></content>
+      <tags>
+        <tag>PAT</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/31/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -322,6 +313,15 @@
       </tags>
   </entry>
   <entry>
+    <title>windows批处理学习</title>
+    <url>/2022/08/31/windows%E6%89%B9%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+[转载链接](https://www.cnblogs.com/xpwi/p/9626959.html)
+[转载链接](https://blog.csdn.net/qq_38199187/article/details/84642491)
+]]></content>
+  </entry>
+  <entry>
     <title>一文搞懂结构体变量占用多大的内存空间</title>
     <url>/2022/08/31/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -338,28 +338,6 @@
 ]]></content>
       <tags>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo+github搭建属于自己的博客</title>
-    <url>/2022/08/29/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。</p>
-<span id="more"></span>
-
-<h2 id="搭建自己的博客网站"><a href="#搭建自己的博客网站" class="headerlink" title="搭建自己的博客网站"></a>搭建自己的博客网站</h2><p>全流程参考知乎文章<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
-<p>如果想要更换主题，不要用上面那篇文章里的教程</p>
-<p>用这一个<a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)_Z小旋的博客-CSDN博客_hexo next主题配置</a></p>
-<p>最后，再说一个我配置的时候遇到的最大的问题，为什么本地预览成功，但是部署到github上后却显示不出来，这里可以这样处理：</p>
-<p>首先打开你的github项目</p>
-<p>点击settings</p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5nq4ca5hbj3062042mx3.jpg" alt="image-20220829162224708"></p>
-<p>然后打开pages选项</p>
-<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
-<p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -396,6 +374,28 @@
         <tag>CS</tag>
         <tag>algorithm</tag>
         <tag>最短路</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo+github搭建属于自己的博客</title>
+    <url>/2022/08/29/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。</p>
+<span id="more"></span>
+
+<h2 id="搭建自己的博客网站"><a href="#搭建自己的博客网站" class="headerlink" title="搭建自己的博客网站"></a>搭建自己的博客网站</h2><p>全流程参考知乎文章<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
+<p>如果想要更换主题，不要用上面那篇文章里的教程</p>
+<p>用这一个<a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)_Z小旋的博客-CSDN博客_hexo next主题配置</a></p>
+<p>最后，再说一个我配置的时候遇到的最大的问题，为什么本地预览成功，但是部署到github上后却显示不出来，这里可以这样处理：</p>
+<p>首先打开你的github项目</p>
+<p>点击settings</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5nq4ca5hbj3062042mx3.jpg" alt="image-20220829162224708"></p>
+<p>然后打开pages选项</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
+<p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -438,72 +438,6 @@
 ]]></content>
       <tags>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复数变量的声明</title>
-    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>栈和队列（手动与STL实现）</title>
-    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
-<ol>
-<li><p>库函数的栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
-<li><p>手写栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
-<p><strong>二.队列</strong></p>
-</li>
-<li><p>库函数的队列</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>手写队列</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
-
-<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复杂度的渐进表示</title>
-    <url>/2022/08/31/%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E6%B8%90%E8%BF%9B%E8%A1%A8%E7%A4%BA/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 复杂度的渐进表示
-## 1. O（n）（常用）
-$$T(n)=O(f(n))$$
-这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)<=C*O(f(n))$
-简单来说，$O(f(n))$ 表示的就是$f(n)$的复杂度中的某个上界
-例如，$f(n)=(n*(n+1))/2$ 则$O(f(n))=n^2$（不唯一）
-## 2. Ω（n）
-$$T(n)=Ω(f(n))$$
-这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)>=C*Ω(f(n))$
-简单来说，$Ω(f(n))$ 表示的就是$f(n)$的复杂度的某个下界
-例如，$f(n)=(n*(n+1))/2$ 则$Ω(f(n))=n^2/2$（不唯一）
-## 3. Θ（n）
-$$T(n)=Θ(f(n))$$
-这个式子表示同时有以下两个式子成立$$T(n)=O(f(n))$$$$T(n)=Ω(f(n))$$
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>course</tag>
       </tags>
   </entry>
   <entry>
@@ -583,49 +517,69 @@ fputs(s, fp2);<br>
       </tags>
   </entry>
   <entry>
-    <title>异或的巧妙使用</title>
-    <url>/2022/08/31/%E6%89%BE%E5%88%B0%E9%82%A3%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%88%E5%BC%82%E6%88%96%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%89/</url>
+    <title>栈和队列（手动与STL实现）</title>
+    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-# 异或的巧妙使用
-## 题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了
- [原文链接](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484505&idx=1&sn=4c1c056dd4852c3b4b1ead51c90a9b2d&chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&scene=21#wechat_redirect)
- ## 题目描述
 
-<blockquote>
-<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
-<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
-</blockquote>
-<br/>
-<br/>
-<br/>
+<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
+<ol>
+<li><p>库函数的栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
+<li><p>手写栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
+<p><strong>二.队列</strong></p>
+</li>
+<li><p>库函数的队列</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手写队列</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
 
-<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><br/>
-<br/>
-<br/>
-
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
-</blockquote>
-<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-x3D-x3D-偶数次-x3D-x3D-和-x3D-x3D-奇数次-x3D-x3D-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-x3D-x3D-偶数次-x3D-x3D-和-x3D-x3D-奇数次-x3D-x3D-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。</h4><br/>
-<br/>
-
-<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
-<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
-</blockquote>
-<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
-</blockquote>
-<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
-<blockquote>
-<p>a &#x3D; a ^ b;<br>b &#x3D; a ^ b;<br>a &#x3D; a ^ b;</p>
-</blockquote>
+<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
 ]]></content>
       <tags>
-        <tag>algorithm</tag>
-        <tag>interview</tag>
+        <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复数变量的声明</title>
+    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复杂度的渐进表示</title>
+    <url>/2022/08/31/%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E6%B8%90%E8%BF%9B%E8%A1%A8%E7%A4%BA/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 复杂度的渐进表示
+## 1. O（n）（常用）
+$$T(n)=O(f(n))$$
+这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)<=C*O(f(n))$
+简单来说，$O(f(n))$ 表示的就是$f(n)$的复杂度中的某个上界
+例如，$f(n)=(n*(n+1))/2$ 则$O(f(n))=n^2$（不唯一）
+## 2. Ω（n）
+$$T(n)=Ω(f(n))$$
+这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)>=C*Ω(f(n))$
+简单来说，$Ω(f(n))$ 表示的就是$f(n)$的复杂度的某个下界
+例如，$f(n)=(n*(n+1))/2$ 则$Ω(f(n))=n^2/2$（不唯一）
+## 3. Θ（n）
+$$T(n)=Θ(f(n))$$
+这个式子表示同时有以下两个式子成立$$T(n)=O(f(n))$$$$T(n)=Ω(f(n))$$
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>course</tag>
       </tags>
   </entry>
   <entry>
@@ -643,28 +597,6 @@ fputs(s, fp2);<br>
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>整除光棍（20分）</title>
-    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 整除光棍 (20 分)
-## 题目描述
-这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
-
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
-<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -712,6 +644,74 @@ fputs(s, fp2);<br>
       <tags>
         <tag>tips</tag>
         <tag>hardware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>异或的巧妙使用</title>
+    <url>/2022/08/31/%E6%89%BE%E5%88%B0%E9%82%A3%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%88%E5%BC%82%E6%88%96%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 异或的巧妙使用
+## 题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了
+ [原文链接](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484505&idx=1&sn=4c1c056dd4852c3b4b1ead51c90a9b2d&chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&scene=21#wechat_redirect)
+ ## 题目描述
+
+<blockquote>
+<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
+<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
+</blockquote>
+<br/>
+<br/>
+<br/>
+
+<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><br/>
+<br/>
+<br/>
+
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
+</blockquote>
+<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-x3D-x3D-偶数次-x3D-x3D-和-x3D-x3D-奇数次-x3D-x3D-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-x3D-x3D-偶数次-x3D-x3D-和-x3D-x3D-奇数次-x3D-x3D-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。</h4><br/>
+<br/>
+
+<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
+<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
+</blockquote>
+<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
+</blockquote>
+<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
+<blockquote>
+<p>a &#x3D; a ^ b;<br>b &#x3D; a ^ b;<br>a &#x3D; a ^ b;</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>整除光棍（20分）</title>
+    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 整除光棍 (20 分)
+## 题目描述
+这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
+
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
+<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -776,6 +776,40 @@ fputs(s, fp2);<br>
       </tags>
   </entry>
   <entry>
+    <title>欧拉筛法及其改进方法（素数的判断）</title>
+    <url>/2022/08/31/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95%E5%8F%8A%E5%85%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95%EF%BC%88%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 素数的筛法（欧拉筛法）及其改进
+
+<h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
+<pre><code>1.使用一个prime[N]存下当前素数 
+2.使用一个on[N]数组标志i 是不是素数。
+3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
+</code></pre>
+</blockquote>
+<h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
+<p>i % prime[j] &#x3D;&#x3D; 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] &#x3D; 0</strong>成立，那么设<strong>k &#x3D; i &#x2F; prime[j]</strong> 则prime[j]*k &#x3D; i成立<br>那么对于下一个需要筛选的 i * prime[j+1]&#x3D;prime[j]<em>k</em>prime[j+1]<br>我们令m &#x3D; k *prime[j+1]&gt;  i<br>因此当i增大时，k * prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
+</blockquote>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
+<p>求1,2,⋯,N 中素数的个数。</p>
+</blockquote>
+<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
+<p>【输入】：	<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据	1≤ N ≤10 ^8^</p>
+</blockquote>
+<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
+<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数"><a href="#on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数" class="headerlink" title="(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)"></a>(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)</h3><p><strong>————————————————————————————————</strong></p>
+<h1 id="2021年后续-欧拉筛法的优化-O-n-x2F-2"><a href="#2021年后续-欧拉筛法的优化-O-n-x2F-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n &#x2F; 2))"></a>2021年后续(欧拉筛法的优化 O(n &#x2F; 2))</h1><p>此处只给出处理的函数代码</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>&#x3D;&#x3D;(所有的素数中只有2一个偶数)&#x3D;&#x3D;</p>
+]]></content>
+      <tags>
+        <tag>素数筛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>求一个数组的所有子集</title>
     <url>/2022/08/31/%E6%B1%82%E4%B8%80%E4%B8%AA%E9%9B%86%E5%90%88%E7%9A%84%E5%AD%90%E9%9B%86%EF%BC%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -834,40 +868,6 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>C</tag>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欧拉筛法及其改进方法（素数的判断）</title>
-    <url>/2022/08/31/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95%E5%8F%8A%E5%85%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95%EF%BC%88%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 素数的筛法（欧拉筛法）及其改进
-
-<h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
-<pre><code>1.使用一个prime[N]存下当前素数 
-2.使用一个on[N]数组标志i 是不是素数。
-3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
-</code></pre>
-</blockquote>
-<h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
-<p>i % prime[j] &#x3D;&#x3D; 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] &#x3D; 0</strong>成立，那么设<strong>k &#x3D; i &#x2F; prime[j]</strong> 则prime[j]*k &#x3D; i成立<br>那么对于下一个需要筛选的 i * prime[j+1]&#x3D;prime[j]<em>k</em>prime[j+1]<br>我们令m &#x3D; k *prime[j+1]&gt;  i<br>因此当i增大时，k * prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
-</blockquote>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
-<p>求1,2,⋯,N 中素数的个数。</p>
-</blockquote>
-<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
-<p>【输入】：	<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据	1≤ N ≤10 ^8^</p>
-</blockquote>
-<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
-<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数"><a href="#on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数" class="headerlink" title="(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)"></a>(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)</h3><p><strong>————————————————————————————————</strong></p>
-<h1 id="2021年后续-欧拉筛法的优化-O-n-x2F-2"><a href="#2021年后续-欧拉筛法的优化-O-n-x2F-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n &#x2F; 2))"></a>2021年后续(欧拉筛法的优化 O(n &#x2F; 2))</h1><p>此处只给出处理的函数代码</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>&#x3D;&#x3D;(所有的素数中只有2一个偶数)&#x3D;&#x3D;</p>
-]]></content>
-      <tags>
-        <tag>素数筛</tag>
       </tags>
   </entry>
   <entry>
@@ -975,19 +975,6 @@ a or b 如果a为true，则b直接跳过<br>
       </tags>
   </entry>
   <entry>
-    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
-    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-## 转载两篇博客，说的很清楚。
- [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
- [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
-]]></content>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高精度模板合集与优化</title>
     <url>/2022/08/31/%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%A8%A1%E6%9D%BF%E5%90%88%E9%9B%86%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%88%E5%85%A8%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -1019,6 +1006,19 @@ a or b 如果a为true，则b直接跳过<br>
         <tag>C</tag>
         <tag>高精度</tag>
         <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
+    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+## 转载两篇博客，说的很清楚。
+ [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
+ [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
+]]></content>
+      <tags>
+        <tag>C</tag>
       </tags>
   </entry>
 </search>
