@@ -50,6 +50,18 @@
       </tags>
   </entry>
   <entry>
+    <title>CSDN传送门</title>
+    <url>/2022/09/07/CSDN%E4%BC%A0%E9%80%81%E9%97%A8/</url>
+    <content><![CDATA[<p>之前在CSDN上写过笔记和题解，这里写一个传送门过去</p>
+<p><a href="https://blog.csdn.net/qq_34771124?spm=1000.2115.3001.5343">传送门</a></p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
+]]></content>
+      <tags>
+        <tag>PAT题解</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++ 引用和传参的区别</title>
     <url>/2022/08/31/C++%20%E5%BC%95%E7%94%A8%E5%92%8C%E4%BC%A0%E5%8F%82%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<center></center>
@@ -62,6 +74,18 @@
 ]]></content>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome的headless配置语句（可粘贴）</title>
+    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -109,18 +133,6 @@
 ]]></content>
       <tags>
         <tag>CG</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chrome的headless配置语句（可粘贴）</title>
-    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -265,18 +277,6 @@
       <tags>
         <tag>C</tag>
         <tag>course</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PAT题解</title>
-    <url>/2022/09/07/PAT%20BasicLevel%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<p>之前在CSDN上写过PAT一些题目的题解，这里写一个传送门过去</p>
-<p><a href="%5B(6%E6%9D%A1%E6%B6%88%E6%81%AF">传送门</a> PTA Basic Level_Crer_lu的博客-CSDN博客](<a href="https://blog.csdn.net/qq_34771124/category_11523126.html?spm=1001.2014.3001.5482">https://blog.csdn.net/qq_34771124/category_11523126.html?spm=1001.2014.3001.5482</a>))</p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
-]]></content>
-      <tags>
-        <tag>PAT</tag>
-        <tag>题解</tag>
       </tags>
   </entry>
   <entry>
@@ -600,53 +600,6 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
-    <title>怎样自己亲手搭建一个四比特加法器</title>
-    <url>/2022/08/31/%E6%80%8E%E6%A0%B7%E8%87%AA%E5%B7%B1%E4%BA%B2%E6%89%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9B%9B%E6%AF%94%E7%89%B9%E5%8A%A0%E6%B3%95%E5%99%A8/</url>
-    <content><![CDATA[<center>大一上《信息与电子工程导论》大作业</center>
-<span id="more"></span>
-# 怎样自己亲手搭建一个四比特加法器
-## 一、前言
-<font color=green>作为大一上学期第一个大作业，最终还是拖到了冬学期的第八周，从第七周的周六开始，一直到第八周周五上午课上展示，中间连续熬了好几天的夜，另外，白天凡是有时间都用在研究它了，最终大约是用了30个小时，完成了这个四比特加法器的“从零到一”。
-最终，小组得分92，个人分数100（贡献比35%），也不枉自己投入的心血
-![在这里插入图片描述](https://img-blog.csdnimg.cn/a5ced433f0e44b12adf4f1f6b04bc4b7.png)
-
-<h2 id="二、器材"><a href="#二、器材" class="headerlink" title="二、器材"></a>二、器材</h2><p>电阻 1 包（10kΩ×100，1kΩ×50）<br>三极管 1 包（9013×100，LED×6）<br>跳线 3 短 1.5 长<br>电源 1 个<br>USB 线 1 条<br>面包板 1 块<br>万用表 1 只<br><img src="https://img-blog.csdnimg.cn/8ff0c2bcc7014108866f0512eae094b5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="三、步骤"><a href="#三、步骤" class="headerlink" title="三、步骤"></a>三、步骤</h2><font color = green>
-1) 利用三极管搭建逻辑门（与或非）并进行仿真测试；<br>
-2) 利用逻辑门搭建一位半加器并进行仿真测试；<br>
-3) 在一位半加器的基础上搭建一位全加器并进行仿真测试；<br>
-4) 利用一位全加器进行适当地级联，搭建 4-bit 加法器，并进行仿真测试；<br>
-5) 进行实物搭建并测试；
-
-<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><h3 id="1-简单逻辑门的搭建"><a href="#1-简单逻辑门的搭建" class="headerlink" title="1.简单逻辑门的搭建"></a>1.简单逻辑门的搭建</h3><p><img src="https://img-blog.csdnimg.cn/9ae8f673639d43ec887013875bcae933.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/79e28736999644fb9e1895daa5b2cf14.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83952eb48f1b4535bc6c8eb6eac63e93.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e72f8d73792541ec99c2643613ddb962.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h3 id="2-半加器的搭建"><a href="#2-半加器的搭建" class="headerlink" title="2.半加器的搭建"></a>2.半加器的搭建</h3><p><img src="https://img-blog.csdnimg.cn/42005dcedeb7493f9cd11dd05dc3c687.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="最初选择"><br>本质上多了的就是异或门，如何搭建异或门呢？<br>这中间经历了好几代的迭代<br><font color=red>第一代<br><img src="https://img-blog.csdnimg.cn/ad48b3cbb77f4c5e887f3e46d5d0422b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=black>我们清点一下三极管的数目，发现总共用到七个，而且有很大的损失，必须得改进<br><font color=red>第二代<br><font color=black>我们考虑对与非门进行改进(节省一个三极管)<br><img src="https://img-blog.csdnimg.cn/a5b189af6a6d470bbc3635aba681c498.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>仿真结果可知，这样的与非门效果很好，同样的思路我们得到了或非门的改进版，将来在进位中可能会用到。<br><img src="https://img-blog.csdnimg.cn/0c9549156c134c639962ab92d11eb33f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>接下来我们搭建半加器<br><font color=black>考虑到进位的与门有损失的问题，我们搭建时，进位采用了无损与门<br><font color=blac>无损与门与无损或门<br><img src="https://img-blog.csdnimg.cn/43e631ec8a154e67ab35877a54515ba3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>然后我们得到了半加器的电路</p>
-<p><img src="https://img-blog.csdnimg.cn/9cc5acb2b24240829b37f6c2edfbd4b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>总共是用到了<strong>七个</strong>三极管，能够完成计算本位（上面的电压表）和进位（下面的电压表）<br><font color=red>考虑到整个电路的简洁性（三极管越多，电路搭建难度越大），我们对半加器进行进一步的改进<br>本位：或非门结果和与门结果进行或非<br>进位：与门结果<br><img src="https://img-blog.csdnimg.cn/175c804bfe60486db8c2f6c300da06f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现只用到了四个三级管，这也是我们最终加法器里面用的半加器方案。</p>
-<h3 id="3-全加器的搭建"><a href="#3-全加器的搭建" class="headerlink" title="3.全加器的搭建"></a>3.全加器的搭建</h3><p>在上面四个三极管的基础上，我们进行相应的改进，得到最终的全加器。<br><font color=blac>本位：两次半加器的本位计算结果（A和B的本位计算结果再与C进位进行本位计算）<br>进位：无损与门（考虑后面的级联问题——损失可能导致结果错误）<br><img src="https://img-blog.csdnimg.cn/2a35aa5463bf45b38a3b9b45873ad1c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>清点一下，我们发现总共用到了10个三极管，同样也是我们的最终版本。</p>
-<h3 id="4-半加器与全加器级联实现两位加法器"><a href="#4-半加器与全加器级联实现两位加法器" class="headerlink" title="4.半加器与全加器级联实现两位加法器"></a>4.半加器与全加器级联实现两位加法器</h3><p>其实就是把半加器的进位结果作为全加器的C输入即可。<br><img src="https://img-blog.csdnimg.cn/d6a4361543094fd0a698a06832d622cf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>仿真结果<br><img src="https://img-blog.csdnimg.cn/1961b1e2920a4c8aad7dadb189706bce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/6db05306d96d4dfda4cb4f62ecb4078e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/338d1beef189445cbfdfe70624cd1e07.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现结果完全正确！<br>两位加法器完成！</p>
-<h3 id="5-四位加法器的搭建"><a href="#5-四位加法器的搭建" class="headerlink" title="5.四位加法器的搭建"></a>5.四位加法器的搭建</h3><p>其实就是半加器+三个全加器，由于我们之前考虑到了进位有损的问题，所以这里搭建起来也是非常的容易。<br><img src="https://img-blog.csdnimg.cn/e88db013db6e406db97e01bc7c2b8c4c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>经仿真，我们发现结果依旧完全正确！<br>至此，我们就完成了四位加法器的搭建</p>
-<h2 id="五、实物图"><a href="#五、实物图" class="headerlink" title="五、实物图"></a>五、实物图</h2><font color=orange>
-1. 与门、或门和非门
-
-<p><img src="https://img-blog.csdnimg.cn/39e8f333521742149d41dc44fb903f04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>2. 异或门<br><img src="https://img-blog.csdnimg.cn/94fd5b21a7d34ca5be701dc012e9a65e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>3. 与非门<br><img src="https://img-blog.csdnimg.cn/89da0c1d181f41b494347cf098572afc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4.无损与门<br><img src="https://img-blog.csdnimg.cn/16e220237fe8411c88bf0ccab2763702.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4. 半加器<br><img src="https://img-blog.csdnimg.cn/44c4042a80b542c29cde2ca7ece8478a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>5. 全加器<br><img src="https://img-blog.csdnimg.cn/7f15dc4765c74f4d9ac836e071a46a36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>6. 两位加法器<br><img src="https://img-blog.csdnimg.cn/c325bbdbbc024b2394ddae72dca67a9a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>7.四位加法器<br><img src="https://img-blog.csdnimg.cn/372d7fa9c2714b68ac36e00bbd4d2e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="六、总结与思考"><a href="#六、总结与思考" class="headerlink" title="六、总结与思考"></a>六、总结与思考</h2><font color=pink>
- 1. 完成一个大作业，需要小组成员合理的分工，这对工作的完成十分重要。<br>
- 2. 建议遵循先仿真后搭建的思路，如果反过来，完成难度大（进位损失须提前考虑）<br>
- 3. 电阻的使用：排电阻用剪刀在红线位置（如下图）剪下，如果拔下的话，管脚会留有胶，易造成接触不良
-
-<blockquote>
-<p><img src="https://img-blog.csdnimg.cn/a00ba0908aee438885aefa44af4111c0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里是引用"></p>
-</blockquote>
-<font color=pink>
-4.搭建电路时，可以考虑把一些电阻、三极管的金属段同时插在面包板的同一个孔内，防止因松动导致接触不良。<br>
-5.完成这项作业，也算是帮助我对计算机底层原理有了新的认识，收获满满！
-
-<h1 id="希望这篇文章对你有所帮助，奥里给QWQ！"><a href="#希望这篇文章对你有所帮助，奥里给QWQ！" class="headerlink" title="希望这篇文章对你有所帮助，奥里给QWQ！"></a>希望这篇文章对你有所帮助，奥里给QWQ！</h1>]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>hardware</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>异或的巧妙使用</title>
     <url>/2022/08/31/%E6%89%BE%E5%88%B0%E9%82%A3%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%88%E5%BC%82%E6%88%96%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -712,6 +665,53 @@ $$T(n)=Θ(f(n))$$
 ]]></content>
       <tags>
         <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>怎样自己亲手搭建一个四比特加法器</title>
+    <url>/2022/08/31/%E6%80%8E%E6%A0%B7%E8%87%AA%E5%B7%B1%E4%BA%B2%E6%89%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9B%9B%E6%AF%94%E7%89%B9%E5%8A%A0%E6%B3%95%E5%99%A8/</url>
+    <content><![CDATA[<center>大一上《信息与电子工程导论》大作业</center>
+<span id="more"></span>
+# 怎样自己亲手搭建一个四比特加法器
+## 一、前言
+<font color=green>作为大一上学期第一个大作业，最终还是拖到了冬学期的第八周，从第七周的周六开始，一直到第八周周五上午课上展示，中间连续熬了好几天的夜，另外，白天凡是有时间都用在研究它了，最终大约是用了30个小时，完成了这个四比特加法器的“从零到一”。
+最终，小组得分92，个人分数100（贡献比35%），也不枉自己投入的心血
+![在这里插入图片描述](https://img-blog.csdnimg.cn/a5ced433f0e44b12adf4f1f6b04bc4b7.png)
+
+<h2 id="二、器材"><a href="#二、器材" class="headerlink" title="二、器材"></a>二、器材</h2><p>电阻 1 包（10kΩ×100，1kΩ×50）<br>三极管 1 包（9013×100，LED×6）<br>跳线 3 短 1.5 长<br>电源 1 个<br>USB 线 1 条<br>面包板 1 块<br>万用表 1 只<br><img src="https://img-blog.csdnimg.cn/8ff0c2bcc7014108866f0512eae094b5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="三、步骤"><a href="#三、步骤" class="headerlink" title="三、步骤"></a>三、步骤</h2><font color = green>
+1) 利用三极管搭建逻辑门（与或非）并进行仿真测试；<br>
+2) 利用逻辑门搭建一位半加器并进行仿真测试；<br>
+3) 在一位半加器的基础上搭建一位全加器并进行仿真测试；<br>
+4) 利用一位全加器进行适当地级联，搭建 4-bit 加法器，并进行仿真测试；<br>
+5) 进行实物搭建并测试；
+
+<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><h3 id="1-简单逻辑门的搭建"><a href="#1-简单逻辑门的搭建" class="headerlink" title="1.简单逻辑门的搭建"></a>1.简单逻辑门的搭建</h3><p><img src="https://img-blog.csdnimg.cn/9ae8f673639d43ec887013875bcae933.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/79e28736999644fb9e1895daa5b2cf14.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83952eb48f1b4535bc6c8eb6eac63e93.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e72f8d73792541ec99c2643613ddb962.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h3 id="2-半加器的搭建"><a href="#2-半加器的搭建" class="headerlink" title="2.半加器的搭建"></a>2.半加器的搭建</h3><p><img src="https://img-blog.csdnimg.cn/42005dcedeb7493f9cd11dd05dc3c687.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="最初选择"><br>本质上多了的就是异或门，如何搭建异或门呢？<br>这中间经历了好几代的迭代<br><font color=red>第一代<br><img src="https://img-blog.csdnimg.cn/ad48b3cbb77f4c5e887f3e46d5d0422b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=black>我们清点一下三极管的数目，发现总共用到七个，而且有很大的损失，必须得改进<br><font color=red>第二代<br><font color=black>我们考虑对与非门进行改进(节省一个三极管)<br><img src="https://img-blog.csdnimg.cn/a5b189af6a6d470bbc3635aba681c498.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>仿真结果可知，这样的与非门效果很好，同样的思路我们得到了或非门的改进版，将来在进位中可能会用到。<br><img src="https://img-blog.csdnimg.cn/0c9549156c134c639962ab92d11eb33f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>接下来我们搭建半加器<br><font color=black>考虑到进位的与门有损失的问题，我们搭建时，进位采用了无损与门<br><font color=blac>无损与门与无损或门<br><img src="https://img-blog.csdnimg.cn/43e631ec8a154e67ab35877a54515ba3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>然后我们得到了半加器的电路</p>
+<p><img src="https://img-blog.csdnimg.cn/9cc5acb2b24240829b37f6c2edfbd4b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>总共是用到了<strong>七个</strong>三极管，能够完成计算本位（上面的电压表）和进位（下面的电压表）<br><font color=red>考虑到整个电路的简洁性（三极管越多，电路搭建难度越大），我们对半加器进行进一步的改进<br>本位：或非门结果和与门结果进行或非<br>进位：与门结果<br><img src="https://img-blog.csdnimg.cn/175c804bfe60486db8c2f6c300da06f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现只用到了四个三级管，这也是我们最终加法器里面用的半加器方案。</p>
+<h3 id="3-全加器的搭建"><a href="#3-全加器的搭建" class="headerlink" title="3.全加器的搭建"></a>3.全加器的搭建</h3><p>在上面四个三极管的基础上，我们进行相应的改进，得到最终的全加器。<br><font color=blac>本位：两次半加器的本位计算结果（A和B的本位计算结果再与C进位进行本位计算）<br>进位：无损与门（考虑后面的级联问题——损失可能导致结果错误）<br><img src="https://img-blog.csdnimg.cn/2a35aa5463bf45b38a3b9b45873ad1c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>清点一下，我们发现总共用到了10个三极管，同样也是我们的最终版本。</p>
+<h3 id="4-半加器与全加器级联实现两位加法器"><a href="#4-半加器与全加器级联实现两位加法器" class="headerlink" title="4.半加器与全加器级联实现两位加法器"></a>4.半加器与全加器级联实现两位加法器</h3><p>其实就是把半加器的进位结果作为全加器的C输入即可。<br><img src="https://img-blog.csdnimg.cn/d6a4361543094fd0a698a06832d622cf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>仿真结果<br><img src="https://img-blog.csdnimg.cn/1961b1e2920a4c8aad7dadb189706bce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/6db05306d96d4dfda4cb4f62ecb4078e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/338d1beef189445cbfdfe70624cd1e07.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现结果完全正确！<br>两位加法器完成！</p>
+<h3 id="5-四位加法器的搭建"><a href="#5-四位加法器的搭建" class="headerlink" title="5.四位加法器的搭建"></a>5.四位加法器的搭建</h3><p>其实就是半加器+三个全加器，由于我们之前考虑到了进位有损的问题，所以这里搭建起来也是非常的容易。<br><img src="https://img-blog.csdnimg.cn/e88db013db6e406db97e01bc7c2b8c4c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>经仿真，我们发现结果依旧完全正确！<br>至此，我们就完成了四位加法器的搭建</p>
+<h2 id="五、实物图"><a href="#五、实物图" class="headerlink" title="五、实物图"></a>五、实物图</h2><font color=orange>
+1. 与门、或门和非门
+
+<p><img src="https://img-blog.csdnimg.cn/39e8f333521742149d41dc44fb903f04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>2. 异或门<br><img src="https://img-blog.csdnimg.cn/94fd5b21a7d34ca5be701dc012e9a65e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>3. 与非门<br><img src="https://img-blog.csdnimg.cn/89da0c1d181f41b494347cf098572afc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4.无损与门<br><img src="https://img-blog.csdnimg.cn/16e220237fe8411c88bf0ccab2763702.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4. 半加器<br><img src="https://img-blog.csdnimg.cn/44c4042a80b542c29cde2ca7ece8478a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>5. 全加器<br><img src="https://img-blog.csdnimg.cn/7f15dc4765c74f4d9ac836e071a46a36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>6. 两位加法器<br><img src="https://img-blog.csdnimg.cn/c325bbdbbc024b2394ddae72dca67a9a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>7.四位加法器<br><img src="https://img-blog.csdnimg.cn/372d7fa9c2714b68ac36e00bbd4d2e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="六、总结与思考"><a href="#六、总结与思考" class="headerlink" title="六、总结与思考"></a>六、总结与思考</h2><font color=pink>
+ 1. 完成一个大作业，需要小组成员合理的分工，这对工作的完成十分重要。<br>
+ 2. 建议遵循先仿真后搭建的思路，如果反过来，完成难度大（进位损失须提前考虑）<br>
+ 3. 电阻的使用：排电阻用剪刀在红线位置（如下图）剪下，如果拔下的话，管脚会留有胶，易造成接触不良
+
+<blockquote>
+<p><img src="https://img-blog.csdnimg.cn/a00ba0908aee438885aefa44af4111c0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里是引用"></p>
+</blockquote>
+<font color=pink>
+4.搭建电路时，可以考虑把一些电阻、三极管的金属段同时插在面包板的同一个孔内，防止因松动导致接触不良。<br>
+5.完成这项作业，也算是帮助我对计算机底层原理有了新的认识，收获满满！
+
+<h1 id="希望这篇文章对你有所帮助，奥里给QWQ！"><a href="#希望这篇文章对你有所帮助，奥里给QWQ！" class="headerlink" title="希望这篇文章对你有所帮助，奥里给QWQ！"></a>希望这篇文章对你有所帮助，奥里给QWQ！</h1>]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
@@ -810,6 +810,30 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
+    <title>结构体类型的三种声明方式</title>
+    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
+
+<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>求一个数组的所有子集</title>
     <url>/2022/08/31/%E6%B1%82%E4%B8%80%E4%B8%AA%E9%9B%86%E5%90%88%E7%9A%84%E5%AD%90%E9%9B%86%EF%BC%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -844,30 +868,6 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>结构体类型的三种声明方式</title>
-    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
