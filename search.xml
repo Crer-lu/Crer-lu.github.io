@@ -21,6 +21,20 @@
       </tags>
   </entry>
   <entry>
+    <title>C++ sort自定义cmp的细节</title>
+    <url>/2022/08/31/C++%20sort%E8%87%AA%E5%AE%9A%E4%B9%89cmp%E7%9A%84%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<font color=red>cmp函数在书写时，一定不要写出“return a <= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。
+
+<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++ string 的substr的使用方法</title>
     <url>/2022/08/31/C++%20string%20%E7%9A%84substr%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<center></center>
@@ -33,20 +47,6 @@
 ]]></content>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++ sort自定义cmp的细节</title>
-    <url>/2022/08/31/C++%20sort%E8%87%AA%E5%AE%9A%E4%B9%89cmp%E7%9A%84%E7%BB%86%E8%8A%82/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<font color=red>cmp函数在书写时，一定不要写出“return a <= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。
-
-<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -65,6 +65,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Chrome的headless配置语句（可粘贴）</title>
+    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言中的内部名和外部名</title>
     <url>/2022/08/31/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E5%90%8D%E4%B8%8E%E5%A4%96%E9%83%A8%E5%90%8D/</url>
     <content><![CDATA[<center></center>
@@ -77,18 +89,6 @@
       <tags>
         <tag>C</tag>
         <tag>CS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chrome的headless配置语句（可粘贴）</title>
-    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -329,28 +329,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用hexo+github搭建属于自己的博客</title>
-    <url>/2022/08/29/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。</p>
-<span id="more"></span>
-
-<h2 id="搭建自己的博客网站"><a href="#搭建自己的博客网站" class="headerlink" title="搭建自己的博客网站"></a>搭建自己的博客网站</h2><p>全流程参考知乎文章<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
-<p>如果想要更换主题，不要用上面那篇文章里的教程</p>
-<p>用这一个<a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)_Z小旋的博客-CSDN博客_hexo next主题配置</a></p>
-<p>最后，再说一个我配置的时候遇到的最大的问题，为什么本地预览成功，但是部署到github上后却显示不出来，这里可以这样处理：</p>
-<p>首先打开你的github项目</p>
-<p>点击settings</p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5nq4ca5hbj3062042mx3.jpg" alt="image-20220829162224708"></p>
-<p>然后打开pages选项</p>
-<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
-<p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>最短路算法总结</title>
     <url>/2022/08/31/%E4%BA%94%E5%A4%A7%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<center></center>
@@ -387,17 +365,22 @@
       </tags>
   </entry>
   <entry>
-    <title>关于from selenium import webdriver运行时报错</title>
-    <url>/2022/08/31/%E5%85%B3%E4%BA%8Efrom%20selenium%20import%20webdriver%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<center></center>
+    <title>使用hexo+github搭建属于自己的博客</title>
+    <url>/2022/08/29/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。</p>
 <span id="more"></span>
-<font color=green>
-首先要成功安装selenium<br>
-我一开始的问题是文件名取了selnium.py<br>
-然后一直报错，改一个其它名即可<br>
-之后，报错就变了
 
-<p><img src="https://img-blog.csdnimg.cn/f2609fd0ee694578a94d7ff607e128fb.png" alt="在这里插入图片描述"><br><font color=green>也就是说编译器显示都正常，一运行就有bug<br>然后我发现了解决的办法<br>左上角文件-设置-python解释器<br>在其中找到selenium，检查版本<br>如果过新，可能会导致不能正常使用<br>我一开始用的4.1.0，后来改为3.11.0就好了<br><img src="https://img-blog.csdnimg.cn/d643ffbca89146a9b579f2fd7f6e4ff2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red><br>祝愿你能尽快调出来！QWQ</p>
+<h2 id="搭建自己的博客网站"><a href="#搭建自己的博客网站" class="headerlink" title="搭建自己的博客网站"></a>搭建自己的博客网站</h2><p>全流程参考知乎文章<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
+<p>如果想要更换主题，不要用上面那篇文章里的教程</p>
+<p>用这一个<a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)_Z小旋的博客-CSDN博客_hexo next主题配置</a></p>
+<p>最后，再说一个我配置的时候遇到的最大的问题，为什么本地预览成功，但是部署到github上后却显示不出来，这里可以这样处理：</p>
+<p>首先打开你的github项目</p>
+<p>点击settings</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5nq4ca5hbj3062042mx3.jpg" alt="image-20220829162224708"></p>
+<p>然后打开pages选项</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
+<p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
 ]]></content>
       <tags>
         <tag>tips</tag>
@@ -426,6 +409,52 @@
 ]]></content>
       <tags>
         <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于from selenium import webdriver运行时报错</title>
+    <url>/2022/08/31/%E5%85%B3%E4%BA%8Efrom%20selenium%20import%20webdriver%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<font color=green>
+首先要成功安装selenium<br>
+我一开始的问题是文件名取了selnium.py<br>
+然后一直报错，改一个其它名即可<br>
+之后，报错就变了
+
+<p><img src="https://img-blog.csdnimg.cn/f2609fd0ee694578a94d7ff607e128fb.png" alt="在这里插入图片描述"><br><font color=green>也就是说编译器显示都正常，一运行就有bug<br>然后我发现了解决的办法<br>左上角文件-设置-python解释器<br>在其中找到selenium，检查版本<br>如果过新，可能会导致不能正常使用<br>我一开始用的4.1.0，后来改为3.11.0就好了<br><img src="https://img-blog.csdnimg.cn/d643ffbca89146a9b579f2fd7f6e4ff2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red><br>祝愿你能尽快调出来！QWQ</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>栈和队列（手动与STL实现）</title>
+    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+
+<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
+<ol>
+<li><p>库函数的栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
+<li><p>手写栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
+<p><strong>二.队列</strong></p>
+</li>
+<li><p>库函数的队列</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手写队列</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
+
+<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -505,35 +534,6 @@ fputs(s, fp2);<br>
       </tags>
   </entry>
   <entry>
-    <title>栈和队列（手动与STL实现）</title>
-    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
-<ol>
-<li><p>库函数的栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
-<li><p>手写栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
-<p><strong>二.队列</strong></p>
-</li>
-<li><p>库函数的队列</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>手写队列</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
-
-<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>复数变量的声明</title>
     <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
     <content><![CDATA[<center></center>
@@ -543,23 +543,6 @@ fputs(s, fp2);<br>
 ]]></content>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何解决爬虫爬取的不是高清图</title>
-    <url>/2022/08/31/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%9A%84%E4%B8%8D%E6%98%AF%E9%AB%98%E6%B8%85%E5%9B%BE/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<font color=red>
-只要把url中的‘_s’删掉即可<br>
-使用以下代码：
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
-<p><font color=red>快去试试吧！QWQ</p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -635,28 +618,6 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
-    <title>整除光棍（20分）</title>
-    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 整除光棍 (20 分)
-## 题目描述
-这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
-
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
-<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>异或的巧妙使用</title>
     <url>/2022/08/31/%E6%89%BE%E5%88%B0%E9%82%A3%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%88%E5%BC%82%E6%88%96%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -700,6 +661,23 @@ $$T(n)=Θ(f(n))$$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何解决爬虫爬取的不是高清图</title>
+    <url>/2022/08/31/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%9A%84%E4%B8%8D%E6%98%AF%E9%AB%98%E6%B8%85%E5%9B%BE/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<font color=red>
+只要把url中的‘_s’删掉即可<br>
+使用以下代码：
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+<p><font color=red>快去试试吧！QWQ</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -798,6 +776,28 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
+    <title>整除光棍（20分）</title>
+    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 整除光棍 (20 分)
+## 题目描述
+这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
+
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
+<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>求一个数组的所有子集</title>
     <url>/2022/08/31/%E6%B1%82%E4%B8%80%E4%B8%AA%E9%9B%86%E5%90%88%E7%9A%84%E5%AD%90%E9%9B%86%EF%BC%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -832,30 +832,6 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>结构体类型的三种声明方式</title>
-    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -913,6 +889,30 @@ $000,001,010,011,100,101,110,111$
       </tags>
   </entry>
   <entry>
+    <title>结构体类型的三种声明方式</title>
+    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
+
+<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>获取Xpath的两种方法</title>
     <url>/2022/08/31/%E8%8E%B7%E5%8F%96Xpath%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<center></center>
@@ -937,29 +937,6 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑运算符的性能优化（短路问题）</title>
-    <url>/2022/08/31/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 逻辑运算符的性能优化（短路问题）
-<font color=orange>在Python中存在这样的规则
-我们举个例子
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<font color=red>
-从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
-a and b 如果a为false，则b直接跳过<br>
-a or b 如果a为true，则b直接跳过<br>
-
-<font color=green>
-其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
-希望这篇文章能给你带来帮助！
-]]></content>
-      <tags>
-        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
@@ -994,6 +971,29 @@ a or b 如果a为true，则b直接跳过<br>
         <tag>C</tag>
         <tag>高精度</tag>
         <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑运算符的性能优化（短路问题）</title>
+    <url>/2022/08/31/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 逻辑运算符的性能优化（短路问题）
+<font color=orange>在Python中存在这样的规则
+我们举个例子
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<font color=red>
+从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
+a and b 如果a为false，则b直接跳过<br>
+a or b 如果a为true，则b直接跳过<br>
+
+<font color=green>
+其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
+希望这篇文章能给你带来帮助！
+]]></content>
+      <tags>
+        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
