@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++ sort自定义cmp的细节</title>
+    <url>/2022/08/31/C++%20sort%E8%87%AA%E5%AE%9A%E4%B9%89cmp%E7%9A%84%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<font color=red>cmp函数在书写时，一定不要写出“return a <= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。
+
+<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ASCII的最大值</title>
     <url>/2022/08/31/ASCII%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%88%B0%E5%BA%95%E6%98%AF127%E8%BF%98%E6%98%AF255/</url>
     <content><![CDATA[<center></center>
@@ -21,21 +35,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++ 引用和传参的区别</title>
-    <url>/2022/08/31/C++%20%E5%BC%95%E7%94%A8%E5%92%8C%E4%BC%A0%E5%8F%82%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# C++ 引用和传参的区别
-直接看代码
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span> &amp;a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func3</span><span class="params">(<span class="type">int</span> *a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">func1</span>(a);</span><br><span class="line">	<span class="built_in">func2</span>(b);</span><br><span class="line">	<span class="built_in">func3</span>(&amp;c);</span><br><span class="line">	cout&lt;&lt; a&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; b&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; c&lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>程序运行结果<br><img src="https://img-blog.csdnimg.cn/20c10e183dc34558afbd940b3e290bfd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++ string 的substr的使用方法</title>
     <url>/2022/08/31/C++%20string%20%E7%9A%84substr%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<center></center>
@@ -51,16 +50,29 @@
       </tags>
   </entry>
   <entry>
-    <title>C++ sort自定义cmp的细节</title>
-    <url>/2022/08/31/C++%20sort%E8%87%AA%E5%AE%9A%E4%B9%89cmp%E7%9A%84%E7%BB%86%E8%8A%82/</url>
+    <title>C++ 引用和传参的区别</title>
+    <url>/2022/08/31/C++%20%E5%BC%95%E7%94%A8%E5%92%8C%E4%BC%A0%E5%8F%82%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-<font color=red>cmp函数在书写时，一定不要写出“return a <= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。
+# C++ 引用和传参的区别
+直接看代码
 
-<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span> &amp;a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func3</span><span class="params">(<span class="type">int</span> *a)</span></span>&#123;</span><br><span class="line">	*a = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">func1</span>(a);</span><br><span class="line">	<span class="built_in">func2</span>(b);</span><br><span class="line">	<span class="built_in">func3</span>(&amp;c);</span><br><span class="line">	cout&lt;&lt; a&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; b&lt;&lt; endl;</span><br><span class="line">	cout&lt;&lt; c&lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果<br><img src="https://img-blog.csdnimg.cn/20c10e183dc34558afbd940b3e290bfd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 ]]></content>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome的headless配置语句（可粘贴）</title>
+    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
         <tag>tips</tag>
       </tags>
   </entry>
@@ -89,43 +101,6 @@
       <tags>
         <tag>C</tag>
         <tag>CS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chrome的headless配置语句（可粘贴）</title>
-    <url>/2022/08/31/Chrome%E7%9A%84headless%E9%85%8D%E7%BD%AE%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%8F%AF%E7%B2%98%E8%B4%B4%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>N个有理分数求和</title>
-    <url>/2022/08/31/N%E4%B8%AA%E6%9C%89%E7%90%86%E5%88%86%E6%95%B0%E6%95%B0%E6%B1%82%E5%92%8C%20/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# N个有理分数求和 (20 分)
-## 题目描述
-本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数分子/分母的形式给出的，你输出的和也必须是有理数的形式。
-
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数N（≤100）。随后一行按格式a1&#x2F;b1 a2&#x2F;b2 …给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出上述数字和的最简形式 —— 即将结果写成整数部分 分数部分，其中分数部分写成分子&#x2F;分母，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
-<p><strong>输入样例1</strong>：<br>5<br>2&#x2F;5 4&#x2F;15 1&#x2F;30 -2&#x2F;60 8&#x2F;3</p>
-<p>输出样例1：<br>3 1&#x2F;3</p>
-<p><strong>输入样例2</strong>：<br>2<br>4&#x2F;3 2&#x2F;3</p>
-<p><strong>输入样例3</strong><br>3<br>1&#x2F;3 -1&#x2F;6 1&#x2F;8</p>
-<p>输出样例3<br>7&#x2F;24</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于是有理数加法，这里可以参照Basic level中的<strong>有理数四则运算</strong><br>（<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805287624491008">题目链接</a>）（<a href="https://blog.csdn.net/qq_34771124/article/details/121479148">题解博客</a>）<br>两个核心：求最大公约数和特殊情况的判断</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>我这个题卡在测试点五<br><strong>运行超时</strong>：那么你在求最大公约数代码中加上这个就好了<br><img src="https://img-blog.csdnimg.cn/417908b7d5aa48548f7136e60cdd7434.png" alt="在这里插入图片描述"><br><strong>浮点错误</strong>：那么你是没有考虑0的情况，一个是求公约数不能出现0，另一个是如果结果为0，只输出一个0就好。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans_up, ans_down;<span class="comment">//分子和分母</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span>(a == b)</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">		<span class="type">int</span> c = a;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="built_in">lcd</span>(a - b, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span>&#123;<span class="comment">//计算两个有理数计算的结果</span></span><br><span class="line">	ans_up = a * d + c * b;</span><br><span class="line">	ans_down = b * d;</span><br><span class="line">	<span class="keyword">if</span>(ans_up == <span class="number">0</span>)	<span class="keyword">return</span> ;</span><br><span class="line">	<span class="type">int</span> ld = <span class="built_in">lcd</span>(<span class="built_in">abs</span>(ans_up), ans_down);</span><br><span class="line">	ans_up /= ld;</span><br><span class="line">	ans_down /= ld;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//输出结果</span></span><br><span class="line">	<span class="keyword">if</span>(ans_up &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">		ans_up *= <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(ans_up == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans_up &gt;= ans_down)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ans_up % ans_down == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans_up / ans_down);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d %d/%d&quot;</span>, ans_up / ans_down, ans_up % ans_down, ans_down);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, ans_up, ans_down);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ans_up = <span class="number">0</span>, ans_down = <span class="number">1</span>;<span class="comment">//初始化结果</span></span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">		<span class="built_in">cal</span>(ans_up, ans_down, x, y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -161,22 +136,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/31/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>N个有理分数求和</title>
+    <url>/2022/08/31/N%E4%B8%AA%E6%9C%89%E7%90%86%E5%88%86%E6%95%B0%E6%95%B0%E6%B1%82%E5%92%8C%20/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# N个有理分数求和 (20 分)
+## 题目描述
+本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数分子/分母的形式给出的，你输出的和也必须是有理数的形式。
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数N（≤100）。随后一行按格式a1&#x2F;b1 a2&#x2F;b2 …给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出上述数字和的最简形式 —— 即将结果写成整数部分 分数部分，其中分数部分写成分子&#x2F;分母，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
+<p><strong>输入样例1</strong>：<br>5<br>2&#x2F;5 4&#x2F;15 1&#x2F;30 -2&#x2F;60 8&#x2F;3</p>
+<p>输出样例1：<br>3 1&#x2F;3</p>
+<p><strong>输入样例2</strong>：<br>2<br>4&#x2F;3 2&#x2F;3</p>
+<p><strong>输入样例3</strong><br>3<br>1&#x2F;3 -1&#x2F;6 1&#x2F;8</p>
+<p>输出样例3<br>7&#x2F;24</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于是有理数加法，这里可以参照Basic level中的<strong>有理数四则运算</strong><br>（<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805287624491008">题目链接</a>）（<a href="https://blog.csdn.net/qq_34771124/article/details/121479148">题解博客</a>）<br>两个核心：求最大公约数和特殊情况的判断</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>我这个题卡在测试点五<br><strong>运行超时</strong>：那么你在求最大公约数代码中加上这个就好了<br><img src="https://img-blog.csdnimg.cn/417908b7d5aa48548f7136e60cdd7434.png" alt="在这里插入图片描述"><br><strong>浮点错误</strong>：那么你是没有考虑0的情况，一个是求公约数不能出现0，另一个是如果结果为0，只输出一个0就好。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans_up, ans_down;<span class="comment">//分子和分母</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span>(a == b)</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">		<span class="type">int</span> c = a;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="built_in">lcd</span>(a - b, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span>&#123;<span class="comment">//计算两个有理数计算的结果</span></span><br><span class="line">	ans_up = a * d + c * b;</span><br><span class="line">	ans_down = b * d;</span><br><span class="line">	<span class="keyword">if</span>(ans_up == <span class="number">0</span>)	<span class="keyword">return</span> ;</span><br><span class="line">	<span class="type">int</span> ld = <span class="built_in">lcd</span>(<span class="built_in">abs</span>(ans_up), ans_down);</span><br><span class="line">	ans_up /= ld;</span><br><span class="line">	ans_down /= ld;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//输出结果</span></span><br><span class="line">	<span class="keyword">if</span>(ans_up &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">		ans_up *= <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(ans_up == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans_up &gt;= ans_down)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ans_up % ans_down == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans_up / ans_down);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d %d/%d&quot;</span>, ans_up / ans_down, ans_up % ans_down, ans_down);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, ans_up, ans_down);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ans_up = <span class="number">0</span>, ans_down = <span class="number">1</span>;<span class="comment">//初始化结果</span></span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">		<span class="built_in">cal</span>(ans_up, ans_down, x, y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
   </entry>
   <entry>
     <title>PTA基础题错题集</title>
@@ -298,6 +280,34 @@
       </tags>
   </entry>
   <entry>
+    <title>一文搞懂结构体变量占用多大的内存空间</title>
+    <url>/2022/08/31/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 一、首先做一道例题感受一下
+请问下面定义的结构体变量aa在计算机内存中占用多少字节？
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="type">float</span>    height;</span><br><span class="line">    <span class="type">short</span> <span class="type">int</span>  age ;</span><br><span class="line">    <span class="type">char</span>     sex ;</span><br><span class="line">&#125;aa;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(aa));  <span class="comment">//屏幕上将显示多少？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+**错误解答**：我们都知道，char类型占用1个字节，float型占用4个字节，short int类型占用2个字节，int型在VC6.0中占用4个字节（TC2.0中占用2个字节），long占用8个字节，double占用8个字节。因此，我们可能会犯一个错误就是直接4+2+1=7，结构体aa占用7个字节。这是错的。
+
+<p><strong>错误分析</strong>：计算结构体大小时需要考虑其内存布局，编译系统为了提高计算机访问数据的效率，在安排结构体每个成员的时候采用了内存对齐的方法，具体是：结构体在内存中的存放按单元进行存放，每个单元的大小取决于<font color=red>结构体中最大基本类型的大小。</p>
+<h1 id="二、为解释清楚，我们列出以下几种格式"><a href="#二、为解释清楚，我们列出以下几种格式" class="headerlink" title="二、为解释清楚，我们列出以下几种格式"></a>二、为解释清楚，我们列出以下几种格式</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">格式一：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line"> <span class="type">short</span>  C;    </span><br><span class="line">&#125;Phone1;  </span><br><span class="line"></span><br><span class="line">格式二：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">short</span>  C;   </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line">&#125;Phone2;   </span><br><span class="line"></span><br><span class="line">格式三：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">char</span>   B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone3;   </span><br><span class="line"></span><br><span class="line">格式四：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">double</span>  B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone4;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><font size=5>然后我们一一分析<br><img src="https://img-blog.csdnimg.cn/e08eaeeff49e4bb9b8898214f94590b4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b53b2ef7e0234d1eb14c2076db3e51dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/07bc4d274ece44978ae05d013451b9dc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ae67bfa5de134532bdbbebf75d7c7729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>综上所述，作为一个优秀的程序员，有必要在声明结构体变量时考虑如何才能节省空间，因为这之间的差异是非常大的。</p>
+<p>原文链接：<a href="http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html">http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html</a></p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows批处理学习</title>
+    <url>/2022/08/31/windows%E6%89%B9%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+[转载链接](https://www.cnblogs.com/xpwi/p/9626959.html)
+[转载链接](https://blog.csdn.net/qq_38199187/article/details/84642491)
+]]></content>
+  </entry>
+  <entry>
     <title>printf输出如何用变量控制位宽</title>
     <url>/2022/08/31/printf%E8%BE%93%E5%87%BA%E6%97%B6%E5%A6%82%E4%BD%95%E7%94%A8%E5%8F%98%E9%87%8F%E6%8E%A7%E5%88%B6%E4%BD%8D%E5%AE%BD_/</url>
     <content><![CDATA[<center></center>
@@ -308,9 +318,27 @@
 
 ]]></content>
       <tags>
-        <tag>C</tag>
         <tag>tips</tag>
+        <tag>C</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/31/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>使用hexo+github搭建属于自己的博客</title>
@@ -333,15 +361,6 @@
       <tags>
         <tag>tips</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>windows批处理学习</title>
-    <url>/2022/08/31/windows%E6%89%B9%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-[转载链接](https://www.cnblogs.com/xpwi/p/9626959.html)
-[转载链接](https://blog.csdn.net/qq_38199187/article/details/84642491)
-]]></content>
   </entry>
   <entry>
     <title>最短路算法总结</title>
@@ -422,21 +441,31 @@
       </tags>
   </entry>
   <entry>
-    <title>一文搞懂结构体变量占用多大的内存空间</title>
-    <url>/2022/08/31/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/</url>
+    <title>栈和队列（手动与STL实现）</title>
+    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-# 一、首先做一道例题感受一下
-请问下面定义的结构体变量aa在计算机内存中占用多少字节？
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="type">float</span>    height;</span><br><span class="line">    <span class="type">short</span> <span class="type">int</span>  age ;</span><br><span class="line">    <span class="type">char</span>     sex ;</span><br><span class="line">&#125;aa;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(aa));  <span class="comment">//屏幕上将显示多少？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-**错误解答**：我们都知道，char类型占用1个字节，float型占用4个字节，short int类型占用2个字节，int型在VC6.0中占用4个字节（TC2.0中占用2个字节），long占用8个字节，double占用8个字节。因此，我们可能会犯一个错误就是直接4+2+1=7，结构体aa占用7个字节。这是错的。
 
-<p><strong>错误分析</strong>：计算结构体大小时需要考虑其内存布局，编译系统为了提高计算机访问数据的效率，在安排结构体每个成员的时候采用了内存对齐的方法，具体是：结构体在内存中的存放按单元进行存放，每个单元的大小取决于<font color=red>结构体中最大基本类型的大小。</p>
-<h1 id="二、为解释清楚，我们列出以下几种格式"><a href="#二、为解释清楚，我们列出以下几种格式" class="headerlink" title="二、为解释清楚，我们列出以下几种格式"></a>二、为解释清楚，我们列出以下几种格式</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">格式一：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line"> <span class="type">short</span>  C;    </span><br><span class="line">&#125;Phone1;  </span><br><span class="line"></span><br><span class="line">格式二：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">short</span>  C;   </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line">&#125;Phone2;   </span><br><span class="line"></span><br><span class="line">格式三：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">char</span>   B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone3;   </span><br><span class="line"></span><br><span class="line">格式四：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">double</span>  B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone4;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><font size=5>然后我们一一分析<br><img src="https://img-blog.csdnimg.cn/e08eaeeff49e4bb9b8898214f94590b4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b53b2ef7e0234d1eb14c2076db3e51dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/07bc4d274ece44978ae05d013451b9dc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ae67bfa5de134532bdbbebf75d7c7729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>综上所述，作为一个优秀的程序员，有必要在声明结构体变量时考虑如何才能节省空间，因为这之间的差异是非常大的。</p>
-<p>原文链接：<a href="http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html">http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html</a></p>
+<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
+<ol>
+<li><p>库函数的栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
+<li><p>手写栈</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
+<p><strong>二.队列</strong></p>
+</li>
+<li><p>库函数的队列</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手写队列</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
+
+<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
 ]]></content>
       <tags>
+        <tag>C++</tag>
         <tag>C</tag>
       </tags>
   </entry>
@@ -517,61 +546,20 @@ fputs(s, fp2);<br>
       </tags>
   </entry>
   <entry>
-    <title>复数变量的声明</title>
-    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
+    <title>如何解决爬虫爬取的不是高清图</title>
+    <url>/2022/08/31/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%9A%84%E4%B8%8D%E6%98%AF%E9%AB%98%E6%B8%85%E5%9B%BE/</url>
     <content><![CDATA[<center></center>
 <span id="more"></span>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
+<font color=red>
+只要把url中的‘_s’删掉即可<br>
+使用以下代码：
 
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>栈和队列（手动与STL实现）</title>
-    <url>/2022/08/31/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%EF%BC%88%E6%89%8B%E5%8A%A8%E4%B8%8ESTL%E5%AE%9E%E7%8E%B0%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
-<ol>
-<li><p>库函数的栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
-<li><p>手写栈</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
-<p><strong>二.队列</strong></p>
-</li>
-<li><p>库函数的队列</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>手写队列</p>
-</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
-
-<p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何批量word转pdf</title>
-    <url>/2022/09/14/%E5%A6%82%E4%BD%95%E6%89%B9%E9%87%8Fword%E8%BD%ACpdf/</url>
-    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a></p>
-<span id="more"></span>
-
-<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
-<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
-
-<p>然后按下F5即可运行</p>
-<p>之后选择好根目录文件夹就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+<p><font color=red>快去试试吧！QWQ</p>
 ]]></content>
       <tags>
         <tag>tips</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -597,6 +585,57 @@ $$T(n)=Θ(f(n))$$
       <tags>
         <tag>tips</tag>
         <tag>course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复数变量的声明</title>
+    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何批量word转pdf</title>
+    <url>/2022/09/14/%E5%A6%82%E4%BD%95%E6%89%B9%E9%87%8Fword%E8%BD%ACpdf/</url>
+    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a></p>
+<span id="more"></span>
+
+<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
+<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>然后按下F5即可运行</p>
+<p>之后选择好根目录文件夹就可以了</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>整除光棍（20分）</title>
+    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 整除光棍 (20 分)
+## 题目描述
+这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
+
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
+<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -647,45 +686,6 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
-    <title>如何解决爬虫爬取的不是高清图</title>
-    <url>/2022/08/31/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96%E7%9A%84%E4%B8%8D%E6%98%AF%E9%AB%98%E6%B8%85%E5%9B%BE/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<font color=red>
-只要把url中的‘_s’删掉即可<br>
-使用以下代码：
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
-<p><font color=red>快去试试吧！QWQ</p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>整除光棍（20分）</title>
-    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 整除光棍 (20 分)
-## 题目描述
-这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
-
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
-<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>异或的巧妙使用</title>
     <url>/2022/08/31/%E6%89%BE%E5%88%B0%E9%82%A3%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%88%E5%BC%82%E6%88%96%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -729,6 +729,40 @@ $$T(n)=Θ(f(n))$$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欧拉筛法及其改进方法（素数的判断）</title>
+    <url>/2022/08/31/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95%E5%8F%8A%E5%85%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95%EF%BC%88%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 素数的筛法（欧拉筛法）及其改进
+
+<h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
+<pre><code>1.使用一个prime[N]存下当前素数 
+2.使用一个on[N]数组标志i 是不是素数。
+3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
+</code></pre>
+</blockquote>
+<h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
+<p>i % prime[j] &#x3D;&#x3D; 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] &#x3D; 0</strong>成立，那么设<strong>k &#x3D; i &#x2F; prime[j]</strong> 则prime[j]*k &#x3D; i成立<br>那么对于下一个需要筛选的 i * prime[j+1]&#x3D;prime[j]<em>k</em>prime[j+1]<br>我们令m &#x3D; k *prime[j+1]&gt;  i<br>因此当i增大时，k * prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
+</blockquote>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
+<p>求1,2,⋯,N 中素数的个数。</p>
+</blockquote>
+<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
+<p>【输入】：	<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据	1≤ N ≤10 ^8^</p>
+</blockquote>
+<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
+<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数"><a href="#on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数" class="headerlink" title="(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)"></a>(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)</h3><p><strong>————————————————————————————————</strong></p>
+<h1 id="2021年后续-欧拉筛法的优化-O-n-x2F-2"><a href="#2021年后续-欧拉筛法的优化-O-n-x2F-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n &#x2F; 2))"></a>2021年后续(欧拉筛法的优化 O(n &#x2F; 2))</h1><p>此处只给出处理的函数代码</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>&#x3D;&#x3D;(所有的素数中只有2一个偶数)&#x3D;&#x3D;</p>
+]]></content>
+      <tags>
+        <tag>素数筛</tag>
       </tags>
   </entry>
   <entry>
@@ -793,64 +827,6 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
-    <title>欧拉筛法及其改进方法（素数的判断）</title>
-    <url>/2022/08/31/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95%E5%8F%8A%E5%85%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95%EF%BC%88%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 素数的筛法（欧拉筛法）及其改进
-
-<h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
-<pre><code>1.使用一个prime[N]存下当前素数 
-2.使用一个on[N]数组标志i 是不是素数。
-3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
-</code></pre>
-</blockquote>
-<h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
-<p>i % prime[j] &#x3D;&#x3D; 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] &#x3D; 0</strong>成立，那么设<strong>k &#x3D; i &#x2F; prime[j]</strong> 则prime[j]*k &#x3D; i成立<br>那么对于下一个需要筛选的 i * prime[j+1]&#x3D;prime[j]<em>k</em>prime[j+1]<br>我们令m &#x3D; k *prime[j+1]&gt;  i<br>因此当i增大时，k * prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
-</blockquote>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
-<p>求1,2,⋯,N 中素数的个数。</p>
-</blockquote>
-<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
-<p>【输入】：	<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据	1≤ N ≤10 ^8^</p>
-</blockquote>
-<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
-<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数"><a href="#on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数" class="headerlink" title="(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)"></a>(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)</h3><p><strong>————————————————————————————————</strong></p>
-<h1 id="2021年后续-欧拉筛法的优化-O-n-x2F-2"><a href="#2021年后续-欧拉筛法的优化-O-n-x2F-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n &#x2F; 2))"></a>2021年后续(欧拉筛法的优化 O(n &#x2F; 2))</h1><p>此处只给出处理的函数代码</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>&#x3D;&#x3D;(所有的素数中只有2一个偶数)&#x3D;&#x3D;</p>
-]]></content>
-      <tags>
-        <tag>素数筛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>结构体类型的三种声明方式</title>
-    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>求一个数组的所有子集</title>
     <url>/2022/08/31/%E6%B1%82%E4%B8%80%E4%B8%AA%E9%9B%86%E5%90%88%E7%9A%84%E5%AD%90%E9%9B%86%EF%BC%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -885,6 +861,30 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>结构体类型的三种声明方式</title>
+    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
+
+<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -992,19 +992,6 @@ a or b 如果a为true，则b直接跳过<br>
       </tags>
   </entry>
   <entry>
-    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
-    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-## 转载两篇博客，说的很清楚。
- [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
- [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
-]]></content>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高精度模板合集与优化</title>
     <url>/2022/08/31/%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%A8%A1%E6%9D%BF%E5%90%88%E9%9B%86%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%88%E5%85%A8%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -1036,6 +1023,395 @@ a or b 如果a为true，则b直接跳过<br>
         <tag>C</tag>
         <tag>高精度</tag>
         <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
+    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+## 转载两篇博客，说的很清楚。
+ [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
+ [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机系统概论 - 课程复习</title>
+    <url>/2022/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%20-%20%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>今天就要考计概了，还是感觉没复习好，整理了一下自己最近复习时做的笔记，等会考试加油！</p>
+<span id="more"></span>
+
+<h1 id="计算机系统概论-课程复习"><a href="#计算机系统概论-课程复习" class="headerlink" title="计算机系统概论 - 课程复习"></a>计算机系统概论 - 课程复习</h1><p><font color=red size=5>注：本文未声明来源的图片均来自于教材</font></p>
+<p><font color=blue>《Introduction to Computing Systems, 3rd Edition》</font></p>
+<h2 id="Chapter-1-Welcome-aboard"><a href="#Chapter-1-Welcome-aboard" class="headerlink" title="Chapter 1 Welcome aboard"></a>Chapter 1 Welcome aboard</h2><p>本章主要是做了文章内容的概览</p>
+<p>需要掌握的点主要有以下几个</p>
+<h3 id="Two-Recurring-Themes"><a href="#Two-Recurring-Themes" class="headerlink" title="Two Recurring Themes"></a>Two Recurring Themes</h3><p>①抽象：在B站上的《计算机科学速成课》中有反复提到，其实我们对一个复杂系统的理解，应该是逐层分析，然后抽象出来到更高一层。</p>
+<p>②硬件 VS 软件：一个优秀的从业者或者科研人员，应该是二者兼通的。</p>
+<h3 id="Two-important-ideas"><a href="#Two-important-ideas" class="headerlink" title="Two important ideas"></a>Two important ideas</h3><p>①所有的计算机都能做同样的事情，只是时间上会有所差别</p>
+<p>②从我们的问题到晶体管把问题解决，涉及到层与层之间的转化</p>
+<h3 id="How-to-solve-a-problem-x2F-Transformations-Between-Layers"><a href="#How-to-solve-a-problem-x2F-Transformations-Between-Layers" class="headerlink" title="How to solve a problem &#x2F; Transformations Between Layers"></a>How to solve a problem &#x2F; Transformations Between Layers</h3><img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220908085936343.png" alt="image-20220908085936343" style="zoom:50%;" />
+
+<p><b>这里需要注意几点内容</b></p>
+<p>①Algorithms的三大特性：definiteness， effective computability， finiteness</p>
+<p>②区分不同ISA的三大特点：OPcode， Data types， addressing mode</p>
+<h2 id="Chapter-2-Bits-Data-Types-and-Operations"><a href="#Chapter-2-Bits-Data-Types-and-Operations" class="headerlink" title="Chapter 2 Bits, Data Types and Operations"></a>Chapter 2 Bits, Data Types and Operations</h2><h3 id="比特-Bits"><a href="#比特-Bits" class="headerlink" title="比特 Bits"></a>比特 Bits</h3><p>在二进制语境下，一个比特就存储着一位的信息，有电压（或者说电压高到一定范围内）即表示1，无电压（或者说电压低到一定范围内）即表示0</p>
+<h3 id="数据类型-Data-Types"><a href="#数据类型-Data-Types" class="headerlink" title="数据类型 Data Types"></a>数据类型 Data Types</h3><h4 id="整数-Integer"><a href="#整数-Integer" class="headerlink" title="整数 Integer"></a>整数 Integer</h4><p>无符号整数的范围是0 ~ 2^k - 1</p>
+<p>有符号整数的范围是- 2^(k - 1) ~ 2^(k - 1) - 1</p>
+<p><b>如何得到一个负数</b></p>
+<p>方法1：首先对它的正数取反，得到反码（1’s Complement）, 然后加1得到补码（2‘s Complement）</p>
+<p>方法2：找到它的正数，从低位往高位（从右往左）找到第一个1，然后左边的取反，1以及右边的部分保持不变</p>
+<p><b>补码（2’s Complement）的设计</b></p>
+<p>这个主要是为了满足A + （-A） &#x3D; 0，便于我们计算机内部的计算</p>
+<h4 id="浮点数-Float-Point"><a href="#浮点数-Float-Point" class="headerlink" title="浮点数 Float Point"></a>浮点数 Float Point</h4><p><b>为什么需要浮点数</b></p>
+<p>对于整数而言，我们保证了精确度（precision），但是可以表示的数的范围（range）却非常小，这是我们不希望看到的</p>
+<p>所以我们选择了这样一种降低精确度，提高表示范围的浮点数表示方法</p>
+<p><img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220908082553192.png" alt="image-20220908082553192"></p>
+<h5 id="①标准形式-Normalized-form"><a href="#①标准形式-Normalized-form" class="headerlink" title="①标准形式 Normalized form"></a>①标准形式 Normalized form</h5><p><img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220908082844646.png" alt="image-20220908082844646"></p>
+<h5 id="②非标准形式-abnormalized-form"><a href="#②非标准形式-abnormalized-form" class="headerlink" title="②非标准形式 abnormalized form"></a>②非标准形式 abnormalized form</h5><p>当指数部分全为1时（即exponent &#x3D; 255），我们可以用来表示一些特殊情况，其中包括了无穷大，当小数部分全为0时，表示的就是无穷大，符号位是1则表示负无穷，符号位是0则表示正无穷</p>
+<p><img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220908083010728.png" alt="image-20220908083010728"></p>
+<h5 id="③亚标准形式-subnormalized-form"><a href="#③亚标准形式-subnormalized-form" class="headerlink" title="③亚标准形式 subnormalized form"></a>③亚标准形式 subnormalized form</h5><p>这个是用来表示标准形式下介于0 和 2^-126之间的数，当指数部分全为0时，则表示属于这种特殊情况</p>
+<p><img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220908083412965.png" alt="image-20220908083412965"></p>
+<h4 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h4><p>ASCII的引入是为了解决电脑的外设与电脑厂商之间的协调问题，引入ASCII后，一个字节大小的数据就可以用来表示键盘上的一个字符，并且也方便显示屏设备识别并输出。</p>
+<h4 id="十六进制数-Hexadecimal-Notion"><a href="#十六进制数-Hexadecimal-Notion" class="headerlink" title="十六进制数 Hexadecimal Notion"></a>十六进制数 Hexadecimal Notion</h4><p>它的引入是为了解决二进制数太长的问题，一个二进制数过长可能会导致拼写容易出错，把每四位二进制码转化为十六进制表示，那么缩短了编码长度，就减少了拼写错误</p>
+<h3 id="数据类型间的转化-Conversion"><a href="#数据类型间的转化-Conversion" class="headerlink" title="数据类型间的转化 Conversion"></a>数据类型间的转化 Conversion</h3><h4 id="二进制与十进制"><a href="#二进制与十进制" class="headerlink" title="二进制与十进制"></a>二进制与十进制</h4><p>①二进制 -&gt; 十进制 ： 加权求和</p>
+<p>②十进制 -&gt; 二进制 ： 除2取余倒序输出</p>
+<p>（如果有小数部分，有两种方案，乘2取整数部分法和逐位分割法，要注意的是，大多数小数部分都不能精确表示，只能一步步趋近）</p>
+<h3 id="运算-Operation"><a href="#运算-Operation" class="headerlink" title="运算 Operation"></a>运算 Operation</h3><h4 id="加法减法-Addition-and-Subtraction"><a href="#加法减法-Addition-and-Subtraction" class="headerlink" title="加法减法 Addition and Subtraction"></a>加法减法 Addition and Subtraction</h4><p>利用二补数的性质就可轻松完成</p>
+<p><b>补充：符号位拓展 Sign-Extension</b>：如果不同位的两个数进行运算，首先要用符号位拓展让他们保持相同的位数，方法是在前面补上足够多的原有符号位。</p>
+<p><b>补充：溢出 Overflow</b>：如果两个数运算的结果超出了在十进制下的表示范围，那么我们就称之为溢出</p>
+<h4 id="逻辑运算-Logical-Operations"><a href="#逻辑运算-Logical-Operations" class="headerlink" title="逻辑运算 Logical Operations"></a>逻辑运算 Logical Operations</h4><p>这是逐位进行的（Bitwise）</p>
+<p>总共有AND，OR， NOT，XOR</p>
+<h4 id="比特向量-Bit-Vector"><a href="#比特向量-Bit-Vector" class="headerlink" title="比特向量 Bit Vector"></a>比特向量 Bit Vector</h4><p>这个主要是运用于掩码（Bit mask），比如我们想取出第三位，那么我们就用原来的数与100进行AND，那结果就是我们期望的值</p>
+<p>另外还可以用于管理一个复杂系统，用每一位来表示一个对应子模块是否可用（available or busy）</p>
+<h2 id="Chapter-3-Digital-Logic-Structures"><a href="#Chapter-3-Digital-Logic-Structures" class="headerlink" title="Chapter 3 Digital Logic Structures"></a>Chapter 3 Digital Logic Structures</h2><h3 id="晶体管-Transistors"><a href="#晶体管-Transistors" class="headerlink" title="晶体管 Transistors"></a>晶体管 Transistors</h3><p>今天我们大多数微处理器都是用的MOS晶体管（metal-oxide semiconductor 金属氧化物半导体），有N型和P型两种。</p>
+<p><font color=red>要注意的是N型MOS管下端接地，P型MOS上端接电源，但是绝对不能给任何一个MOS管同时接上电源和地，这将破坏MOS的结构）</font></p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5yd3rvixij30ah07mt92.jpg" alt="image"></p>
+<center>N型MOS管（Gate为1则通路）
+</center>
+
+<p><img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220907212921441.png" alt="image-20220907212921441"></p>
+<center>P型MOS管（Gate为0则为通路）
+
+<p>关于晶体管的内部原理，不在我们这门课程的讨论范围内，我们可以把MOS简单理解为是一个开关</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5ycypf1ccj30rl0bbwgp.jpg" alt="image"></p>
+<p>NMOS Circuits：只包含N型MOS的电路</p>
+<p>PMOS Circuits：只包含P型MOS的电路</p>
+<p>CMOS CIrcuits（Complementary MOS Circuits）：既包含N型，也包含P型MOS的电路</p>
+<h3 id="基本门电路"><a href="#基本门电路" class="headerlink" title="基本门电路"></a>基本门电路</h3><h4 id="非门（NOT-gate-x2F-Inverter）"><a href="#非门（NOT-gate-x2F-Inverter）" class="headerlink" title="非门（NOT gate &#x2F; Inverter）"></a>非门（NOT gate &#x2F; Inverter）</h4><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5yd7kcwvwj30dc0ekabb.jpg" alt="image"></p>
+<h4 id="或门（OR-gate）"><a href="#或门（OR-gate）" class="headerlink" title="或门（OR gate）"></a>或门（OR gate）</h4><p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5yd90lwwyj30o80l3jso.jpg" alt="image"></p>
+<h4 id="与门（AND-gate）"><a href="#与门（AND-gate）" class="headerlink" title="与门（AND gate）"></a>与门（AND gate）</h4><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h5yd8ld1ccj30ns0l3dh1.jpg" alt="image"></p>
+<h4 id="异或门（XOR-gate）"><a href="#异或门（XOR-gate）" class="headerlink" title="异或门（XOR gate）"></a>异或门（XOR gate）</h4><p>实现方式有很多种，书上没写出来，这里我搜集了一些网上的说法</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5ydlve21aj30gw09qdgo.jpg" alt="image"></p>
+<p>（来源：<a href="https://xiaogd.net/book/spcp/gate/xor-gate-by-nand-gate.html">通过与非门构建异或门 · 从零开始打造一台简易计算机 (xiaogd.net)</a>）</p>
+<p>当然我们根据异或门的真值表，很容易利用逻辑完备实现异或门（多路选择器的应用）</p>
+<h3 id="组合逻辑电路（Combinational-Logic-Circuits）"><a href="#组合逻辑电路（Combinational-Logic-Circuits）" class="headerlink" title="组合逻辑电路（Combinational Logic Circuits）"></a>组合逻辑电路（Combinational Logic Circuits）</h3><h4 id="解码器（Decoder）"><a href="#解码器（Decoder）" class="headerlink" title="解码器（Decoder）"></a>解码器（Decoder）</h4><p>这个可以用在后面LC-3的OPcode识别中</p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h5ydov9nahj30g20fiwg2.jpg" alt="image"></p>
+<h4 id="多路选择器（Mux）"><a href="#多路选择器（Mux）" class="headerlink" title="多路选择器（Mux）"></a>多路选择器（Mux）</h4><p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5ydsmanigj30s90g5tap.jpg" alt="image"></p>
+<h4 id="加法器（Adder）"><a href="#加法器（Adder）" class="headerlink" title="加法器（Adder）"></a>加法器（Adder）</h4><p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h5ydu0cffjj312k0patie.jpg" alt="image"></p>
+<h4 id="可编程逻辑元（Programmable-Logic-Array-x2F-PLA）"><a href="#可编程逻辑元（Programmable-Logic-Array-x2F-PLA）" class="headerlink" title="可编程逻辑元（Programmable Logic Array &#x2F; PLA）"></a>可编程逻辑元（Programmable Logic Array &#x2F; PLA）</h4><p>其实也就是多路选择器的一种扩展</p>
+<h4 id="逻辑完备（Logical-completeness）"><a href="#逻辑完备（Logical-completeness）" class="headerlink" title="逻辑完备（Logical completeness）"></a>逻辑完备（Logical completeness）</h4><p>其实意思就是对于任何一种电路的真值表，都可以通过与或非的搭配组合表示出来，其实也是多路选择器的应用</p>
+<h3 id="时序逻辑电路（Sequential-Logic-Circuits）"><a href="#时序逻辑电路（Sequential-Logic-Circuits）" class="headerlink" title="时序逻辑电路（Sequential Logic Circuits）"></a>时序逻辑电路（Sequential Logic Circuits）</h3><h4 id="基本存储单元"><a href="#基本存储单元" class="headerlink" title="基本存储单元"></a>基本存储单元</h4><h5 id="R-S-Latch"><a href="#R-S-Latch" class="headerlink" title="R-S Latch"></a>R-S Latch</h5><p>a端为输出端，b端为非a</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5ydzp3p2pj30au07x74k.jpg" alt="image"></p>
+<img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5ye2mrv1vj30vt0lrwm1.jpg" alt="image" style="zoom:50%;" />
+
+<h5 id="D-Latch"><a href="#D-Latch" class="headerlink" title="D Latch"></a>D Latch</h5><p>相当于是R-S Latch的改进版</p>
+<p>改进的思路是加上一个WE（write enable）</p>
+<p>当它为0时 R&#x3D;1 S&#x3D;1，保持稳定；当它为1时 D端的内容就直接写入输出端a</p>
+<img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220907220457628.png" alt="image-20220907220457628" style="zoom:50%;" />
+
+<h5 id="Master-Slave-Flipflop"><a href="#Master-Slave-Flipflop" class="headerlink" title="Master-Slave Flipflop"></a>Master-Slave Flipflop</h5><p>主从触发器，相当于是D Latch的一种改进，改进的原因是在处理器处理指令时，通常是同步处理的（synchronous)，每次的操作都在一个时钟周期内完成（Clock），所以如果D端的内容改变，那OUT端立马就会发生改变，这是我们不期望得到的，因为我们这个时候可能正在使用输出端的值，我们需要它保持一段时间的稳定。解决方法是把两个D Latch套在一起，再加上Clock信号即可。</p>
+<img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220907220936997.png" alt="image-20220907220936997" style="zoom: 50%;" />
+
+<h4 id="存储的概念"><a href="#存储的概念" class="headerlink" title="存储的概念"></a>存储的概念</h4><p>（用身边的例子比特和字节来解释）</p>
+<h5 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h5><p>指的是具有多少个unit，一个bit是一个unit，那么bit数就是Memory的大小</p>
+<h5 id="Addressability"><a href="#Addressability" class="headerlink" title="Addressability"></a>Addressability</h5><p>如果我们处理器是按照字节来处理的，一字节是8个bit，所以8就是Addressability</p>
+<h5 id="Address-Space"><a href="#Address-Space" class="headerlink" title="Address Space"></a>Address Space</h5><p>这个指的是我们的内存有多少个字节，比如我们的内存是2MB，Address Space就是2 000 000（Bytes）</p>
+<p><font color=red>所以我们发现 Memory &#x3D; Addressability * Address Space</font></p>
+<h5 id="RAM（Random-Access-Memory）"><a href="#RAM（Random-Access-Memory）" class="headerlink" title="RAM（Random Access Memory）"></a>RAM（Random Access Memory）</h5><p>RAM是 <strong>随机存取存储器</strong> （random access memory），是计算机 内部存储器 中的一种，也是其中最重要的，计算机和手机中一般把其叫做 （运行）内存 ，它的速度要比硬盘快得多，所以用运行程序在RAM中，而存放运行时不用的数据则在硬盘中，什么时候需要数据，便把数据从硬盘中拿到内存，但同时RAM断电会丢失数据，所以我们电脑如果断电了就会丢失原来正在运行的数据。RAM即内存越大，能同时在内存中执行的程序就越多，性能一般是越好的。</p>
+<h6 id="Static-RAM（SRAM）"><a href="#Static-RAM（SRAM）" class="headerlink" title="Static RAM（SRAM）"></a>Static RAM（SRAM）</h6><p>可以认为是一个锁存器结构。速度快，只要不断电，数据一直都在，但是集成度低，生产成本高，所以一般用来制作容量小的高速缓冲存储器。</p>
+<h6 id="Dynamic-RAM（DRAM）"><a href="#Dynamic-RAM（DRAM）" class="headerlink" title="Dynamic RAM（DRAM）"></a>Dynamic RAM（DRAM）</h6><p>用电容来存储数据。比较慢，且数据会随着电荷的衰退而丢失，所以需要定时更新。集成度高，生产成本低，所以一般用来制作容量大的主存储器。</p>
+<p><font color=red>区别于Register和ROM，他们的容量和速度都是不一样的。（Register -&gt; SRAM -&gt; DRAM -&gt; ROM 速度变小，容量变大）</font></p>
+<h4 id="有限状态机"><a href="#有限状态机" class="headerlink" title="有限状态机"></a>有限状态机</h4><p>状态（state）：可以认为一次对这一瞬间的记录 —— 快照（snapshot）</p>
+<p>状态机内部涉及到状态之间的转移，可以用状态图（state diagram）来表示</p>
+<p>时序逻辑电路和组合逻辑电路更像是一种包含关系，时序包含组合，不同的是，时序中还有一些存储单元，存下的是上一状态，这将参与到下一次状态的计算中（在时序电路中完成）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5yevrzqlpj312o0r1nan.jpg" alt="image"></p>
+<p>时钟周期（Clock）通常认为是上升沿开始，经历一段1，然后是下降沿，然后是一段0</p>
+<p>（这里助教曾说关于时钟周期可以自定义哪一段的说法，我觉得是对的，但是在理解课本内容方面没有任何帮助，所以建议是就把默认的时钟周期认为是前面写的那个版本）</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5yew7fmpaj30wa06ojs5.jpg" alt="image"></p>
+<h2 id="Chapter-4-The-Von-Neumann-Model"><a href="#Chapter-4-The-Von-Neumann-Model" class="headerlink" title="Chapter 4 The Von Neumann Model"></a>Chapter 4 The Von Neumann Model</h2><h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p>五大部分：输入（INPUT）、输出（OUTPUT）、存储器（MEMORY）、处理器（PROCESSING UNIT）、控制器（CONTROL UNIT）</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h5z6gj12xwj30zv0p47bw.jpg" alt="image"></p>
+<h4 id="MEMORY"><a href="#MEMORY" class="headerlink" title="MEMORY"></a>MEMORY</h4><p>MAR：memory address register</p>
+<p>MDR：memory data register</p>
+<p>通过这两个寄存器，可以与内存进行交互（MAR存下地址值 MDR存下地址值对应的内容）</p>
+<p><b>作用：存放信息</b></p>
+<h4 id="PROCESSING-UNIT"><a href="#PROCESSING-UNIT" class="headerlink" title="PROCESSING UNIT"></a>PROCESSING UNIT</h4><p>ALU：arithmetic and logic unit算术与逻辑单元</p>
+<p>Register：暂存数据的地方</p>
+<p>Word Size：与Addressability大小一样</p>
+<p><b>作用：对输入进行一些算术处理，然后把结果输出</b></p>
+<h4 id="CONTROL-UNIT"><a href="#CONTROL-UNIT" class="headerlink" title="CONTROL UNIT"></a>CONTROL UNIT</h4><p>IR：Instruction Register指令寄存器存下当前处理的指令</p>
+<p>PC：Program Counter包含着下一条指令的地址</p>
+<p><b>作用：从内存中读取指令，然后解析后产生对应的信号让别的组成部分去执行</b></p>
+<h4 id="INPUT-and-OUTPUT"><a href="#INPUT-and-OUTPUT" class="headerlink" title="INPUT and OUTPUT"></a>INPUT and OUTPUT</h4><p>LC-3支持键盘作为输入，显示器作为输出</p>
+<p>所以对应的就有四个寄存器</p>
+<p>KBDR：keyboard data register   	KBSR：keyboard status register</p>
+<p>DDR：display data register			 DSR：display status register</p>
+<p><b>作用：实现外界与计算机的交互</b></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5z81js1sqj30dq083tb4.jpg" alt="image"></h3><h3 id="指令循环-Instruction-Cycle"><a href="#指令循环-Instruction-Cycle" class="headerlink" title="指令循环 Instruction Cycle"></a>指令循环 Instruction Cycle</h3><p><b>FETCH - DECODE - EVALUATE ADDRESS - FETCH OPERANDS - EXECUTE - STORE RESULT</b></p>
+<p>总共是六个阶段，每个阶段都有具体的流程，每个阶段可能会花费一个或多个machine cycle（时钟周期）</p>
+<p><font color=red>注：不同的指令可能需要不同的阶段，并非每一个阶段都必须做</font></p>
+<h4 id="FETCH"><a href="#FETCH" class="headerlink" title="FETCH"></a>FETCH</h4><p>总共有四步</p>
+<p><strong>MAR &lt;- PC :</strong> First the MAR is loaded with the contents of the PC. </p>
+<p><strong>MDR &lt;- M[MAR] :</strong> Next, the memory is interrogated, which results in the next instruction being placed by the memory into the MDR. </p>
+<p><strong>IR &lt;- MDR :</strong> Finally, the IR is loaded with the contents of the MDR.</p>
+<p><strong>PC &lt;- PC + 1</strong></p>
+<h4 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h4><p>这里就利用到了我们第三章谈到的译码器（DECODER），根据指令前四位（IR[15:12]）的内容，来判断通向哪一个处理路径</p>
+<p>然后把后面的几位切割开，划分好哪些位是立即数，要用到哪些寄存器</p>
+<h4 id="EVALUATE-ADDRESS"><a href="#EVALUATE-ADDRESS" class="headerlink" title="EVALUATE ADDRESS"></a>EVALUATE ADDRESS</h4><p>这个阶段主要干两件事，首先是Sign-extension，然后是与其他值进行一些运算</p>
+<img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5zay952n3j30o207dt9y.jpg" alt="image" style="zoom:80%;" />
+
+<h4 id="FETCH-OPERANDS"><a href="#FETCH-OPERANDS" class="headerlink" title="FETCH OPERANDS"></a>FETCH OPERANDS</h4><p>准备好要用的数据，这里的操作数可能是寄存器，也可能是MDR，或者是立即数</p>
+<img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5zb2im5wnj30mh06775c.jpg" alt="image" style="zoom: 80%;" />
+
+<h4 id="EXECUTE"><a href="#EXECUTE" class="headerlink" title="EXECUTE"></a>EXECUTE</h4><p>执行阶段</p>
+<img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zb1xj464j30ra0610u2.jpg" alt="image" style="zoom:67%;" />
+
+<p><font color=red>值得注意的是ADD指令的EVALUATE ADDRESS， EXECUTE和 STORE RESULT三者同时可以放在一个clock内（其它很多计算机也是一样）具体的细节需要再学习更加深后才能明白</font></p>
+<h4 id="STORE-RESULT"><a href="#STORE-RESULT" class="headerlink" title="STORE RESULT"></a>STORE RESULT</h4><p>把运算好的结果存放在指定地址或者是寄存器中</p>
+<img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h5zb1lim0yj30vt0adn0s.jpg" alt="image" style="zoom:67%;" />
+
+<h3 id="指令类型"><a href="#指令类型" class="headerlink" title="指令类型"></a>指令类型</h3><p>总共有Operates , Data movement , Control三种类型</p>
+<h4 id="Operates"><a href="#Operates" class="headerlink" title="Operates"></a>Operates</h4><p>总共有三个：<em>ADD AND NOT</em></p>
+<p>主要是在ALU里面进行一些运算，然后存储在指定寄存器内</p>
+<p><b>LEA指令的分类比较茫，没有像data movement那样涉及到内存，但是它又和前面三个Operates有所区别</b></p>
+<h4 id="Data-movement"><a href="#Data-movement" class="headerlink" title="Data movement"></a>Data movement</h4><p>总共有六个：<em>LDI LDR LD STI STR ST</em></p>
+<p>主要是通过不同的方式存取地址里的内容</p>
+<h4 id="Control"><a href="#Control" class="headerlink" title="Control"></a>Control</h4><p>剩下的全都是Control指令，<em>BR  JMP(RET)  JSR(JSRR) RTI TRAP</em>等</p>
+<p>通常情况下，指令会一条一条的顺次执行到结束，但是这样的方式给我们带来一些不便（比如重复使用相同的指令，占用很多内存地址）</p>
+<p>所以我们可以通过修改PC的值，改变程序的控制流，以达到一些循环结构</p>
+<img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zg2nakl9j30s9041grs.jpg" alt="image" style="zoom: 67%;" />
+
+<p><b>TRAP指令</b></p>
+<p>它也属于Control指令，但是又稍有不同，因为它涉及到特权模式的转化，TRAP指令中有一个八位的TRAP Vector，可以跳转到对应的位置上执行操作系统的程序，比如我们执行TRAP x25就可停机</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zgd7slq9j30zp0iznia.jpg" alt="image"></p>
+<h2 id="Chapter-5-The-LC-3"><a href="#Chapter-5-The-LC-3" class="headerlink" title="Chapter 5 The LC-3"></a>Chapter 5 The LC-3</h2><h3 id="ISA-指令集架构（Instruction-Set-Architecture）"><a href="#ISA-指令集架构（Instruction-Set-Architecture）" class="headerlink" title="ISA 指令集架构（Instruction Set Architecture）"></a>ISA 指令集架构（Instruction Set Architecture）</h3><p>一个ISA主要包括<b>三个部分</b></p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5zglqucfzj30uz0dg0y3.jpg" alt="image"></p>
+<p>对于LC-3来说</p>
+<p>①address space是2^16 locations	addressability是16bits</p>
+<p>②registers包括了8个通用寄存器（general-purpose registers ）和别的一些特殊寄存器，比如PC，CC（conditional codes）</p>
+<p>③Instrucion set部分：opcodes共有16个，有一个暂时没有被使用。data types主要是二补数。取址模式有三种：相对于PC的（PC-relative），间接取址（indirect），基偏移（base+offset）</p>
+<h3 id="Operate-Instructions"><a href="#Operate-Instructions" class="headerlink" title="Operate Instructions"></a>Operate Instructions</h3><p>总共就三个 ADD AND NOT</p>
+<h4 id="ADD-amp-AND"><a href="#ADD-amp-AND" class="headerlink" title="ADD &amp; AND"></a>ADD &amp; AND</h4><p>对于AND 和 ADD来说，二者十分相近（都有两种模式，是由IR[5]决定的）</p>
+<img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5zgwtep0pj30zr0qewnh.jpg" alt="image" style="zoom:50%;" />
+
+<img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zh5ghotsj31030qrgvw.jpg" alt="image" style="zoom:50%;" />
+
+<h4 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a>NOT</h4><p>NOT指令，相对简单，就只有一个src，dst可以与src相同，也可以不同</p>
+<img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zh5ser2kj30ys0qb44k.jpg" alt="image" style="zoom:50%;" />
+
+<h3 id="Data-Movement-Instructions"><a href="#Data-Movement-Instructions" class="headerlink" title="Data Movement Instructions"></a>Data Movement Instructions</h3><h4 id="Load类和Store类"><a href="#Load类和Store类" class="headerlink" title="Load类和Store类"></a>Load类和Store类</h4><p>LD ST：PC-relative mode</p>
+<p>LDR STR：base+offset mode</p>
+<p>LDI STI：indirect mode</p>
+<p>三种Load指令，都是将对应位置的内容存放在指定寄存器中，三种Store指令则正好相反</p>
+<img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zh6evz8wj30z50qh0zz.jpg" alt="image" style="zoom:50%;" />
+
+<img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5zh2nzuqyj30z50q5jyt.jpg" alt="image" style="zoom:50%;" />
+
+<img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h602t379nej30z70qek04.jpg" alt="image" style="zoom:50%;" />
+
+<img src="https://tva4.sinaimg.cn/large/008cRf41ly1h602tv0bebj30zj0qbah9.jpg" alt="image" style="zoom:50%;" />
+
+<img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h602ut69yhj30z70qh7bb.jpg" alt="image" style="zoom:50%;" />
+
+<img src="https://tva1.sinaimg.cn/large/008cRf41ly1h602v59juwj30yo0qdwlj.jpg" alt="image" style="zoom:50%;" />
+
+<h4 id="LEA（Leave-Effective-Address）"><a href="#LEA（Leave-Effective-Address）" class="headerlink" title="LEA（Leave Effective Address）"></a>LEA（Leave Effective Address）</h4><p>LEA是一个分类不明的指令，像是属于PC-relative，但是又不涉及内存，它只是把PC + offset的值放在指定寄存器中</p>
+<img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220909090701534.png" alt="image-20220909090701534" style="zoom:50%;" />
+
+<h3 id="Control-Instructions"><a href="#Control-Instructions" class="headerlink" title="Control Instructions"></a>Control Instructions</h3><p><b>Conditional Codes</b></p>
+<p>这个存放在PSR[2:0]，PSR是processing status register，用于控制权限的一个寄存器，具体在后面会谈到。</p>
+<p>当六个指令（ADD AND NOT LD LDR LDI）被执行时，执行阶段的最后会设置CC的值，CC包括了nzp三部分</p>
+<p>分别是negative，zero和positive，然后被设置过的CC可以用于BR指令，进行一些条件跳转。</p>
+<h4 id="条件跳转-Conditional-Branch"><a href="#条件跳转-Conditional-Branch" class="headerlink" title="条件跳转 Conditional Branch"></a>条件跳转 Conditional Branch</h4><p>这里主要就是一个BR指令，根据当前CC的值和BR指令内的条件，判断是否跳转到一个PC-relative的位置上继续执行程序。</p>
+<p>如果满足条件，那么程序控制流发生改变，如果不满足条件，则程序继续向下执行。</p>
+<p><font color=red>注：设置PCoffset9时易错，因为现在PC已经存放的是下一条指令了</font></p>
+<p><font color=green>注：另外，PC+offset的计算不是在ALU内进行的，而是在一个特殊的加法器中（细节略过）</font></p>
+<img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h603f3rxv7j30xt0mvjy3.jpg" alt="image" style="zoom:50%;" />
+
+<h4 id="无条件跳转-Unconditional-Branch"><a href="#无条件跳转-Unconditional-Branch" class="headerlink" title="无条件跳转 Unconditional Branch"></a>无条件跳转 Unconditional Branch</h4><p>这里主要是JMP指令（当然还有JSR等，但是JMP是最基础的）</p>
+<p>JMP指令是直接无脑跳转到指定位置</p>
+<img src="https://tva3.sinaimg.cn/large/008cRf41ly1h603kuu26xj30xe0md453.jpg" alt="image" style="zoom:50%;" />
+
+<p>JSR JSRR</p>
+<p>JSR（JSRR）使用的opcode是一样的，唯一的区别是第11位区分开了二者，JSR是PCoffset，JSRR是Base + 0（offset）</p>
+<p>当修改完PC后，这两个指令会自动把R7的内容存放成原来PC的值（即JSR或JSRR的下一条指令）</p>
+<img src="https://tva1.sinaimg.cn/large/008cRf41ly1h603pt3poyj30or07a0uu.jpg" alt="image" style="zoom:50%;" />
+
+<p>RET指令是用于从JSR或JSRR跳转出去后，调回来时使用的，它和JMP指令的opcode是一样的，唯一不同的是RET的Base必须是R7（因为我们之前已经把要跳回去的位置存放在了R7中）</p>
+<img src="https://tva3.sinaimg.cn/large/008cRf41ly1h603tyw3c0j30on079wgm.jpg" alt="image" style="zoom:50%;" />
+
+<p>最后还有一个RTI（return from interrupt）</p>
+<p>这条指令做的事情还蛮多的，这个我们在后面讲到中断时再详细展开</p>
+<h4 id="TRAP"><a href="#TRAP" class="headerlink" title="TRAP"></a>TRAP</h4><p>TRAP指令的作用是跳转到OS中，执行对应片段的程序。这里要注意的是使用TRAP而不是自己直接跳转过去的原因是，TRAP指令执行时，会对用户的特权模式进行修改，以便我们可以正常执行，如果我们直接跳转过去，将会触发ACV（Access control violation）</p>
+<img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h603wkbh6mj310m0n0gud.jpg" alt="image" style="zoom:50%;" />
+
+<p>通过控制trapvector的值，我们就可以控制执行哪个TRAP程序</p>
+<p>目前LC-3总共就6个TRAP程序，以下为对应的介绍</p>
+<img src="C:\Users\Lu\AppData\Roaming\Typora\typora-user-images\image-20220909094636548.png" alt="image-20220909094636548" style="zoom:50%;" />
+
+<h3 id="循环结构-loop-control"><a href="#循环结构-loop-control" class="headerlink" title="循环结构 loop control"></a>循环结构 loop control</h3><p>书上讲了两种方法：一种是通过设置一个Counter为指定值，每次循环给它减去一个1，判断计算的结果是否为0，若为0则跳出循环，这种方法就是计数法（Counter），还有一种是通过提前设置一个值为哨兵，我们每次循环都把某一个值进行一些变化，然后与哨兵进行运算，如果结果符合要求，我们就跳出循环，这叫做哨兵法（Sentinel）。</p>
+<h2 id="Chapter-6-Programming"><a href="#Chapter-6-Programming" class="headerlink" title="Chapter 6 Programming"></a>Chapter 6 Programming</h2><h3 id="问题解决-Problem-Solving"><a href="#问题解决-Problem-Solving" class="headerlink" title="问题解决 Problem Solving"></a>问题解决 Problem Solving</h3><p>首先是对问题进行系统化拆解（systematic decomposition），系统化拆解包括搞清楚自然语言描述的问题，把问题转化为算法（转化为一步步的流程，具有那三大特性definiteness, effective computabiblity, finiteness），最后就可以按照流程进行结构化编程（structured programming）。</p>
+<p>我们常见的三种结构是：顺序结构（sequential）条件结构（conditional）循环结构（iterative）</p>
+<h3 id="调试-debugging"><a href="#调试-debugging" class="headerlink" title="调试 debugging"></a>调试 debugging</h3><p>bug：虫子，程序的错误所在</p>
+<p>所谓debugging，也就是当我们运行程序发现不能正常运行时，我们要去做的调整工作，而哪里出了问题呢，这是调试中最难的一部分，所以我们要运用一定的调试技巧，节约我们找到错误的时间。</p>
+<p>首先我们要把程序分块，切割成一个个独立的模块（modules），然后就可以用下面三种技巧</p>
+<p><b>赋值法（set value）：在程序运行到当前模块时，我们手动修改所用到的变量的值，然后看这个模块的运行结果是否符合预期</b></p>
+<p><b>执行序列（execute sequences）：设置断点（set breakpoint）+ 开始调试（run）+ 下一步（step）</b></p>
+<p><b>显示值（display values）：在程序中段可以增加一些语句来输出中间变量，看哪一个模块出了问题</b></p>
+<h2 id="Chapter-7-Assembly-Language"><a href="#Chapter-7-Assembly-Language" class="headerlink" title="Chapter 7 Assembly Language"></a>Chapter 7 Assembly Language</h2><p>为提高我们的编程效率，汇编语言就产生了，它对用户更加友好（user-friendly），更便于使用。</p>
+<p>在汇编语言中，我们会有<b>符号化地址</b>（symbolic addresses），它可以独一无二的标记一些运算符和数据块、函数的位置，比如ADD NOT save1等等，这都是可以直接拿来使用的，然后我们也就不必去关心各种各样的偏移量和opcode等，提高了编程效率。</p>
+<h3 id="基本组成"><a href="#基本组成" class="headerlink" title="基本组成"></a>基本组成</h3><h4 id="Opcode-and-Operands"><a href="#Opcode-and-Operands" class="headerlink" title="Opcode and Operands"></a>Opcode and Operands</h4><p>这是一条汇编语句必备的部分，要注意的是，不同的Opcode所关联的Operands的个数可能是不一样的，所以我们要相应地适配它所要求的个数，否则就会报错。</p>
+<h4 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h4><p>标签是我们编程中极为重要的东西，因为我们在跳转时，我们如果想要直接找到函数入口或者是数据块的位置，那标签就可以极大的省去我们计算偏移量的时间。要注意的是Opcode（比如ADD NOT等）和其它有含义的字符串有一个合称：<strong>Reserved words</strong>，这些是不可以作为Label的，因为计算机不容许二义性（ambiguity）。</p>
+<h4 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h4><p>LC-3的注释以；（semicolon）开始，后面可以跟上一些注释，便于调试和维护。</p>
+<h4 id="伪指令-Pseudo-Ops"><a href="#伪指令-Pseudo-Ops" class="headerlink" title="伪指令 Pseudo-Ops"></a>伪指令 Pseudo-Ops</h4><h5 id="ORIG"><a href="#ORIG" class="headerlink" title=".ORIG"></a>.ORIG</h5><p>表明程序的开头</p>
+<h5 id="FILL"><a href="#FILL" class="headerlink" title=".FILL"></a>.FILL</h5><p>表明在此处填充上给定内容</p>
+<h5 id="BLKW"><a href="#BLKW" class="headerlink" title=".BLKW"></a>.BLKW</h5><p>开辟一块空间，方便后续使用</p>
+<h5 id="STRINGZ"><a href="#STRINGZ" class="headerlink" title=".STRINGZ"></a>.STRINGZ</h5><p>在此处开始的内存上填充给定字符串（顺次填入每个 memory location）</p>
+<h5 id="END"><a href="#END" class="headerlink" title=".END"></a>.END</h5><p>表明程序内容的结束，而非程序的结束，程序的结束需要用TRAP指令</p>
+<h3 id="汇编过程-Assembly-Process"><a href="#汇编过程-Assembly-Process" class="headerlink" title="汇编过程 Assembly Process"></a>汇编过程 Assembly Process</h3><p><b>Two-Pass Process</b></p>
+<p>对LC-3来说，采用的汇编过程是跑两次程序，有的汇编语言是跑一次的，这对应着不同的算法和机制。</p>
+<p><b>第一次</b>:从头到尾跑，记录好每一条指令对应的地址值（通过一个变量LC即location counter逐个递增来完成），遇到Label就记录在一个表格中（<strong>symbol table</strong>），作用是便于第二次遍历时填入相应的内存值（或者偏移量）</p>
+<p><strong>第二次</strong>:从头到尾跑，遇到Label就进行解释，通过symbol table内的值完成。</p>
+<h3 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h3><h4 id="可执行文件-Executable-Image"><a href="#可执行文件-Executable-Image" class="headerlink" title="可执行文件 Executable Image"></a>可执行文件 Executable Image</h4><p>当我们汇编产生.o文件后，可能还会有别的.o文件与与之相关联，这个过程就叫做链接（<strong>link</strong>），生成可执行文件</p>
+<h4 id="多于一个目标文件-More-than-One-Object-File"><a href="#多于一个目标文件-More-than-One-Object-File" class="headerlink" title="多于一个目标文件 More than One Object File"></a>多于一个目标文件 More than One Object File</h4><p>通常我们见到的真实的应用都是这样的情况，我们需要用一个外部声明 .External</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h62rp3lsluj30bg021wem.jpg" alt="image"></p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h62rpkw775j30bj01lt8x.jpg" alt="image"></p>
+<p>这样汇编器就不会报错说找不到STARTofFILE这个标签，而是会做一个标记，说这个标签存在于别的目标文件，在链接器链接时，它们之间的联系就会真实地建立起来。</p>
+<h2 id="Chapter-8-Data-Structures"><a href="#Chapter-8-Data-Structures" class="headerlink" title="Chapter 8 Data Structures"></a>Chapter 8 Data Structures</h2><p>又名：<em>abstract data types</em></p>
+<h3 id="子函数-Subroutines-x2F-Funtions"><a href="#子函数-Subroutines-x2F-Funtions" class="headerlink" title="子函数 Subroutines &#x2F; Funtions"></a>子函数 Subroutines &#x2F; Funtions</h3><p>通常我们写复杂程序时，有很多部分是会重复利用的，所以如果我们按照顺次排列的方式来写，可能会导致代码的可读性下降，所以我们可以使用子函数来简化我们的程序，让我们的程序主干更加清晰，可读性更强。另外，可能会有一些情况是不同的工程师写不同段的代码（当工程量巨大无比时），一个工程师写下这个函数，另一个工程师来调用它，这种情况也十分常见。</p>
+<p><b>库（library）</b>：库的含义其实就是把许多子函数给封装起来，便于不同程序员进行调用。这样可以省去大家写一些重复性的代码，而且通常情况下，库的代码效率更高，调用起来也十分方便好用。</p>
+<h4 id="调用和返回机制Call-x2F-Return-mechanism"><a href="#调用和返回机制Call-x2F-Return-mechanism" class="headerlink" title="调用和返回机制Call &#x2F; Return mechanism"></a>调用和返回机制Call &#x2F; Return mechanism</h4><p>主要就是JSR(R)和RET两条指令，唯一需要注意的是JSR除了修改程序的控制流，还会自动存下函数的返回地址（即跳转指令的下一条指令）于Ｒ７中，当ＲＥＴ指令执行时，Ｒ７的值就写入了ＰＣ中，开始接下来的程序。</p>
+<p><b>寄存器可能不够用？</b></p>
+<p>我们可以在内存中开辟一段空间，然后函数开始执行前，把一些包含关键内容的寄存器的值存在指定内存内，然后函数执行结束返回前把对应内存内的值再填回到寄存器中。</p>
+<p>要注意有两种类型的暂存<strong>Caller Save</strong> 和 <strong>Callee Save</strong>，前者是调用者（源程序）做存储和恢复工作，而后者是被调用者做这样的工作。</p>
+<p><font color=red>注意：书上的栈的Push（Pop与之相反）和队列的Remove和Insert都是先对指针操作，再去做别的操作。</font></p>
+<h3 id="栈-Stack"><a href="#栈-Stack" class="headerlink" title="栈 Stack"></a>栈 Stack</h3><p>栈的特性是——<b>后进先出</b>:Last In，First Out，简称：LIFO</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62swqm0n1j30r60d1dkz.jpg" alt="image"></p>
+<p>栈在内存上实现时，其实并没有“真正”弹出顶部元素，而是用一个栈指针（<strong>stack pointer</strong>），来控制当前栈顶元素的位置。当一个元素从栈中弹出时，其实在内存内还会暂存一段时间，不会立即被清除掉。</p>
+<p><em><strong>stack protocal</strong></em>:当我们从栈中弹出元素后，不能再去访问被弹出的值所在的地址，尽管它可能还在内存上，这是约定俗成的规则。</p>
+<p><em><strong>Underflow &amp; Overflow</strong></em>：通常我们会提前设置好栈的大小和栈的起始位置（默认用户模式下的起始位置是FDFF or FE00，也可以是别的位置，这取决于实现方式），那么当我们弹数据到边界时或者压入数据到边界时，我们就得特别注意，因为如果超出去，那程序段的内容可能会被修改，这将导致不可预想的后果。</p>
+<h3 id="递归-Recursion"><a href="#递归-Recursion" class="headerlink" title="递归 Recursion"></a>递归 Recursion</h3><p>当我们执行一些特别的子函数时，我们可能需要调用子函数本身，那么它就意味着我们要去存下以及恢复过程变量以及返回地址（这部分语句将占用许多地址，但是确实是保证正确性所必要的），而且我们不可以把它们存放在固定的一个位置上，因为会相互覆盖，所以常见的方式是使用栈来存储，这也是当调用子函数过多，程序会炸的原因（栈溢出）。</p>
+<p>当我们学会用递归来写阶乘和斐波那契后，我们会发现其实它可以改写成一个循环，而不需要重复调用函数，占用大量内存。这种递归叫做<strong>尾递归</strong>（递归返回时不需要做其它操作，或者说调用语句在递归函数的最后），其实尾递归可以算作是一种技巧，因为它可以大大提高程序运行效率（其实我们的编译器通常都会对尾递归进行优化），这算是一种技巧，但是本书中只是简单的提到了一下。</p>
+<p>比如迷宫问题就不太适合用尾递归来解决，因为其中涉及到很多的判断和特殊处理，那么正常的递归就可以把问题清晰的表述并解决（虽然时间效率堪忧，但是是唯一选择）</p>
+<h3 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列 Queue"></a>队列 Queue</h3><p>队列的特性——<b>先进先出 </b>：First In First Out，简称FIFO</p>
+<p>由于它跟队列十分相近，只是由栈指针变成了一个头指针（<strong>FRONT</strong>）和尾指针（<strong>REAR</strong>），所以这里不过多介绍。</p>
+<p><strong>但是要注意的是</strong>，我们通常使用的队列都是用n个位置存n-1个内容，原因如果我们要存n个内容，那么我们从队列上来看，满队列和空队列的指针位置是一样的，所以我们很难去判断Underflow和Overflow，因此n个位置存n-1个内容就成了约定俗成的东西。</p>
+<p>注意一些特殊的结构：比如循环队列（Wrap-Around Queue）和双向队列（deque）</p>
+<h3 id="字符串-Character-Strings"><a href="#字符串-Character-Strings" class="headerlink" title="字符串 Character Strings"></a>字符串 Character Strings</h3><p>在LC-3中，从字符串的方向上来看，是从低地址存到高地址的，所以是大端序。而且所有的都是存在了16-bit的低8位bit（TRAP指令有一个可以支持低八位和高八位都写入的情况 ）</p>
+<p><font color=red>注：最后一位会自动补上x0000</font></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62u9z43k9j30q404l790.jpg" alt="image"></p>
+<p><b>正常版本</b></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62ub8g07ij30q102cmz7.jpg" alt="image"></p>
+<h2 id="Chapter-9-I-x2F-O"><a href="#Chapter-9-I-x2F-O" class="headerlink" title="Chapter 9 I&#x2F;O"></a>Chapter 9 I&#x2F;O</h2><p><b>首先补充一下LC-3的内存分布</b></p>
+<p><font color=orange>system space</font></p>
+<p>x0000 ~ x00FF TRAP相关(<b>TRAP的别称：system call</b>)</p>
+<p>​			[ 这段的地址及其内容合称 Trap Vector Table]</p>
+<p>x0100 ~ 01FF Interrupt &#x2F; Exception相关</p>
+<p>​			[ 从x0180分开，前半段是第一类（exception），后半段是第二类（interrupt） ]</p>
+<p>x0200 ~ x2FFF 操作系统代码段</p>
+<p>​			[ 最开头的一小段是开机相关的内容 ]</p>
+<p><font color=orange>user space</font></p>
+<p>x3000 ~ xFDFF User用户段</p>
+<p><font color=orange>I&#x2F;O Page</font></p>
+<p>xFE00 ~ I &#x2F; O相关代码段和特殊寄存器</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="Privilege-amp-Priority"><a href="#Privilege-amp-Priority" class="headerlink" title="Privilege &amp; Priority"></a>Privilege &amp; Priority</h4><p>二者有所区别，且与我们生活的常规，因为我们生活中自然而然地认为二者甚至是近义词，但在计算机中会不同。</p>
+<p>Privilege表明权力，等级，更多的是每一种事物都具有的固定属性，不同的Privilege区别开不同权力的程序，低权力程序不能做高权力程序的事情。</p>
+<p>Priority表明优先级，更像是动态的属性，比如我们正在做某件事情，可能会被更高优先级的事情给打断。类似地，一个程序在运行时，如果有更高优先级的程序打断（比如键盘输入），那么计算机会优先处理更高优先级的程序。</p>
+<h4 id="PSR（Processor-Status-Register）xFFFC"><a href="#PSR（Processor-Status-Register）xFFFC" class="headerlink" title="PSR（Processor Status Register）xFFFC"></a>PSR（Processor Status Register）xFFFC</h4><p><b>注：MCR (Processor’s Master Control Register) xFFFE</b></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62xcoirllj30rn04btab.jpg" alt="image"></p>
+<p>PSR[15]表明Privilege，如果为1表明User mode（Unprivileged），如果为0表明Supervisor mode（Privileged）</p>
+<p>PSR[10:8]表明Priority，是一个介于0~7之间的值，二进制表示</p>
+<p>PSR[2:0]表明conditional code，是一个动态刷新的码，有六条指令可以修改，BR指令会用来判断并分支。</p>
+<h4 id="USP-amp-SSP"><a href="#USP-amp-SSP" class="headerlink" title="USP &amp; SSP"></a>USP &amp; SSP</h4><p>User Stack Pointer &amp; Supervisor Stack Pointer</p>
+<p>要注意的是R6通常用来放正在使用的栈指针，而切换时要用到两个特殊寄存器Saved_USP或Saved_SSP来暂存不用的栈顶指针</p>
+<h3 id="Input-x2F-Output"><a href="#Input-x2F-Output" class="headerlink" title="Input &#x2F; Output"></a>Input &#x2F; Output</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p><b>Memory-Mapped I&#x2F;O &amp; Special I&#x2F;O instructions</b></p>
+<p>前者是大多数计算机采用的输入输出处理方式，后者是比较小众的方式，每一个设备都有自己的I&#x2F;O处理指令（比如1965年的PDP-8） LC-3采用的是前者，内存映射型I&#x2F;O。之所以叫这个名字，是因为要遵循普适性，原理是在ISA的内存地址上开辟一块空间专门用来存储与I&#x2F;O相关的寄存器，比如LC-3的xFE00 ~ XFFFF就是这样，I&#x2F;O设备的寄存器就可以与我们开辟的内存区域一一映射，所以我们称之为内存映射型I&#x2F;O。</p>
+<p><b>Asynchronous  &amp; Synchronous</b></p>
+<p>同步和异步，提到这两个词是因为输入输出设备的处理速度是不同于CPU的处理速度的，我们称之为<strong>异步</strong>。那也就意味着让一个人一秒钟打3000000个字不可能实现，这个问题如果想解决：</p>
+<p>首先我们能想到的是放慢速度，比如每秒输入3个字母，设置一定的间隔，让某些打字员（虽然很难有人做得到）按照这样的频率输入即可，同步化两个异步的设备，但是这个也太难了，有几个人能做到呢？</p>
+<p>所以我们就可以引入一个<strong>标志</strong>（FLAG or Ready bit）来标识当前设备是否准备好了，程序运行到这一段CPU就去查询是否准备好了，如果准备好了那么就输入，如果没有，可能会直接抛弃输入的东西，或者会缓存下来（取决于不同的外设），然后这样就可以完成简单的同步化。（Polling方式）</p>
+<p><b>Interrupt-Driven &amp; Polling</b></p>
+<p>前者与后者的区别在于，前者是由键盘控制着交互过程，后者是由处理器控制着交互过程。</p>
+<p><strong>Interrupt-Driven</strong>是在程序正常运行过程中，键盘的输入打断了原有程序，程序控制流跳转到键盘处，然后执行结束后交还控制流。</p>
+<p><strong>Polling</strong>是程序运行到某一处后，就开始不断的询问当前KBSR是否已经被set（[15]设置为1），如果设置好了，那就表明键盘已经有输入了，如果没有设置好，那就说明现在还是处于clear状态（[15]为0），这时程序就会不断循环，直到有数据输入。</p>
+<p><font color=red>下面将先用Polling的方式讲解Keyboard和Display，然后才是Interrupt-driven</font></p>
+<h4 id="Input-From-The-Keyboard"><a href="#Input-From-The-Keyboard" class="headerlink" title="Input From The Keyboard"></a>Input From The Keyboard</h4><p>关键的两个寄存器： <strong>KBSR（xFE00） &amp; KBDR（xFE02）</strong></p>
+<img src="https://tva4.sinaimg.cn/large/008cRf41ly1h63v1bvslmj30s30b9jxc.jpg" alt="image" style="zoom: 67%;" />
+
+<p>对计算机而言，分配16bit比分配特定数量的bit来的容易，所以上图中我们看到kBSR和KBDR中的bit只有部分得到了使用，而非全部。</p>
+<p>KBDR是只有[7:0]被使用，KBSR是只有[15]被使用。</p>
+<p><strong>处理机制</strong>：正常状态下KBSR的15位为0，表明现在键盘可以输入，这时如果键盘被敲击，那KBDR的低八位bit就会载入这个字符的ASCII，然后KBSR的15位自动置为1，表明现在读入的字符正在被程序读取，这时如果键盘继续被敲击，不会有新的字符载入KBDR，直到读取结束，KBSR的15位置为0，才会开始下一个字符的读入。</p>
+<h4 id="Output-to-the-Monitor"><a href="#Output-to-the-Monitor" class="headerlink" title="Output to the Monitor"></a>Output to the Monitor</h4><p>关键的两个寄存器：<strong>DSR（xFE04） &amp; DDR（xFE06）</strong></p>
+<img src="https://tva3.sinaimg.cn/large/008cRf41ly1h63vhxvyraj30rx0amjy3.jpg" alt="image" style="zoom:67%;" />
+
+<p><strong>处理机制</strong>：其实它们的处理机制与KBDR和KBSR是完全一致的。正常状态下DSR的15位为1，当我们想要展示的字符提供给设备后，DSR的15位会被clear为0，设备开始处理（此时仍处于clear状态），然后处理结束后DSR的15位就会被set成1，然后就开始运行接下来的程序，在DSR的15位为0的过程中，DDR只能处理一个值（一个锁定的状态），新的想要展示的字符不会载入到DDR中。</p>
+<h3 id="操作系统服务程序：TRAP-Routines"><a href="#操作系统服务程序：TRAP-Routines" class="headerlink" title="操作系统服务程序：TRAP Routines"></a>操作系统服务程序：TRAP Routines</h3><p><b>为什么要这样设置?</b></p>
+<p>两方面原因，一方面是，让所有的程序编写者去了解这些status register和data register是一件不容易的事情，因为难度比编写程序来得高，另一方面是，I&#x2F;O设备是由所有用户共享的，如果把访问和修改的权利交给每一个用户，可能会导致别的用户也无法使用I&#x2F;O设备了，这并不是我们期望的结果，所以我们通过设置privilege，让普通用户只能调用函数使用，而不是自己写程序来操作设备寄存器。</p>
+<p><b>TRAP &#x2F; system call &#x2F; service call的流程</b>：通常情况下，我们运行到程序的一处，然后我们调用操作系统来帮我们执行一些程序（比如输入输出，停机等），这时操作系统会接管计算机，控制流也交给操作系统，操作系统全部弄完后，把控制流再交还给我们自己的程序。</p>
+<h4 id="Trap-Vector-Table"><a href="#Trap-Vector-Table" class="headerlink" title="Trap Vector Table"></a>Trap Vector Table</h4><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h63xeqmof8j30cn0glmz9.jpg" alt="image" style="zoom:50%;" />
+
+<p>这里我们看到只有六个，其余的空间都填充着无意义的值x038C</p>
+<img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h63xje36xuj30n60j5wil.jpg" alt="image" style="zoom:50%;" />
+
+<p>我们在LC-3 tools中查看x038C的内容，其实跳转后，都报错 “BAD TRAP”</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h63xi2dmz4j30ie035gly.jpg" alt="image"></p>
+<p>也就是说，目前的LC-3指令虽然可以支持256条TRAP指令，但是目前就只有这六种是有意义的</p>
+<center><b>GETC      OUT      PUTS     IN     PUTSP     HALT</b></center>
+
+<h4 id="两条指令"><a href="#两条指令" class="headerlink" title="两条指令"></a>两条指令</h4><h5 id="TRAP-Instruction"><a href="#TRAP-Instruction" class="headerlink" title="TRAP Instruction"></a>TRAP Instruction</h5><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h63xmqp9goj30pi03twg0.jpg" alt="image" style="zoom:67%;" />
+
+<p><strong>TRAP过程详解</strong>：首先，当前程序的PSR和PC都会被压到系统栈上（这里的PC要减去一个1保证返回时完美衔接），并且在压栈前，如果当前是用户模式，需要切换到超级模式（把当前的栈指针存到Saved_USP，把系统栈指针&lt;存储在Saved_SSP处&gt;复制给活跃指针——R6）；然后，PSR[15]被置为0，PSR[10:8]保持不变，因为TRAP指令的priority与原程序一致。接下来，8bit的trap vector会被扩展到16bit并放入MAR中，MDR对应的修改，PC会被写入MDR的内容（MAR地址处存放的东西）；最后，程序就开始执行系统段的代码了。</p>
+<h5 id="RTI-Instruction"><a href="#RTI-Instruction" class="headerlink" title="RTI Instruction"></a>RTI Instruction</h5><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h63xvzcqw3j30oy0390u4.jpg" alt="image" style="zoom:67%;" />
+
+<p>全称：<strong>R</strong>eturn from <strong>T</strong>rap or <strong>I</strong>nterrupt</p>
+<p><strong>RTI过程详解</strong>：首先POP系统栈栈顶的两个元素，分别是PC和PSR，然后判断PSR[15]的值，如果是1，那就意味着现在要从超级模式跳回用户模式了，那么当前的栈指针要存下来（Saved_SSP），并且活跃指针R6要载入到原来用户栈的栈指针（之前存储在Saved_USP）。</p>
+<h4 id="TRAP的各种程序"><a href="#TRAP的各种程序" class="headerlink" title="TRAP的各种程序"></a>TRAP的各种程序</h4><h5 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h5><p>都是用Polling实现的，这里就不多展开</p>
+<h5 id="HALT"><a href="#HALT" class="headerlink" title="HALT"></a>HALT</h5><p>这里需要补充的是<strong>MCR</strong>（the processor‘s Master Control Register）</p>
+<p>这个寄存器只有[15]是有意义的，因为Clock信号是由晶体振荡器（crystal oscillator）和RUN-Latch（即MCR）AND之后得到的，所以如果我们想要停机，只需要把[15]置为0即可，我们在TRAP HALT中使用一个bit vector叫做MASK：x7fff，与原来的MCR（正常运行时MCR的值为x4000）AND，然后结果存放到MCR中，这样程序就停下来了。</p>
+<img src="https://tva2.sinaimg.cn/large/008cRf41ly1h63ykrursaj30wa0mjk01.jpg" alt="image" style="zoom:50%;" />
+
+<p>其实当红线处执行后，程序就停下来了，所以虽然后面黄线部分还有一些返回程序，但是它们是不会执行的。</p>
+<p><font color=red>前面我们用Polling的方式讲解了输入输出的一种方法，下面我们从Interrupt-Driven来理解</font></p>
+<h3 id="Interrupts-amp-Interrupt-Driven-I-x2F-O"><a href="#Interrupts-amp-Interrupt-Driven-I-x2F-O" class="headerlink" title="Interrupts &amp; Interrupt Driven I&#x2F;O"></a>Interrupts &amp; Interrupt Driven I&#x2F;O</h3><p>中断程序的优势就在于它把Polling不断询问的时间，拿来做别的事情了，时间效率高。每当有中断程序打断时，处理器就先跳转过去处理，等到处理结束后再跳转回来。</p>
+<h4 id="触发中断详解"><a href="#触发中断详解" class="headerlink" title="触发中断详解"></a>触发中断详解</h4><h5 id="PART1——中断的前置条件"><a href="#PART1——中断的前置条件" class="headerlink" title="PART1——中断的前置条件"></a><font color=red size=5>PART1——中断的前置条件</font></h5><h6 id="IE-amp-PL"><a href="#IE-amp-PL" class="headerlink" title="IE &amp; PL"></a><strong>IE</strong> &amp; PL</h6><p>在KBSR和DSR中，[14]其实有别的含义，即<strong>IE（interrupt enable）</strong>，我们的中断信号（interrupt signal）来源于[15] AND [14]，所以在中断程序中，我们需要提前设置好IE（值为1）。另外，我们还需要保证的是把中断请求的<strong>PL（priority level）</strong>高于普通用户程序，这个通常是不需要修改的，因为每一种设备会有它自己的Priority。</p>
+<p><b>补充：</b>在实际编程中我们在x200处（开机程序）除了要把IE设置好，还需要把Interrupt Vector Table设置好，也就是说，在一种设备对应的位置上填上我们自定义中断函数的首地址。（实验中我们使用的是x180处填上x2000——键盘中断函数的首地址）</p>
+<h6 id="INT-Signal"><a href="#INT-Signal" class="headerlink" title="INT Signal"></a><b>INT Signal</b></h6><p>中断信号：如果前面PART1的事情全都满足了，中断信号就会被设定<strong>（asserted）</strong></p>
+<img src="https://tva1.sinaimg.cn/large/008cRf41ly1h642g7fg9sj30sp0lljtx.jpg" alt="image" style="zoom:67%;" />
+
+<p><strong>Test for INT signal</strong>：中断信号的设定可以发生在任何时候，但是我们处理中断发生在FETCH阶段（一定程度上可以省下不少状态，因为我们不用去关心当前指令的哪些部分已经被执行了，哪些部分还没被执行）。</p>
+<h5 id="PART2——中断的执行过程"><a href="#PART2——中断的执行过程" class="headerlink" title="PART2——中断的执行过程"></a><font color=red size=5>PART2——中断的执行过程</font></h5><p>总共分为三步</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41gy1h6433ouemkj30nq03rwhx.jpg" alt="image"></p>
+<h6 id="Step1-初始化中断"><a href="#Step1-初始化中断" class="headerlink" title="Step1 初始化中断"></a>Step1 初始化中断</h6><p>首先把PC和PSR进行一波压栈（压在系统栈上），在压栈之前检测是否已经切换活跃栈指针（active stack pointer），如果没有，那么要先切换一下，然后是修改PSR[15]为0和PSR[10:8]为中断请求的priority，关于PSR[2:0]书上说由于在超级模式下任何一条指令都还没有执行，我们赋初值为010，<strong>这一点要特别注意</strong>。然后是table&lt;- 01（区别于TRAP的00，含义是vector的起始位置），Vector就载入INTV（Interrupt Vector，提前设置好的），然后把二者拼起来就可以在Interrupt Vector Table内找到对应的位置跳转过去，执行中断程序。</p>
+<h6 id="Step2-执行中断"><a href="#Step2-执行中断" class="headerlink" title="Step2 执行中断"></a>Step2 执行中断</h6><p>当我们把中断请求在Interrupt Vector Table内的值找到并复制到PC中时，中断就正式开始执行了，这时与用户模式下的指令执行没有什么区别。</p>
+<h6 id="Step3-从中断返回"><a href="#Step3-从中断返回" class="headerlink" title="Step3 从中断返回"></a>Step3 从中断返回</h6><p>这与TRAP指令的RTI是完全一样的，毕竟RTI即Return from Trap or Interrupt</p>
+<br>
+
+<p><b>要注意的是，Interrupt不是只关于I&#x2F;O的，它还可以有很多延展。下面是课本中举的三个例子</b></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h645a3scrxj30sb07bgv3.jpg" alt="image"></p>
+<h2 id="附录-A-amp-C"><a href="#附录-A-amp-C" class="headerlink" title="附录 A&amp;C"></a>附录 A&amp;C</h2><h3 id="附录A-：The-LC-3-ISA-Instructions"><a href="#附录A-：The-LC-3-ISA-Instructions" class="headerlink" title="附录A ：The LC-3 ISA Instructions"></a>附录A ：The LC-3 ISA Instructions</h3><h4 id="A-1-Overview"><a href="#A-1-Overview" class="headerlink" title="A.1 Overview"></a>A.1 Overview</h4><p>这部分主要对所有LC-3中用到的和图中出现的相对专业的名词做了解释</p>
+<h4 id="A-2-The-Instruction-Set"><a href="#A-2-The-Instruction-Set" class="headerlink" title="A.2 The Instruction Set"></a>A.2 The Instruction Set</h4><p>这里对每条指令都做了详细的解释，包括二进制代码和汇编代码。</p>
+<h4 id="A-3-Interrupt-and-Exception-Processing"><a href="#A-3-Interrupt-and-Exception-Processing" class="headerlink" title="A.3 Interrupt and Exception Processing"></a>A.3 Interrupt and Exception Processing</h4><p>前面所有提到的内容我们直接代过，部分内容补充如下</p>
+<h5 id="对x0100-x01FF的划分（总称为Interrupt-Vector-Table）"><a href="#对x0100-x01FF的划分（总称为Interrupt-Vector-Table）" class="headerlink" title="对x0100 ~ x01FF的划分（总称为Interrupt Vector Table）"></a><strong>对x0100 ~ x01FF的划分（总称为Interrupt Vector Table）</strong></h5><p>①x0100 ~ x017F这部分是exception部分的代码段，这是由程序自己引起的。包括了三种情况：**privilege mode violation（USER模式	下调用RTI）, illegal opcode（1101）, and access control violation (ACV).**三者顺次对应的vector是x00 x01 x02</p>
+<p>②x0180 ~ x01FF这部分是Interrupt的代码段，这是由设备打断引起的，可由用户自行设计。常见的是键盘，Priority Level是4，在Table里面对应的是x0180位置。</p>
+<p>这里需要补充的是，具体的exception如何施行，这是因情况而异的，但可以肯定的是，结果通常是计算机自动修正错误，然后让程序恢复，继续运行下去。另外，exception在执行时，程序的priority是不发生改变的，即与原来的程序priority保持一致，这与Interrupt不同，因为中断程序的Priority必须高于原来程序的Priority。</p>
+<h3 id="附录C-：The-Microarchitecture-of-the-LC-3"><a href="#附录C-：The-Microarchitecture-of-the-LC-3" class="headerlink" title="附录C ：The Microarchitecture of the LC-3"></a>附录C ：The Microarchitecture of the LC-3</h3><p><b>注：这里只是一个LC-3微架构的例子，和其它ISA一样，其对应的微架构可以有多种</b></p>
+<h4 id="State-Machine-amp-Data-Path"><a href="#State-Machine-amp-Data-Path" class="headerlink" title="State Machine &amp; Data Path"></a>State Machine &amp; Data Path</h4><p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h67pu6ste9j30tq10snbw.jpg" alt="image"></p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h67puluio5j30ot0y17dc.jpg" alt="image"></p>
+]]></content>
+      <tags>
+        <tag>Courses</tag>
       </tags>
   </entry>
 </search>
