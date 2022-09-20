@@ -21,21 +21,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++ string 的substr的使用方法</title>
-    <url>/2022/08/31/C++%20string%20%E7%9A%84substr%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# C++ string 的substr的使用方法
-直接看代码
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string s = <span class="string">&quot;Hello world !&quot;</span>;</span><br><span class="line">	cout&lt;&lt; s.<span class="built_in">substr</span>(<span class="number">1</span>)&lt;&lt; endl;<span class="comment">//下标从1开始到结束</span></span><br><span class="line">	cout&lt;&lt; s.<span class="built_in">substr</span>(<span class="number">1</span>, <span class="number">4</span>);<span class="comment">//下标从1开始后4个字符</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><img src="https://img-blog.csdnimg.cn/ac658afbfa6043528de6cb364d11c7ef.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++ sort自定义cmp的细节</title>
     <url>/2022/08/31/C++%20sort%E8%87%AA%E5%AE%9A%E4%B9%89cmp%E7%9A%84%E7%BB%86%E8%8A%82/</url>
     <content><![CDATA[<center></center>
@@ -50,15 +35,18 @@
       </tags>
   </entry>
   <entry>
-    <title>CSDN传送门</title>
-    <url>/2022/09/07/CSDN%E4%BC%A0%E9%80%81%E9%97%A8/</url>
-    <content><![CDATA[<p>之前在CSDN上写过笔记和题解，这里写一个传送门过去</p>
-<p><a href="https://blog.csdn.net/qq_34771124?spm=1000.2115.3001.5343">传送门</a></p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
+    <title>C++ string 的substr的使用方法</title>
+    <url>/2022/08/31/C++%20string%20%E7%9A%84substr%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# C++ string 的substr的使用方法
+直接看代码
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string s = <span class="string">&quot;Hello world !&quot;</span>;</span><br><span class="line">	cout&lt;&lt; s.<span class="built_in">substr</span>(<span class="number">1</span>)&lt;&lt; endl;<span class="comment">//下标从1开始到结束</span></span><br><span class="line">	cout&lt;&lt; s.<span class="built_in">substr</span>(<span class="number">1</span>, <span class="number">4</span>);<span class="comment">//下标从1开始后4个字符</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果<br><img src="https://img-blog.csdnimg.cn/ac658afbfa6043528de6cb364d11c7ef.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 ]]></content>
       <tags>
-        <tag>PAT题解</tag>
-        <tag>学习笔记</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -89,18 +77,15 @@
       </tags>
   </entry>
   <entry>
-    <title>C语言中的内部名和外部名</title>
-    <url>/2022/08/31/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E5%90%8D%E4%B8%8E%E5%A4%96%E9%83%A8%E5%90%8D/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-​	最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：
-
-<p>​	A N S I标准规定，标识符可以为任意长度，但外部名必须至少能由前6个字符唯一地区分，并且不区分大小写。这里外部名指的是在链接过程中所涉及的标识符，其中包括文件间共享的函数名和全局变量名。因此外部名abcdefgh和abcdef将被当作同一个标识符处理，而且abcd和ABCD会当作一样处理。</p>
-<p>​	A N S I标准还规定内部名必须至少能由前31个字符唯一地区分。内部名指的是仅出现于定义该标识符的文件中的那些标识符。C语言中的字母是有大小写区别的，因此count Count COUNT是三个不同的标识符。标识符不能和C语言的关键字相同，也不能和用户已编制的函数或C语言库函数同名。</p>
+    <title>CSDN传送门</title>
+    <url>/2022/09/07/CSDN%E4%BC%A0%E9%80%81%E9%97%A8/</url>
+    <content><![CDATA[<p>之前在CSDN上写过笔记和题解，这里写一个传送门过去</p>
+<p><a href="https://blog.csdn.net/qq_34771124?spm=1000.2115.3001.5343">传送门</a></p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
 ]]></content>
       <tags>
-        <tag>C</tag>
-        <tag>CS</tag>
+        <tag>PAT题解</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -136,6 +121,21 @@
       </tags>
   </entry>
   <entry>
+    <title>C语言中的内部名和外部名</title>
+    <url>/2022/08/31/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E5%90%8D%E4%B8%8E%E5%A4%96%E9%83%A8%E5%90%8D/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+​	最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：
+
+<p>​	A N S I标准规定，标识符可以为任意长度，但外部名必须至少能由前6个字符唯一地区分，并且不区分大小写。这里外部名指的是在链接过程中所涉及的标识符，其中包括文件间共享的函数名和全局变量名。因此外部名abcdefgh和abcdef将被当作同一个标识符处理，而且abcd和ABCD会当作一样处理。</p>
+<p>​	A N S I标准还规定内部名必须至少能由前31个字符唯一地区分。内部名指的是仅出现于定义该标识符的文件中的那些标识符。C语言中的字母是有大小写区别的，因此count Count COUNT是三个不同的标识符。标识符不能和C语言的关键字相同，也不能和用户已编制的函数或C语言库函数同名。</p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>N个有理分数求和</title>
     <url>/2022/08/31/N%E4%B8%AA%E6%9C%89%E7%90%86%E5%88%86%E6%95%B0%E6%95%B0%E6%B1%82%E5%92%8C%20/</url>
     <content><![CDATA[<center></center>
@@ -159,24 +159,6 @@
       <tags>
         <tag>algorithm</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/31/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>printf输出如何用变量控制位宽</title>
@@ -322,6 +304,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/31/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>一文搞懂结构体变量占用多大的内存空间</title>
     <url>/2022/08/31/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -377,20 +377,38 @@
       </tags>
   </entry>
   <entry>
-    <title>关于from selenium import webdriver运行时报错</title>
-    <url>/2022/08/31/%E5%85%B3%E4%BA%8Efrom%20selenium%20import%20webdriver%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<center></center>
+    <title>一种特殊的算法复杂度分析</title>
+    <url>/2022/09/20/%E4%B8%80%E7%A7%8D%E7%89%B9%E6%AE%8A%E7%9A%84%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>今天看到了DS的HW1拿到了满分，总结一下这次作业学到的一个点：如何分析形如这样的递推函数的复杂度</p>
+<p>$$<br>F(x) &#x3D; 3F(x &#x2F; 3) or F(x) &#x3D; 3F(x &#x2F; 3) + 1<br>$$</p>
 <span id="more"></span>
-<font color=green>
-首先要成功安装selenium<br>
-我一开始的问题是文件名取了selnium.py<br>
-然后一直报错，改一个其它名即可<br>
-之后，报错就变了
 
-<p><img src="https://img-blog.csdnimg.cn/f2609fd0ee694578a94d7ff607e128fb.png" alt="在这里插入图片描述"><br><font color=green>也就是说编译器显示都正常，一运行就有bug<br>然后我发现了解决的办法<br>左上角文件-设置-python解释器<br>在其中找到selenium，检查版本<br>如果过新，可能会导致不能正常使用<br>我一开始用的4.1.0，后来改为3.11.0就好了<br><img src="https://img-blog.csdnimg.cn/d643ffbca89146a9b579f2fd7f6e4ff2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red><br>祝愿你能尽快调出来！QWQ</p>
+<h2 id="原题展示"><a href="#原题展示" class="headerlink" title="原题展示"></a>原题展示</h2><p>The recurrent equations for the time complexities of programs P1 and P2 are:</p>
+<ul>
+<li>P1:<em>T</em>(1)&#x3D;1,<em>T</em>(<em>N</em>)&#x3D;<em>T</em>(<em>N</em>&#x2F;3)+1</li>
+<li>P2: <em>T</em>(1)&#x3D;1,<em>T</em>(<em>N</em>)&#x3D;3<em>T</em>(<em>N</em>&#x2F;3)+1</li>
+</ul>
+<p>Then the correct conclusion about their time complexities is:</p>
+<img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6d9d8kaa0j30ef07jtae.jpg" alt="image" style="zoom: 67%;" align="left"/>
+
+<p><font color=red>正确答案是B，那是如何推导的呢？</font></p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>其实这一类的递推函数分析复杂度时，是有一些通性的。也就是说，如果我们掌握了这样的式子如何去推导它的时间复杂度，那么类似的就可以掌握了。</p>
+<h3 id="P1"><a href="#P1" class="headerlink" title="P1"></a>P1</h3><p>首先我们来看P1,既然它是一个递推式，那我们不妨往下多写几项<br>$$<br>T(N)&#x3D;T(N&#x2F;3)+1<br>$$</p>
+<p>$$<br>T(N)&#x3D;[T(N&#x2F;3^2)+1]+1<br>$$</p>
+<p>一直往下写，最终的式子应该是<br>$$<br>T(N)&#x3D;T(N&#x2F;3^k)+k<br>$$<br>这里递归到了最底层，N&#x2F;3^k的值为1，k&#x3D;logN，所以我们上面这个式子的复杂度为<br>$$<br>O（T(N)）&#x3D; 1+logN &#x3D; O（logN）<br>$$</p>
+<h3 id="P2"><a href="#P2" class="headerlink" title="P2"></a>P2</h3><p>P1和P2的区别是什么呢？我们不难发现，T（N&#x2F;3）的系数不一样，那它对复杂度的影响是什么样子的呢？</p>
+<p>我们不妨学习P1的那种方法，试着写几项<br>$$<br>T(N)&#x3D;3T(N&#x2F;3)+1<br>$$</p>
+<p>$$<br>T(N)&#x3D;3(3T(N&#x2F;3^2)+1)+1&#x3D;3^2T(N&#x2F;3^2)+3+1<br>$$</p>
+<p>$$<br>T(N)&#x3D;3(3(3(T(N&#x2F;3^3)+1)+1)+1&#x3D;3^3T(N&#x2F;3^3)+3^2+3+1<br>$$</p>
+<p>一直往下写，最终的式子应该是<br>$$<br>T(N)&#x3D;3^kT(N&#x2F;3^k)+3^{k-1}+…+3+1<br>$$<br>这里也递归到了最底层，N&#x2F;3^k的值为1，k&#x3D;logN，所以我们上面这个式子的复杂度为<br>$$<br>T(N)&#x3D;3^k * 1+3^{k-1}+…+3+1&#x3D;O(3^k)&#x3D;O(N)<br>$$</p>
+<hr>
+
+<center><font color=orange>到这里本文就结束了，如有问题欢迎指出！</font></center>
+
 ]]></content>
       <tags>
         <tag>tips</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -410,6 +428,23 @@
 <p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
 <p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
 <p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于from selenium import webdriver运行时报错</title>
+    <url>/2022/08/31/%E5%85%B3%E4%BA%8Efrom%20selenium%20import%20webdriver%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<font color=green>
+首先要成功安装selenium<br>
+我一开始的问题是文件名取了selnium.py<br>
+然后一直报错，改一个其它名即可<br>
+之后，报错就变了
+
+<p><img src="https://img-blog.csdnimg.cn/f2609fd0ee694578a94d7ff607e128fb.png" alt="在这里插入图片描述"><br><font color=green>也就是说编译器显示都正常，一运行就有bug<br>然后我发现了解决的办法<br>左上角文件-设置-python解释器<br>在其中找到selenium，检查版本<br>如果过新，可能会导致不能正常使用<br>我一开始用的4.1.0，后来改为3.11.0就好了<br><img src="https://img-blog.csdnimg.cn/d643ffbca89146a9b579f2fd7f6e4ff2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red><br>祝愿你能尽快调出来！QWQ</p>
 ]]></content>
       <tags>
         <tag>tips</tag>
@@ -546,6 +581,43 @@ fputs(s, fp2);<br>
       </tags>
   </entry>
   <entry>
+    <title>复杂度的渐进表示</title>
+    <url>/2022/08/31/%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E6%B8%90%E8%BF%9B%E8%A1%A8%E7%A4%BA/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 复杂度的渐进表示
+## 1. O（n）（常用）
+$$T(n)=O(f(n))$$
+这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)<=C*O(f(n))$
+简单来说，$O(f(n))$ 表示的就是$f(n)$的复杂度中的某个上界
+例如，$f(n)=(n*(n+1))/2$ 则$O(f(n))=n^2$（不唯一）
+## 2. Ω（n）
+$$T(n)=Ω(f(n))$$
+这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)>=C*Ω(f(n))$
+简单来说，$Ω(f(n))$ 表示的就是$f(n)$的复杂度的某个下界
+例如，$f(n)=(n*(n+1))/2$ 则$Ω(f(n))=n^2/2$（不唯一）
+## 3. Θ（n）
+$$T(n)=Θ(f(n))$$
+这个式子表示同时有以下两个式子成立$$T(n)=O(f(n))$$$$T(n)=Ω(f(n))$$
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复数变量的声明</title>
+    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何批量word转pdf</title>
     <url>/2022/09/14/%E5%A6%82%E4%BD%95%E6%89%B9%E9%87%8Fword%E8%BD%ACpdf/</url>
     <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a></p>
@@ -577,43 +649,6 @@ fputs(s, fp2);<br>
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复数变量的声明</title>
-    <url>/2022/08/31/%E5%A4%8D%E6%95%B0%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复杂度的渐进表示</title>
-    <url>/2022/08/31/%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E6%B8%90%E8%BF%9B%E8%A1%A8%E7%A4%BA/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 复杂度的渐进表示
-## 1. O（n）（常用）
-$$T(n)=O(f(n))$$
-这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)<=C*O(f(n))$
-简单来说，$O(f(n))$ 表示的就是$f(n)$的复杂度中的某个上界
-例如，$f(n)=(n*(n+1))/2$ 则$O(f(n))=n^2$（不唯一）
-## 2. Ω（n）
-$$T(n)=Ω(f(n))$$
-这个式子表示存在常数$C>0$ $n_0 >0$使得当 $n>=n_0$ 时，$T(n)>=C*Ω(f(n))$
-简单来说，$Ω(f(n))$ 表示的就是$f(n)$的复杂度的某个下界
-例如，$f(n)=(n*(n+1))/2$ 则$Ω(f(n))=n^2/2$（不唯一）
-## 3. Θ（n）
-$$T(n)=Θ(f(n))$$
-这个式子表示同时有以下两个式子成立$$T(n)=O(f(n))$$$$T(n)=Ω(f(n))$$
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>course</tag>
       </tags>
   </entry>
   <entry>
@@ -660,109 +695,6 @@ $$T(n)=Θ(f(n))$$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>怎样自己亲手搭建一个四比特加法器</title>
-    <url>/2022/08/31/%E6%80%8E%E6%A0%B7%E8%87%AA%E5%B7%B1%E4%BA%B2%E6%89%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9B%9B%E6%AF%94%E7%89%B9%E5%8A%A0%E6%B3%95%E5%99%A8/</url>
-    <content><![CDATA[<center>大一上《信息与电子工程导论》大作业</center>
-<span id="more"></span>
-# 怎样自己亲手搭建一个四比特加法器
-## 一、前言
-<font color=green>作为大一上学期第一个大作业，最终还是拖到了冬学期的第八周，从第七周的周六开始，一直到第八周周五上午课上展示，中间连续熬了好几天的夜，另外，白天凡是有时间都用在研究它了，最终大约是用了30个小时，完成了这个四比特加法器的“从零到一”。
-最终，小组得分92，个人分数100（贡献比35%），也不枉自己投入的心血
-![在这里插入图片描述](https://img-blog.csdnimg.cn/a5ced433f0e44b12adf4f1f6b04bc4b7.png)
-
-<h2 id="二、器材"><a href="#二、器材" class="headerlink" title="二、器材"></a>二、器材</h2><p>电阻 1 包（10kΩ×100，1kΩ×50）<br>三极管 1 包（9013×100，LED×6）<br>跳线 3 短 1.5 长<br>电源 1 个<br>USB 线 1 条<br>面包板 1 块<br>万用表 1 只<br><img src="https://img-blog.csdnimg.cn/8ff0c2bcc7014108866f0512eae094b5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="三、步骤"><a href="#三、步骤" class="headerlink" title="三、步骤"></a>三、步骤</h2><font color = green>
-1) 利用三极管搭建逻辑门（与或非）并进行仿真测试；<br>
-2) 利用逻辑门搭建一位半加器并进行仿真测试；<br>
-3) 在一位半加器的基础上搭建一位全加器并进行仿真测试；<br>
-4) 利用一位全加器进行适当地级联，搭建 4-bit 加法器，并进行仿真测试；<br>
-5) 进行实物搭建并测试；
-
-<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><h3 id="1-简单逻辑门的搭建"><a href="#1-简单逻辑门的搭建" class="headerlink" title="1.简单逻辑门的搭建"></a>1.简单逻辑门的搭建</h3><p><img src="https://img-blog.csdnimg.cn/9ae8f673639d43ec887013875bcae933.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/79e28736999644fb9e1895daa5b2cf14.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83952eb48f1b4535bc6c8eb6eac63e93.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e72f8d73792541ec99c2643613ddb962.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h3 id="2-半加器的搭建"><a href="#2-半加器的搭建" class="headerlink" title="2.半加器的搭建"></a>2.半加器的搭建</h3><p><img src="https://img-blog.csdnimg.cn/42005dcedeb7493f9cd11dd05dc3c687.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="最初选择"><br>本质上多了的就是异或门，如何搭建异或门呢？<br>这中间经历了好几代的迭代<br><font color=red>第一代<br><img src="https://img-blog.csdnimg.cn/ad48b3cbb77f4c5e887f3e46d5d0422b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=black>我们清点一下三极管的数目，发现总共用到七个，而且有很大的损失，必须得改进<br><font color=red>第二代<br><font color=black>我们考虑对与非门进行改进(节省一个三极管)<br><img src="https://img-blog.csdnimg.cn/a5b189af6a6d470bbc3635aba681c498.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>仿真结果可知，这样的与非门效果很好，同样的思路我们得到了或非门的改进版，将来在进位中可能会用到。<br><img src="https://img-blog.csdnimg.cn/0c9549156c134c639962ab92d11eb33f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>接下来我们搭建半加器<br><font color=black>考虑到进位的与门有损失的问题，我们搭建时，进位采用了无损与门<br><font color=blac>无损与门与无损或门<br><img src="https://img-blog.csdnimg.cn/43e631ec8a154e67ab35877a54515ba3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>然后我们得到了半加器的电路</p>
-<p><img src="https://img-blog.csdnimg.cn/9cc5acb2b24240829b37f6c2edfbd4b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>总共是用到了<strong>七个</strong>三极管，能够完成计算本位（上面的电压表）和进位（下面的电压表）<br><font color=red>考虑到整个电路的简洁性（三极管越多，电路搭建难度越大），我们对半加器进行进一步的改进<br>本位：或非门结果和与门结果进行或非<br>进位：与门结果<br><img src="https://img-blog.csdnimg.cn/175c804bfe60486db8c2f6c300da06f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现只用到了四个三级管，这也是我们最终加法器里面用的半加器方案。</p>
-<h3 id="3-全加器的搭建"><a href="#3-全加器的搭建" class="headerlink" title="3.全加器的搭建"></a>3.全加器的搭建</h3><p>在上面四个三极管的基础上，我们进行相应的改进，得到最终的全加器。<br><font color=blac>本位：两次半加器的本位计算结果（A和B的本位计算结果再与C进位进行本位计算）<br>进位：无损与门（考虑后面的级联问题——损失可能导致结果错误）<br><img src="https://img-blog.csdnimg.cn/2a35aa5463bf45b38a3b9b45873ad1c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>清点一下，我们发现总共用到了10个三极管，同样也是我们的最终版本。</p>
-<h3 id="4-半加器与全加器级联实现两位加法器"><a href="#4-半加器与全加器级联实现两位加法器" class="headerlink" title="4.半加器与全加器级联实现两位加法器"></a>4.半加器与全加器级联实现两位加法器</h3><p>其实就是把半加器的进位结果作为全加器的C输入即可。<br><img src="https://img-blog.csdnimg.cn/d6a4361543094fd0a698a06832d622cf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>仿真结果<br><img src="https://img-blog.csdnimg.cn/1961b1e2920a4c8aad7dadb189706bce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/6db05306d96d4dfda4cb4f62ecb4078e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/338d1beef189445cbfdfe70624cd1e07.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现结果完全正确！<br>两位加法器完成！</p>
-<h3 id="5-四位加法器的搭建"><a href="#5-四位加法器的搭建" class="headerlink" title="5.四位加法器的搭建"></a>5.四位加法器的搭建</h3><p>其实就是半加器+三个全加器，由于我们之前考虑到了进位有损的问题，所以这里搭建起来也是非常的容易。<br><img src="https://img-blog.csdnimg.cn/e88db013db6e406db97e01bc7c2b8c4c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>经仿真，我们发现结果依旧完全正确！<br>至此，我们就完成了四位加法器的搭建</p>
-<h2 id="五、实物图"><a href="#五、实物图" class="headerlink" title="五、实物图"></a>五、实物图</h2><font color=orange>
-1. 与门、或门和非门
-
-<p><img src="https://img-blog.csdnimg.cn/39e8f333521742149d41dc44fb903f04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>2. 异或门<br><img src="https://img-blog.csdnimg.cn/94fd5b21a7d34ca5be701dc012e9a65e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>3. 与非门<br><img src="https://img-blog.csdnimg.cn/89da0c1d181f41b494347cf098572afc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4.无损与门<br><img src="https://img-blog.csdnimg.cn/16e220237fe8411c88bf0ccab2763702.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4. 半加器<br><img src="https://img-blog.csdnimg.cn/44c4042a80b542c29cde2ca7ece8478a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>5. 全加器<br><img src="https://img-blog.csdnimg.cn/7f15dc4765c74f4d9ac836e071a46a36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>6. 两位加法器<br><img src="https://img-blog.csdnimg.cn/c325bbdbbc024b2394ddae72dca67a9a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>7.四位加法器<br><img src="https://img-blog.csdnimg.cn/372d7fa9c2714b68ac36e00bbd4d2e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="六、总结与思考"><a href="#六、总结与思考" class="headerlink" title="六、总结与思考"></a>六、总结与思考</h2><font color=pink>
- 1. 完成一个大作业，需要小组成员合理的分工，这对工作的完成十分重要。<br>
- 2. 建议遵循先仿真后搭建的思路，如果反过来，完成难度大（进位损失须提前考虑）<br>
- 3. 电阻的使用：排电阻用剪刀在红线位置（如下图）剪下，如果拔下的话，管脚会留有胶，易造成接触不良
-
-<blockquote>
-<p><img src="https://img-blog.csdnimg.cn/a00ba0908aee438885aefa44af4111c0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里是引用"></p>
-</blockquote>
-<font color=pink>
-4.搭建电路时，可以考虑把一些电阻、三极管的金属段同时插在面包板的同一个孔内，防止因松动导致接触不良。<br>
-5.完成这项作业，也算是帮助我对计算机底层原理有了新的认识，收获满满！
-
-<h1 id="希望这篇文章对你有所帮助，奥里给QWQ！"><a href="#希望这篇文章对你有所帮助，奥里给QWQ！" class="headerlink" title="希望这篇文章对你有所帮助，奥里给QWQ！"></a>希望这篇文章对你有所帮助，奥里给QWQ！</h1>]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>hardware</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欧拉筛法及其改进方法（素数的判断）</title>
-    <url>/2022/08/31/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95%E5%8F%8A%E5%85%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95%EF%BC%88%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 素数的筛法（欧拉筛法）及其改进
-
-<h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
-<pre><code>1.使用一个prime[N]存下当前素数 
-2.使用一个on[N]数组标志i 是不是素数。
-3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
-</code></pre>
-</blockquote>
-<h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
-<p>i % prime[j] &#x3D;&#x3D; 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] &#x3D; 0</strong>成立，那么设<strong>k &#x3D; i &#x2F; prime[j]</strong> 则prime[j]*k &#x3D; i成立<br>那么对于下一个需要筛选的 i * prime[j+1]&#x3D;prime[j]<em>k</em>prime[j+1]<br>我们令m &#x3D; k *prime[j+1]&gt;  i<br>因此当i增大时，k * prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
-</blockquote>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
-<p>求1,2,⋯,N 中素数的个数。</p>
-</blockquote>
-<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
-<p>【输入】：	<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据	1≤ N ≤10 ^8^</p>
-</blockquote>
-<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
-<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数"><a href="#on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数" class="headerlink" title="(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)"></a>(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)</h3><p><strong>————————————————————————————————</strong></p>
-<h1 id="2021年后续-欧拉筛法的优化-O-n-x2F-2"><a href="#2021年后续-欧拉筛法的优化-O-n-x2F-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n &#x2F; 2))"></a>2021年后续(欧拉筛法的优化 O(n &#x2F; 2))</h1><p>此处只给出处理的函数代码</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>&#x3D;&#x3D;(所有的素数中只有2一个偶数)&#x3D;&#x3D;</p>
-]]></content>
-      <tags>
-        <tag>素数筛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>整除光棍（20分）</title>
-    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 整除光棍 (20 分)
-## 题目描述
-这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
-
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
-<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -827,6 +759,109 @@ $$T(n)=Θ(f(n))$$
       </tags>
   </entry>
   <entry>
+    <title>怎样自己亲手搭建一个四比特加法器</title>
+    <url>/2022/08/31/%E6%80%8E%E6%A0%B7%E8%87%AA%E5%B7%B1%E4%BA%B2%E6%89%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9B%9B%E6%AF%94%E7%89%B9%E5%8A%A0%E6%B3%95%E5%99%A8/</url>
+    <content><![CDATA[<center>大一上《信息与电子工程导论》大作业</center>
+<span id="more"></span>
+# 怎样自己亲手搭建一个四比特加法器
+## 一、前言
+<font color=green>作为大一上学期第一个大作业，最终还是拖到了冬学期的第八周，从第七周的周六开始，一直到第八周周五上午课上展示，中间连续熬了好几天的夜，另外，白天凡是有时间都用在研究它了，最终大约是用了30个小时，完成了这个四比特加法器的“从零到一”。
+最终，小组得分92，个人分数100（贡献比35%），也不枉自己投入的心血
+![在这里插入图片描述](https://img-blog.csdnimg.cn/a5ced433f0e44b12adf4f1f6b04bc4b7.png)
+
+<h2 id="二、器材"><a href="#二、器材" class="headerlink" title="二、器材"></a>二、器材</h2><p>电阻 1 包（10kΩ×100，1kΩ×50）<br>三极管 1 包（9013×100，LED×6）<br>跳线 3 短 1.5 长<br>电源 1 个<br>USB 线 1 条<br>面包板 1 块<br>万用表 1 只<br><img src="https://img-blog.csdnimg.cn/8ff0c2bcc7014108866f0512eae094b5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="三、步骤"><a href="#三、步骤" class="headerlink" title="三、步骤"></a>三、步骤</h2><font color = green>
+1) 利用三极管搭建逻辑门（与或非）并进行仿真测试；<br>
+2) 利用逻辑门搭建一位半加器并进行仿真测试；<br>
+3) 在一位半加器的基础上搭建一位全加器并进行仿真测试；<br>
+4) 利用一位全加器进行适当地级联，搭建 4-bit 加法器，并进行仿真测试；<br>
+5) 进行实物搭建并测试；
+
+<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><h3 id="1-简单逻辑门的搭建"><a href="#1-简单逻辑门的搭建" class="headerlink" title="1.简单逻辑门的搭建"></a>1.简单逻辑门的搭建</h3><p><img src="https://img-blog.csdnimg.cn/9ae8f673639d43ec887013875bcae933.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/79e28736999644fb9e1895daa5b2cf14.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83952eb48f1b4535bc6c8eb6eac63e93.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e72f8d73792541ec99c2643613ddb962.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h3 id="2-半加器的搭建"><a href="#2-半加器的搭建" class="headerlink" title="2.半加器的搭建"></a>2.半加器的搭建</h3><p><img src="https://img-blog.csdnimg.cn/42005dcedeb7493f9cd11dd05dc3c687.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="最初选择"><br>本质上多了的就是异或门，如何搭建异或门呢？<br>这中间经历了好几代的迭代<br><font color=red>第一代<br><img src="https://img-blog.csdnimg.cn/ad48b3cbb77f4c5e887f3e46d5d0422b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=black>我们清点一下三极管的数目，发现总共用到七个，而且有很大的损失，必须得改进<br><font color=red>第二代<br><font color=black>我们考虑对与非门进行改进(节省一个三极管)<br><img src="https://img-blog.csdnimg.cn/a5b189af6a6d470bbc3635aba681c498.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>仿真结果可知，这样的与非门效果很好，同样的思路我们得到了或非门的改进版，将来在进位中可能会用到。<br><img src="https://img-blog.csdnimg.cn/0c9549156c134c639962ab92d11eb33f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>接下来我们搭建半加器<br><font color=black>考虑到进位的与门有损失的问题，我们搭建时，进位采用了无损与门<br><font color=blac>无损与门与无损或门<br><img src="https://img-blog.csdnimg.cn/43e631ec8a154e67ab35877a54515ba3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>然后我们得到了半加器的电路</p>
+<p><img src="https://img-blog.csdnimg.cn/9cc5acb2b24240829b37f6c2edfbd4b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>总共是用到了<strong>七个</strong>三极管，能够完成计算本位（上面的电压表）和进位（下面的电压表）<br><font color=red>考虑到整个电路的简洁性（三极管越多，电路搭建难度越大），我们对半加器进行进一步的改进<br>本位：或非门结果和与门结果进行或非<br>进位：与门结果<br><img src="https://img-blog.csdnimg.cn/175c804bfe60486db8c2f6c300da06f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现只用到了四个三级管，这也是我们最终加法器里面用的半加器方案。</p>
+<h3 id="3-全加器的搭建"><a href="#3-全加器的搭建" class="headerlink" title="3.全加器的搭建"></a>3.全加器的搭建</h3><p>在上面四个三极管的基础上，我们进行相应的改进，得到最终的全加器。<br><font color=blac>本位：两次半加器的本位计算结果（A和B的本位计算结果再与C进位进行本位计算）<br>进位：无损与门（考虑后面的级联问题——损失可能导致结果错误）<br><img src="https://img-blog.csdnimg.cn/2a35aa5463bf45b38a3b9b45873ad1c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>清点一下，我们发现总共用到了10个三极管，同样也是我们的最终版本。</p>
+<h3 id="4-半加器与全加器级联实现两位加法器"><a href="#4-半加器与全加器级联实现两位加法器" class="headerlink" title="4.半加器与全加器级联实现两位加法器"></a>4.半加器与全加器级联实现两位加法器</h3><p>其实就是把半加器的进位结果作为全加器的C输入即可。<br><img src="https://img-blog.csdnimg.cn/d6a4361543094fd0a698a06832d622cf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>仿真结果<br><img src="https://img-blog.csdnimg.cn/1961b1e2920a4c8aad7dadb189706bce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/6db05306d96d4dfda4cb4f62ecb4078e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/338d1beef189445cbfdfe70624cd1e07.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现结果完全正确！<br>两位加法器完成！</p>
+<h3 id="5-四位加法器的搭建"><a href="#5-四位加法器的搭建" class="headerlink" title="5.四位加法器的搭建"></a>5.四位加法器的搭建</h3><p>其实就是半加器+三个全加器，由于我们之前考虑到了进位有损的问题，所以这里搭建起来也是非常的容易。<br><img src="https://img-blog.csdnimg.cn/e88db013db6e406db97e01bc7c2b8c4c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=red>经仿真，我们发现结果依旧完全正确！<br>至此，我们就完成了四位加法器的搭建</p>
+<h2 id="五、实物图"><a href="#五、实物图" class="headerlink" title="五、实物图"></a>五、实物图</h2><font color=orange>
+1. 与门、或门和非门
+
+<p><img src="https://img-blog.csdnimg.cn/39e8f333521742149d41dc44fb903f04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>2. 异或门<br><img src="https://img-blog.csdnimg.cn/94fd5b21a7d34ca5be701dc012e9a65e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>3. 与非门<br><img src="https://img-blog.csdnimg.cn/89da0c1d181f41b494347cf098572afc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4.无损与门<br><img src="https://img-blog.csdnimg.cn/16e220237fe8411c88bf0ccab2763702.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4. 半加器<br><img src="https://img-blog.csdnimg.cn/44c4042a80b542c29cde2ca7ece8478a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>5. 全加器<br><img src="https://img-blog.csdnimg.cn/7f15dc4765c74f4d9ac836e071a46a36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>6. 两位加法器<br><img src="https://img-blog.csdnimg.cn/c325bbdbbc024b2394ddae72dca67a9a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>7.四位加法器<br><img src="https://img-blog.csdnimg.cn/372d7fa9c2714b68ac36e00bbd4d2e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="六、总结与思考"><a href="#六、总结与思考" class="headerlink" title="六、总结与思考"></a>六、总结与思考</h2><font color=pink>
+ 1. 完成一个大作业，需要小组成员合理的分工，这对工作的完成十分重要。<br>
+ 2. 建议遵循先仿真后搭建的思路，如果反过来，完成难度大（进位损失须提前考虑）<br>
+ 3. 电阻的使用：排电阻用剪刀在红线位置（如下图）剪下，如果拔下的话，管脚会留有胶，易造成接触不良
+
+<blockquote>
+<p><img src="https://img-blog.csdnimg.cn/a00ba0908aee438885aefa44af4111c0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里是引用"></p>
+</blockquote>
+<font color=pink>
+4.搭建电路时，可以考虑把一些电阻、三极管的金属段同时插在面包板的同一个孔内，防止因松动导致接触不良。<br>
+5.完成这项作业，也算是帮助我对计算机底层原理有了新的认识，收获满满！
+
+<h1 id="希望这篇文章对你有所帮助，奥里给QWQ！"><a href="#希望这篇文章对你有所帮助，奥里给QWQ！" class="headerlink" title="希望这篇文章对你有所帮助，奥里给QWQ！"></a>希望这篇文章对你有所帮助，奥里给QWQ！</h1>]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>hardware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>整除光棍（20分）</title>
+    <url>/2022/08/31/%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%20(20%20%E5%88%86)%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B91%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 整除光棍 (20 分)
+## 题目描述
+这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。
+
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除x为止。但难点在于，s可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数x（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的s和n，其间以1个空格分隔。</p>
+<p><strong>输入样例</strong>：<br>31<br><strong>输出样例</strong>：<br>3584229390681 15</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a><strong>算法分析</strong></h2><p>本质上就是模拟除法运算，其实有点类似于高精度除法（<a href="https://blog.csdn.net/qq_34771124/article/details/121453990">高精度合集可以参考这里</a>）</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>这个题我一开始卡在了测试点1，其实问题就出在“0”，一共有两种，一种是在商的最前面的0，不能输出，一种是在商中间的“0”，必须输出。<br>这里我为了解决这个问题，用了一个flag来标记是否已经输出一个非0值。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, x, flag, n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag)	<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);<span class="comment">//特判</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x / n);<span class="comment">//输出每一步的除法结果</span></span><br><span class="line">			x %= n;</span><br><span class="line">			<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * <span class="number">10</span> + <span class="number">1</span>;</span><br><span class="line">		cnt ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, cnt);<span class="comment">//输出1的个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欧拉筛法及其改进方法（素数的判断）</title>
+    <url>/2022/08/31/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95%E5%8F%8A%E5%85%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95%EF%BC%88%E7%B4%A0%E6%95%B0%E7%9A%84%E5%88%A4%E6%96%AD%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 素数的筛法（欧拉筛法）及其改进
+
+<h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
+<pre><code>1.使用一个prime[N]存下当前素数 
+2.使用一个on[N]数组标志i 是不是素数。
+3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
+</code></pre>
+</blockquote>
+<h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
+<p>i % prime[j] &#x3D;&#x3D; 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] &#x3D; 0</strong>成立，那么设<strong>k &#x3D; i &#x2F; prime[j]</strong> 则prime[j]*k &#x3D; i成立<br>那么对于下一个需要筛选的 i * prime[j+1]&#x3D;prime[j]<em>k</em>prime[j+1]<br>我们令m &#x3D; k *prime[j+1]&gt;  i<br>因此当i增大时，k * prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
+</blockquote>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
+<p>求1,2,⋯,N 中素数的个数。</p>
+</blockquote>
+<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
+<p>【输入】：	<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据	1≤ N ≤10 ^8^</p>
+</blockquote>
+<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
+<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数"><a href="#on-x3D-x3D-1-表示不是素数-on-x3D-x3D-0表示是素数" class="headerlink" title="(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)"></a>(on[] &#x3D;&#x3D; 1 表示不是素数 on[] &#x3D;&#x3D;0表示是素数)</h3><p><strong>————————————————————————————————</strong></p>
+<h1 id="2021年后续-欧拉筛法的优化-O-n-x2F-2"><a href="#2021年后续-欧拉筛法的优化-O-n-x2F-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n &#x2F; 2))"></a>2021年后续(欧拉筛法的优化 O(n &#x2F; 2))</h1><p>此处只给出处理的函数代码</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>&#x3D;&#x3D;(所有的素数中只有2一个偶数)&#x3D;&#x3D;</p>
+]]></content>
+      <tags>
+        <tag>素数筛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>求一个数组的所有子集</title>
     <url>/2022/08/31/%E6%B1%82%E4%B8%80%E4%B8%AA%E9%9B%86%E5%90%88%E7%9A%84%E5%AD%90%E9%9B%86%EF%BC%88%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%89/</url>
     <content><![CDATA[<center></center>
@@ -861,30 +896,6 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>algorithm</tag>
         <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>结构体类型的三种声明方式</title>
-    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -942,6 +953,30 @@ $000,001,010,011,100,101,110,111$
       </tags>
   </entry>
   <entry>
+    <title>结构体类型的三种声明方式</title>
+    <url>/2022/08/31/%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure>
+
+<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>获取Xpath的两种方法</title>
     <url>/2022/08/31/%E8%8E%B7%E5%8F%96Xpath%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<center></center>
@@ -966,6 +1001,76 @@ $000,001,010,011,100,101,110,111$
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高精度模板合集与优化</title>
+    <url>/2022/08/31/%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%A8%A1%E6%9D%BF%E5%90%88%E9%9B%86%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%88%E5%85%A8%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 高精度模板合集与优化（无注释版）
+我把所有的高精度模板总结了一下，收录在这里，希望对大家有帮助。
+## 目录
+**1.高精度加法
+2.高精度减法
+3.高精度乘法
+4.高精度除法
+（1）高精度除以低精度
+（2）高精度除以高精度**
+**5.高精度算法的优化思路**
+
+<h2 id="一、高精度加法"><a href="#一、高精度加法" class="headerlink" title="一、高精度加法"></a>一、高精度加法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], t2[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N], b[N];<span class="comment">// 两个加数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入两个加数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="type">int</span> lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下两个加数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenb; ++ i) t2[lenb - i] = b[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="type">int</span> len = lena &gt; lenb ? lena : lenb;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= len; ++ i)&#123;<span class="comment">//从低位到高位的处理 </span></span><br><span class="line">		c[i] += t1[i] + t2[i];</span><br><span class="line">		<span class="keyword">if</span>(c[i] &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">			c[i] %= <span class="number">10</span>;</span><br><span class="line">			c[i + <span class="number">1</span>] ++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">if</span>(c[len + <span class="number">1</span>]) len ++;<span class="comment">//最高位的判断 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、高精度减法"><a href="#二、高精度减法" class="headerlink" title="二、高精度减法"></a>二、高精度减法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], t2[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N], b[N];<span class="comment">// 两个数</span></span><br><span class="line"><span class="type">char</span> ch[N];<span class="comment">//中间字符串</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="type">int</span> lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">if</span>(lena &lt; lenb || (lena == lenb &amp;&amp; <span class="built_in">strcmp</span>(a, b) &lt; <span class="number">0</span>))&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(ch, a);</span><br><span class="line">		<span class="built_in">strcpy</span>(a, b);</span><br><span class="line">		<span class="built_in">strcpy</span>(b, ch);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">	&#125;<span class="comment">//如果前一个数小于后一个数，则交换二者 </span></span><br><span class="line">	lena = <span class="built_in">strlen</span>(a); </span><br><span class="line">	lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下两个数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenb; ++ i) t2[lenb - i] = b[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="type">int</span> len = lena &gt; lenb ? lena : lenb;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= len; ++ i)&#123;<span class="comment">//从低位到高位的处理 </span></span><br><span class="line">		c[i] += t1[i] - t2[i];</span><br><span class="line">		<span class="keyword">if</span>(c[i] &lt; <span class="number">0</span>)&#123;</span><br><span class="line">			c[i] += <span class="number">10</span>;</span><br><span class="line">			c[i + <span class="number">1</span>] --;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">while</span>(!c[len] &amp;&amp; len &gt; <span class="number">0</span>) len --;</span><br><span class="line">	<span class="keyword">if</span>(!len)&#123;<span class="comment">//特殊情况的判断 </span></span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、高精度乘法"><a href="#三、高精度乘法" class="headerlink" title="三、高精度乘法"></a>三、高精度乘法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], t2[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N], b[N];<span class="comment">// 两个数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入两个数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="type">int</span> lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下两个加数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenb; ++ i) t2[lenb - i] = b[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="type">int</span> len = lena + lenb;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lena; ++ i)&#123;<span class="comment">//两层循环依次计算 </span></span><br><span class="line">		<span class="type">int</span> x = <span class="number">0</span>;<span class="comment">//存储进位 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lenb; ++ j)&#123;</span><br><span class="line">			c[i + j - <span class="number">1</span>] += t1[i] * t2[j] + x;<span class="comment">//</span></span><br><span class="line">			x = c[i + j - <span class="number">1</span>] / <span class="number">10</span>;</span><br><span class="line">			c[i + j - <span class="number">1</span>] %= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		c[i + lenb] = x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(!c[len] &amp;&amp; len &gt; <span class="number">1</span>) len --;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、高精度除法"><a href="#四、高精度除法" class="headerlink" title="四、高精度除法"></a>四、高精度除法</h2><h3 id="1-高精度除以低精度"><a href="#1-高精度除以低精度" class="headerlink" title="1.高精度除以低精度"></a>1.高精度除以低精度</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N];<span class="comment">// 两个数</span></span><br><span class="line"><span class="type">int</span> b; </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入两个数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下被除数 </span></span><br><span class="line">	<span class="type">int</span> len = lena;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)&#123;<span class="comment">//从高位到低位的处理 </span></span><br><span class="line">		c[i] += (x * <span class="number">10</span> + t1[i]) / b;</span><br><span class="line">		x = (x * <span class="number">10</span> + t1[i]) % b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(!c[len] &amp;&amp; len &gt; <span class="number">1</span>) len --;<span class="comment">//最高位的判断</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);<span class="comment">//商 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, x);<span class="comment">//余数 </span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-高精度除以高精度"><a href="#2-高精度除以高精度" class="headerlink" title="2.高精度除以高精度"></a>2.高精度除以高精度</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 305</span></span><br><span class="line"><span class="type">int</span> a[N], b[N], c[N];<span class="comment">//anan-1&#x27;&#x27;&#x27;a1-&gt;数字的正常顺序 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Init</span><span class="params">(<span class="type">int</span> a[])</span></span>&#123;<span class="comment">//读入数据并进行存储 </span></span><br><span class="line">	string s;</span><br><span class="line">	cin&gt;&gt; s;</span><br><span class="line">	a[<span class="number">0</span>] = s.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= a[<span class="number">0</span>]; ++ i)</span><br><span class="line">		a[i] = s[a[<span class="number">0</span>]-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">(<span class="type">int</span> a[])</span></span>&#123;<span class="comment">//输出结果函数 </span></span><br><span class="line">	<span class="keyword">if</span>(a[<span class="number">0</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">		cout&lt;&lt; <span class="string">&#x27;0&#x27;</span>&lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = a[<span class="number">0</span>]; i &gt; <span class="number">0</span>; -- i)</span><br><span class="line">		cout&lt;&lt; a[i];</span><br><span class="line">	cout&lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">compare</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> b[])</span></span>&#123;<span class="comment">//比较两个数大小的函数 </span></span><br><span class="line">	<span class="keyword">if</span>(a[<span class="number">0</span>] &gt; b[<span class="number">0</span>]) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(a[<span class="number">0</span>] &lt; b[<span class="number">0</span>]) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = a[<span class="number">0</span>]; i &gt; <span class="number">0</span>; -- i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i] &gt; b[i]) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[i] &lt; b[i]) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">numcpy</span><span class="params">(<span class="type">int</span> p[], <span class="type">int</span> q[], <span class="type">int</span> det)</span></span>&#123;<span class="comment">//复制p数组到q数组从det开始的地方</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= p[<span class="number">0</span>]; ++ i)</span><br><span class="line">		q[i + det - <span class="number">1</span>] = p[i];</span><br><span class="line">	q[<span class="number">0</span>] = p[<span class="number">0</span>] + det - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Minus</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> b[])</span></span>&#123;<span class="comment">//减法操作 </span></span><br><span class="line">	<span class="type">int</span> flag;</span><br><span class="line">	flag = <span class="built_in">compare</span>(a, b);</span><br><span class="line">	<span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">		a[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= a[<span class="number">0</span>]; ++ i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i] &lt; b[i])&#123;</span><br><span class="line">				a[i + <span class="number">1</span>] --;</span><br><span class="line">				a[i] += <span class="number">10</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			a[i] -= b[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(a[<span class="number">0</span>] &gt; <span class="number">0</span> &amp;&amp; a[a[<span class="number">0</span>]] == <span class="number">0</span>) a[<span class="number">0</span>] --;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">High_accuracy_division</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> b[], <span class="type">int</span> c[])</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> tmp[N];</span><br><span class="line">	c[<span class="number">0</span>] = a[<span class="number">0</span>] - b[<span class="number">0</span>] + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = c[<span class="number">0</span>]; i &gt; <span class="number">0</span>; -- i)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(tmp, <span class="number">0</span>, <span class="built_in">sizeof</span>(tmp));</span><br><span class="line">		<span class="built_in">numcpy</span>(b, tmp, i);</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">compare</span>(a, tmp) &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			c[i] ++;</span><br><span class="line">			<span class="built_in">Minus</span>(a, tmp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(c[<span class="number">0</span>] &gt; <span class="number">0</span> &amp;&amp; c[c[<span class="number">0</span>]] == <span class="number">0</span>)</span><br><span class="line">		c[<span class="number">0</span>] --;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">Init</span>(a);</span><br><span class="line">	<span class="built_in">Init</span>(b);</span><br><span class="line">	<span class="built_in">High_accuracy_division</span>(a, b, c);</span><br><span class="line">	<span class="built_in">Print</span>(c);</span><br><span class="line">	<span class="built_in">Print</span>(a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、高精度算法的优化思路"><a href="#五、高精度算法的优化思路" class="headerlink" title="五、高精度算法的优化思路"></a>五、高精度算法的优化思路</h2><p><img src="https://img-blog.csdnimg.cn/0dc48c5a34064fc3bee0e0738faef51a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>高精度</tag>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
+    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+## 转载两篇博客，说的很清楚。
+ [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
+ [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑运算符的性能优化（短路问题）</title>
+    <url>/2022/08/31/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89/</url>
+    <content><![CDATA[<center></center>
+<span id="more"></span>
+# 逻辑运算符的性能优化（短路问题）
+<font color=orange>在Python中存在这样的规则
+我们举个例子
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<font color=red>
+从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
+a and b 如果a为false，则b直接跳过<br>
+a or b 如果a为true，则b直接跳过<br>
+
+<font color=green>
+其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
+希望这篇文章能给你带来帮助！
+]]></content>
+      <tags>
+        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
@@ -1342,76 +1447,6 @@ $000,001,010,011,100,101,110,111$
 ]]></content>
       <tags>
         <tag>Courses</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
-    <url>/2022/08/31/%EF%BC%88%E5%AF%B9%E4%BA%8E%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89gets%E5%92%8Cfgets%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cputs%E5%92%8Cfputs%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-## 转载两篇博客，说的很清楚。
- [关于fets与gets](https://blog.csdn.net/qq_45849888/article/details/104562038)
- [关于fputs与puts](https://blog.csdn.net/qq_21835111/article/details/84445302)
-]]></content>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑运算符的性能优化（短路问题）</title>
-    <url>/2022/08/31/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 逻辑运算符的性能优化（短路问题）
-<font color=orange>在Python中存在这样的规则
-我们举个例子
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<font color=red>
-从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
-a and b 如果a为false，则b直接跳过<br>
-a or b 如果a为true，则b直接跳过<br>
-
-<font color=green>
-其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
-希望这篇文章能给你带来帮助！
-]]></content>
-      <tags>
-        <tag>CS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高精度模板合集与优化</title>
-    <url>/2022/08/31/%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%A8%A1%E6%9D%BF%E5%90%88%E9%9B%86%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%88%E5%85%A8%EF%BC%89/</url>
-    <content><![CDATA[<center></center>
-<span id="more"></span>
-# 高精度模板合集与优化（无注释版）
-我把所有的高精度模板总结了一下，收录在这里，希望对大家有帮助。
-## 目录
-**1.高精度加法
-2.高精度减法
-3.高精度乘法
-4.高精度除法
-（1）高精度除以低精度
-（2）高精度除以高精度**
-**5.高精度算法的优化思路**
-
-<h2 id="一、高精度加法"><a href="#一、高精度加法" class="headerlink" title="一、高精度加法"></a>一、高精度加法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], t2[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N], b[N];<span class="comment">// 两个加数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入两个加数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="type">int</span> lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下两个加数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenb; ++ i) t2[lenb - i] = b[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="type">int</span> len = lena &gt; lenb ? lena : lenb;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= len; ++ i)&#123;<span class="comment">//从低位到高位的处理 </span></span><br><span class="line">		c[i] += t1[i] + t2[i];</span><br><span class="line">		<span class="keyword">if</span>(c[i] &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">			c[i] %= <span class="number">10</span>;</span><br><span class="line">			c[i + <span class="number">1</span>] ++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">if</span>(c[len + <span class="number">1</span>]) len ++;<span class="comment">//最高位的判断 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、高精度减法"><a href="#二、高精度减法" class="headerlink" title="二、高精度减法"></a>二、高精度减法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], t2[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N], b[N];<span class="comment">// 两个数</span></span><br><span class="line"><span class="type">char</span> ch[N];<span class="comment">//中间字符串</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="type">int</span> lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">if</span>(lena &lt; lenb || (lena == lenb &amp;&amp; <span class="built_in">strcmp</span>(a, b) &lt; <span class="number">0</span>))&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(ch, a);</span><br><span class="line">		<span class="built_in">strcpy</span>(a, b);</span><br><span class="line">		<span class="built_in">strcpy</span>(b, ch);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">	&#125;<span class="comment">//如果前一个数小于后一个数，则交换二者 </span></span><br><span class="line">	lena = <span class="built_in">strlen</span>(a); </span><br><span class="line">	lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下两个数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenb; ++ i) t2[lenb - i] = b[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="type">int</span> len = lena &gt; lenb ? lena : lenb;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= len; ++ i)&#123;<span class="comment">//从低位到高位的处理 </span></span><br><span class="line">		c[i] += t1[i] - t2[i];</span><br><span class="line">		<span class="keyword">if</span>(c[i] &lt; <span class="number">0</span>)&#123;</span><br><span class="line">			c[i] += <span class="number">10</span>;</span><br><span class="line">			c[i + <span class="number">1</span>] --;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">while</span>(!c[len] &amp;&amp; len &gt; <span class="number">0</span>) len --;</span><br><span class="line">	<span class="keyword">if</span>(!len)&#123;<span class="comment">//特殊情况的判断 </span></span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、高精度乘法"><a href="#三、高精度乘法" class="headerlink" title="三、高精度乘法"></a>三、高精度乘法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], t2[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N], b[N];<span class="comment">// 两个数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入两个数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="type">int</span> lenb = <span class="built_in">strlen</span>(b);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下两个加数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenb; ++ i) t2[lenb - i] = b[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="type">int</span> len = lena + lenb;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lena; ++ i)&#123;<span class="comment">//两层循环依次计算 </span></span><br><span class="line">		<span class="type">int</span> x = <span class="number">0</span>;<span class="comment">//存储进位 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lenb; ++ j)&#123;</span><br><span class="line">			c[i + j - <span class="number">1</span>] += t1[i] * t2[j] + x;<span class="comment">//</span></span><br><span class="line">			x = c[i + j - <span class="number">1</span>] / <span class="number">10</span>;</span><br><span class="line">			c[i + j - <span class="number">1</span>] %= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		c[i + lenb] = x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(!c[len] &amp;&amp; len &gt; <span class="number">1</span>) len --;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、高精度除法"><a href="#四、高精度除法" class="headerlink" title="四、高精度除法"></a>四、高精度除法</h2><h3 id="1-高精度除以低精度"><a href="#1-高精度除以低精度" class="headerlink" title="1.高精度除以低精度"></a>1.高精度除以低精度</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000000</span></span><br><span class="line"><span class="type">int</span> t1[N], c[N];</span><br><span class="line"><span class="type">char</span> a[N];<span class="comment">// 两个数</span></span><br><span class="line"><span class="type">int</span> b; </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt; a&gt;&gt; b;<span class="comment">//输入两个数 </span></span><br><span class="line">	<span class="type">int</span> lena = <span class="built_in">strlen</span>(a);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lena; ++ i) t1[lena - i] = a[i] - <span class="string">&#x27;0&#x27;</span>;<span class="comment">//存下被除数 </span></span><br><span class="line">	<span class="type">int</span> len = lena;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)&#123;<span class="comment">//从高位到低位的处理 </span></span><br><span class="line">		c[i] += (x * <span class="number">10</span> + t1[i]) / b;</span><br><span class="line">		x = (x * <span class="number">10</span> + t1[i]) % b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(!c[len] &amp;&amp; len &gt; <span class="number">1</span>) len --;<span class="comment">//最高位的判断</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c[i]);<span class="comment">//商 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, x);<span class="comment">//余数 </span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-高精度除以高精度"><a href="#2-高精度除以高精度" class="headerlink" title="2.高精度除以高精度"></a>2.高精度除以高精度</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 305</span></span><br><span class="line"><span class="type">int</span> a[N], b[N], c[N];<span class="comment">//anan-1&#x27;&#x27;&#x27;a1-&gt;数字的正常顺序 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Init</span><span class="params">(<span class="type">int</span> a[])</span></span>&#123;<span class="comment">//读入数据并进行存储 </span></span><br><span class="line">	string s;</span><br><span class="line">	cin&gt;&gt; s;</span><br><span class="line">	a[<span class="number">0</span>] = s.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= a[<span class="number">0</span>]; ++ i)</span><br><span class="line">		a[i] = s[a[<span class="number">0</span>]-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">(<span class="type">int</span> a[])</span></span>&#123;<span class="comment">//输出结果函数 </span></span><br><span class="line">	<span class="keyword">if</span>(a[<span class="number">0</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">		cout&lt;&lt; <span class="string">&#x27;0&#x27;</span>&lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = a[<span class="number">0</span>]; i &gt; <span class="number">0</span>; -- i)</span><br><span class="line">		cout&lt;&lt; a[i];</span><br><span class="line">	cout&lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">compare</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> b[])</span></span>&#123;<span class="comment">//比较两个数大小的函数 </span></span><br><span class="line">	<span class="keyword">if</span>(a[<span class="number">0</span>] &gt; b[<span class="number">0</span>]) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(a[<span class="number">0</span>] &lt; b[<span class="number">0</span>]) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = a[<span class="number">0</span>]; i &gt; <span class="number">0</span>; -- i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i] &gt; b[i]) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[i] &lt; b[i]) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">numcpy</span><span class="params">(<span class="type">int</span> p[], <span class="type">int</span> q[], <span class="type">int</span> det)</span></span>&#123;<span class="comment">//复制p数组到q数组从det开始的地方</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= p[<span class="number">0</span>]; ++ i)</span><br><span class="line">		q[i + det - <span class="number">1</span>] = p[i];</span><br><span class="line">	q[<span class="number">0</span>] = p[<span class="number">0</span>] + det - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Minus</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> b[])</span></span>&#123;<span class="comment">//减法操作 </span></span><br><span class="line">	<span class="type">int</span> flag;</span><br><span class="line">	flag = <span class="built_in">compare</span>(a, b);</span><br><span class="line">	<span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">		a[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= a[<span class="number">0</span>]; ++ i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i] &lt; b[i])&#123;</span><br><span class="line">				a[i + <span class="number">1</span>] --;</span><br><span class="line">				a[i] += <span class="number">10</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			a[i] -= b[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(a[<span class="number">0</span>] &gt; <span class="number">0</span> &amp;&amp; a[a[<span class="number">0</span>]] == <span class="number">0</span>) a[<span class="number">0</span>] --;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">High_accuracy_division</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> b[], <span class="type">int</span> c[])</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> tmp[N];</span><br><span class="line">	c[<span class="number">0</span>] = a[<span class="number">0</span>] - b[<span class="number">0</span>] + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = c[<span class="number">0</span>]; i &gt; <span class="number">0</span>; -- i)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(tmp, <span class="number">0</span>, <span class="built_in">sizeof</span>(tmp));</span><br><span class="line">		<span class="built_in">numcpy</span>(b, tmp, i);</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">compare</span>(a, tmp) &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			c[i] ++;</span><br><span class="line">			<span class="built_in">Minus</span>(a, tmp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(c[<span class="number">0</span>] &gt; <span class="number">0</span> &amp;&amp; c[c[<span class="number">0</span>]] == <span class="number">0</span>)</span><br><span class="line">		c[<span class="number">0</span>] --;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">Init</span>(a);</span><br><span class="line">	<span class="built_in">Init</span>(b);</span><br><span class="line">	<span class="built_in">High_accuracy_division</span>(a, b, c);</span><br><span class="line">	<span class="built_in">Print</span>(c);</span><br><span class="line">	<span class="built_in">Print</span>(a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="五、高精度算法的优化思路"><a href="#五、高精度算法的优化思路" class="headerlink" title="五、高精度算法的优化思路"></a>五、高精度算法的优化思路</h2><p><img src="https://img-blog.csdnimg.cn/0dc48c5a34064fc3bee0e0738faef51a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>高精度</tag>
-        <tag>模板</tag>
       </tags>
   </entry>
 </search>
