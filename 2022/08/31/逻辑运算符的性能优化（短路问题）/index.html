@@ -226,21 +226,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-# 逻辑运算符的性能优化（短路问题）
-<font color=orange>在Python中存在这样的规则
-我们举个例子
-
+        <p><center></center><br><span id="more"></span></p>
+<h1 id="逻辑运算符的性能优化（短路问题）"><a href="#逻辑运算符的性能优化（短路问题）" class="headerlink" title="逻辑运算符的性能优化（短路问题）"></a>逻辑运算符的性能优化（短路问题）</h1><p><font color=orange>在Python中存在这样的规则<br>我们举个例子</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<font color=red>
-从上面的代码和它的输出结果来看，Python中存在这样的规则：<br>
-a and b 如果a为false，则b直接跳过<br>
-a or b 如果a为true，则b直接跳过<br>
-
-<font color=green>
-其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br>
-希望这篇文章能给你带来帮助！
+<p><font color=red><br>从上面的代码和它的输出结果来看，Python中存在这样的规则：<br><br>a and b 如果a为false，则b直接跳过<br><br>a or b 如果a为true，则b直接跳过<br></p>
+<p><font color=green><br>其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br><br>希望这篇文章能给你带来帮助！</p>
 
     </div>
 
@@ -344,6 +334,7 @@ a or b 如果a为true，则b直接跳过<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-text">逻辑运算符的性能优化（短路问题）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -476,6 +467,8 @@ a or b 如果a为true，则b直接跳过<br>
 
 
 
+
+  
 
   
 

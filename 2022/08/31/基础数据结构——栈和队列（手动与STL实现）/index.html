@@ -227,17 +227,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-
+        <p><center></center><br><span id="more"></span></p>
 <h2 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h2><p><strong>一、栈</strong></p>
 <ol>
-<li><p>库函数的栈</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
-<li><p>手写栈</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
-<p><strong>二.队列</strong></p>
-</li>
+<li>库函数的栈<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">stack&lt; <span class="type">int</span> &gt; S; </span><br><span class="line">stack&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;SS;</span><br><span class="line"></span><br><span class="line">S.<span class="built_in">push</span>(x);入栈</span><br><span class="line">SS.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(x, y));入栈</span><br><span class="line">S.<span class="built_in">pop</span>();出栈</span><br><span class="line">S.<span class="built_in">empty</span>()；判断是否为空，若空返回<span class="number">1</span>，不空返回<span class="number">0</span></span><br><span class="line">S.<span class="built_in">size</span>()；栈内元素个数</span><br><span class="line">S.<span class="built_in">top</span>();取出栈顶元素</span><br></pre></td></tr></table></figure></li>
+<li>手写栈<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> s[];</span><br><span class="line"><span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">s[++t] = x;入栈</span><br><span class="line">--t; 出栈</span><br><span class="line">t不为<span class="number">0</span>栈则不空</span><br><span class="line">t为栈内元素个数</span><br><span class="line">s[t] 栈顶元素</span><br></pre></td></tr></table></figure>
+<strong>二.队列</strong></li>
 <li><p>库函数的队列</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">queue&lt; <span class="type">int</span> &gt;que;</span><br><span class="line"></span><br><span class="line">que.<span class="built_in">push</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">back</span>();</span><br><span class="line">que.<span class="built_in">size</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">标注基本同库函数的栈，此处忽略</span><br></pre></td></tr></table></figure>
 </li>
@@ -245,7 +240,6 @@
 </li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">que[];</span><br><span class="line"><span class="type">int</span> head = <span class="number">1</span>, tail = <span class="number">0</span>;</span><br><span class="line">que[++ tail] = x; 加入队列</span><br><span class="line">++head;删除队头</span><br><span class="line">--tail;删除队尾（区别于库函数的操作）</span><br><span class="line">head &gt; tail 队列为空</span><br><span class="line">tail - head 队列元素个数</span><br></pre></td></tr></table></figure>
-
 <p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
 
     </div>
@@ -484,6 +478,8 @@
 
 
 
+
+  
 
   
 

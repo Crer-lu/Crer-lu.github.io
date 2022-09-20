@@ -234,12 +234,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-<font color=green><font size=5>
-本文参考：浙大版《C语言程序设计（第4版）》
-<br>
-
+        <p><center></center><br><span id="more"></span></p>
+<p><font color=green><font size=5><br>本文参考：浙大版《C语言程序设计（第4版）》<br><br></p>
 <ol>
 <li><font color=blue>什么是文件操作</li>
 <li><font color=blue>怎么实现基础文件操作</li>
@@ -247,20 +243,17 @@
 </ol>
 <h1 id="一、什么是文件操作？"><a href="#一、什么是文件操作？" class="headerlink" title="一、什么是文件操作？"></a>一、什么是文件操作？</h1><p>直接来看不太方便理解，我们把它分开。</p>
 <h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>文件可以通过应用程序创建，如运行“记事本”程序，输入一些数据，然后保存并输入文件名，就会在磁盘中产生一个文本文件。<br><img src="https://img-blog.csdnimg.cn/b93c225bb94c43b392327b7cdcc2afd5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/5e41550760314605afe69b1841f46d46.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/49eec3e24e81491d95feb9df85c2bf1b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>刚刚我们创建的只是一种文件，叫做文本文件，还有好多其它类型的文件，每个文件都有&#x3D;&#x3D;自己的属性&#x3D;&#x3D;。</p>
+<p>刚刚我们创建的只是一种文件，叫做文本文件，还有好多其它类型的文件，每个文件都有==自己的属性==。</p>
 <p><font size=5>文件的概念</p>
-<p>在操作系统中，文件是指驻留在外部介质（如磁盘等）中的一个&#x3D;&#x3D;有序数据集&#x3D;&#x3D;<br>它可以是源文件、目标程序文件、可执行程序，也可以是待输入的原始数据，或是一组输出的结果。</p>
+<p>在操作系统中，文件是指驻留在外部介质（如磁盘等）中的一个==有序数据集==<br>它可以是源文件、目标程序文件、可执行程序，也可以是待输入的原始数据，或是一组输出的结果。</p>
 <p><font size=5>文件的分类</p>
-<p>源文件、目标文件和可执行程序可称为&#x3D;&#x3D;程序文件&#x3D;&#x3D;，输入输出数据可称为&#x3D;&#x3D;数据文件&#x3D;&#x3D;。数据文件还可分为各种类型，如<font color=red>文本文件、图像文件、声音文件<font color=black>等。使用应用程序时，通常保存功能实现把数据从内存写入到文件，这就是所谓的（存盘），打开功能实现把磁盘文件的内容读入到内存。</p>
+<p>源文件、目标文件和可执行程序可称为==程序文件==，输入输出数据可称为==数据文件==。数据文件还可分为各种类型，如<font color=red>文本文件、图像文件、声音文件<font color=black>等。使用应用程序时，通常保存功能实现把数据从内存写入到文件，这就是所谓的（存盘），打开功能实现把磁盘文件的内容读入到内存。</p>
 <p><font color=red>我们需要重点关注的类型就是数据文件<br>最直观的例子也就是记事本（可编辑的文本文档）</p>
-<font size=4>
-如果在用“记事本”程序编辑文件时不“保存”，数据就不会写入到磁盘，即若不保存而直接关闭了应用程序，数据就会消失。实际上，用“记事本”程序编辑文件时，输入的数据先是在内存中，保存后，数据才被写入到磁盘文件中。
-这其实有点类似我们打游戏时的“存档”，不存档=刚刚的努力白费了
-
-
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>我们需要了解的就是读和写两个操作，简单来说<br><font size=5><br>读：scanf做的事情<br>写：printf做的事情</p>
+<p><font size=4><br>如果在用“记事本”程序编辑文件时不“保存”，数据就不会写入到磁盘，即若不保存而直接关闭了应用程序，数据就会消失。实际上，用“记事本”程序编辑文件时，输入的数据先是在内存中，保存后，数据才被写入到磁盘文件中。<br>这其实有点类似我们打游戏时的“存档”，不存档=刚刚的努力白费了</p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>我们需要了解的就是读和写两个操作，简单来说</p>
+<p><font size=5><br>读：scanf做的事情<br>写：printf做的事情</p>
 <p>当上升到文件层面时，“读”就不再是我们平时那样，从键盘读入，而是从数据文件中（最常见的就是记事本）读入；“写”也就是输出，同样地，不会像我们之前写程序那样，显示在屏幕上，而是写在数据文件中（最常见的也是记事本）<br><img src="https://img-blog.csdnimg.cn/e005c92cbebc4a8f96c8d7b69e0a20a6.png" alt="在这里插入图片描述"></p>
-<h2 id="那为什么需要文件操作这种东西呢？"><a href="#那为什么需要文件操作这种东西呢？" class="headerlink" title="那为什么需要文件操作这种东西呢？"></a>那为什么需要文件操作这种东西呢？</h2><p>有的人想问，这不是找麻烦吗？我直接ctrl + c &#x2F; v，运行一下，结果显示在屏幕上，这不是很方便吗？整到记事本里面干什么。<br>其实，文件操作主要是运用于大量数据输入时，可能复制粘贴都得好几秒的那种，屏幕也放不下，那么这个时候用文件操作就很方便啦。</p>
+<h2 id="那为什么需要文件操作这种东西呢？"><a href="#那为什么需要文件操作这种东西呢？" class="headerlink" title="那为什么需要文件操作这种东西呢？"></a>那为什么需要文件操作这种东西呢？</h2><p>有的人想问，这不是找麻烦吗？我直接ctrl + c / v，运行一下，结果显示在屏幕上，这不是很方便吗？整到记事本里面干什么。<br>其实，文件操作主要是运用于大量数据输入时，可能复制粘贴都得好几秒的那种，屏幕也放不下，那么这个时候用文件操作就很方便啦。</p>
 <h1 id="二、怎么实现文件操作？"><a href="#二、怎么实现文件操作？" class="headerlink" title="二、怎么实现文件操作？"></a>二、怎么实现文件操作？</h1><p>直接上代码，用注释帮助理解。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">具体细节不表</span><br><span class="line">FILE *fp1, *fp2, *fp3;</span><br><span class="line">fp1 = <span class="built_in">fopen</span>(<span class="string">&quot;in.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);<span class="comment">//读</span></span><br><span class="line">fp2 = <span class="built_in">fopen</span>(<span class="string">&quot;out.txt&quot;</span>, <span class="string">&quot;w&quot;</span>);<span class="comment">//写</span></span><br><span class="line">/这里进行你的程序读写/</span><br><span class="line">（读入类型一）</span><br><span class="line"><span class="built_in">fscanf</span>(fp1, <span class="string">&quot;%d%lf&quot;</span>, &amp;n, &amp;ft);</span><br><span class="line"><span class="built_in">fprintf</span>(fp2, <span class="string">&quot;%d%f&quot;</span>, n, ft);</span><br><span class="line">（读入类型二）</span><br><span class="line">ch = <span class="built_in">fgetc</span>(fp1);</span><br><span class="line"><span class="built_in">fputc</span>(ch, fp2);</span><br><span class="line">（读入类型三）</span><br><span class="line"><span class="built_in">fgets</span>(s, len, fp1);</span><br><span class="line"><span class="built_in">fputs</span>(s, fp2);</span><br><span class="line">（关闭文件）</span><br><span class="line"><span class="built_in">fclose</span>(fp1);</span><br><span class="line"><span class="built_in">fclose</span>(fp2);</span><br><span class="line">fp3 = <span class="built_in">fopen</span>(<span class="string">&quot;out.txt&quot;</span>, <span class="string">&quot;a&quot;</span>);<span class="comment">//追加</span></span><br><span class="line"><span class="built_in">fprintf</span>(fp3, <span class="string">&quot;需要补充在后面的东西****&quot;</span>);</span><br><span class="line">(关闭文件)</span><br><span class="line"><span class="built_in">fclost</span>(fp3);</span><br></pre></td></tr></table></figure>
 <p>以上就是就是常用的用法，我们接下来从以下几个方面来读懂这个程序</p>
@@ -271,36 +264,23 @@
 <li>fgetc和fputc</li>
 <li>fgets和fputs</li>
 </ol>
-<h2 id="1-FILE"><a href="#1-FILE" class="headerlink" title="1.FILE"></a>1.FILE</h2><p>简单来写，就是下面这样的（不必搞懂里面的细节）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">　　　　<span class="type">char</span> *_ptr; <span class="comment">//文件输入的下一个位置</span></span><br><span class="line">　　　　<span class="type">int</span> _cnt; <span class="comment">//当前缓冲区的相对位置</span></span><br><span class="line">　　　　<span class="type">char</span> *_base; <span class="comment">//指基础位置(即是文件的起始位置) </span></span><br><span class="line">　　　　<span class="type">int</span> _flag; <span class="comment">//文件标志</span></span><br><span class="line">　　　　<span class="type">int</span> _file; <span class="comment">//文件描述符id</span></span><br><span class="line">　　　　<span class="type">int</span> _charbuf; <span class="comment">//检查缓冲区状况,如果无缓冲区则不读取</span></span><br><span class="line">　　　　<span class="type">int</span> _bufsiz; <span class="comment">//文件缓冲区大小</span></span><br><span class="line">　　　　<span class="type">char</span> *_tmpfname; <span class="comment">//临时文件名</span></span><br><span class="line">  &#125;FILE;</span><br></pre></td></tr></table></figure>
-<p>所以我们知道，FILE是一个结构体类型，我们定义时<br>FILE * fp；<br>其实是定义了一个结构体指针，我们对这个文件指针进行操作时，本质上就对文件进行了操作。</p>
+<h2 id="1-FILE"><a href="#1-FILE" class="headerlink" title="1.FILE"></a>1.FILE</h2><p>简单来写，就是下面这样的（不必搞懂里面的细节）<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">　　　　<span class="type">char</span> *_ptr; <span class="comment">//文件输入的下一个位置</span></span><br><span class="line">　　　　<span class="type">int</span> _cnt; <span class="comment">//当前缓冲区的相对位置</span></span><br><span class="line">　　　　<span class="type">char</span> *_base; <span class="comment">//指基础位置(即是文件的起始位置) </span></span><br><span class="line">　　　　<span class="type">int</span> _flag; <span class="comment">//文件标志</span></span><br><span class="line">　　　　<span class="type">int</span> _file; <span class="comment">//文件描述符id</span></span><br><span class="line">　　　　<span class="type">int</span> _charbuf; <span class="comment">//检查缓冲区状况,如果无缓冲区则不读取</span></span><br><span class="line">　　　　<span class="type">int</span> _bufsiz; <span class="comment">//文件缓冲区大小</span></span><br><span class="line">　　　　<span class="type">char</span> *_tmpfname; <span class="comment">//临时文件名</span></span><br><span class="line">  &#125;FILE;</span><br></pre></td></tr></table></figure><br>所以我们知道，FILE是一个结构体类型，我们定义时<br>FILE * fp；<br>其实是定义了一个结构体指针，我们对这个文件指针进行操作时，本质上就对文件进行了操作。</p>
 <h2 id="2-fopen和fclose"><a href="#2-fopen和fclose" class="headerlink" title="2.fopen和fclose"></a>2.fopen和fclose</h2><p><font color=red>fopen（“文件名”，文件打开方式）；</p>
-<p>例如：fp &#x3D; fopen(“in.txt”, “r”);</p>
-<p>&#x3D;&#x3D;说明&#x3D;&#x3D;：(1)该函数有返回值。如果执行成功，函数将返回包含文件缓冲区等信息的FILE结构地址，赋给文件指针fp。否则，返回一个NULL(空值)的FILE指针。<br>(2)括号内包括两个参数：“文件名”和“文件打开方式”。两个参数都是字符串。“文件名”指出要对哪个具体文件进行操作，一般要指定文件的路径，如果不写出路径，则默认与应用程序的当前路径相同。<br><img src="https://img-blog.csdnimg.cn/4ed2d6cce36442e2908789da7513f5b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>我们只讲解了前三种，大家可以借助于此继续理解其它的方式，我们在此就不多赘述。<br>不过重点还是放在&#x3D;&#x3D;文本文件&#x3D;&#x3D;（左边一栏），二进制文件用到的情况很少。<br><font color=red>fclose（文件指针）；.</p>
+<p>例如：fp = fopen(“in.txt”, “r”);</p>
+<p>==说明==：(1)该函数有返回值。如果执行成功，函数将返回包含文件缓冲区等信息的FILE结构地址，赋给文件指针fp。否则，返回一个NULL(空值)的FILE指针。<br>(2)括号内包括两个参数：“文件名”和“文件打开方式”。两个参数都是字符串。“文件名”指出要对哪个具体文件进行操作，一般要指定文件的路径，如果不写出路径，则默认与应用程序的当前路径相同。<br><img src="https://img-blog.csdnimg.cn/4ed2d6cce36442e2908789da7513f5b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>我们只讲解了前三种，大家可以借助于此继续理解其它的方式，我们在此就不多赘述。<br>不过重点还是放在==文本文件==（左边一栏），二进制文件用到的情况很少。</p>
+<p><font color=red>fclose（文件指针）；.</p>
 <p>例如：fclose(fp);</p>
-<p>&#x3D;&#x3D;说明&#x3D;&#x3D;：fclose的作用就是关闭文件，至于为什么，我们在前面的介绍中也提到过，如果不及时关闭，可能会出现数据保存不成功的问题。<br>此外，你需要知道：<strong>C语言允许一个程序同时打开多个文件，但是不允许同一文件在关闭前被打开，也就是说，你这一次不关，很有可能导致以后再用这个文件时，就打不开。</strong></p>
+<p>==说明==：fclose的作用就是关闭文件，至于为什么，我们在前面的介绍中也提到过，如果不及时关闭，可能会出现数据保存不成功的问题。<br>此外，你需要知道：<strong>C语言允许一个程序同时打开多个文件，但是不允许同一文件在关闭前被打开，也就是说，你这一次不关，很有可能导致以后再用这个文件时，就打不开。</strong></p>
 <h2 id="3-fscanf和fprintf"><a href="#3-fscanf和fprintf" class="headerlink" title="3.fscanf和fprintf"></a>3.fscanf和fprintf</h2><p><font color=red>fscanf（文件指针，格式字符串，输入表)；<br>fprintf（文件指针，格式字符串，输出表)；</p>
 <p>例如：<br>fscanf(fp1, “%d%lf”, &amp;n, &amp;ft);<br> fprintf(fp2, “%d%f”, n, ft);</p>
-<p>&#x3D;&#x3D;说明&#x3D;&#x3D;：其实和scanf和printf差不多，多了一个参数是文件指针。</p>
-<h2 id="4-fgetc和fputc"><a href="#4-fgetc和fputc" class="headerlink" title="4.fgetc和fputc"></a>4.fgetc和fputc</h2><font color=red>
-fgetc(文件指针)；（返回一个字符）；<br>
-fputc（字符，文件指针）；
-
-<br>
-例如：
-<br>ch = fgetc(fp1);<br>fputc(ch, fp2);
-
-<p>&#x3D;&#x3D;说明&#x3D;&#x3D;：其实和getchar()和putchar()差不多，多了一个参数是文件指针。</p>
-<h2 id="5-fgets和fputs"><a href="#5-fgets和fputs" class="headerlink" title="5.fgets和fputs"></a>5.fgets和fputs</h2><font color=red>
-fgets(字符串首地址，想要读入的字符串长度，文件指针)；<br>
-fputs(字符串首地址， 文件指针)；
-
-<br>
-例如：<br>fgets(s, len, fp1);<br>
-fputs(s, fp2);<br>
-
-<p>&#x3D;&#x3D;说明&#x3D;&#x3D; :fgets（）比gets（）多了两个参数，一个是文件指针，一个是想要读入的长度，意思就是你想读进去几个字符存到字符串里，可以用变量来控制.<br>fputs()比puts()也就多了一个参数——文件指针。</p>
+<p>==说明==：其实和scanf和printf差不多，多了一个参数是文件指针。</p>
+<h2 id="4-fgetc和fputc"><a href="#4-fgetc和fputc" class="headerlink" title="4.fgetc和fputc"></a>4.fgetc和fputc</h2><p><font color=red><br>fgetc(文件指针)；（返回一个字符）；<br><br>fputc（字符，文件指针）；</p>
+<p><br><br>例如：<br><br>ch = fgetc(fp1);<br>fputc(ch, fp2);</p>
+<p>==说明==：其实和getchar()和putchar()差不多，多了一个参数是文件指针。</p>
+<h2 id="5-fgets和fputs"><a href="#5-fgets和fputs" class="headerlink" title="5.fgets和fputs"></a>5.fgets和fputs</h2><p><font color=red><br>fgets(字符串首地址，想要读入的字符串长度，文件指针)；<br><br>fputs(字符串首地址， 文件指针)；</p>
+<p><br><br>例如：<br>fgets(s, len, fp1);<br><br>fputs(s, fp2);<br></p>
+<p>==说明== :fgets（）比gets（）多了两个参数，一个是文件指针，一个是想要读入的长度，意思就是你想读进去几个字符存到字符串里，可以用变量来控制.<br>fputs()比puts()也就多了一个参数——文件指针。</p>
 <h1 id="三、其它的文件操作（摘自教材）"><a href="#三、其它的文件操作（摘自教材）" class="headerlink" title="三、其它的文件操作（摘自教材）"></a>三、其它的文件操作（摘自教材）</h1><p><img src="https://img-blog.csdnimg.cn/a18c2e0d7fff4749a7c0e4b5593ad5c3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/df72f633aa234a5db7b1611150e3f181.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 <h1 id="结语：虽然还有好多细节没有展示出来，不过那不影响学会使用文件操作，本文的作用就是帮助大家整理这一块的重要知识，学会用，进而形成自己的知识框架。如果要想深入理解，只靠这一篇博客还是不够的，有必要掌握好一些知识，比如说缓冲文件系统，指针等等。希望这篇博客能对大家有所帮助！"><a href="#结语：虽然还有好多细节没有展示出来，不过那不影响学会使用文件操作，本文的作用就是帮助大家整理这一块的重要知识，学会用，进而形成自己的知识框架。如果要想深入理解，只靠这一篇博客还是不够的，有必要掌握好一些知识，比如说缓冲文件系统，指针等等。希望这篇博客能对大家有所帮助！" class="headerlink" title="结语：虽然还有好多细节没有展示出来，不过那不影响学会使用文件操作，本文的作用就是帮助大家整理这一块的重要知识，学会用，进而形成自己的知识框架。如果要想深入理解，只靠这一篇博客还是不够的，有必要掌握好一些知识，比如说缓冲文件系统，指针等等。希望这篇博客能对大家有所帮助！"></a>结语：虽然还有好多细节没有展示出来，不过那不影响学会使用文件操作，本文的作用就是帮助大家整理这一块的重要知识，学会用，进而形成自己的知识框架。如果要想深入理解，只靠这一篇博客还是不够的，有必要掌握好一些知识，比如说缓冲文件系统，指针等等。希望这篇博客能对大家有所帮助！</h1>
     </div>
@@ -538,6 +518,8 @@ fputs(s, fp2);<br>
 
 
 
+
+  
 
   
 

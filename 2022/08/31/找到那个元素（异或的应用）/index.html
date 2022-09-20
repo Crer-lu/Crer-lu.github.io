@@ -227,33 +227,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-<span id="more"></span>
-# 异或的巧妙使用
-## 题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了
- [原文链接](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484505&idx=1&sn=4c1c056dd4852c3b4b1ead51c90a9b2d&chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&scene=21#wechat_redirect)
- ## 题目描述
-
-<blockquote>
+        <p><center></center><br><span id="more"></span></p>
+<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
 <p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 <p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
 <p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
 <p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
 </blockquote>
-<br/>
-<br/>
-<br/>
-
-<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><br/>
-<br/>
-<br/>
-
+<p><br/><br><br/><br><br/></p>
+<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
 <h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
 <p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
 </blockquote>
-<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-x3D-x3D-偶数次-x3D-x3D-和-x3D-x3D-奇数次-x3D-x3D-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-x3D-x3D-偶数次-x3D-x3D-和-x3D-x3D-奇数次-x3D-x3D-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。</h4><br/>
-<br/>
-
+<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
 <h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
 <p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
 </blockquote>
@@ -262,7 +249,7 @@
 </blockquote>
 <h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
 <blockquote>
-<p>a &#x3D; a ^ b;<br>b &#x3D; a ^ b;<br>a &#x3D; a ^ b;</p>
+<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
 </blockquote>
 
     </div>
@@ -368,7 +355,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E7%AD%94%E6%A1%88%E4%B9%8B%E5%89%8D%EF%BC%8C%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83%E4%B8%80%E4%B8%8B%E5%93%A6%EF%BC%81"><span class="nav-text">看答案之前，独立思考一下哦！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AF%E4%B8%8D%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%B7%A7%E5%A6%99%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-text">是不是非常巧妙？？？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E4%B8%8D%E9%9A%BE%E5%BE%97%E5%88%B0%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%80%9D%E8%80%83%EF%BC%8C%E5%8F%AA%E8%A6%81%E6%98%AF-x3D-x3D-%E5%81%B6%E6%95%B0%E6%AC%A1-x3D-x3D-%E5%92%8C-x3D-x3D-%E5%A5%87%E6%95%B0%E6%AC%A1-x3D-x3D-%E7%9A%84%E7%B1%BB%E4%BC%BC%E9%97%AE%E9%A2%98%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E8%A7%A3%E5%86%B3%E7%9A%84%E3%80%82"><span class="nav-text">我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E7%9A%84%E8%BF%9B%E9%98%B6"><span class="nav-text">题目的进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-1"><span class="nav-text">算法分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%AE%97%E6%B3%95%E4%B9%9F%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%B7%A7%E5%A6%99%EF%BC%8C%E4%B9%9F%E5%90%8C%E6%A0%B7%E5%8F%AF%E4%BB%A5%E6%89%A9%E5%B1%95%E5%88%B0%E6%89%80%E6%9C%89%E7%9A%84%E5%A5%87%E6%95%B0%E5%92%8C%E5%81%B6%E6%95%B0%E6%AC%A1%E7%9A%84%E6%83%85%E5%86%B5%E3%80%82"><span class="nav-text">同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8"><span class="nav-text">其他应用</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E6%88%96%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8"><span class="nav-text">异或的巧妙使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%9D%A5%E6%BA%90%EF%BC%9A%E5%81%B6%E7%84%B6%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9C%8B%E5%88%B0%E8%BF%99%E6%A0%B7%E4%B8%80%E4%B8%AA%E9%A2%98%E7%9B%AE%EF%BC%8C%E6%9C%89%E5%BE%88%E5%A4%A7%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%EF%BC%8C%E4%BA%8E%E6%98%AF%E5%B0%B1%E6%94%B6%E5%BD%95%E5%9C%A8%E6%AD%A4%E4%BA%86"><span class="nav-text">题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E7%AD%94%E6%A1%88%E4%B9%8B%E5%89%8D%EF%BC%8C%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83%E4%B8%80%E4%B8%8B%E5%93%A6%EF%BC%81"><span class="nav-text">看答案之前，独立思考一下哦！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AF%E4%B8%8D%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%B7%A7%E5%A6%99%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-text">是不是非常巧妙？？？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E4%B8%8D%E9%9A%BE%E5%BE%97%E5%88%B0%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E6%80%9D%E8%80%83%EF%BC%8C%E5%8F%AA%E8%A6%81%E6%98%AF-%E5%81%B6%E6%95%B0%E6%AC%A1-%E5%92%8C-%E5%A5%87%E6%95%B0%E6%AC%A1-%E7%9A%84%E7%B1%BB%E4%BC%BC%E9%97%AE%E9%A2%98%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E8%A7%A3%E5%86%B3%E7%9A%84%E3%80%82"><span class="nav-text">我们不难得到进一步的思考，只要是&#x3D;&#x3D;偶数次&#x3D;&#x3D;和&#x3D;&#x3D;奇数次&#x3D;&#x3D;的类似问题，都可以这样解决的。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E7%9A%84%E8%BF%9B%E9%98%B6"><span class="nav-text">题目的进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90-1"><span class="nav-text">算法分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%A0%B7%EF%BC%8C%E8%BF%99%E4%B8%AA%E7%AE%97%E6%B3%95%E4%B9%9F%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%B7%A7%E5%A6%99%EF%BC%8C%E4%B9%9F%E5%90%8C%E6%A0%B7%E5%8F%AF%E4%BB%A5%E6%89%A9%E5%B1%95%E5%88%B0%E6%89%80%E6%9C%89%E7%9A%84%E5%A5%87%E6%95%B0%E5%92%8C%E5%81%B6%E6%95%B0%E6%AC%A1%E7%9A%84%E6%83%85%E5%86%B5%E3%80%82"><span class="nav-text">同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8"><span class="nav-text">其他应用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -501,6 +488,8 @@
 
 
 
+
+  
 
   
 
