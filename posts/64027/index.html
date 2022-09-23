@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="9.16:今天就要考计概了，这几天整理了一下自己最近复习时做的笔记，等会考试加油！ 9:23:后续 满绩飘过 :)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机系统概论 - 课程复习">
+<meta property="og:url" content="https://fengjielu.top/posts/64027/index.html">
+<meta property="og:site_name" content="Blog by Crer_lu">
+<meta property="og:description" content="9.16:今天就要考计概了，这几天整理了一下自己最近复习时做的笔记，等会考试加油！ 9:23:后续 满绩飘过 :)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h6ftpdgvskj30cg0dlace.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h6g8f7xwd6j30f80kvabk.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h6g8g25y4nj30rt07fjtm.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h6g8gdchugj30vp03375n.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h6g8guh41fj3133069qb3.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h6g8h2uvwsj30hb02v3z4.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h5yd3rvixij30ah07mt92.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h6g95nvjfvj30h50d6js6.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h5ycypf1ccj30rl0bbwgp.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h5yd7kcwvwj30dc0ekabb.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h5yd90lwwyj30o80l3jso.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h5yd8ld1ccj30ns0l3dh1.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h5ydlve21aj30gw09qdgo.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h5ydov9nahj30g20fiwg2.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h5ydsmanigj30s90g5tap.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h5ydu0cffjj312k0patie.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h5ydzp3p2pj30au07x74k.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h5ye2mrv1vj30vt0lrwm1.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h6g8lww0gdj30o209it9s.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h6g8m8ha9nj30uh0jgthg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h5yevrzqlpj312o0r1nan.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h5yew7fmpaj30wa06ojs5.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h5z6gj12xwj30zv0p47bw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h5z81js1sqj30dq083tb4.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h5zay952n3j30o207dt9y.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h5zb2im5wnj30mh06775c.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zb1xj464j30ra0610u2.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h5zb1lim0yj30vt0adn0s.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zg2nakl9j30s9041grs.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zgd7slq9j30zp0iznia.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h5zglqucfzj30uz0dg0y3.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h5zgwtep0pj30zr0qewnh.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zh5ghotsj31030qrgvw.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zh5ser2kj30ys0qb44k.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zh6evz8wj30z50qh0zz.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h5zh2nzuqyj30z50q5jyt.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h602t379nej30z70qek04.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h602tv0bebj30zj0qbah9.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h602ut69yhj30z70qh7bb.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h602v59juwj30yo0qdwlj.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h6g8pd940wj30pt0hngoy.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h603f3rxv7j30xt0mvjy3.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h603kuu26xj30xe0md453.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h603pt3poyj30or07a0uu.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h603tyw3c0j30on079wgm.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h603wkbh6mj310m0n0gud.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h6g8pykl28j31300k67qd.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h62rp3lsluj30bg021wem.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h62rpkw775j30bj01lt8x.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h62swqm0n1j30r60d1dkz.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h62u9z43k9j30q404l790.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h62ub8g07ij30q102cmz7.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h62xcoirllj30rn04btab.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h63v1bvslmj30s30b9jxc.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h63vhxvyraj30rx0amjy3.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h63xeqmof8j30cn0glmz9.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h63xje36xuj30n60j5wil.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h63xi2dmz4j30ie035gly.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h63xmqp9goj30pi03twg0.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h63xvzcqw3j30oy0390u4.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h63ykrursaj30wa0mjk01.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h642g7fg9sj30sp0lljtx.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41gy1h6433ouemkj30nq03rwhx.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h645a3scrxj30sb07bgv3.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h67pu6ste9j30tq10snbw.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h67puluio5j30ot0y17dc.jpg">
+<meta property="article:published_time" content="2022-09-16T05:34:00.000Z">
+<meta property="article:modified_time" content="2022-09-23T00:53:44.180Z">
+<meta property="article:author" content="Fengjie Lu">
+<meta property="article:tag" content="Courses">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h6ftpdgvskj30cg0dlace.jpg">
+
+<link rel="canonical" href="https://fengjielu.top/posts/64027/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>计算机系统概论 - 课程复习 | Blog by Crer_lu</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog by Crer_lu</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">recording my learning and life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home-page">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home Page</a>
+
+  </li>
+        <li class="menu-item menu-item-about-&-life-saving">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About & Life Saving</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/64027/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mouse.jpg">
+      <meta itemprop="name" content="Fengjie Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog by Crer_lu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机系统概论 - 课程复习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-16 13:34:00" itemprop="dateCreated datePublished" datetime="2022-09-16T13:34:00+08:00">2022-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-23 08:53:44" itemprop="dateModified" datetime="2022-09-23T08:53:44+08:00">2022-09-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>9.16:今天就要考计概了，这几天整理了一下自己最近复习时做的笔记，等会考试加油！</p>
+<p>9:23:后续 满绩飘过 :)</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h6ftpdgvskj30cg0dlace.jpg" alt="image"></p>
+<span id="more"></span>
+<h1 id="计算机系统概论-课程复习"><a href="#计算机系统概论-课程复习" class="headerlink" title="计算机系统概论 - 课程复习"></a>计算机系统概论 - 课程复习</h1><font color=red size=5>注：本文未声明来源的图片均来自于教材</font>
+
+<font color=blue>《Introduction to Computing Systems, 3rd Edition》</font>
+
+<h2 id="Chapter-1-Welcome-aboard"><a href="#Chapter-1-Welcome-aboard" class="headerlink" title="Chapter 1 Welcome aboard"></a>Chapter 1 Welcome aboard</h2><p>本章主要是做了文章内容的概览</p>
+<p>需要掌握的点主要有以下几个</p>
+<h3 id="Two-Recurring-Themes"><a href="#Two-Recurring-Themes" class="headerlink" title="Two Recurring Themes"></a>Two Recurring Themes</h3><p>①抽象：在B站上的《计算机科学速成课》中有反复提到，其实我们对一个复杂系统的理解，应该是逐层分析，然后抽象出来到更高一层。</p>
+<p>②硬件 VS 软件：一个优秀的从业者或者科研人员，应该是二者兼通的。</p>
+<h3 id="Two-important-ideas"><a href="#Two-important-ideas" class="headerlink" title="Two important ideas"></a>Two important ideas</h3><p>①所有的计算机都能做同样的事情，只是时间上会有所差别</p>
+<p>②从我们的问题到晶体管把问题解决，涉及到层与层之间的转化</p>
+<h3 id="How-to-solve-a-problem-Transformations-Between-Layers"><a href="#How-to-solve-a-problem-Transformations-Between-Layers" class="headerlink" title="How to solve a problem / Transformations Between Layers"></a>How to solve a problem / Transformations Between Layers</h3><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6g8f7xwd6j30f80kvabk.jpg" alt="image" style="zoom: 67%;" /></p>
+<p><b>这里需要注意几点内容</b></p>
+<p>①Algorithms的三大特性：definiteness， effective computability， finiteness</p>
+<p>②区分不同ISA的三大特点：OPcode， Data types， addressing mode</p>
+<h2 id="Chapter-2-Bits-Data-Types-and-Operations"><a href="#Chapter-2-Bits-Data-Types-and-Operations" class="headerlink" title="Chapter 2 Bits, Data Types and Operations"></a>Chapter 2 Bits, Data Types and Operations</h2><h3 id="比特-Bits"><a href="#比特-Bits" class="headerlink" title="比特 Bits"></a>比特 Bits</h3><p>在二进制语境下，一个比特就存储着一位的信息，有电压（或者说电压高到一定范围内）即表示1，无电压（或者说电压低到一定范围内）即表示0</p>
+<h3 id="数据类型-Data-Types"><a href="#数据类型-Data-Types" class="headerlink" title="数据类型 Data Types"></a>数据类型 Data Types</h3><h4 id="整数-Integer"><a href="#整数-Integer" class="headerlink" title="整数 Integer"></a>整数 Integer</h4><p>无符号整数的范围是0 ~ 2^k - 1</p>
+<p>有符号整数的范围是- 2^(k - 1) ~ 2^(k - 1) - 1</p>
+<p><b>如何得到一个负数</b></p>
+<p>方法1：首先对它的正数取反，得到反码（1’s Complement）, 然后加1得到补码（2‘s Complement）</p>
+<p>方法2：找到它的正数，从低位往高位（从右往左）找到第一个1，然后左边的取反，1以及右边的部分保持不变</p>
+<p><b>补码（2’s Complement）的设计</b></p>
+<p>这个主要是为了满足A + （-A） = 0，便于我们计算机内部的计算</p>
+<h4 id="浮点数-Float-Point"><a href="#浮点数-Float-Point" class="headerlink" title="浮点数 Float Point"></a>浮点数 Float Point</h4><p><b>为什么需要浮点数</b></p>
+<p>对于整数而言，我们保证了精确度（precision），但是可以表示的数的范围（range）却非常小，这是我们不希望看到的</p>
+<p>所以我们选择了这样一种降低精确度，提高表示范围的浮点数表示方法</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6g8g25y4nj30rt07fjtm.jpg" alt="image" style="zoom:67%;" /></p>
+<h5 id="①标准形式-Normalized-form"><a href="#①标准形式-Normalized-form" class="headerlink" title="①标准形式 Normalized form"></a>①标准形式 Normalized form</h5><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6g8gdchugj30vp03375n.jpg" alt="image" style="zoom:67%;" /></p>
+<h5 id="②非标准形式-abnormalized-form"><a href="#②非标准形式-abnormalized-form" class="headerlink" title="②非标准形式 abnormalized form"></a>②非标准形式 abnormalized form</h5><p>当指数部分全为1时（即exponent = 255），我们可以用来表示一些特殊情况，其中包括了无穷大，当小数部分全为0时，表示的就是无穷大，符号位是1则表示负无穷，符号位是0则表示正无穷</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6g8guh41fj3133069qb3.jpg" alt="image"></p>
+<h5 id="③亚标准形式-subnormalized-form"><a href="#③亚标准形式-subnormalized-form" class="headerlink" title="③亚标准形式 subnormalized form"></a>③亚标准形式 subnormalized form</h5><p>这个是用来表示标准形式下介于0 和 2^-126之间的数，当指数部分全为0时，则表示属于这种特殊情况</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h6g8h2uvwsj30hb02v3z4.jpg" alt="image" style="zoom:67%;" /></p>
+<h4 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h4><p>ASCII的引入是为了解决电脑的外设与电脑厂商之间的协调问题，引入ASCII后，一个字节大小的数据就可以用来表示键盘上的一个字符，并且也方便显示屏设备识别并输出。</p>
+<h4 id="十六进制数-Hexadecimal-Notion"><a href="#十六进制数-Hexadecimal-Notion" class="headerlink" title="十六进制数 Hexadecimal Notion"></a>十六进制数 Hexadecimal Notion</h4><p>它的引入是为了解决二进制数太长的问题，一个二进制数过长可能会导致拼写容易出错，把每四位二进制码转化为十六进制表示，那么缩短了编码长度，就减少了拼写错误</p>
+<h3 id="数据类型间的转化-Conversion"><a href="#数据类型间的转化-Conversion" class="headerlink" title="数据类型间的转化 Conversion"></a>数据类型间的转化 Conversion</h3><h4 id="二进制与十进制"><a href="#二进制与十进制" class="headerlink" title="二进制与十进制"></a>二进制与十进制</h4><p>①二进制 -&gt; 十进制 ： 加权求和</p>
+<p>②十进制 -&gt; 二进制 ： 除2取余倒序输出</p>
+<p>（如果有小数部分，有两种方案，乘2取整数部分法和逐位分割法，要注意的是，大多数小数部分都不能精确表示，只能一步步趋近）</p>
+<h3 id="运算-Operation"><a href="#运算-Operation" class="headerlink" title="运算 Operation"></a>运算 Operation</h3><h4 id="加法减法-Addition-and-Subtraction"><a href="#加法减法-Addition-and-Subtraction" class="headerlink" title="加法减法 Addition and Subtraction"></a>加法减法 Addition and Subtraction</h4><p>利用二补数的性质就可轻松完成</p>
+<p><b>补充：符号位拓展 Sign-Extension</b>：如果不同位的两个数进行运算，首先要用符号位拓展让他们保持相同的位数，方法是在前面补上足够多的原有符号位。</p>
+<p><b>补充：溢出 Overflow</b>：如果两个数运算的结果超出了在十进制下的表示范围，那么我们就称之为溢出</p>
+<h4 id="逻辑运算-Logical-Operations"><a href="#逻辑运算-Logical-Operations" class="headerlink" title="逻辑运算 Logical Operations"></a>逻辑运算 Logical Operations</h4><p>这是逐位进行的（Bitwise）</p>
+<p>总共有AND，OR， NOT，XOR</p>
+<h4 id="比特向量-Bit-Vector"><a href="#比特向量-Bit-Vector" class="headerlink" title="比特向量 Bit Vector"></a>比特向量 Bit Vector</h4><p>这个主要是运用于掩码（Bit mask），比如我们想取出第三位，那么我们就用原来的数与100进行AND，那结果就是我们期望的值</p>
+<p>另外还可以用于管理一个复杂系统，用每一位来表示一个对应子模块是否可用（available or busy）</p>
+<h2 id="Chapter-3-Digital-Logic-Structures"><a href="#Chapter-3-Digital-Logic-Structures" class="headerlink" title="Chapter 3 Digital Logic Structures"></a>Chapter 3 Digital Logic Structures</h2><h3 id="晶体管-Transistors"><a href="#晶体管-Transistors" class="headerlink" title="晶体管 Transistors"></a>晶体管 Transistors</h3><p>今天我们大多数微处理器都是用的MOS晶体管（metal-oxide semiconductor 金属氧化物半导体），有N型和P型两种。</p>
+<font color=red>要注意的是N型MOS管下端接地，P型MOS上端接电源，但是绝对不能给任何一个MOS管同时接上电源和地，这将破坏MOS的结构）</font>
+
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5yd3rvixij30ah07mt92.jpg" alt="image"></p>
+<center>N型MOS管（Gate为1则通路）
+</center>
+<img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6g95nvjfvj30h50d6js6.jpg" alt="image" style="zoom:67%;" />
+
+<center>P型MOS管（Gate为0则为通路）</center>
+
+
+<p>关于晶体管的内部原理，不在我们这门课程的讨论范围内，我们可以把MOS简单理解为是一个开关</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5ycypf1ccj30rl0bbwgp.jpg" alt="image"></p>
+<p>NMOS Circuits：只包含N型MOS的电路</p>
+<p>PMOS Circuits：只包含P型MOS的电路</p>
+<p>CMOS CIrcuits（Complementary MOS Circuits）：既包含N型，也包含P型MOS的电路</p>
+<h3 id="基本门电路"><a href="#基本门电路" class="headerlink" title="基本门电路"></a>基本门电路</h3><h4 id="非门（NOT-gate-Inverter）"><a href="#非门（NOT-gate-Inverter）" class="headerlink" title="非门（NOT gate / Inverter）"></a>非门（NOT gate / Inverter）</h4><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5yd7kcwvwj30dc0ekabb.jpg" alt="image"></p>
+<h4 id="或门（OR-gate）"><a href="#或门（OR-gate）" class="headerlink" title="或门（OR gate）"></a>或门（OR gate）</h4><p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5yd90lwwyj30o80l3jso.jpg" alt="image"></p>
+<h4 id="与门（AND-gate）"><a href="#与门（AND-gate）" class="headerlink" title="与门（AND gate）"></a>与门（AND gate）</h4><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h5yd8ld1ccj30ns0l3dh1.jpg" alt="image"></p>
+<h4 id="异或门（XOR-gate）"><a href="#异或门（XOR-gate）" class="headerlink" title="异或门（XOR gate）"></a>异或门（XOR gate）</h4><p>实现方式有很多种，书上没写出来，这里我搜集了一些网上的说法</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5ydlve21aj30gw09qdgo.jpg" alt="image"></p>
+<p>（来源：<a target="_blank" rel="noopener" href="https://xiaogd.net/book/spcp/gate/xor-gate-by-nand-gate.html">通过与非门构建异或门 · 从零开始打造一台简易计算机 (xiaogd.net)</a>）</p>
+<p>当然我们根据异或门的真值表，很容易利用逻辑完备实现异或门（多路选择器的应用）</p>
+<h3 id="组合逻辑电路（Combinational-Logic-Circuits）"><a href="#组合逻辑电路（Combinational-Logic-Circuits）" class="headerlink" title="组合逻辑电路（Combinational Logic Circuits）"></a>组合逻辑电路（Combinational Logic Circuits）</h3><h4 id="解码器（Decoder）"><a href="#解码器（Decoder）" class="headerlink" title="解码器（Decoder）"></a>解码器（Decoder）</h4><p>这个可以用在后面LC-3的OPcode识别中</p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h5ydov9nahj30g20fiwg2.jpg" alt="image"></p>
+<h4 id="多路选择器（Mux）"><a href="#多路选择器（Mux）" class="headerlink" title="多路选择器（Mux）"></a>多路选择器（Mux）</h4><p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5ydsmanigj30s90g5tap.jpg" alt="image"></p>
+<h4 id="加法器（Adder）"><a href="#加法器（Adder）" class="headerlink" title="加法器（Adder）"></a>加法器（Adder）</h4><p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h5ydu0cffjj312k0patie.jpg" alt="image"></p>
+<h4 id="可编程逻辑元（Programmable-Logic-Array-PLA）"><a href="#可编程逻辑元（Programmable-Logic-Array-PLA）" class="headerlink" title="可编程逻辑元（Programmable Logic Array / PLA）"></a>可编程逻辑元（Programmable Logic Array / PLA）</h4><p>其实也就是多路选择器的一种扩展</p>
+<h4 id="逻辑完备（Logical-completeness）"><a href="#逻辑完备（Logical-completeness）" class="headerlink" title="逻辑完备（Logical completeness）"></a>逻辑完备（Logical completeness）</h4><p>其实意思就是对于任何一种电路的真值表，都可以通过与或非的搭配组合表示出来，其实也是多路选择器的应用</p>
+<h3 id="时序逻辑电路（Sequential-Logic-Circuits）"><a href="#时序逻辑电路（Sequential-Logic-Circuits）" class="headerlink" title="时序逻辑电路（Sequential Logic Circuits）"></a>时序逻辑电路（Sequential Logic Circuits）</h3><h4 id="基本存储单元"><a href="#基本存储单元" class="headerlink" title="基本存储单元"></a>基本存储单元</h4><h5 id="R-S-Latch"><a href="#R-S-Latch" class="headerlink" title="R-S Latch"></a>R-S Latch</h5><p>a端为输出端，b端为非a</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5ydzp3p2pj30au07x74k.jpg" alt="image"></p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5ye2mrv1vj30vt0lrwm1.jpg" alt="image" style="zoom:50%;" /></p>
+<h5 id="D-Latch"><a href="#D-Latch" class="headerlink" title="D Latch"></a>D Latch</h5><p>相当于是R-S Latch的改进版</p>
+<p>改进的思路是加上一个WE（write enable）</p>
+<p>当它为0时 R=1 S=1，保持稳定；当它为1时 D端的内容就直接写入输出端a</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h6g8lww0gdj30o209it9s.jpg" alt="image" style="zoom:50%;" /></p>
+<h5 id="Master-Slave-Flipflop"><a href="#Master-Slave-Flipflop" class="headerlink" title="Master-Slave Flipflop"></a>Master-Slave Flipflop</h5><p>主从触发器，相当于是D Latch的一种改进，改进的原因是在处理器处理指令时，通常是同步处理的（synchronous)，每次的操作都在一个时钟周期内完成（Clock），所以如果D端的内容改变，那OUT端立马就会发生改变，这是我们不期望得到的，因为我们这个时候可能正在使用输出端的值，我们需要它保持一段时间的稳定。解决方法是把两个D Latch套在一起，再加上Clock信号即可。</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6g8m8ha9nj30uh0jgthg.jpg" alt="image" style="zoom:67%;" /></p>
+<h4 id="存储的概念"><a href="#存储的概念" class="headerlink" title="存储的概念"></a>存储的概念</h4><p>（用身边的例子比特和字节来解释）</p>
+<h5 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h5><p>指的是具有多少个unit，一个bit是一个unit，那么bit数就是Memory的大小</p>
+<h5 id="Addressability"><a href="#Addressability" class="headerlink" title="Addressability"></a>Addressability</h5><p>如果我们处理器是按照字节来处理的，一字节是8个bit，所以8就是Addressability</p>
+<h5 id="Address-Space"><a href="#Address-Space" class="headerlink" title="Address Space"></a>Address Space</h5><p>这个指的是我们的内存有多少个字节，比如我们的内存是2MB，Address Space就是2 000 000（Bytes）</p>
+<font color=red>所以我们发现 Memory = Addressability * Address Space</font>
+
+<h5 id="RAM（Random-Access-Memory）"><a href="#RAM（Random-Access-Memory）" class="headerlink" title="RAM（Random Access Memory）"></a>RAM（Random Access Memory）</h5><p>RAM是 <strong>随机存取存储器</strong> （random access memory），是计算机 内部存储器 中的一种，也是其中最重要的，计算机和手机中一般把其叫做 （运行）内存 ，它的速度要比硬盘快得多，所以用运行程序在RAM中，而存放运行时不用的数据则在硬盘中，什么时候需要数据，便把数据从硬盘中拿到内存，但同时RAM断电会丢失数据，所以我们电脑如果断电了就会丢失原来正在运行的数据。RAM即内存越大，能同时在内存中执行的程序就越多，性能一般是越好的。</p>
+<h6 id="Static-RAM（SRAM）"><a href="#Static-RAM（SRAM）" class="headerlink" title="Static RAM（SRAM）"></a>Static RAM（SRAM）</h6><p>可以认为是一个锁存器结构。速度快，只要不断电，数据一直都在，但是集成度低，生产成本高，所以一般用来制作容量小的高速缓冲存储器。</p>
+<h6 id="Dynamic-RAM（DRAM）"><a href="#Dynamic-RAM（DRAM）" class="headerlink" title="Dynamic RAM（DRAM）"></a>Dynamic RAM（DRAM）</h6><p>用电容来存储数据。比较慢，且数据会随着电荷的衰退而丢失，所以需要定时更新。集成度高，生产成本低，所以一般用来制作容量大的主存储器。</p>
+<font color=red>区别于Register和ROM，他们的容量和速度都是不一样的。（Register -> SRAM -> DRAM -> ROM 速度变小，容量变大）</font>
+
+<h4 id="有限状态机"><a href="#有限状态机" class="headerlink" title="有限状态机"></a>有限状态机</h4><p>状态（state）：可以认为一次对这一瞬间的记录 —— 快照（snapshot）</p>
+<p>状态机内部涉及到状态之间的转移，可以用状态图（state diagram）来表示</p>
+<p>时序逻辑电路和组合逻辑电路更像是一种包含关系，时序包含组合，不同的是，时序中还有一些存储单元，存下的是上一状态，这将参与到下一次状态的计算中（在时序电路中完成）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5yevrzqlpj312o0r1nan.jpg" alt="image"></p>
+<p>时钟周期（Clock）通常认为是上升沿开始，经历一段1，然后是下降沿，然后是一段0</p>
+<p>（这里助教曾说关于时钟周期可以自定义哪一段的说法，我觉得是对的，但是在理解课本内容方面没有任何帮助，所以建议是就把默认的时钟周期认为是前面写的那个版本）</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5yew7fmpaj30wa06ojs5.jpg" alt="image"></p>
+<h2 id="Chapter-4-The-Von-Neumann-Model"><a href="#Chapter-4-The-Von-Neumann-Model" class="headerlink" title="Chapter 4 The Von Neumann Model"></a>Chapter 4 The Von Neumann Model</h2><h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p>五大部分：输入（INPUT）、输出（OUTPUT）、存储器（MEMORY）、处理器（PROCESSING UNIT）、控制器（CONTROL UNIT）</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h5z6gj12xwj30zv0p47bw.jpg" alt="image"></p>
+<h4 id="MEMORY"><a href="#MEMORY" class="headerlink" title="MEMORY"></a>MEMORY</h4><p>MAR：memory address register</p>
+<p>MDR：memory data register</p>
+<p>通过这两个寄存器，可以与内存进行交互（MAR存下地址值 MDR存下地址值对应的内容）</p>
+<p><b>作用：存放信息</b></p>
+<h4 id="PROCESSING-UNIT"><a href="#PROCESSING-UNIT" class="headerlink" title="PROCESSING UNIT"></a>PROCESSING UNIT</h4><p>ALU：arithmetic and logic unit算术与逻辑单元</p>
+<p>Register：暂存数据的地方</p>
+<p>Word Size：与Addressability大小一样</p>
+<p><b>作用：对输入进行一些算术处理，然后把结果输出</b></p>
+<h4 id="CONTROL-UNIT"><a href="#CONTROL-UNIT" class="headerlink" title="CONTROL UNIT"></a>CONTROL UNIT</h4><p>IR：Instruction Register指令寄存器存下当前处理的指令</p>
+<p>PC：Program Counter包含着下一条指令的地址</p>
+<p><b>作用：从内存中读取指令，然后解析后产生对应的信号让别的组成部分去执行</b></p>
+<h4 id="INPUT-and-OUTPUT"><a href="#INPUT-and-OUTPUT" class="headerlink" title="INPUT and OUTPUT"></a>INPUT and OUTPUT</h4><p>LC-3支持键盘作为输入，显示器作为输出</p>
+<p>所以对应的就有四个寄存器</p>
+<p>KBDR：keyboard data register       KBSR：keyboard status register</p>
+<p>DDR：display data register             DSR：display status register</p>
+<p><b>作用：实现外界与计算机的交互</b></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5z81js1sqj30dq083tb4.jpg" alt="image"></h3><h3 id="指令循环-Instruction-Cycle"><a href="#指令循环-Instruction-Cycle" class="headerlink" title="指令循环 Instruction Cycle"></a>指令循环 Instruction Cycle</h3><p><b>FETCH - DECODE - EVALUATE ADDRESS - FETCH OPERANDS - EXECUTE - STORE RESULT</b></p>
+<p>总共是六个阶段，每个阶段都有具体的流程，每个阶段可能会花费一个或多个machine cycle（时钟周期）</p>
+<font color=red>注：不同的指令可能需要不同的阶段，并非每一个阶段都必须做</font>
+
+<h4 id="FETCH"><a href="#FETCH" class="headerlink" title="FETCH"></a>FETCH</h4><p>总共有四步</p>
+<p><strong>MAR &lt;- PC :</strong> First the MAR is loaded with the contents of the PC. </p>
+<p><strong>MDR &lt;- M[MAR] :</strong> Next, the memory is interrogated, which results in the next instruction being placed by the memory into the MDR. </p>
+<p><strong>IR &lt;- MDR :</strong> Finally, the IR is loaded with the contents of the MDR.</p>
+<p><strong>PC &lt;- PC + 1</strong></p>
+<h4 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h4><p>这里就利用到了我们第三章谈到的译码器（DECODER），根据指令前四位（IR[15:12]）的内容，来判断通向哪一个处理路径</p>
+<p>然后把后面的几位切割开，划分好哪些位是立即数，要用到哪些寄存器</p>
+<h4 id="EVALUATE-ADDRESS"><a href="#EVALUATE-ADDRESS" class="headerlink" title="EVALUATE ADDRESS"></a>EVALUATE ADDRESS</h4><p>这个阶段主要干两件事，首先是Sign-extension，然后是与其他值进行一些运算</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5zay952n3j30o207dt9y.jpg" alt="image" style="zoom:80%;" /></p>
+<h4 id="FETCH-OPERANDS"><a href="#FETCH-OPERANDS" class="headerlink" title="FETCH OPERANDS"></a>FETCH OPERANDS</h4><p>准备好要用的数据，这里的操作数可能是寄存器，也可能是MDR，或者是立即数</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5zb2im5wnj30mh06775c.jpg" alt="image" style="zoom: 80%;" /></p>
+<h4 id="EXECUTE"><a href="#EXECUTE" class="headerlink" title="EXECUTE"></a>EXECUTE</h4><p>执行阶段</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zb1xj464j30ra0610u2.jpg" alt="image" style="zoom:67%;" /></p>
+<font color=red>值得注意的是ADD指令的EVALUATE ADDRESS， EXECUTE和 STORE RESULT三者同时可以放在一个clock内（其它很多计算机也是一样）具体的细节需要再学习更加深后才能明白</font>
+
+<h4 id="STORE-RESULT"><a href="#STORE-RESULT" class="headerlink" title="STORE RESULT"></a>STORE RESULT</h4><p>把运算好的结果存放在指定地址或者是寄存器中</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h5zb1lim0yj30vt0adn0s.jpg" alt="image" style="zoom:67%;" /></p>
+<h3 id="指令类型"><a href="#指令类型" class="headerlink" title="指令类型"></a>指令类型</h3><p>总共有Operates , Data movement , Control三种类型</p>
+<h4 id="Operates"><a href="#Operates" class="headerlink" title="Operates"></a>Operates</h4><p>总共有三个：<em>ADD AND NOT</em></p>
+<p>主要是在ALU里面进行一些运算，然后存储在指定寄存器内</p>
+<p><b>LEA指令的分类比较茫，没有像data movement那样涉及到内存，但是它又和前面三个Operates有所区别</b></p>
+<h4 id="Data-movement"><a href="#Data-movement" class="headerlink" title="Data movement"></a>Data movement</h4><p>总共有六个：<em>LDI LDR LD STI STR ST</em></p>
+<p>主要是通过不同的方式存取地址里的内容</p>
+<h4 id="Control"><a href="#Control" class="headerlink" title="Control"></a>Control</h4><p>剩下的全都是Control指令，<em>BR  JMP(RET)  JSR(JSRR) RTI TRAP</em>等</p>
+<p>通常情况下，指令会一条一条的顺次执行到结束，但是这样的方式给我们带来一些不便（比如重复使用相同的指令，占用很多内存地址）</p>
+<p>所以我们可以通过修改PC的值，改变程序的控制流，以达到一些循环结构</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zg2nakl9j30s9041grs.jpg" alt="image" style="zoom: 67%;" /></p>
+<p><b>TRAP指令</b></p>
+<p>它也属于Control指令，但是又稍有不同，因为它涉及到特权模式的转化，TRAP指令中有一个八位的TRAP Vector，可以跳转到对应的位置上执行操作系统的程序，比如我们执行TRAP x25就可停机</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zgd7slq9j30zp0iznia.jpg" alt="image"></p>
+<h2 id="Chapter-5-The-LC-3"><a href="#Chapter-5-The-LC-3" class="headerlink" title="Chapter 5 The LC-3"></a>Chapter 5 The LC-3</h2><h3 id="ISA-指令集架构（Instruction-Set-Architecture）"><a href="#ISA-指令集架构（Instruction-Set-Architecture）" class="headerlink" title="ISA 指令集架构（Instruction Set Architecture）"></a>ISA 指令集架构（Instruction Set Architecture）</h3><p>一个ISA主要包括<b>三个部分</b></p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5zglqucfzj30uz0dg0y3.jpg" alt="image"></p>
+<p>对于LC-3来说</p>
+<p>①address space是2^16 locations    addressability是16bits</p>
+<p>②registers包括了8个通用寄存器（general-purpose registers ）和别的一些特殊寄存器，比如PC，CC（conditional codes）</p>
+<p>③Instrucion set部分：opcodes共有16个，有一个暂时没有被使用。data types主要是二补数。取址模式有三种：相对于PC的（PC-relative），间接取址（indirect），基偏移（base+offset）</p>
+<h3 id="Operate-Instructions"><a href="#Operate-Instructions" class="headerlink" title="Operate Instructions"></a>Operate Instructions</h3><p>总共就三个 ADD AND NOT</p>
+<h4 id="ADD-amp-AND"><a href="#ADD-amp-AND" class="headerlink" title="ADD &amp; AND"></a>ADD &amp; AND</h4><p>对于AND 和 ADD来说，二者十分相近（都有两种模式，是由IR[5]决定的）</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5zgwtep0pj30zr0qewnh.jpg" alt="image" style="zoom:50%;" /></p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5zh5ghotsj31030qrgvw.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a>NOT</h4><p>NOT指令，相对简单，就只有一个src，dst可以与src相同，也可以不同</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zh5ser2kj30ys0qb44k.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="Data-Movement-Instructions"><a href="#Data-Movement-Instructions" class="headerlink" title="Data Movement Instructions"></a>Data Movement Instructions</h3><h4 id="Load类和Store类"><a href="#Load类和Store类" class="headerlink" title="Load类和Store类"></a>Load类和Store类</h4><p>LD ST：PC-relative mode</p>
+<p>LDR STR：base+offset mode</p>
+<p>LDI STI：indirect mode</p>
+<p>三种Load指令，都是将对应位置的内容存放在指定寄存器中，三种Store指令则正好相反</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h5zh6evz8wj30z50qh0zz.jpg" alt="image" style="zoom:50%;" /></p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5zh2nzuqyj30z50q5jyt.jpg" alt="image" style="zoom:50%;" /></p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h602t379nej30z70qek04.jpg" alt="image" style="zoom:50%;" /></p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h602tv0bebj30zj0qbah9.jpg" alt="image" style="zoom:50%;" /></p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h602ut69yhj30z70qh7bb.jpg" alt="image" style="zoom:50%;" /></p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h602v59juwj30yo0qdwlj.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="LEA（Leave-Effective-Address）"><a href="#LEA（Leave-Effective-Address）" class="headerlink" title="LEA（Leave Effective Address）"></a>LEA（Leave Effective Address）</h4><p>LEA是一个分类不明的指令，像是属于PC-relative，但是又不涉及内存，它只是把PC + offset的值放在指定寄存器中</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6g8pd940wj30pt0hngoy.jpg" alt="image" style="zoom: 67%;" /></p>
+<h3 id="Control-Instructions"><a href="#Control-Instructions" class="headerlink" title="Control Instructions"></a>Control Instructions</h3><p><b>Conditional Codes</b></p>
+<p>这个存放在PSR[2:0]，PSR是processing status register，用于控制权限的一个寄存器，具体在后面会谈到。</p>
+<p>当六个指令（ADD AND NOT LD LDR LDI）被执行时，执行阶段的最后会设置CC的值，CC包括了nzp三部分</p>
+<p>分别是negative，zero和positive，然后被设置过的CC可以用于BR指令，进行一些条件跳转。</p>
+<h4 id="条件跳转-Conditional-Branch"><a href="#条件跳转-Conditional-Branch" class="headerlink" title="条件跳转 Conditional Branch"></a>条件跳转 Conditional Branch</h4><p>这里主要就是一个BR指令，根据当前CC的值和BR指令内的条件，判断是否跳转到一个PC-relative的位置上继续执行程序。</p>
+<p>如果满足条件，那么程序控制流发生改变，如果不满足条件，则程序继续向下执行。</p>
+<font color=red>注：设置PCoffset9时易错，因为现在PC已经存放的是下一条指令了</font>
+
+<font color=green>注：另外，PC+offset的计算不是在ALU内进行的，而是在一个特殊的加法器中（细节略过）</font>
+
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h603f3rxv7j30xt0mvjy3.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="无条件跳转-Unconditional-Branch"><a href="#无条件跳转-Unconditional-Branch" class="headerlink" title="无条件跳转 Unconditional Branch"></a>无条件跳转 Unconditional Branch</h4><p>这里主要是JMP指令（当然还有JSR等，但是JMP是最基础的）</p>
+<p>JMP指令是直接无脑跳转到指定位置</p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h603kuu26xj30xe0md453.jpg" alt="image" style="zoom:50%;" /></p>
+<p>JSR JSRR</p>
+<p>JSR（JSRR）使用的opcode是一样的，唯一的区别是第11位区分开了二者，JSR是PCoffset，JSRR是Base + 0（offset）</p>
+<p>当修改完PC后，这两个指令会自动把R7的内容存放成原来PC的值（即JSR或JSRR的下一条指令）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h603pt3poyj30or07a0uu.jpg" alt="image" style="zoom:50%;" /></p>
+<p>RET指令是用于从JSR或JSRR跳转出去后，调回来时使用的，它和JMP指令的opcode是一样的，唯一不同的是RET的Base必须是R7（因为我们之前已经把要跳回去的位置存放在了R7中）</p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h603tyw3c0j30on079wgm.jpg" alt="image" style="zoom:50%;" /></p>
+<p>最后还有一个RTI（return from interrupt）</p>
+<p>这条指令做的事情还蛮多的，这个我们在后面讲到中断时再详细展开</p>
+<h4 id="TRAP"><a href="#TRAP" class="headerlink" title="TRAP"></a>TRAP</h4><p>TRAP指令的作用是跳转到OS中，执行对应片段的程序。这里要注意的是使用TRAP而不是自己直接跳转过去的原因是，TRAP指令执行时，会对用户的特权模式进行修改，以便我们可以正常执行，如果我们直接跳转过去，将会触发ACV（Access control violation）</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h603wkbh6mj310m0n0gud.jpg" alt="image" style="zoom:50%;" /></p>
+<p>通过控制trapvector的值，我们就可以控制执行哪个TRAP程序</p>
+<p>目前LC-3总共就6个TRAP程序，以下为对应的介绍</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6g8pykl28j31300k67qd.jpg" alt="image" style="zoom: 50%;" /></p>
+<h3 id="循环结构-loop-control"><a href="#循环结构-loop-control" class="headerlink" title="循环结构 loop control"></a>循环结构 loop control</h3><p>书上讲了两种方法：一种是通过设置一个Counter为指定值，每次循环给它减去一个1，判断计算的结果是否为0，若为0则跳出循环，这种方法就是计数法（Counter），还有一种是通过提前设置一个值为哨兵，我们每次循环都把某一个值进行一些变化，然后与哨兵进行运算，如果结果符合要求，我们就跳出循环，这叫做哨兵法（Sentinel）。</p>
+<h2 id="Chapter-6-Programming"><a href="#Chapter-6-Programming" class="headerlink" title="Chapter 6 Programming"></a>Chapter 6 Programming</h2><h3 id="问题解决-Problem-Solving"><a href="#问题解决-Problem-Solving" class="headerlink" title="问题解决 Problem Solving"></a>问题解决 Problem Solving</h3><p>首先是对问题进行系统化拆解（systematic decomposition），系统化拆解包括搞清楚自然语言描述的问题，把问题转化为算法（转化为一步步的流程，具有那三大特性definiteness, effective computabiblity, finiteness），最后就可以按照流程进行结构化编程（structured programming）。</p>
+<p>我们常见的三种结构是：顺序结构（sequential）条件结构（conditional）循环结构（iterative）</p>
+<h3 id="调试-debugging"><a href="#调试-debugging" class="headerlink" title="调试 debugging"></a>调试 debugging</h3><p>bug：虫子，程序的错误所在</p>
+<p>所谓debugging，也就是当我们运行程序发现不能正常运行时，我们要去做的调整工作，而哪里出了问题呢，这是调试中最难的一部分，所以我们要运用一定的调试技巧，节约我们找到错误的时间。</p>
+<p>首先我们要把程序分块，切割成一个个独立的模块（modules），然后就可以用下面三种技巧</p>
+<p><b>赋值法（set value）：在程序运行到当前模块时，我们手动修改所用到的变量的值，然后看这个模块的运行结果是否符合预期</b></p>
+<p><b>执行序列（execute sequences）：设置断点（set breakpoint）+ 开始调试（run）+ 下一步（step）</b></p>
+<p><b>显示值（display values）：在程序中段可以增加一些语句来输出中间变量，看哪一个模块出了问题</b></p>
+<h2 id="Chapter-7-Assembly-Language"><a href="#Chapter-7-Assembly-Language" class="headerlink" title="Chapter 7 Assembly Language"></a>Chapter 7 Assembly Language</h2><p>为提高我们的编程效率，汇编语言就产生了，它对用户更加友好（user-friendly），更便于使用。</p>
+<p>在汇编语言中，我们会有<b>符号化地址</b>（symbolic addresses），它可以独一无二的标记一些运算符和数据块、函数的位置，比如ADD NOT save1等等，这都是可以直接拿来使用的，然后我们也就不必去关心各种各样的偏移量和opcode等，提高了编程效率。</p>
+<h3 id="基本组成"><a href="#基本组成" class="headerlink" title="基本组成"></a>基本组成</h3><h4 id="Opcode-and-Operands"><a href="#Opcode-and-Operands" class="headerlink" title="Opcode and Operands"></a>Opcode and Operands</h4><p>这是一条汇编语句必备的部分，要注意的是，不同的Opcode所关联的Operands的个数可能是不一样的，所以我们要相应地适配它所要求的个数，否则就会报错。</p>
+<h4 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h4><p>标签是我们编程中极为重要的东西，因为我们在跳转时，我们如果想要直接找到函数入口或者是数据块的位置，那标签就可以极大的省去我们计算偏移量的时间。要注意的是Opcode（比如ADD NOT等）和其它有含义的字符串有一个合称：<strong>Reserved words</strong>，这些是不可以作为Label的，因为计算机不容许二义性（ambiguity）。</p>
+<h4 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h4><p>LC-3的注释以；（semicolon）开始，后面可以跟上一些注释，便于调试和维护。</p>
+<h4 id="伪指令-Pseudo-Ops"><a href="#伪指令-Pseudo-Ops" class="headerlink" title="伪指令 Pseudo-Ops"></a>伪指令 Pseudo-Ops</h4><h5 id="ORIG"><a href="#ORIG" class="headerlink" title=".ORIG"></a>.ORIG</h5><p>表明程序的开头</p>
+<h5 id="FILL"><a href="#FILL" class="headerlink" title=".FILL"></a>.FILL</h5><p>表明在此处填充上给定内容</p>
+<h5 id="BLKW"><a href="#BLKW" class="headerlink" title=".BLKW"></a>.BLKW</h5><p>开辟一块空间，方便后续使用</p>
+<h5 id="STRINGZ"><a href="#STRINGZ" class="headerlink" title=".STRINGZ"></a>.STRINGZ</h5><p>在此处开始的内存上填充给定字符串（顺次填入每个 memory location）</p>
+<h5 id="END"><a href="#END" class="headerlink" title=".END"></a>.END</h5><p>表明程序内容的结束，而非程序的结束，程序的结束需要用TRAP指令</p>
+<h3 id="汇编过程-Assembly-Process"><a href="#汇编过程-Assembly-Process" class="headerlink" title="汇编过程 Assembly Process"></a>汇编过程 Assembly Process</h3><p><b>Two-Pass Process</b></p>
+<p>对LC-3来说，采用的汇编过程是跑两次程序，有的汇编语言是跑一次的，这对应着不同的算法和机制。</p>
+<p><b>第一次</b>:从头到尾跑，记录好每一条指令对应的地址值（通过一个变量LC即location counter逐个递增来完成），遇到Label就记录在一个表格中（<strong>symbol table</strong>），作用是便于第二次遍历时填入相应的内存值（或者偏移量）</p>
+<p><strong>第二次</strong>:从头到尾跑，遇到Label就进行解释，通过symbol table内的值完成。</p>
+<h3 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h3><h4 id="可执行文件-Executable-Image"><a href="#可执行文件-Executable-Image" class="headerlink" title="可执行文件 Executable Image"></a>可执行文件 Executable Image</h4><p>当我们汇编产生.o文件后，可能还会有别的.o文件与与之相关联，这个过程就叫做链接（<strong>link</strong>），生成可执行文件</p>
+<h4 id="多于一个目标文件-More-than-One-Object-File"><a href="#多于一个目标文件-More-than-One-Object-File" class="headerlink" title="多于一个目标文件 More than One Object File"></a>多于一个目标文件 More than One Object File</h4><p>通常我们见到的真实的应用都是这样的情况，我们需要用一个外部声明 .External</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h62rp3lsluj30bg021wem.jpg" alt="image"></p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h62rpkw775j30bj01lt8x.jpg" alt="image"></p>
+<p>这样汇编器就不会报错说找不到STARTofFILE这个标签，而是会做一个标记，说这个标签存在于别的目标文件，在链接器链接时，它们之间的联系就会真实地建立起来。</p>
+<h2 id="Chapter-8-Data-Structures"><a href="#Chapter-8-Data-Structures" class="headerlink" title="Chapter 8 Data Structures"></a>Chapter 8 Data Structures</h2><p>又名：<em>abstract data types</em></p>
+<h3 id="子函数-Subroutines-Funtions"><a href="#子函数-Subroutines-Funtions" class="headerlink" title="子函数 Subroutines / Funtions"></a>子函数 Subroutines / Funtions</h3><p>通常我们写复杂程序时，有很多部分是会重复利用的，所以如果我们按照顺次排列的方式来写，可能会导致代码的可读性下降，所以我们可以使用子函数来简化我们的程序，让我们的程序主干更加清晰，可读性更强。另外，可能会有一些情况是不同的工程师写不同段的代码（当工程量巨大无比时），一个工程师写下这个函数，另一个工程师来调用它，这种情况也十分常见。</p>
+<p><b>库（library）</b>：库的含义其实就是把许多子函数给封装起来，便于不同程序员进行调用。这样可以省去大家写一些重复性的代码，而且通常情况下，库的代码效率更高，调用起来也十分方便好用。</p>
+<h4 id="调用和返回机制Call-Return-mechanism"><a href="#调用和返回机制Call-Return-mechanism" class="headerlink" title="调用和返回机制Call / Return mechanism"></a>调用和返回机制Call / Return mechanism</h4><p>主要就是JSR(R)和RET两条指令，唯一需要注意的是JSR除了修改程序的控制流，还会自动存下函数的返回地址（即跳转指令的下一条指令）于Ｒ７中，当ＲＥＴ指令执行时，Ｒ７的值就写入了ＰＣ中，开始接下来的程序。</p>
+<p><b>寄存器可能不够用？</b></p>
+<p>我们可以在内存中开辟一段空间，然后函数开始执行前，把一些包含关键内容的寄存器的值存在指定内存内，然后函数执行结束返回前把对应内存内的值再填回到寄存器中。</p>
+<p>要注意有两种类型的暂存<strong>Caller Save</strong> 和 <strong>Callee Save</strong>，前者是调用者（源程序）做存储和恢复工作，而后者是被调用者做这样的工作。</p>
+<font color=red>注意：书上的栈的Push（Pop与之相反）和队列的Remove和Insert都是先对指针操作，再去做别的操作。</font>
+
+
+
+<h3 id="栈-Stack"><a href="#栈-Stack" class="headerlink" title="栈 Stack"></a>栈 Stack</h3><p>栈的特性是——<b>后进先出</b>:Last In，First Out，简称：LIFO</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62swqm0n1j30r60d1dkz.jpg" alt="image"></p>
+<p>栈在内存上实现时，其实并没有“真正”弹出顶部元素，而是用一个栈指针（<strong>stack pointer</strong>），来控制当前栈顶元素的位置。当一个元素从栈中弹出时，其实在内存内还会暂存一段时间，不会立即被清除掉。</p>
+<p><strong><em>stack protocal</em></strong>:当我们从栈中弹出元素后，不能再去访问被弹出的值所在的地址，尽管它可能还在内存上，这是约定俗成的规则。</p>
+<p><strong><em>Underflow &amp; Overflow</em></strong>：通常我们会提前设置好栈的大小和栈的起始位置（默认用户模式下的起始位置是FDFF or FE00，也可以是别的位置，这取决于实现方式），那么当我们弹数据到边界时或者压入数据到边界时，我们就得特别注意，因为如果超出去，那程序段的内容可能会被修改，这将导致不可预想的后果。</p>
+<h3 id="递归-Recursion"><a href="#递归-Recursion" class="headerlink" title="递归 Recursion"></a>递归 Recursion</h3><p>当我们执行一些特别的子函数时，我们可能需要调用子函数本身，那么它就意味着我们要去存下以及恢复过程变量以及返回地址（这部分语句将占用许多地址，但是确实是保证正确性所必要的），而且我们不可以把它们存放在固定的一个位置上，因为会相互覆盖，所以常见的方式是使用栈来存储，这也是当调用子函数过多，程序会炸的原因（栈溢出）。</p>
+<p>当我们学会用递归来写阶乘和斐波那契后，我们会发现其实它可以改写成一个循环，而不需要重复调用函数，占用大量内存。这种递归叫做<strong>尾递归</strong>（递归返回时不需要做其它操作，或者说调用语句在递归函数的最后），其实尾递归可以算作是一种技巧，因为它可以大大提高程序运行效率（其实我们的编译器通常都会对尾递归进行优化），这算是一种技巧，但是本书中只是简单的提到了一下。</p>
+<p>比如迷宫问题就不太适合用尾递归来解决，因为其中涉及到很多的判断和特殊处理，那么正常的递归就可以把问题清晰的表述并解决（虽然时间效率堪忧，但是是唯一选择）</p>
+<h3 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列 Queue"></a>队列 Queue</h3><p>队列的特性——<b>先进先出 </b>：First In First Out，简称FIFO</p>
+<p>由于它跟队列十分相近，只是由栈指针变成了一个头指针（<strong>FRONT</strong>）和尾指针（<strong>REAR</strong>），所以这里不过多介绍。</p>
+<p><strong>但是要注意的是</strong>，我们通常使用的队列都是用n个位置存n-1个内容，原因如果我们要存n个内容，那么我们从队列上来看，满队列和空队列的指针位置是一样的，所以我们很难去判断Underflow和Overflow，因此n个位置存n-1个内容就成了约定俗成的东西。</p>
+<p>注意一些特殊的结构：比如循环队列（Wrap-Around Queue）和双向队列（deque）</p>
+<h3 id="字符串-Character-Strings"><a href="#字符串-Character-Strings" class="headerlink" title="字符串 Character Strings"></a>字符串 Character Strings</h3><p>在LC-3中，从字符串的方向上来看，是从低地址存到高地址的，所以是大端序。而且所有的都是存在了16-bit的低8位bit（TRAP指令有一个可以支持低八位和高八位都写入的情况 ）</p>
+<font color=red>注：最后一位会自动补上x0000</font>
+
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62u9z43k9j30q404l790.jpg" alt="image"></p>
+<p><b>正常版本</b></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62ub8g07ij30q102cmz7.jpg" alt="image"></p>
+<h2 id="Chapter-9-I-O"><a href="#Chapter-9-I-O" class="headerlink" title="Chapter 9 I/O"></a>Chapter 9 I/O</h2><p><b>首先补充一下LC-3的内存分布</b></p>
+<font color=orange>system space</font>
+
+<p>x0000 ~ x00FF TRAP相关(<b>TRAP的别称：system call</b>)</p>
+<p>​            [ 这段的地址及其内容合称 Trap Vector Table]</p>
+<p>x0100 ~ 01FF Interrupt / Exception相关</p>
+<p>​            [ 从x0180分开，前半段是第一类（exception），后半段是第二类（interrupt） ]</p>
+<p>x0200 ~ x2FFF 操作系统代码段</p>
+<p>​            [ 最开头的一小段是开机相关的内容 ]</p>
+<font color=orange>user space</font>
+
+<p>x3000 ~ xFDFF User用户段</p>
+<font color=orange>I/O Page</font>
+
+<p>xFE00 ~ I / O相关代码段和特殊寄存器</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="Privilege-amp-Priority"><a href="#Privilege-amp-Priority" class="headerlink" title="Privilege &amp; Priority"></a>Privilege &amp; Priority</h4><p>二者有所区别，且与我们生活的常规，因为我们生活中自然而然地认为二者甚至是近义词，但在计算机中会不同。</p>
+<p>Privilege表明权力，等级，更多的是每一种事物都具有的固定属性，不同的Privilege区别开不同权力的程序，低权力程序不能做高权力程序的事情。</p>
+<p>Priority表明优先级，更像是动态的属性，比如我们正在做某件事情，可能会被更高优先级的事情给打断。类似地，一个程序在运行时，如果有更高优先级的程序打断（比如键盘输入），那么计算机会优先处理更高优先级的程序。</p>
+<h4 id="PSR（Processor-Status-Register）xFFFC"><a href="#PSR（Processor-Status-Register）xFFFC" class="headerlink" title="PSR（Processor Status Register）xFFFC"></a>PSR（Processor Status Register）xFFFC</h4><p><b>注：MCR (Processor’s Master Control Register) xFFFE</b></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h62xcoirllj30rn04btab.jpg" alt="image"></p>
+<p>PSR[15]表明Privilege，如果为1表明User mode（Unprivileged），如果为0表明Supervisor mode（Privileged）</p>
+<p>PSR[10:8]表明Priority，是一个介于0~7之间的值，二进制表示</p>
+<p>PSR[2:0]表明conditional code，是一个动态刷新的码，有六条指令可以修改，BR指令会用来判断并分支。</p>
+<h4 id="USP-amp-SSP"><a href="#USP-amp-SSP" class="headerlink" title="USP &amp; SSP"></a>USP &amp; SSP</h4><p>User Stack Pointer &amp; Supervisor Stack Pointer</p>
+<p>要注意的是R6通常用来放正在使用的栈指针，而切换时要用到两个特殊寄存器Saved_USP或Saved_SSP来暂存不用的栈顶指针</p>
+<h3 id="Input-Output"><a href="#Input-Output" class="headerlink" title="Input / Output"></a>Input / Output</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p><b>Memory-Mapped I/O &amp; Special I/O instructions</b></p>
+<p>前者是大多数计算机采用的输入输出处理方式，后者是比较小众的方式，每一个设备都有自己的I/O处理指令（比如1965年的PDP-8） LC-3采用的是前者，内存映射型I/O。之所以叫这个名字，是因为要遵循普适性，原理是在ISA的内存地址上开辟一块空间专门用来存储与I/O相关的寄存器，比如LC-3的xFE00 ~ XFFFF就是这样，I/O设备的寄存器就可以与我们开辟的内存区域一一映射，所以我们称之为内存映射型I/O。</p>
+<p><b>Asynchronous  &amp; Synchronous</b></p>
+<p>同步和异步，提到这两个词是因为输入输出设备的处理速度是不同于CPU的处理速度的，我们称之为<strong>异步</strong>。那也就意味着让一个人一秒钟打3000000个字不可能实现，这个问题如果想解决：</p>
+<p>首先我们能想到的是放慢速度，比如每秒输入3个字母，设置一定的间隔，让某些打字员（虽然很难有人做得到）按照这样的频率输入即可，同步化两个异步的设备，但是这个也太难了，有几个人能做到呢？</p>
+<p>所以我们就可以引入一个<strong>标志</strong>（FLAG or Ready bit）来标识当前设备是否准备好了，程序运行到这一段CPU就去查询是否准备好了，如果准备好了那么就输入，如果没有，可能会直接抛弃输入的东西，或者会缓存下来（取决于不同的外设），然后这样就可以完成简单的同步化。（Polling方式）</p>
+<p><b>Interrupt-Driven &amp; Polling</b></p>
+<p>前者与后者的区别在于，前者是由键盘控制着交互过程，后者是由处理器控制着交互过程。</p>
+<p><strong>Interrupt-Driven</strong>是在程序正常运行过程中，键盘的输入打断了原有程序，程序控制流跳转到键盘处，然后执行结束后交还控制流。</p>
+<p><strong>Polling</strong>是程序运行到某一处后，就开始不断的询问当前KBSR是否已经被set（[15]设置为1），如果设置好了，那就表明键盘已经有输入了，如果没有设置好，那就说明现在还是处于clear状态（[15]为0），这时程序就会不断循环，直到有数据输入。</p>
+<font color=red>下面将先用Polling的方式讲解Keyboard和Display，然后才是Interrupt-driven</font>
+
+<h4 id="Input-From-The-Keyboard"><a href="#Input-From-The-Keyboard" class="headerlink" title="Input From The Keyboard"></a>Input From The Keyboard</h4><p>关键的两个寄存器： <strong>KBSR（xFE00） &amp; KBDR（xFE02）</strong></p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h63v1bvslmj30s30b9jxc.jpg" alt="image" style="zoom: 67%;" /></p>
+<p>对计算机而言，分配16bit比分配特定数量的bit来的容易，所以上图中我们看到kBSR和KBDR中的bit只有部分得到了使用，而非全部。</p>
+<p>KBDR是只有[7:0]被使用，KBSR是只有[15]被使用。</p>
+<p><strong>处理机制</strong>：正常状态下KBSR的15位为0，表明现在键盘可以输入，这时如果键盘被敲击，那KBDR的低八位bit就会载入这个字符的ASCII，然后KBSR的15位自动置为1，表明现在读入的字符正在被程序读取，这时如果键盘继续被敲击，不会有新的字符载入KBDR，直到读取结束，KBSR的15位置为0，才会开始下一个字符的读入。</p>
+<h4 id="Output-to-the-Monitor"><a href="#Output-to-the-Monitor" class="headerlink" title="Output to the Monitor"></a>Output to the Monitor</h4><p>关键的两个寄存器：<strong>DSR（xFE04） &amp; DDR（xFE06）</strong></p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h63vhxvyraj30rx0amjy3.jpg" alt="image" style="zoom:67%;" /></p>
+<p><strong>处理机制</strong>：其实它们的处理机制与KBDR和KBSR是完全一致的。正常状态下DSR的15位为1，当我们想要展示的字符提供给设备后，DSR的15位会被clear为0，设备开始处理（此时仍处于clear状态），然后处理结束后DSR的15位就会被set成1，然后就开始运行接下来的程序，在DSR的15位为0的过程中，DDR只能处理一个值（一个锁定的状态），新的想要展示的字符不会载入到DDR中。</p>
+<h3 id="操作系统服务程序：TRAP-Routines"><a href="#操作系统服务程序：TRAP-Routines" class="headerlink" title="操作系统服务程序：TRAP Routines"></a>操作系统服务程序：TRAP Routines</h3><p><b>为什么要这样设置?</b></p>
+<p>两方面原因，一方面是，让所有的程序编写者去了解这些status register和data register是一件不容易的事情，因为难度比编写程序来得高，另一方面是，I/O设备是由所有用户共享的，如果把访问和修改的权利交给每一个用户，可能会导致别的用户也无法使用I/O设备了，这并不是我们期望的结果，所以我们通过设置privilege，让普通用户只能调用函数使用，而不是自己写程序来操作设备寄存器。</p>
+<p><b>TRAP / system call / service call的流程</b>：通常情况下，我们运行到程序的一处，然后我们调用操作系统来帮我们执行一些程序（比如输入输出，停机等），这时操作系统会接管计算机，控制流也交给操作系统，操作系统全部弄完后，把控制流再交还给我们自己的程序。</p>
+<h4 id="Trap-Vector-Table"><a href="#Trap-Vector-Table" class="headerlink" title="Trap Vector Table"></a>Trap Vector Table</h4><p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h63xeqmof8j30cn0glmz9.jpg" alt="image" style="zoom:50%;" /></p>
+<p>这里我们看到只有六个，其余的空间都填充着无意义的值x038C</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h63xje36xuj30n60j5wil.jpg" alt="image" style="zoom:50%;" /></p>
+<p>我们在LC-3 tools中查看x038C的内容，其实跳转后，都报错 “BAD TRAP”</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h63xi2dmz4j30ie035gly.jpg" alt="image"></p>
+<p>也就是说，目前的LC-3指令虽然可以支持256条TRAP指令，但是目前就只有这六种是有意义的</p>
+<center><b>GETC      OUT      PUTS     IN     PUTSP     HALT</b></center>
+
+<h4 id="两条指令"><a href="#两条指令" class="headerlink" title="两条指令"></a>两条指令</h4><h5 id="TRAP-Instruction"><a href="#TRAP-Instruction" class="headerlink" title="TRAP Instruction"></a>TRAP Instruction</h5><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h63xmqp9goj30pi03twg0.jpg" alt="image" style="zoom:67%;" /></p>
+<p><strong>TRAP过程详解</strong>：首先，当前程序的PSR和PC都会被压到系统栈上（这里的PC要减去一个1保证返回时完美衔接），并且在压栈前，如果当前是用户模式，需要切换到超级模式（把当前的栈指针存到Saved_USP，把系统栈指针&lt;存储在Saved_SSP处&gt;复制给活跃指针——R6）；然后，PSR[15]被置为0，PSR[10:8]保持不变，因为TRAP指令的priority与原程序一致。接下来，8bit的trap vector会被扩展到16bit并放入MAR中，MDR对应的修改，PC会被写入MDR的内容（MAR地址处存放的东西）；最后，程序就开始执行系统段的代码了。</p>
+<h5 id="RTI-Instruction"><a href="#RTI-Instruction" class="headerlink" title="RTI Instruction"></a>RTI Instruction</h5><p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h63xvzcqw3j30oy0390u4.jpg" alt="image" style="zoom:67%;" /></p>
+<p>全称：<strong>R</strong>eturn from <strong>T</strong>rap or <strong>I</strong>nterrupt</p>
+<p><strong>RTI过程详解</strong>：首先POP系统栈栈顶的两个元素，分别是PC和PSR，然后判断PSR[15]的值，如果是1，那就意味着现在要从超级模式跳回用户模式了，那么当前的栈指针要存下来（Saved_SSP），并且活跃指针R6要载入到原来用户栈的栈指针（之前存储在Saved_USP）。</p>
+<h4 id="TRAP的各种程序"><a href="#TRAP的各种程序" class="headerlink" title="TRAP的各种程序"></a>TRAP的各种程序</h4><h5 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h5><p>都是用Polling实现的，这里就不多展开</p>
+<h5 id="HALT"><a href="#HALT" class="headerlink" title="HALT"></a>HALT</h5><p>这里需要补充的是<strong>MCR</strong>（the processor‘s Master Control Register）</p>
+<p>这个寄存器只有[15]是有意义的，因为Clock信号是由晶体振荡器（crystal oscillator）和RUN-Latch（即MCR）AND之后得到的，所以如果我们想要停机，只需要把[15]置为0即可，我们在TRAP HALT中使用一个bit vector叫做MASK：x7fff，与原来的MCR（正常运行时MCR的值为x4000）AND，然后结果存放到MCR中，这样程序就停下来了。</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h63ykrursaj30wa0mjk01.jpg" alt="image" style="zoom:50%;" /></p>
+<p>其实当红线处执行后，程序就停下来了，所以虽然后面黄线部分还有一些返回程序，但是它们是不会执行的。</p>
+<font color=red>前面我们用Polling的方式讲解了输入输出的一种方法，下面我们从Interrupt-Driven来理解</font>
+
+<h3 id="Interrupts-amp-Interrupt-Driven-I-O"><a href="#Interrupts-amp-Interrupt-Driven-I-O" class="headerlink" title="Interrupts &amp; Interrupt Driven I/O"></a>Interrupts &amp; Interrupt Driven I/O</h3><p>中断程序的优势就在于它把Polling不断询问的时间，拿来做别的事情了，时间效率高。每当有中断程序打断时，处理器就先跳转过去处理，等到处理结束后再跳转回来。</p>
+<h4 id="触发中断详解"><a href="#触发中断详解" class="headerlink" title="触发中断详解"></a>触发中断详解</h4><h5 id="PART1——中断的前置条件"><a href="#PART1——中断的前置条件" class="headerlink" title="PART1——中断的前置条件"></a><font color=red size=5>PART1——中断的前置条件</font></h5><h6 id="IE-amp-PL"><a href="#IE-amp-PL" class="headerlink" title="IE &amp; PL"></a><strong>IE</strong> &amp; PL</h6><p>在KBSR和DSR中，[14]其实有别的含义，即<strong>IE（interrupt enable）</strong>，我们的中断信号（interrupt signal）来源于[15] AND [14]，所以在中断程序中，我们需要提前设置好IE（值为1）。另外，我们还需要保证的是把中断请求的<strong>PL（priority level）</strong>高于普通用户程序，这个通常是不需要修改的，因为每一种设备会有它自己的Priority。</p>
+<p><b>补充：</b>在实际编程中我们在x200处（开机程序）除了要把IE设置好，还需要把Interrupt Vector Table设置好，也就是说，在一种设备对应的位置上填上我们自定义中断函数的首地址。（实验中我们使用的是x180处填上x2000——键盘中断函数的首地址）</p>
+<h6 id="INT-Signal"><a href="#INT-Signal" class="headerlink" title="INT Signal"></a><b>INT Signal</b></h6><p>中断信号：如果前面PART1的事情全都满足了，中断信号就会被设定<strong>（asserted）</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h642g7fg9sj30sp0lljtx.jpg" alt="image" style="zoom:67%;" /></p>
+<p><strong>Test for INT signal</strong>：中断信号的设定可以发生在任何时候，但是我们处理中断发生在FETCH阶段（一定程度上可以省下不少状态，因为我们不用去关心当前指令的哪些部分已经被执行了，哪些部分还没被执行）。</p>
+<h5 id="PART2——中断的执行过程"><a href="#PART2——中断的执行过程" class="headerlink" title="PART2——中断的执行过程"></a><font color=red size=5>PART2——中断的执行过程</font></h5><p>总共分为三步</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41gy1h6433ouemkj30nq03rwhx.jpg" alt="image"></p>
+<h6 id="Step1-初始化中断"><a href="#Step1-初始化中断" class="headerlink" title="Step1 初始化中断"></a>Step1 初始化中断</h6><p>首先把PC和PSR进行一波压栈（压在系统栈上），在压栈之前检测是否已经切换活跃栈指针（active stack pointer），如果没有，那么要先切换一下，然后是修改PSR[15]为0和PSR[10:8]为中断请求的priority，关于PSR[2:0]书上说由于在超级模式下任何一条指令都还没有执行，我们赋初值为010，<strong>这一点要特别注意</strong>。然后是table&lt;- 01（区别于TRAP的00，含义是vector的起始位置），Vector就载入INTV（Interrupt Vector，提前设置好的），然后把二者拼起来就可以在Interrupt Vector Table内找到对应的位置跳转过去，执行中断程序。</p>
+<h6 id="Step2-执行中断"><a href="#Step2-执行中断" class="headerlink" title="Step2 执行中断"></a>Step2 执行中断</h6><p>当我们把中断请求在Interrupt Vector Table内的值找到并复制到PC中时，中断就正式开始执行了，这时与用户模式下的指令执行没有什么区别。</p>
+<h6 id="Step3-从中断返回"><a href="#Step3-从中断返回" class="headerlink" title="Step3 从中断返回"></a>Step3 从中断返回</h6><p>这与TRAP指令的RTI是完全一样的，毕竟RTI即Return from Trap or Interrupt</p>
+<p><br></p>
+<p><b>要注意的是，Interrupt不是只关于I/O的，它还可以有很多延展。下面是课本中举的三个例子</b></p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h645a3scrxj30sb07bgv3.jpg" alt="image"></p>
+<h2 id="附录-A-amp-C"><a href="#附录-A-amp-C" class="headerlink" title="附录 A&amp;C"></a>附录 A&amp;C</h2><h3 id="附录A-：The-LC-3-ISA-Instructions"><a href="#附录A-：The-LC-3-ISA-Instructions" class="headerlink" title="附录A ：The LC-3 ISA Instructions"></a>附录A ：The LC-3 ISA Instructions</h3><h4 id="A-1-Overview"><a href="#A-1-Overview" class="headerlink" title="A.1 Overview"></a>A.1 Overview</h4><p>这部分主要对所有LC-3中用到的和图中出现的相对专业的名词做了解释</p>
+<h4 id="A-2-The-Instruction-Set"><a href="#A-2-The-Instruction-Set" class="headerlink" title="A.2 The Instruction Set"></a>A.2 The Instruction Set</h4><p>这里对每条指令都做了详细的解释，包括二进制代码和汇编代码。</p>
+<h4 id="A-3-Interrupt-and-Exception-Processing"><a href="#A-3-Interrupt-and-Exception-Processing" class="headerlink" title="A.3 Interrupt and Exception Processing"></a>A.3 Interrupt and Exception Processing</h4><p>前面所有提到的内容我们直接代过，部分内容补充如下</p>
+<h5 id="对x0100-x01FF的划分（总称为Interrupt-Vector-Table）"><a href="#对x0100-x01FF的划分（总称为Interrupt-Vector-Table）" class="headerlink" title="对x0100 ~ x01FF的划分（总称为Interrupt Vector Table）"></a><strong>对x0100 ~ x01FF的划分（总称为Interrupt Vector Table）</strong></h5><p>①x0100 ~ x017F这部分是exception部分的代码段，这是由程序自己引起的。包括了三种情况：<strong>privilege mode violation（USER模式    下调用RTI）, illegal opcode（1101）, and access control violation (ACV).</strong>三者顺次对应的vector是x00 x01 x02</p>
+<p>②x0180 ~ x01FF这部分是Interrupt的代码段，这是由设备打断引起的，可由用户自行设计。常见的是键盘，Priority Level是4，在Table里面对应的是x0180位置。</p>
+<p>这里需要补充的是，具体的exception如何施行，这是因情况而异的，但可以肯定的是，结果通常是计算机自动修正错误，然后让程序恢复，继续运行下去。另外，exception在执行时，程序的priority是不发生改变的，即与原来的程序priority保持一致，这与Interrupt不同，因为中断程序的Priority必须高于原来程序的Priority。</p>
+<h3 id="附录C-：The-Microarchitecture-of-the-LC-3"><a href="#附录C-：The-Microarchitecture-of-the-LC-3" class="headerlink" title="附录C ：The Microarchitecture of the LC-3"></a>附录C ：The Microarchitecture of the LC-3</h3><p><b>注：这里只是一个LC-3微架构的例子，和其它ISA一样，其对应的微架构可以有多种</b></p>
+<h4 id="State-Machine-amp-Data-Path"><a href="#State-Machine-amp-Data-Path" class="headerlink" title="State Machine &amp; Data Path"></a>State Machine &amp; Data Path</h4><p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h67pu6ste9j30tq10snbw.jpg" alt="image"></p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h67puluio5j30ot0y17dc.jpg" alt="image"></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Fengjie Lu WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Fengjie Lu Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Courses/" rel="tag"># Courses</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/53104/" rel="prev" title="如何批量word转pdf">
+      <i class="fa fa-chevron-left"></i> 如何批量word转pdf
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/30513/" rel="next" title="一种特殊的算法复杂度分析">
+      一种特殊的算法复杂度分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA-%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0"><span class="nav-text">计算机系统概论 - 课程复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-1-Welcome-aboard"><span class="nav-text">Chapter 1 Welcome aboard</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-Recurring-Themes"><span class="nav-text">Two Recurring Themes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-important-ideas"><span class="nav-text">Two important ideas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-solve-a-problem-Transformations-Between-Layers"><span class="nav-text">How to solve a problem &#x2F; Transformations Between Layers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2-Bits-Data-Types-and-Operations"><span class="nav-text">Chapter 2 Bits, Data Types and Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E7%89%B9-Bits"><span class="nav-text">比特 Bits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-Data-Types"><span class="nav-text">数据类型 Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E6%95%B0-Integer"><span class="nav-text">整数 Integer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0-Float-Point"><span class="nav-text">浮点数 Float Point</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A0%E6%A0%87%E5%87%86%E5%BD%A2%E5%BC%8F-Normalized-form"><span class="nav-text">①标准形式 Normalized form</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A1%E9%9D%9E%E6%A0%87%E5%87%86%E5%BD%A2%E5%BC%8F-abnormalized-form"><span class="nav-text">②非标准形式 abnormalized form</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A2%E4%BA%9A%E6%A0%87%E5%87%86%E5%BD%A2%E5%BC%8F-subnormalized-form"><span class="nav-text">③亚标准形式 subnormalized form</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASCII"><span class="nav-text">ASCII</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%95%B0-Hexadecimal-Notion"><span class="nav-text">十六进制数 Hexadecimal Notion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E5%8C%96-Conversion"><span class="nav-text">数据类型间的转化 Conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="nav-text">二进制与十进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97-Operation"><span class="nav-text">运算 Operation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%87%8F%E6%B3%95-Addition-and-Subtraction"><span class="nav-text">加法减法 Addition and Subtraction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-Logical-Operations"><span class="nav-text">逻辑运算 Logical Operations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%94%E7%89%B9%E5%90%91%E9%87%8F-Bit-Vector"><span class="nav-text">比特向量 Bit Vector</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-3-Digital-Logic-Structures"><span class="nav-text">Chapter 3 Digital Logic Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%B6%E4%BD%93%E7%AE%A1-Transistors"><span class="nav-text">晶体管 Transistors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E9%97%A8%E7%94%B5%E8%B7%AF"><span class="nav-text">基本门电路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E9%97%A8%EF%BC%88NOT-gate-Inverter%EF%BC%89"><span class="nav-text">非门（NOT gate &#x2F; Inverter）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%96%E9%97%A8%EF%BC%88OR-gate%EF%BC%89"><span class="nav-text">或门（OR gate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E9%97%A8%EF%BC%88AND-gate%EF%BC%89"><span class="nav-text">与门（AND gate）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E6%88%96%E9%97%A8%EF%BC%88XOR-gate%EF%BC%89"><span class="nav-text">异或门（XOR gate）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%EF%BC%88Combinational-Logic-Circuits%EF%BC%89"><span class="nav-text">组合逻辑电路（Combinational Logic Circuits）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%E5%99%A8%EF%BC%88Decoder%EF%BC%89"><span class="nav-text">解码器（Decoder）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88Mux%EF%BC%89"><span class="nav-text">多路选择器（Mux）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8%EF%BC%88Adder%EF%BC%89"><span class="nav-text">加法器（Adder）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E5%85%83%EF%BC%88Programmable-Logic-Array-PLA%EF%BC%89"><span class="nav-text">可编程逻辑元（Programmable Logic Array &#x2F; PLA）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%AE%8C%E5%A4%87%EF%BC%88Logical-completeness%EF%BC%89"><span class="nav-text">逻辑完备（Logical completeness）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%EF%BC%88Sequential-Logic-Circuits%EF%BC%89"><span class="nav-text">时序逻辑电路（Sequential Logic Circuits）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="nav-text">基本存储单元</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#R-S-Latch"><span class="nav-text">R-S Latch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#D-Latch"><span class="nav-text">D Latch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Master-Slave-Flipflop"><span class="nav-text">Master-Slave Flipflop</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">存储的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Memory"><span class="nav-text">Memory</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Addressability"><span class="nav-text">Addressability</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Address-Space"><span class="nav-text">Address Space</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RAM%EF%BC%88Random-Access-Memory%EF%BC%89"><span class="nav-text">RAM（Random Access Memory）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Static-RAM%EF%BC%88SRAM%EF%BC%89"><span class="nav-text">Static RAM（SRAM）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Dynamic-RAM%EF%BC%88DRAM%EF%BC%89"><span class="nav-text">Dynamic RAM（DRAM）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-text">有限状态机</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-4-The-Von-Neumann-Model"><span class="nav-text">Chapter 4 The Von Neumann Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E6%88%90"><span class="nav-text">组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MEMORY"><span class="nav-text">MEMORY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PROCESSING-UNIT"><span class="nav-text">PROCESSING UNIT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CONTROL-UNIT"><span class="nav-text">CONTROL UNIT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#INPUT-and-OUTPUT"><span class="nav-text">INPUT and OUTPUT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E5%BE%AA%E7%8E%AF-Instruction-Cycle"><span class="nav-text">指令循环 Instruction Cycle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FETCH"><span class="nav-text">FETCH</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DECODE"><span class="nav-text">DECODE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EVALUATE-ADDRESS"><span class="nav-text">EVALUATE ADDRESS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FETCH-OPERANDS"><span class="nav-text">FETCH OPERANDS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EXECUTE"><span class="nav-text">EXECUTE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#STORE-RESULT"><span class="nav-text">STORE RESULT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E7%B1%BB%E5%9E%8B"><span class="nav-text">指令类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Operates"><span class="nav-text">Operates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-movement"><span class="nav-text">Data movement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Control"><span class="nav-text">Control</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-5-The-LC-3"><span class="nav-text">Chapter 5 The LC-3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ISA-%E6%8C%87%E4%BB%A4%E9%9B%86%E6%9E%B6%E6%9E%84%EF%BC%88Instruction-Set-Architecture%EF%BC%89"><span class="nav-text">ISA 指令集架构（Instruction Set Architecture）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operate-Instructions"><span class="nav-text">Operate Instructions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ADD-amp-AND"><span class="nav-text">ADD &amp; AND</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NOT"><span class="nav-text">NOT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Movement-Instructions"><span class="nav-text">Data Movement Instructions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Load%E7%B1%BB%E5%92%8CStore%E7%B1%BB"><span class="nav-text">Load类和Store类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LEA%EF%BC%88Leave-Effective-Address%EF%BC%89"><span class="nav-text">LEA（Leave Effective Address）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control-Instructions"><span class="nav-text">Control Instructions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%B7%B3%E8%BD%AC-Conditional-Branch"><span class="nav-text">条件跳转 Conditional Branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E6%9D%A1%E4%BB%B6%E8%B7%B3%E8%BD%AC-Unconditional-Branch"><span class="nav-text">无条件跳转 Unconditional Branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TRAP"><span class="nav-text">TRAP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84-loop-control"><span class="nav-text">循环结构 loop control</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-6-Programming"><span class="nav-text">Chapter 6 Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3-Problem-Solving"><span class="nav-text">问题解决 Problem Solving</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95-debugging"><span class="nav-text">调试 debugging</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-7-Assembly-Language"><span class="nav-text">Chapter 7 Assembly Language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="nav-text">基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Opcode-and-Operands"><span class="nav-text">Opcode and Operands</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Labels"><span class="nav-text">Labels</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comment"><span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4-Pseudo-Ops"><span class="nav-text">伪指令 Pseudo-Ops</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ORIG"><span class="nav-text">.ORIG</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FILL"><span class="nav-text">.FILL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BLKW"><span class="nav-text">.BLKW</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#STRINGZ"><span class="nav-text">.STRINGZ</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#END"><span class="nav-text">.END</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%BF%87%E7%A8%8B-Assembly-Process"><span class="nav-text">汇编过程 Assembly Process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="nav-text">补充知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6-Executable-Image"><span class="nav-text">可执行文件 Executable Image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E4%BA%8E%E4%B8%80%E4%B8%AA%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6-More-than-One-Object-File"><span class="nav-text">多于一个目标文件 More than One Object File</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-8-Data-Structures"><span class="nav-text">Chapter 8 Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E5%87%BD%E6%95%B0-Subroutines-Funtions"><span class="nav-text">子函数 Subroutines &#x2F; Funtions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%92%8C%E8%BF%94%E5%9B%9E%E6%9C%BA%E5%88%B6Call-Return-mechanism"><span class="nav-text">调用和返回机制Call &#x2F; Return mechanism</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88-Stack"><span class="nav-text">栈 Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92-Recursion"><span class="nav-text">递归 Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%9F%E5%88%97-Queue"><span class="nav-text">队列 Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-Character-Strings"><span class="nav-text">字符串 Character Strings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-9-I-O"><span class="nav-text">Chapter 9 I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Privilege-amp-Priority"><span class="nav-text">Privilege &amp; Priority</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PSR%EF%BC%88Processor-Status-Register%EF%BC%89xFFFC"><span class="nav-text">PSR（Processor Status Register）xFFFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#USP-amp-SSP"><span class="nav-text">USP &amp; SSP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-Output"><span class="nav-text">Input &#x2F; Output</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-From-The-Keyboard"><span class="nav-text">Input From The Keyboard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output-to-the-Monitor"><span class="nav-text">Output to the Monitor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F%EF%BC%9ATRAP-Routines"><span class="nav-text">操作系统服务程序：TRAP Routines</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Trap-Vector-Table"><span class="nav-text">Trap Vector Table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E6%9D%A1%E6%8C%87%E4%BB%A4"><span class="nav-text">两条指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TRAP-Instruction"><span class="nav-text">TRAP Instruction</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RTI-Instruction"><span class="nav-text">RTI Instruction</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TRAP%E7%9A%84%E5%90%84%E7%A7%8D%E7%A8%8B%E5%BA%8F"><span class="nav-text">TRAP的各种程序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Input-amp-Output"><span class="nav-text">Input &amp; Output</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HALT"><span class="nav-text">HALT</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interrupts-amp-Interrupt-Driven-I-O"><span class="nav-text">Interrupts &amp; Interrupt Driven I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E4%B8%AD%E6%96%AD%E8%AF%A6%E8%A7%A3"><span class="nav-text">触发中断详解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PART1%E2%80%94%E2%80%94%E4%B8%AD%E6%96%AD%E7%9A%84%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="nav-text">PART1——中断的前置条件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#IE-amp-PL"><span class="nav-text">IE &amp; PL</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#INT-Signal"><span class="nav-text">INT Signal</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PART2%E2%80%94%E2%80%94%E4%B8%AD%E6%96%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-text">PART2——中断的执行过程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Step1-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%AD%E6%96%AD"><span class="nav-text">Step1 初始化中断</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Step2-%E6%89%A7%E8%A1%8C%E4%B8%AD%E6%96%AD"><span class="nav-text">Step2 执行中断</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Step3-%E4%BB%8E%E4%B8%AD%E6%96%AD%E8%BF%94%E5%9B%9E"><span class="nav-text">Step3 从中断返回</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95-A-amp-C"><span class="nav-text">附录 A&amp;C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%84%E5%BD%95A-%EF%BC%9AThe-LC-3-ISA-Instructions"><span class="nav-text">附录A ：The LC-3 ISA Instructions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-1-Overview"><span class="nav-text">A.1 Overview</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-2-The-Instruction-Set"><span class="nav-text">A.2 The Instruction Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-3-Interrupt-and-Exception-Processing"><span class="nav-text">A.3 Interrupt and Exception Processing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%B9x0100-x01FF%E7%9A%84%E5%88%92%E5%88%86%EF%BC%88%E6%80%BB%E7%A7%B0%E4%B8%BAInterrupt-Vector-Table%EF%BC%89"><span class="nav-text">对x0100 ~ x01FF的划分（总称为Interrupt Vector Table）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%84%E5%BD%95C-%EF%BC%9AThe-Microarchitecture-of-the-LC-3"><span class="nav-text">附录C ：The Microarchitecture of the LC-3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#State-Machine-amp-Data-Path"><span class="nav-text">State Machine &amp; Data Path</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fengjie Lu"
+      src="/images/mouse.jpg">
+  <p class="site-author-name" itemprop="name">Fengjie Lu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Crer-lu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Crer-lu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1290174724@qq.com" title="E-Mail → 1290174724@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fengjie Lu</span>
+</div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+-->
+
+  <div>
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+      var now = new Date();
+      function createtime() {
+          var grt= new Date("08/31/2022 00:00:00");
+          now.setTime(now.getTime()+250);
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+      }
+  setInterval("createtime()",250);
+  </script>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
