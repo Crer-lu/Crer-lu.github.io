@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是自己一个学期对数值分析这门课所有LAB的总结，讲真的我觉得难度还是不小的，需要很多时间来钻研。首先声明的是，这里不会粘贴源代码，但是会有一些自己对问题的记录，希望能对其他同学的学习有所帮助（更新ing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数值分析 LAB总结">
+<meta property="og:url" content="https://fengjielu.top/posts/4ad48bbb/index.html">
+<meta property="og:site_name" content="Blog by Crer_lu">
+<meta property="og:description" content="这是自己一个学期对数值分析这门课所有LAB的总结，讲真的我觉得难度还是不小的，需要很多时间来钻研。首先声明的是，这里不会粘贴源代码，但是会有一些自己对问题的记录，希望能对其他同学的学习有所帮助（更新ing">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h6c0bhgd9xj308r01i74f.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h6c0k9jpslj31fx04rjuw.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c0o595q2j30u702hwgj.jpg">
+<meta property="og:image" content="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c2t20p52j30jm090ac9.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h6c3ap284kj31bb12c4ck.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h6journdgyj30xo0v9afp.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h6jovj8zshj30w20r1438.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h6jow25f6lj30wf0hljvh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008cRf41ly1h6jowxvqjqj30wj0n7n1w.jpg">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/008cRf41ly1h6joxvcc4fj30y30wmgrl.jpg">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h6nt7t8cwej30yk033dhq.jpg">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/008cRf41ly1h6zbowmaihj310b0es421.jpg">
+<meta property="og:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h6zbw8l9dnj30m50sj47x.jpg">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/008cRf41ly1h6zbx9dvrxj31ik0cmjvt.jpg">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/008cRf41ly1h77ec0lsmgj31760xewqh.jpg">
+<meta property="article:published_time" content="2022-09-16T05:34:00.000Z">
+<meta property="article:modified_time" content="2022-10-16T12:24:14.712Z">
+<meta property="article:author" content="Fengjie Lu">
+<meta property="article:tag" content="Courses">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tvax2.sinaimg.cn/large/008cRf41ly1h6c0bhgd9xj308r01i74f.jpg">
+
+<link rel="canonical" href="https://fengjielu.top/posts/4ad48bbb/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>数值分析 LAB总结 | Blog by Crer_lu</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog by Crer_lu</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">recording my learning and life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home-page">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home Page</a>
+
+  </li>
+        <li class="menu-item menu-item-about-&-life-saving">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About & Life Saving</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/4ad48bbb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mouse.jpg">
+      <meta itemprop="name" content="Fengjie Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog by Crer_lu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数值分析 LAB总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-16 13:34:00" itemprop="dateCreated datePublished" datetime="2022-09-16T13:34:00+08:00">2022-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-10-16 20:24:14" itemprop="dateModified" datetime="2022-10-16T20:24:14+08:00">2022-10-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是自己一个学期对数值分析这门课所有LAB的总结，讲真的我觉得难度还是不小的，需要很多时间来钻研。首先声明的是，这里不会粘贴源代码，但是会有一些自己对问题的记录，希望能对其他同学的学习有所帮助（更新ing</p>
+<span id="more"></span>
+<h1 id="数值分析-LAB总结"><a href="#数值分析-LAB总结" class="headerlink" title="数值分析 LAB总结"></a>数值分析 LAB总结</h1><h2 id="LAB1-6-1-Numerical-Summation-of-a-Series"><a href="#LAB1-6-1-Numerical-Summation-of-a-Series" class="headerlink" title="LAB1 6-1 Numerical Summation of a Series"></a>LAB1 <strong>6-1 Numerical Summation of a Series</strong></h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>这个题目的核心就是三个式子的理解</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h6c0bhgd9xj308r01i74f.jpg" alt="image"></p>
+<p>这是我们求和最原始的式子，我们在学习数学的时候了解到过当x = 1时，它是容易裂项成一个给定值的，比如1/k，但是我们没有考虑过的是其它值，比如小数和其它整数，这个服题目就是要我们计算当x从0.0 到 300.0这3001个entry的值，并且要在给定的时间和精度要求下。</p>
+<p>①我们先来考虑整数，手推后不难发现其实当x为任意正整数时，我们可以得到上式其实等于（1/x）* Σ（1/k） 1&lt;= k &lt;= x，这是极为关键的，如果我们用这样的算法来算，我们的精度可以非常高，而且效率也比（1）好很多。</p>
+<p>②其它小数怎么算呢，我们从题目的条件中来看，其实（2）（3）都是与这个相关的</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6c0k9jpslj31fx04rjuw.jpg" alt="image"></p>
+<p>（2）的意思是告诉我们一个加快收敛的方式，因为我们如果用（1）来计算，精度和效率是不可兼得的，所以我们可以构造上面那样一个式子来提高效率，具体方式需要自己去推理一下，而且可能还需要进行两次这样的操作才可以达到题目要求（我就是用了2次），但是要注意的是并非纯纯作差两次，而是要在第一个的基础上去构造内嵌的和式。</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c0o595q2j30u702hwgj.jpg" alt="image"  /></p>
+<p>（3）的意思是告诉我们一个控制项数的方式，如果我们一直算下去，肯定是不行的，所以我们就要去通过上面的不等式来判断是否后面的项对于我们的精度已经没有影响了。</p>
+ <font color=green>这里想特别指出的是，如果只用x=1和x=2的值来计算其它所有项是否可行？经测验是不可行的，即使用每项70000次来计算，最后的结果还是会偏差1e-10，所以改进策略就是先把整数算出来，然后把整个3000项分成不同段来计算，这样就可以达到精度和时间的双重要求</font>
+
+<p><strong>所以我们就可以得到一个伪代码</strong></p>
+<p>①计算除0外的整数项</p>
+<p>②分不同的段来计算中间项的值</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><font color=red>能不能更加优化？</font>
+
+<p>我们可以通过推理不同项的关系（如下）</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c2t20p52j30jm090ac9.jpg" alt="image"></p>
+<p>首先计算前十项的值，然后通过这样的递推式得到后面2991项的值</p>
+<p>要注意的是，前十项的精度要求就比较高了</p>
+<p>&lt;/font&gt;</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h6c3ap284kj31bb12c4ck.jpg" alt="image"></p>
+<h2 id="LAB2-6-2-Root-of-a-Polynomial"><a href="#LAB2-6-2-Root-of-a-Polynomial" class="headerlink" title="LAB2 6-2 Root of a Polynomial"></a>LAB2 6-2 Root of a Polynomial</h2><p>这个题目的核心其实也就是把书上学到的各种求根算法用一用，然后加之优化</p>
+<h3 id="1-二分法"><a href="#1-二分法" class="headerlink" title="1.二分法"></a>1.二分法</h3><p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h6journdgyj30xo0v9afp.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="2-不动点法"><a href="#2-不动点法" class="headerlink" title="2.不动点法"></a>2.不动点法</h3><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6jovj8zshj30w20r1438.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="3-牛顿法"><a href="#3-牛顿法" class="headerlink" title="3.牛顿法"></a>3.牛顿法</h3><h4 id="3-1-普通牛顿法"><a href="#3-1-普通牛顿法" class="headerlink" title="3.1 普通牛顿法"></a>3.1 普通牛顿法</h4><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6jow25f6lj30wf0hljvh.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="3-2-割线牛顿法（secant）"><a href="#3-2-割线牛顿法（secant）" class="headerlink" title="3.2 割线牛顿法（secant）"></a>3.2 割线牛顿法（secant）</h4><p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h6jowxvqjqj30wj0n7n1w.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="3-3-错位法（false-position）"><a href="#3-3-错位法（false-position）" class="headerlink" title="3.3 错位法（false position）"></a>3.3 错位法（false position）</h4><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6joxvcc4fj30y30wmgrl.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="关于这道题目"><a href="#关于这道题目" class="headerlink" title="关于这道题目"></a>关于这道题目</h3><p>首先说题目是有坑的，关键点在于以下几个</p>
+<p>1.极值点处取到零点，牛顿法失效（F‘’（x）== 0），要做一些特判，在附近找到合适的零点，但是实践表明不用在迭代过程中特殊判断。（测试点2，5）</p>
+<p>2.当区间的右端点取到零点时，答案的零点是<strong>b-EPS</strong>（测试点3）<font color=red>麻了 -_-</font></p>
+<p><strong>[ 不要问我为什么，问就是题目的测试点有点问题 ] 真的麻了</strong></p>
+<p>如果用二分法，也可以基本全过，如果用优化版牛顿法也可以基本全过，但是唯独测试点三！</p>
+<p>只要加上这样一句话，你就可以A掉这道题目</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6nt7t8cwej30yk033dhq.jpg" alt="image"></p>
+<h2 id="LAB3-6-3-There-is-No-Free-Lunch"><a href="#LAB3-6-3-There-is-No-Free-Lunch" class="headerlink" title="LAB3 6-3 There is No Free Lunch"></a>LAB3 <strong>6-3 There is No Free Lunch</strong></h2><p>这道题目的思路主要是<strong>Sherman-Morrison公式</strong>的应用</p>
+<p>首先我们用最普通的牛顿消元法来做，发现只能过两个点，后两个点空间爆了。</p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6zbowmaihj310b0es421.jpg" alt="image"></p>
+<p>那我们就得去想想别的解法，这是就想到了课上讲的crout分解法，但是我们发现题目所给的矩阵是循环性三对角矩阵</p>
+<p>而crout分解法适用的范围是普通三对角矩阵，那这是我们首先用sherman-morrison公式来分解原矩阵</p>
+<p>然后就可以通过求解两个普通三对角矩阵的解，来得到最终的解，这个算法的时间复杂度是O(N)</p>
+<p>附上自己的手写推导过程</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h6zbw8l9dnj30m50sj47x.jpg" alt="image"></p>
+<p>然后37行代码一次性提交成功喽！还挺惊喜，中间居然没写出来bug（×</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h6zbx9dvrxj31ik0cmjvt.jpg" alt="image"></p>
+<h2 id="LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel"><a href="#LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel" class="headerlink" title="LAB4 6-4 Compare Methods of Jacobi with Gauss-Seidel"></a>LAB4 <strong>6-4 Compare Methods of Jacobi with Gauss-Seidel</strong></h2><p>这个题目十分考验细心程度</p>
+<p>代码按照书上的伪代码来写就好，这里列举一些细节，帮助大家对照</p>
+<p><strong>1.交换不同行或把某一行加到另一行时要带上b一起交换</strong></p>
+<p><strong>2.题目中的ZERO判断不需要用，直接用0判断就可</strong></p>
+<p><strong>3.在范数小于TOL返回前，把当前轮的X更新掉，否则返回的是上一轮的X</strong></p>
+<p><strong>4.判断行是否需要相加或者交换，在两个迭代函数开始前都需要操作一次（最后一个测试点</strong></p>
+<p>最后用100+行提交成功了，这次的LAB就用了不到一个小时，还是蛮开心的！</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h77ec0lsmgj31760xewqh.jpg" alt="image"></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Fengjie Lu WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Fengjie Lu Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Courses/" rel="tag"># Courses</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/64027/" rel="prev" title="计算机系统概论 - 课程复习">
+      <i class="fa fa-chevron-left"></i> 计算机系统概论 - 课程复习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/30513/" rel="next" title="一种特殊的算法复杂度分析">
+      一种特殊的算法复杂度分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90-LAB%E6%80%BB%E7%BB%93"><span class="nav-text">数值分析 LAB总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LAB1-6-1-Numerical-Summation-of-a-Series"><span class="nav-text">LAB1 6-1 Numerical Summation of a Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LAB2-6-2-Root-of-a-Polynomial"><span class="nav-text">LAB2 6-2 Root of a Polynomial</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BA%8C%E5%88%86%E6%B3%95"><span class="nav-text">1.二分法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8D%E5%8A%A8%E7%82%B9%E6%B3%95"><span class="nav-text">2.不动点法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%89%9B%E9%A1%BF%E6%B3%95"><span class="nav-text">3.牛顿法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E6%99%AE%E9%80%9A%E7%89%9B%E9%A1%BF%E6%B3%95"><span class="nav-text">3.1 普通牛顿法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E5%89%B2%E7%BA%BF%E7%89%9B%E9%A1%BF%E6%B3%95%EF%BC%88secant%EF%BC%89"><span class="nav-text">3.2 割线牛顿法（secant）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-%E9%94%99%E4%BD%8D%E6%B3%95%EF%BC%88false-position%EF%BC%89"><span class="nav-text">3.3 错位法（false position）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%BF%99%E9%81%93%E9%A2%98%E7%9B%AE"><span class="nav-text">关于这道题目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LAB3-6-3-There-is-No-Free-Lunch"><span class="nav-text">LAB3 6-3 There is No Free Lunch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel"><span class="nav-text">LAB4 6-4 Compare Methods of Jacobi with Gauss-Seidel</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fengjie Lu"
+      src="/images/mouse.jpg">
+  <p class="site-author-name" itemprop="name">Fengjie Lu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Crer-lu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Crer-lu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1290174724@qq.com" title="E-Mail → 1290174724@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fengjie Lu</span>
+</div>
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+-->
+
+  <div>
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+      var now = new Date();
+      function createtime() {
+          var grt= new Date("08/31/2022 00:00:00");
+          now.setTime(now.getTime()+250);
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+      }
+  setInterval("createtime()",250);
+  </script>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
