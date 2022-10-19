@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++ sort自定义cmp的细节</title>
-    <url>/posts/18623/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<p><font color=red>cmp函数在书写时，一定不要写出“return a &lt;= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。</p>
-<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ASCII的最大值</title>
     <url>/posts/24838/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -25,6 +13,18 @@
 ]]></content>
       <tags>
         <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ sort自定义cmp的细节</title>
+    <url>/posts/18623/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<p><font color=red>cmp函数在书写时，一定不要写出“return a &lt;= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。</p>
+<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -85,42 +85,9 @@
       </tags>
   </entry>
   <entry>
-    <title>C语言中的内部名和外部名</title>
-    <url>/posts/63593/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span><br>​    最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：</p>
-<p>​    A N S I标准规定，标识符可以为任意长度，但外部名必须至少能由前6个字符唯一地区分，并且不区分大小写。这里外部名指的是在链接过程中所涉及的标识符，其中包括文件间共享的函数名和全局变量名。因此外部名abcdefgh和abcdef将被当作同一个标识符处理，而且abcd和ABCD会当作一样处理。</p>
-<p>​    A N S I标准还规定内部名必须至少能由前31个字符唯一地区分。内部名指的是仅出现于定义该标识符的文件中的那些标识符。C语言中的字母是有大小写区别的，因此count Count COUNT是三个不同的标识符。标识符不能和C语言的关键字相同，也不能和用户已编制的函数或C语言库函数同名。</p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>CS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Chrome的headless配置语句（可粘贴）</title>
     <url>/posts/50872/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ISE14.7在win10安装教程</title>
-    <url>/posts/fb4be677/</url>
-    <content><![CDATA[<p>ISE安装了好久才好，中间遇到不少问题，写下这篇帮助大家安装！<br><span id="more"></span></p>
-<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h1 id="ISE14-7在win10安装教程"><a href="#ISE14-7在win10安装教程" class="headerlink" title="ISE14.7在win10安装教程"></a>ISE14.7在win10安装教程</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先我们下载四个安装包</p>
-<p>可以在官网上下载（要注意不是win10版本，下载win10版本下面那个14.7）</p>
-<p><a href="https://china.xilinx.com/support/download/index.html/content/xilinx/zh/downloadNav/vivado-design-tools/archive-ise.html">下载 (xilinx.com)</a></p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h707srm9gfj31k910w4kn.jpg" alt="image"></p>
-<p>或者直接用百度网盘，我上传到这里</p>
-<p>链接：<a href="https://pan.baidu.com/s/1m5ulT6aP5n4uWamysTpvAQ">https://pan.baidu.com/s/1m5ulT6aP5n4uWamysTpvAQ</a><br>提取码：bjv1<br>—来自百度网盘超级会员V2的分享</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我们只需要解压Xilinx_ISE_DS_14.7_1015_1-1.tar这个压缩包，然后打开xsetup.exe</p>
-<p>一路next即可，如果想要参考请看这篇博客</p>
-<p><a href="http://blog.chinaaet.com/crazybird/p/39693">【原创】Xilinx ISE14.7 安装教程-crazybird-电子技术应用-AET-中国科技核心期刊-最丰富的电子设计资源平台 (chinaaet.com)</a></p>
-<h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><p>百度网盘链接下载下来</p>
-<p>链接：<a href="https://pan.baidu.com/s/1YEFw6SJPeUkH3ZNHiWIbZg">https://pan.baidu.com/s/1YEFw6SJPeUkH3ZNHiWIbZg</a><br>提取码：z1c4<br>—来自百度网盘超级会员V2的分享</p>
-<p>里面有一个破解方法.txt，参考后就可以导入成功了！</p>
 ]]></content>
       <tags>
         <tag>tips</tag>
@@ -158,48 +125,36 @@
       </tags>
   </entry>
   <entry>
-    <title>N个有理分数求和</title>
-    <url>/posts/34381/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="N个有理分数求和-20-分"><a href="#N个有理分数求和-20-分" class="headerlink" title="N个有理分数求和 (20 分)"></a>N个有理分数求和 (20 分)</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数分子/分母的形式给出的，你输出的和也必须是有理数的形式。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数N（≤100）。随后一行按格式a1/b1 a2/b2 …给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出上述数字和的最简形式 —— 即将结果写成整数部分 分数部分，其中分数部分写成分子/分母，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
-<p><strong>输入样例1</strong>：<br>5<br>2/5 4/15 1/30 -2/60 8/3</p>
-<p>输出样例1：<br>3 1/3</p>
-<p><strong>输入样例2</strong>：<br>2<br>4/3 2/3</p>
-<p><strong>输入样例3</strong><br>3<br>1/3 -1/6 1/8</p>
-<p>输出样例3<br>7/24</p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于是有理数加法，这里可以参照Basic level中的<strong>有理数四则运算</strong><br>（<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805287624491008">题目链接</a>）（<a href="https://blog.csdn.net/qq_34771124/article/details/121479148">题解博客</a>）<br>两个核心：求最大公约数和特殊情况的判断</p>
-<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>我这个题卡在测试点五<br><strong>运行超时</strong>：那么你在求最大公约数代码中加上这个就好了<br><img src="https://img-blog.csdnimg.cn/417908b7d5aa48548f7136e60cdd7434.png" alt="在这里插入图片描述"><br><strong>浮点错误</strong>：那么你是没有考虑0的情况，一个是求公约数不能出现0，另一个是如果结果为0，只输出一个0就好。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans_up, ans_down;<span class="comment">//分子和分母</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span>(a == b)</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">		<span class="type">int</span> c = a;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="built_in">lcd</span>(a - b, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span>&#123;<span class="comment">//计算两个有理数计算的结果</span></span><br><span class="line">	ans_up = a * d + c * b;</span><br><span class="line">	ans_down = b * d;</span><br><span class="line">	<span class="keyword">if</span>(ans_up == <span class="number">0</span>)	<span class="keyword">return</span> ;</span><br><span class="line">	<span class="type">int</span> ld = <span class="built_in">lcd</span>(<span class="built_in">abs</span>(ans_up), ans_down);</span><br><span class="line">	ans_up /= ld;</span><br><span class="line">	ans_down /= ld;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//输出结果</span></span><br><span class="line">	<span class="keyword">if</span>(ans_up &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">		ans_up *= <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(ans_up == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans_up &gt;= ans_down)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ans_up % ans_down == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans_up / ans_down);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d %d/%d&quot;</span>, ans_up / ans_down, ans_up % ans_down, ans_down);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, ans_up, ans_down);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ans_up = <span class="number">0</span>, ans_down = <span class="number">1</span>;<span class="comment">//初始化结果</span></span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">		<span class="built_in">cal</span>(ans_up, ans_down, x, y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+    <title>C语言中的内部名和外部名</title>
+    <url>/posts/63593/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br>​    最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：</p>
+<p>​    A N S I标准规定，标识符可以为任意长度，但外部名必须至少能由前6个字符唯一地区分，并且不区分大小写。这里外部名指的是在链接过程中所涉及的标识符，其中包括文件间共享的函数名和全局变量名。因此外部名abcdefgh和abcdef将被当作同一个标识符处理，而且abcd和ABCD会当作一样处理。</p>
+<p>​    A N S I标准还规定内部名必须至少能由前31个字符唯一地区分。内部名指的是仅出现于定义该标识符的文件中的那些标识符。C语言中的字母是有大小写区别的，因此count Count COUNT是三个不同的标识符。标识符不能和C语言的关键字相同，也不能和用户已编制的函数或C语言库函数同名。</p>
 ]]></content>
       <tags>
-        <tag>algorithm</tag>
+        <tag>C</tag>
+        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>printf输出如何用变量控制位宽</title>
-    <url>/posts/23429/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="看代码"><a href="#看代码" class="headerlink" title="看代码"></a>看代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">2</span>, y = <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%*d %0*d&quot;</span>, x, y, x, y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>ISE14.7在win10安装教程</title>
+    <url>/posts/fb4be677/</url>
+    <content><![CDATA[<p>ISE安装了好久才好，中间遇到不少问题，写下这篇帮助大家安装！<br><span id="more"></span></p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h1 id="ISE14-7在win10安装教程"><a href="#ISE14-7在win10安装教程" class="headerlink" title="ISE14.7在win10安装教程"></a>ISE14.7在win10安装教程</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先我们下载四个安装包</p>
+<p>可以在官网上下载（要注意不是win10版本，下载win10版本下面那个14.7）</p>
+<p><a href="https://china.xilinx.com/support/download/index.html/content/xilinx/zh/downloadNav/vivado-design-tools/archive-ise.html">下载 (xilinx.com)</a></p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h707srm9gfj31k910w4kn.jpg" alt="image"></p>
+<p>或者直接用百度网盘，我上传到这里</p>
+<p>链接：<a href="https://pan.baidu.com/s/1m5ulT6aP5n4uWamysTpvAQ">https://pan.baidu.com/s/1m5ulT6aP5n4uWamysTpvAQ</a><br>提取码：bjv1<br>—来自百度网盘超级会员V2的分享</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我们只需要解压Xilinx_ISE_DS_14.7_1015_1-1.tar这个压缩包，然后打开xsetup.exe</p>
+<p>一路next即可，如果想要参考请看这篇博客</p>
+<p><a href="http://blog.chinaaet.com/crazybird/p/39693">【原创】Xilinx ISE14.7 安装教程-crazybird-电子技术应用-AET-中国科技核心期刊-最丰富的电子设计资源平台 (chinaaet.com)</a></p>
+<h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><p>百度网盘链接下载下来</p>
+<p>链接：<a href="https://pan.baidu.com/s/1YEFw6SJPeUkH3ZNHiWIbZg">https://pan.baidu.com/s/1YEFw6SJPeUkH3ZNHiWIbZg</a><br>提取码：z1c4<br>—来自百度网盘超级会员V2的分享</p>
+<p>里面有一个破解方法.txt，参考后就可以导入成功了！</p>
 ]]></content>
       <tags>
         <tag>tips</tag>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -318,25 +273,55 @@
       </tags>
   </entry>
   <entry>
+    <title>printf输出如何用变量控制位宽</title>
+    <url>/posts/23429/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="看代码"><a href="#看代码" class="headerlink" title="看代码"></a>看代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">2</span>, y = <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%*d %0*d&quot;</span>, x, y, x, y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>N个有理分数求和</title>
+    <url>/posts/34381/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="N个有理分数求和-20-分"><a href="#N个有理分数求和-20-分" class="headerlink" title="N个有理分数求和 (20 分)"></a>N个有理分数求和 (20 分)</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数分子/分母的形式给出的，你输出的和也必须是有理数的形式。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数N（≤100）。随后一行按格式a1/b1 a2/b2 …给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出上述数字和的最简形式 —— 即将结果写成整数部分 分数部分，其中分数部分写成分子/分母，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
+<p><strong>输入样例1</strong>：<br>5<br>2/5 4/15 1/30 -2/60 8/3</p>
+<p>输出样例1：<br>3 1/3</p>
+<p><strong>输入样例2</strong>：<br>2<br>4/3 2/3</p>
+<p><strong>输入样例3</strong><br>3<br>1/3 -1/6 1/8</p>
+<p>输出样例3<br>7/24</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于是有理数加法，这里可以参照Basic level中的<strong>有理数四则运算</strong><br>（<a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805287624491008">题目链接</a>）（<a href="https://blog.csdn.net/qq_34771124/article/details/121479148">题解博客</a>）<br>两个核心：求最大公约数和特殊情况的判断</p>
+<h2 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h2><p>我这个题卡在测试点五<br><strong>运行超时</strong>：那么你在求最大公约数代码中加上这个就好了<br><img src="https://img-blog.csdnimg.cn/417908b7d5aa48548f7136e60cdd7434.png" alt="在这里插入图片描述"><br><strong>浮点错误</strong>：那么你是没有考虑0的情况，一个是求公约数不能出现0，另一个是如果结果为0，只输出一个0就好。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans_up, ans_down;<span class="comment">//分子和分母</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span>(a == b)</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">		<span class="type">int</span> c = a;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="built_in">lcd</span>(a - b, b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cal</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span>&#123;<span class="comment">//计算两个有理数计算的结果</span></span><br><span class="line">	ans_up = a * d + c * b;</span><br><span class="line">	ans_down = b * d;</span><br><span class="line">	<span class="keyword">if</span>(ans_up == <span class="number">0</span>)	<span class="keyword">return</span> ;</span><br><span class="line">	<span class="type">int</span> ld = <span class="built_in">lcd</span>(<span class="built_in">abs</span>(ans_up), ans_down);</span><br><span class="line">	ans_up /= ld;</span><br><span class="line">	ans_down /= ld;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//输出结果</span></span><br><span class="line">	<span class="keyword">if</span>(ans_up &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">		ans_up *= <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(ans_up == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans_up &gt;= ans_down)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ans_up % ans_down == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans_up / ans_down);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d %d/%d&quot;</span>, ans_up / ans_down, ans_up % ans_down, ans_down);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, ans_up, ans_down);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ans_up = <span class="number">0</span>, ans_down = <span class="number">1</span>;<span class="comment">//初始化结果</span></span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">		<span class="built_in">cal</span>(ans_up, ans_down, x, y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>windows批处理学习</title>
     <url>/posts/24536/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span><br><a href="https://www.cnblogs.com/xpwi/p/9626959.html">转载链接</a><br><a href="https://blog.csdn.net/qq_38199187/article/details/84642491">转载链接</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>一文搞懂结构体变量占用多大的内存空间</title>
-    <url>/posts/7270/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="一、首先做一道例题感受一下"><a href="#一、首先做一道例题感受一下" class="headerlink" title="一、首先做一道例题感受一下"></a>一、首先做一道例题感受一下</h1><p>请问下面定义的结构体变量aa在计算机内存中占用多少字节？<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="type">float</span>    height;</span><br><span class="line">    <span class="type">short</span> <span class="type">int</span>  age ;</span><br><span class="line">    <span class="type">char</span>     sex ;</span><br><span class="line">&#125;aa;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(aa));  <span class="comment">//屏幕上将显示多少？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>错误解答</strong>：我们都知道，char类型占用1个字节，float型占用4个字节，short int类型占用2个字节，int型在VC6.0中占用4个字节（TC2.0中占用2个字节），long占用8个字节，double占用8个字节。因此，我们可能会犯一个错误就是直接4+2+1=7，结构体aa占用7个字节。这是错的。</p>
-<p><strong>错误分析</strong>：计算结构体大小时需要考虑其内存布局，编译系统为了提高计算机访问数据的效率，在安排结构体每个成员的时候采用了内存对齐的方法，具体是：结构体在内存中的存放按单元进行存放，每个单元的大小取决于<font color=red>结构体中最大基本类型的大小。</p>
-<h1 id="二、为解释清楚，我们列出以下几种格式"><a href="#二、为解释清楚，我们列出以下几种格式" class="headerlink" title="二、为解释清楚，我们列出以下几种格式"></a>二、为解释清楚，我们列出以下几种格式</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">格式一：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line"> <span class="type">short</span>  C;    </span><br><span class="line">&#125;Phone1;  </span><br><span class="line"></span><br><span class="line">格式二：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">short</span>  C;   </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line">&#125;Phone2;   </span><br><span class="line"></span><br><span class="line">格式三：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">char</span>   B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone3;   </span><br><span class="line"></span><br><span class="line">格式四：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">double</span>  B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone4;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><font size=5>然后我们一一分析<br><img src="https://img-blog.csdnimg.cn/e08eaeeff49e4bb9b8898214f94590b4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b53b2ef7e0234d1eb14c2076db3e51dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/07bc4d274ece44978ae05d013451b9dc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ae67bfa5de134532bdbbebf75d7c7729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red>综上所述，作为一个优秀的程序员，有必要在声明结构体变量时考虑如何才能节省空间，因为这之间的差异是非常大的。</p>
-<p>原文链接：<a href="http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html">http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html</a></p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-      </tags>
   </entry>
   <entry>
     <title>一种特殊的算法复杂度分析</title>
@@ -407,6 +392,21 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
+    <title>一文搞懂结构体变量占用多大的内存空间</title>
+    <url>/posts/7270/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="一、首先做一道例题感受一下"><a href="#一、首先做一道例题感受一下" class="headerlink" title="一、首先做一道例题感受一下"></a>一、首先做一道例题感受一下</h1><p>请问下面定义的结构体变量aa在计算机内存中占用多少字节？<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="type">float</span>    height;</span><br><span class="line">    <span class="type">short</span> <span class="type">int</span>  age ;</span><br><span class="line">    <span class="type">char</span>     sex ;</span><br><span class="line">&#125;aa;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="keyword">sizeof</span>(aa));  <span class="comment">//屏幕上将显示多少？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>错误解答</strong>：我们都知道，char类型占用1个字节，float型占用4个字节，short int类型占用2个字节，int型在VC6.0中占用4个字节（TC2.0中占用2个字节），long占用8个字节，double占用8个字节。因此，我们可能会犯一个错误就是直接4+2+1=7，结构体aa占用7个字节。这是错的。</p>
+<p><strong>错误分析</strong>：计算结构体大小时需要考虑其内存布局，编译系统为了提高计算机访问数据的效率，在安排结构体每个成员的时候采用了内存对齐的方法，具体是：结构体在内存中的存放按单元进行存放，每个单元的大小取决于<font color=red>结构体中最大基本类型的大小。</p>
+<h1 id="二、为解释清楚，我们列出以下几种格式"><a href="#二、为解释清楚，我们列出以下几种格式" class="headerlink" title="二、为解释清楚，我们列出以下几种格式"></a>二、为解释清楚，我们列出以下几种格式</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">格式一：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line"> <span class="type">short</span>  C;    </span><br><span class="line">&#125;Phone1;  </span><br><span class="line"></span><br><span class="line">格式二：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>   A;    </span><br><span class="line"> <span class="type">short</span>  C;   </span><br><span class="line"> <span class="type">int</span>    B;    </span><br><span class="line">&#125;Phone2;   </span><br><span class="line"></span><br><span class="line">格式三：  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">char</span>   B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone3;   </span><br><span class="line"></span><br><span class="line">格式四：</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagPhone3</span>&#123;</span>    </span><br><span class="line"> <span class="type">char</span>    A;    </span><br><span class="line"> <span class="type">double</span>  B[<span class="number">2</span>];    </span><br><span class="line"> <span class="type">char</span>    C[<span class="number">4</span>];    </span><br><span class="line">&#125;Phone4;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><font size=5>然后我们一一分析<br><img src="https://img-blog.csdnimg.cn/e08eaeeff49e4bb9b8898214f94590b4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b53b2ef7e0234d1eb14c2076db3e51dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/07bc4d274ece44978ae05d013451b9dc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ae67bfa5de134532bdbbebf75d7c7729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red>综上所述，作为一个优秀的程序员，有必要在声明结构体变量时考虑如何才能节省空间，因为这之间的差异是非常大的。</p>
+<p>原文链接：<a href="http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html">http://blog.sina.com.cn/s/blog_75a2ecd20102xca0.html</a></p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用hexo+github搭建属于自己的博客</title>
     <url>/posts/50751/</url>
     <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。<br><span id="more"></span></p>
@@ -421,19 +421,6 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 <p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
 <p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
 <p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于from selenium import webdriver运行时报错</title>
-    <url>/posts/65308/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<p><font color=green><br>首先要成功安装selenium<br><br>我一开始的问题是文件名取了selnium.py<br><br>然后一直报错，改一个其它名即可<br><br>之后，报错就变了</p>
-<p><img src="https://img-blog.csdnimg.cn/f2609fd0ee694578a94d7ff607e128fb.png" alt="在这里插入图片描述"></p>
-<p><font color=green>也就是说编译器显示都正常，一运行就有bug<br>然后我发现了解决的办法<br>左上角文件-设置-python解释器<br>在其中找到selenium，检查版本<br>如果过新，可能会导致不能正常使用<br>我一开始用的4.1.0，后来改为3.11.0就好了<br><img src="https://img-blog.csdnimg.cn/d643ffbca89146a9b579f2fd7f6e4ff2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red><br>祝愿你能尽快调出来！QWQ</p>
 ]]></content>
       <tags>
         <tag>tips</tag>
@@ -463,6 +450,28 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
+    <title>复数变量的声明</title>
+    <url>/posts/803/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于from selenium import webdriver运行时报错</title>
+    <url>/posts/65308/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<p><font color=green><br>首先要成功安装selenium<br><br>我一开始的问题是文件名取了selnium.py<br><br>然后一直报错，改一个其它名即可<br><br>之后，报错就变了</p>
+<p><img src="https://img-blog.csdnimg.cn/f2609fd0ee694578a94d7ff607e128fb.png" alt="在这里插入图片描述"></p>
+<p><font color=green>也就是说编译器显示都正常，一运行就有bug<br>然后我发现了解决的办法<br>左上角文件-设置-python解释器<br>在其中找到selenium，检查版本<br>如果过新，可能会导致不能正常使用<br>我一开始用的4.1.0，后来改为3.11.0就好了<br><img src="https://img-blog.csdnimg.cn/d643ffbca89146a9b579f2fd7f6e4ff2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red><br>祝愿你能尽快调出来！QWQ</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>栈和队列（手动与STL实现）</title>
     <url>/posts/24344/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -481,8 +490,35 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 <p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何解决爬虫爬取的不是高清图</title>
+    <url>/posts/53990/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<p><font color=red><br>只要把url中的‘_s’删掉即可<br><br>使用以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+<p><font color=red>快去试试吧！QWQ</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何批量word转pdf</title>
+    <url>/posts/53104/</url>
+    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br><span id="more"></span></p>
+<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
+<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>然后按下F5即可运行</p>
+<p>之后选择好根目录文件夹就可以了</p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -555,28 +591,6 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
-    <title>复数变量的声明</title>
-    <url>/posts/803/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何解决爬虫爬取的不是高清图</title>
-    <url>/posts/53990/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<p><font color=red><br>只要把url中的‘_s’删掉即可<br><br>使用以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = url.replace(&#x27;_s&#x27;, &#x27;&#x27;)</span><br></pre></td></tr></table></figure>
-<p><font color=red>快去试试吧！QWQ</p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>怎样自己亲手搭建一个四比特加法器</title>
     <url>/posts/34487/</url>
     <content><![CDATA[<p><center>大一上《信息与电子工程导论》大作业</center><br><span id="more"></span></p>
@@ -632,17 +646,99 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
-    <title>如何批量word转pdf</title>
-    <url>/posts/53104/</url>
-    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br><span id="more"></span></p>
-<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
-<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
-<p>然后按下F5即可运行</p>
-<p>之后选择好根目录文件夹就可以了</p>
+    <title>异或的巧妙使用</title>
+    <url>/posts/1322/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
+<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
+</blockquote>
+<p><br/><br><br/><br><br/></p>
+<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
+</blockquote>
+<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
+<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
+<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
+</blockquote>
+<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
+</blockquote>
+<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
+<blockquote>
+<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>tips</tag>
+        <tag>algorithm</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数值分析 LAB总结</title>
+    <url>/posts/4ad48bbb/</url>
+    <content><![CDATA[<p>这是自己一个学期对数值分析这门课所有LAB的总结，讲真的我觉得难度还是不小的，需要很多时间来钻研。首先声明的是，这里不会粘贴源代码，但是会有一些自己对问题的记录，希望能对其他同学的学习有所帮助（更新ing</p>
+<span id="more"></span>
+<h1 id="数值分析-LAB总结"><a href="#数值分析-LAB总结" class="headerlink" title="数值分析 LAB总结"></a>数值分析 LAB总结</h1><h2 id="LAB1-6-1-Numerical-Summation-of-a-Series"><a href="#LAB1-6-1-Numerical-Summation-of-a-Series" class="headerlink" title="LAB1 6-1 Numerical Summation of a Series"></a>LAB1 <strong>6-1 Numerical Summation of a Series</strong></h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>这个题目的核心就是三个式子的理解</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h6c0bhgd9xj308r01i74f.jpg" alt="image"></p>
+<p>这是我们求和最原始的式子，我们在学习数学的时候了解到过当x = 1时，它是容易裂项成一个给定值的，比如1/k，但是我们没有考虑过的是其它值，比如小数和其它整数，这个服题目就是要我们计算当x从0.0 到 300.0这3001个entry的值，并且要在给定的时间和精度要求下。</p>
+<p>①我们先来考虑整数，手推后不难发现其实当x为任意正整数时，我们可以得到上式其实等于（1/x）* Σ（1/k） 1&lt;= k &lt;= x，这是极为关键的，如果我们用这样的算法来算，我们的精度可以非常高，而且效率也比（1）好很多。</p>
+<p>②其它小数怎么算呢，我们从题目的条件中来看，其实（2）（3）都是与这个相关的</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6c0k9jpslj31fx04rjuw.jpg" alt="image"></p>
+<p>（2）的意思是告诉我们一个加快收敛的方式，因为我们如果用（1）来计算，精度和效率是不可兼得的，所以我们可以构造上面那样一个式子来提高效率，具体方式需要自己去推理一下，而且可能还需要进行两次这样的操作才可以达到题目要求（我就是用了2次），但是要注意的是并非纯纯作差两次，而是要在第一个的基础上去构造内嵌的和式。</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c0o595q2j30u702hwgj.jpg" alt="image"  /></p>
+<p>（3）的意思是告诉我们一个控制项数的方式，如果我们一直算下去，肯定是不行的，所以我们就要去通过上面的不等式来判断是否后面的项对于我们的精度已经没有影响了。</p>
+ <font color=green>这里想特别指出的是，如果只用x=1和x=2的值来计算其它所有项是否可行？经测验是不可行的，即使用每项70000次来计算，最后的结果还是会偏差1e-10，所以改进策略就是先把整数算出来，然后把整个3000项分成不同段来计算，这样就可以达到精度和时间的双重要求</font>
+
+<p><strong>所以我们就可以得到一个伪代码</strong></p>
+<p>①计算除0外的整数项</p>
+<p>②分不同的段来计算中间项的值</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><font color=red>能不能更加优化？</font>
+
+<p>我们可以通过推理不同项的关系（如下）</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c2t20p52j30jm090ac9.jpg" alt="image"></p>
+<p>首先计算前十项的值，然后通过这样的递推式得到后面2991项的值</p>
+<p>要注意的是，前十项的精度要求就比较高了</p>
+<p>&lt;/font&gt;</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h6c3ap284kj31bb12c4ck.jpg" alt="image"></p>
+<h2 id="LAB2-6-2-Root-of-a-Polynomial"><a href="#LAB2-6-2-Root-of-a-Polynomial" class="headerlink" title="LAB2 6-2 Root of a Polynomial"></a>LAB2 6-2 Root of a Polynomial</h2><p>这个题目的核心其实也就是把书上学到的各种求根算法用一用，然后加之优化</p>
+<h3 id="1-二分法"><a href="#1-二分法" class="headerlink" title="1.二分法"></a>1.二分法</h3><p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h6journdgyj30xo0v9afp.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="2-不动点法"><a href="#2-不动点法" class="headerlink" title="2.不动点法"></a>2.不动点法</h3><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6jovj8zshj30w20r1438.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="3-牛顿法"><a href="#3-牛顿法" class="headerlink" title="3.牛顿法"></a>3.牛顿法</h3><h4 id="3-1-普通牛顿法"><a href="#3-1-普通牛顿法" class="headerlink" title="3.1 普通牛顿法"></a>3.1 普通牛顿法</h4><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6jow25f6lj30wf0hljvh.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="3-2-割线牛顿法（secant）"><a href="#3-2-割线牛顿法（secant）" class="headerlink" title="3.2 割线牛顿法（secant）"></a>3.2 割线牛顿法（secant）</h4><p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h6jowxvqjqj30wj0n7n1w.jpg" alt="image" style="zoom:50%;" /></p>
+<h4 id="3-3-错位法（false-position）"><a href="#3-3-错位法（false-position）" class="headerlink" title="3.3 错位法（false position）"></a>3.3 错位法（false position）</h4><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6joxvcc4fj30y30wmgrl.jpg" alt="image" style="zoom:50%;" /></p>
+<h3 id="关于这道题目"><a href="#关于这道题目" class="headerlink" title="关于这道题目"></a>关于这道题目</h3><p>首先说题目是有坑的，关键点在于以下几个</p>
+<p>1.极值点处取到零点，牛顿法失效（F‘’（x）== 0），要做一些特判，在附近找到合适的零点，但是实践表明不用在迭代过程中特殊判断。（测试点2，5）</p>
+<p>2.当区间的右端点取到零点时，答案的零点是<strong>b-EPS</strong>（测试点3）<font color=red>麻了 -_-</font></p>
+<p><strong>[ 不要问我为什么，问就是题目的测试点有点问题 ] 真的麻了</strong></p>
+<p>如果用二分法，也可以基本全过，如果用优化版牛顿法也可以基本全过，但是唯独测试点三！</p>
+<p>只要加上这样一句话，你就可以A掉这道题目</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6nt7t8cwej30yk033dhq.jpg" alt="image"></p>
+<h2 id="LAB3-6-3-There-is-No-Free-Lunch"><a href="#LAB3-6-3-There-is-No-Free-Lunch" class="headerlink" title="LAB3 6-3 There is No Free Lunch"></a>LAB3 <strong>6-3 There is No Free Lunch</strong></h2><p>这道题目的思路主要是<strong>Sherman-Morrison公式</strong>的应用</p>
+<p>首先我们用最普通的牛顿消元法来做，发现只能过两个点，后两个点空间爆了。</p>
+<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6zbowmaihj310b0es421.jpg" alt="image"></p>
+<p>那我们就得去想想别的解法，这是就想到了课上讲的crout分解法，但是我们发现题目所给的矩阵是循环性三对角矩阵</p>
+<p>而crout分解法适用的范围是普通三对角矩阵，那这是我们首先用sherman-morrison公式来分解原矩阵</p>
+<p>然后就可以通过求解两个普通三对角矩阵的解，来得到最终的解，这个算法的时间复杂度是O(N)</p>
+<p>附上自己的手写推导过程</p>
+<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h6zbw8l9dnj30m50sj47x.jpg" alt="image"></p>
+<p>然后37行代码一次性提交成功喽！还挺惊喜，中间居然没写出来bug（×</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h6zbx9dvrxj31ik0cmjvt.jpg" alt="image"></p>
+<h2 id="LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel"><a href="#LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel" class="headerlink" title="LAB4 6-4 Compare Methods of Jacobi with Gauss-Seidel"></a>LAB4 <strong>6-4 Compare Methods of Jacobi with Gauss-Seidel</strong></h2><p>这个题目十分考验细心程度</p>
+<p>代码按照书上的伪代码来写就好，这里列举一些细节，帮助大家对照</p>
+<p><strong>1.交换不同行或把某一行加到另一行时要带上b一起交换</strong></p>
+<p><strong>2.题目中的ZERO判断不需要用，直接用0判断就可</strong></p>
+<p><strong>3.在范数小于TOL返回前，把当前轮的X更新掉，否则返回的是上一轮的X</strong></p>
+<p><strong>4.判断行是否需要相加或者交换，在两个迭代函数开始前都需要操作一次（最后一个测试点</strong></p>
+<p>最后用100+行提交成功了，这次的LAB就用了不到一个小时，还是蛮开心的！</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h77ec0lsmgj31760xewqh.jpg" alt="image"></p>
+]]></content>
+      <tags>
+        <tag>Courses</tag>
       </tags>
   </entry>
   <entry>
@@ -714,102 +810,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
-    <title>数值分析 LAB总结</title>
-    <url>/posts/4ad48bbb/</url>
-    <content><![CDATA[<p>这是自己一个学期对数值分析这门课所有LAB的总结，讲真的我觉得难度还是不小的，需要很多时间来钻研。首先声明的是，这里不会粘贴源代码，但是会有一些自己对问题的记录，希望能对其他同学的学习有所帮助（更新ing</p>
-<span id="more"></span>
-<h1 id="数值分析-LAB总结"><a href="#数值分析-LAB总结" class="headerlink" title="数值分析 LAB总结"></a>数值分析 LAB总结</h1><h2 id="LAB1-6-1-Numerical-Summation-of-a-Series"><a href="#LAB1-6-1-Numerical-Summation-of-a-Series" class="headerlink" title="LAB1 6-1 Numerical Summation of a Series"></a>LAB1 <strong>6-1 Numerical Summation of a Series</strong></h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>这个题目的核心就是三个式子的理解</p>
-<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h6c0bhgd9xj308r01i74f.jpg" alt="image"></p>
-<p>这是我们求和最原始的式子，我们在学习数学的时候了解到过当x = 1时，它是容易裂项成一个给定值的，比如1/k，但是我们没有考虑过的是其它值，比如小数和其它整数，这个服题目就是要我们计算当x从0.0 到 300.0这3001个entry的值，并且要在给定的时间和精度要求下。</p>
-<p>①我们先来考虑整数，手推后不难发现其实当x为任意正整数时，我们可以得到上式其实等于（1/x）* Σ（1/k） 1&lt;= k &lt;= x，这是极为关键的，如果我们用这样的算法来算，我们的精度可以非常高，而且效率也比（1）好很多。</p>
-<p>②其它小数怎么算呢，我们从题目的条件中来看，其实（2）（3）都是与这个相关的</p>
-<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6c0k9jpslj31fx04rjuw.jpg" alt="image"></p>
-<p>（2）的意思是告诉我们一个加快收敛的方式，因为我们如果用（1）来计算，精度和效率是不可兼得的，所以我们可以构造上面那样一个式子来提高效率，具体方式需要自己去推理一下，而且可能还需要进行两次这样的操作才可以达到题目要求（我就是用了2次），但是要注意的是并非纯纯作差两次，而是要在第一个的基础上去构造内嵌的和式。</p>
-<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c0o595q2j30u702hwgj.jpg" alt="image"  /></p>
-<p>（3）的意思是告诉我们一个控制项数的方式，如果我们一直算下去，肯定是不行的，所以我们就要去通过上面的不等式来判断是否后面的项对于我们的精度已经没有影响了。</p>
- <font color=green>这里想特别指出的是，如果只用x=1和x=2的值来计算其它所有项是否可行？经测验是不可行的，即使用每项70000次来计算，最后的结果还是会偏差1e-10，所以改进策略就是先把整数算出来，然后把整个3000项分成不同段来计算，这样就可以达到精度和时间的双重要求</font>
-
-<p><strong>所以我们就可以得到一个伪代码</strong></p>
-<p>①计算除0外的整数项</p>
-<p>②分不同的段来计算中间项的值</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><font color=red>能不能更加优化？</font>
-
-<p>我们可以通过推理不同项的关系（如下）</p>
-<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6c2t20p52j30jm090ac9.jpg" alt="image"></p>
-<p>首先计算前十项的值，然后通过这样的递推式得到后面2991项的值</p>
-<p>要注意的是，前十项的精度要求就比较高了</p>
-<p>&lt;/font&gt;</p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h6c3ap284kj31bb12c4ck.jpg" alt="image"></p>
-<h2 id="LAB2-6-2-Root-of-a-Polynomial"><a href="#LAB2-6-2-Root-of-a-Polynomial" class="headerlink" title="LAB2 6-2 Root of a Polynomial"></a>LAB2 6-2 Root of a Polynomial</h2><p>这个题目的核心其实也就是把书上学到的各种求根算法用一用，然后加之优化</p>
-<h3 id="1-二分法"><a href="#1-二分法" class="headerlink" title="1.二分法"></a>1.二分法</h3><p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h6journdgyj30xo0v9afp.jpg" alt="image" style="zoom:50%;" /></p>
-<h3 id="2-不动点法"><a href="#2-不动点法" class="headerlink" title="2.不动点法"></a>2.不动点法</h3><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6jovj8zshj30w20r1438.jpg" alt="image" style="zoom:50%;" /></p>
-<h3 id="3-牛顿法"><a href="#3-牛顿法" class="headerlink" title="3.牛顿法"></a>3.牛顿法</h3><h4 id="3-1-普通牛顿法"><a href="#3-1-普通牛顿法" class="headerlink" title="3.1 普通牛顿法"></a>3.1 普通牛顿法</h4><p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6jow25f6lj30wf0hljvh.jpg" alt="image" style="zoom:50%;" /></p>
-<h4 id="3-2-割线牛顿法（secant）"><a href="#3-2-割线牛顿法（secant）" class="headerlink" title="3.2 割线牛顿法（secant）"></a>3.2 割线牛顿法（secant）</h4><p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h6jowxvqjqj30wj0n7n1w.jpg" alt="image" style="zoom:50%;" /></p>
-<h4 id="3-3-错位法（false-position）"><a href="#3-3-错位法（false-position）" class="headerlink" title="3.3 错位法（false position）"></a>3.3 错位法（false position）</h4><p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h6joxvcc4fj30y30wmgrl.jpg" alt="image" style="zoom:50%;" /></p>
-<h3 id="关于这道题目"><a href="#关于这道题目" class="headerlink" title="关于这道题目"></a>关于这道题目</h3><p>首先说题目是有坑的，关键点在于以下几个</p>
-<p>1.极值点处取到零点，牛顿法失效（F‘’（x）== 0），要做一些特判，在附近找到合适的零点，但是实践表明不用在迭代过程中特殊判断。（测试点2，5）</p>
-<p>2.当区间的右端点取到零点时，答案的零点是<strong>b-EPS</strong>（测试点3）<font color=red>麻了 -_-</font></p>
-<p><strong>[ 不要问我为什么，问就是题目的测试点有点问题 ] 真的麻了</strong></p>
-<p>如果用二分法，也可以基本全过，如果用优化版牛顿法也可以基本全过，但是唯独测试点三！</p>
-<p>只要加上这样一句话，你就可以A掉这道题目</p>
-<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h6nt7t8cwej30yk033dhq.jpg" alt="image"></p>
-<h2 id="LAB3-6-3-There-is-No-Free-Lunch"><a href="#LAB3-6-3-There-is-No-Free-Lunch" class="headerlink" title="LAB3 6-3 There is No Free Lunch"></a>LAB3 <strong>6-3 There is No Free Lunch</strong></h2><p>这道题目的思路主要是<strong>Sherman-Morrison公式</strong>的应用</p>
-<p>首先我们用最普通的牛顿消元法来做，发现只能过两个点，后两个点空间爆了。</p>
-<p><img src="https://tva3.sinaimg.cn/large/008cRf41ly1h6zbowmaihj310b0es421.jpg" alt="image"></p>
-<p>那我们就得去想想别的解法，这是就想到了课上讲的crout分解法，但是我们发现题目所给的矩阵是循环性三对角矩阵</p>
-<p>而crout分解法适用的范围是普通三对角矩阵，那这是我们首先用sherman-morrison公式来分解原矩阵</p>
-<p>然后就可以通过求解两个普通三对角矩阵的解，来得到最终的解，这个算法的时间复杂度是O(N)</p>
-<p>附上自己的手写推导过程</p>
-<p><img src="https://tvax2.sinaimg.cn/large/008cRf41ly1h6zbw8l9dnj30m50sj47x.jpg" alt="image"></p>
-<p>然后37行代码一次性提交成功喽！还挺惊喜，中间居然没写出来bug（×</p>
-<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h6zbx9dvrxj31ik0cmjvt.jpg" alt="image"></p>
-<h2 id="LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel"><a href="#LAB4-6-4-Compare-Methods-of-Jacobi-with-Gauss-Seidel" class="headerlink" title="LAB4 6-4 Compare Methods of Jacobi with Gauss-Seidel"></a>LAB4 <strong>6-4 Compare Methods of Jacobi with Gauss-Seidel</strong></h2><p>这个题目十分考验细心程度</p>
-<p>代码按照书上的伪代码来写就好，这里列举一些细节，帮助大家对照</p>
-<p><strong>1.交换不同行或把某一行加到另一行时要带上b一起交换</strong></p>
-<p><strong>2.题目中的ZERO判断不需要用，直接用0判断就可</strong></p>
-<p><strong>3.在范数小于TOL返回前，把当前轮的X更新掉，否则返回的是上一轮的X</strong></p>
-<p><strong>4.判断行是否需要相加或者交换，在两个迭代函数开始前都需要操作一次（最后一个测试点</strong></p>
-<p>最后用100+行提交成功了，这次的LAB就用了不到一个小时，还是蛮开心的！</p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h77ec0lsmgj31760xewqh.jpg" alt="image"></p>
-]]></content>
-      <tags>
-        <tag>Courses</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>异或的巧妙使用</title>
-    <url>/posts/1322/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
-<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
-</blockquote>
-<p><br/><br><br/><br><br/></p>
-<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
-</blockquote>
-<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
-<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
-<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
-</blockquote>
-<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
-</blockquote>
-<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
-<blockquote>
-<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-        <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>欧拉筛法及其改进方法（素数的判断）</title>
     <url>/posts/5593/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -855,6 +855,21 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
+    <title>结构体类型的三种声明方式</title>
+    <url>/posts/40650/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure></p>
+<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>求凸包的算法</title>
     <url>/posts/ec5e156b/</url>
     <content><![CDATA[<p>今天认真学习了一下求凸包的一种算法，总结在这篇博客中<br><span id="more"></span></p>
@@ -888,21 +903,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
-    <title>结构体类型的三种声明方式</title>
-    <url>/posts/40650/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure></p>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure></p>
-<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>获取Xpath的两种方法</title>
     <url>/posts/44935/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -912,6 +912,19 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑运算符的性能优化（短路问题）</title>
+    <url>/posts/40853/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="逻辑运算符的性能优化（短路问题）"><a href="#逻辑运算符的性能优化（短路问题）" class="headerlink" title="逻辑运算符的性能优化（短路问题）"></a>逻辑运算符的性能优化（短路问题）</h1><p><font color=orange>在Python中存在这样的规则<br>我们举个例子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><font color=red><br>从上面的代码和它的输出结果来看，Python中存在这样的规则：<br><br>a and b 如果a为false，则b直接跳过<br><br>a or b 如果a为true，则b直接跳过<br></p>
+<p><font color=green><br>其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br><br>希望这篇文章能给你带来帮助！</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
@@ -949,19 +962,6 @@ B=\begin{bmatrix}
       <tags>
         <tag>CG</tag>
         <tag>algorithms</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑运算符的性能优化（短路问题）</title>
-    <url>/posts/40853/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="逻辑运算符的性能优化（短路问题）"><a href="#逻辑运算符的性能优化（短路问题）" class="headerlink" title="逻辑运算符的性能优化（短路问题）"></a>逻辑运算符的性能优化（短路问题）</h1><p><font color=orange>在Python中存在这样的规则<br>我们举个例子</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">and</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">32</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">无输出结果</span><br><span class="line"></span><br><span class="line">a = <span class="number">35</span></span><br><span class="line">a &gt; <span class="number">38</span> <span class="keyword">or</span> <span class="built_in">print</span>(<span class="string">&#x27;我被运行了&#x27;</span>)</span><br><span class="line"></span><br><span class="line">输出结果：我被运行了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><font color=red><br>从上面的代码和它的输出结果来看，Python中存在这样的规则：<br><br>a and b 如果a为false，则b直接跳过<br><br>a or b 如果a为true，则b直接跳过<br></p>
-<p><font color=green><br>其实，C语言中也有类似的规则，本质上是为了提高代码的性能。<br><br>希望这篇文章能给你带来帮助！</p>
-]]></content>
-      <tags>
-        <tag>CS</tag>
       </tags>
   </entry>
   <entry>
