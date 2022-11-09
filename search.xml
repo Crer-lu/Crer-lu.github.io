@@ -1370,4 +1370,26 @@ B=\begin{bmatrix}
         <tag>Courses</tag>
       </tags>
   </entry>
+  <entry>
+    <title>汇编语言结尾为什么是end main</title>
+    <url>/posts/849f6e42/</url>
+    <content><![CDATA[<p>今天学习汇编的时候发现了一个小细节<br><span id="more"></span><br>比如随便写一段汇编代码，拿最简单的输出“hello，world”为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data segment</span><br><span class="line">hw db &#x27;hello, world&#x27;, 0Dh, 0Ah, &#x27;$&#x27;</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">assume cs:code, ds:data</span><br><span class="line">main:</span><br><span class="line">    mov ax, data</span><br><span class="line">    mov ds, ax</span><br><span class="line"></span><br><span class="line">    mov ah, 9</span><br><span class="line">    mov dx, offset hw</span><br><span class="line">    int 21h;printf</span><br><span class="line">    mov ah, 4Ch</span><br><span class="line">    int 21h;return();</span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure>
+<p>我们不难发现：code segment是先出现的，但是在程序结束的时候，code ends本应该最后出现，但是却出现在end main的前面</p>
+<p>这是什么原因呢？我上网搜索这个问题，结果表明，这是对end main这句话的理解不够深导致的</p>
+<p>在这篇问答（<a href="https://www.zhihu.com/question/22095837">汇编中为什么先code ends，再end main？ - 知乎 (zhihu.com)</a>）中我看到</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h7z5tleuf6j30k006v40d.jpg" alt="image"></p>
+<p> 所以end后面跟上一个标号（可以不是main），主要的作用有这么几个</p>
+<ol>
+<li><p>标志任何一个汇编语言程序的结尾</p>
+</li>
+<li><p>说明这个汇编程序的入口是什么（跟在end 后面的标号）</p>
+</li>
+</ol>
+<p>所以说，end main并不是类似于C语言中的那种花括号的闭合，而是起着其它作用，或者换言之，如果我们在code ends后面加上好多好多其它的段（~segment开始，~ ends结束），最后的结尾应该仍然是end main（或者end ~ 这里加上某个标签名，标志程序入口）</p>
+]]></content>
+      <tags>
+        <tag>汇编</tag>
+      </tags>
+  </entry>
 </search>

@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="C++ sort自定义cmp的细节">
-<meta property="og:url" content="https://fengjielu.top/posts/18623/index.html">
+  <meta name="description" content="今天学习汇编的时候发现了一个小细节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言结尾为什么是end main">
+<meta property="og:url" content="https://fengjielu.top/posts/849f6e42/index.html">
 <meta property="og:site_name" content="Blog by Crer_lu">
+<meta property="og:description" content="今天学习汇编的时候发现了一个小细节">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-31T11:15:45.885Z">
-<meta property="article:modified_time" content="2022-09-21T11:50:02.247Z">
+<meta property="og:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h7z5tleuf6j30k006v40d.jpg">
+<meta property="article:published_time" content="2022-11-09T12:30:58.000Z">
+<meta property="article:modified_time" content="2022-11-09T12:52:11.183Z">
 <meta property="article:author" content="Fengjie Lu">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="tips">
+<meta property="article:tag" content="汇编">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva4.sinaimg.cn/large/008cRf41ly1h7z5tleuf6j30k006v40d.jpg">
 
-<link rel="canonical" href="https://fengjielu.top/posts/18623/">
+<link rel="canonical" href="https://fengjielu.top/posts/849f6e42/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>C++ sort自定义cmp的细节 | Blog by Crer_lu</title>
+  <title>汇编语言结尾为什么是end main | Blog by Crer_lu</title>
   
 
 
@@ -194,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/18623/">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/849f6e42/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mouse.jpg">
@@ -207,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++ sort自定义cmp的细节
+          汇编语言结尾为什么是end main
         </h1>
 
         <div class="post-meta">
@@ -216,16 +219,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-08-31 19:15:45" itemprop="dateCreated datePublished" datetime="2022-08-31T19:15:45+08:00">2022-08-31</time>
+              <time title="Created: 2022-11-09 20:30:58 / Modified: 20:52:11" itemprop="dateCreated datePublished" datetime="2022-11-09T20:30:58+08:00">2022-11-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-21 19:50:02" itemprop="dateModified" datetime="2022-09-21T19:50:02+08:00">2022-09-21</time>
-              </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -243,8 +240,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/posts/18623/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/18623/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/849f6e42/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/849f6e42/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -259,9 +256,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><span id="more"></span></p>
-<p><font color=red>cmp函数在书写时，一定不要写出“return a &lt;= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。</p>
-<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+        <p>今天学习汇编的时候发现了一个小细节<br><span id="more"></span><br>比如随便写一段汇编代码，拿最简单的输出“hello，world”为例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">data segment</span><br><span class="line">hw db &#x27;hello, world&#x27;, 0Dh, 0Ah, &#x27;$&#x27;</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">assume cs:code, ds:data</span><br><span class="line">main:</span><br><span class="line">    mov ax, data</span><br><span class="line">    mov ds, ax</span><br><span class="line"></span><br><span class="line">    mov ah, 9</span><br><span class="line">    mov dx, offset hw</span><br><span class="line">    int 21h;printf</span><br><span class="line">    mov ah, 4Ch</span><br><span class="line">    int 21h;return();</span><br><span class="line">code ends</span><br><span class="line">end main</span><br></pre></td></tr></table></figure>
+<p>我们不难发现：code segment是先出现的，但是在程序结束的时候，code ends本应该最后出现，但是却出现在end main的前面</p>
+<p>这是什么原因呢？我上网搜索这个问题，结果表明，这是对end main这句话的理解不够深导致的</p>
+<p>在这篇问答（<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22095837">汇编中为什么先code ends，再end main？ - 知乎 (zhihu.com)</a>）中我看到</p>
+<p><img src="https://tva4.sinaimg.cn/large/008cRf41ly1h7z5tleuf6j30k006v40d.jpg" alt="image"></p>
+<p> 所以end后面跟上一个标号（可以不是main），主要的作用有这么几个</p>
+<ol>
+<li><p>标志任何一个汇编语言程序的结尾</p>
+</li>
+<li><p>说明这个汇编程序的入口是什么（跟在end 后面的标号）</p>
+</li>
+</ol>
+<p>所以说，end main并不是类似于C语言中的那种花括号的闭合，而是起着其它作用，或者换言之，如果我们在code ends后面加上好多好多其它的段（~segment开始，~ ends结束），最后的结尾应该仍然是end main（或者end ~ 这里加上某个标签名，标志程序入口）</p>
 
     </div>
 
@@ -291,8 +299,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C++</a>
-              <a href="/tags/tips/" rel="tag"># tips</a>
+              <a href="/tags/%E6%B1%87%E7%BC%96/" rel="tag"># 汇编</a>
           </div>
 
         
@@ -301,13 +308,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/24838/" rel="prev" title="ASCII的最大值">
-      <i class="fa fa-chevron-left"></i> ASCII的最大值
+    <a href="/posts/fb4be677/" rel="prev" title="ISE14.7在win10安装教程">
+      <i class="fa fa-chevron-left"></i> ISE14.7在win10安装教程
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/20964/" rel="next" title="C++ string 的substr的使用方法">
-      C++ string 的substr的使用方法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
