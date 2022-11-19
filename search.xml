@@ -751,6 +751,26 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 </ol>
 <p>最后就可以通过啦！（最后也是花了一个多小时的时间，居然比LAB4还要久）</p>
 <p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h7gkxhe7icj30it0buq68.jpg" alt="image"></p>
+<h2 id="LAB6-6-6-Cubic-Spline"><a href="#LAB6-6-6-Cubic-Spline" class="headerlink" title="LAB6 6-6 Cubic Spline"></a>LAB6 <strong>6-6 Cubic Spline</strong></h2><p>这个题目的关键是分两种情况来解决不同的边界问题</p>
+<p>当type == 1和type == 2时分别对应着clamped spline 和 natural spine，基本就照着书上所给的伪代码一步步写就可以了</p>
+<p>不过要注意以下几点：</p>
+<ol>
+<li>下标不是完全对应的（可能老师也是专门设置成这样子的</li>
+<li>natural spline 的边界值书上认为的是0，这里我们由于要设置成指定值，所以要对中间的参变量进行修正（详情见下）</li>
+</ol>
+<p>课上老师讲的那种是和书上的方式不太一样的，所以我们先看懂书上的推导，然后在natural spine的流程中做三处修改</p>
+<p><strong>Z0=S0’’/2 Cn=Sn’’/2 Zn=Sn’’/2</strong></p>
+<p>然后就可以完成这道题目了</p>
+<h2 id="LAB7-6-7-Orthogonal-Polynomials-Approximation"><a href="#LAB7-6-7-Orthogonal-Polynomials-Approximation" class="headerlink" title="LAB7 6-7 Orthogonal Polynomials Approximation"></a>LAB7 <strong>6-7 Orthogonal Polynomials Approximation</strong></h2><p>这个题目的关键是模拟一个正交多项式的生成过程，这个流程的伪代码书上没写，在PPT里面有</p>
+<p>基本按照原流程写下来就可以了，中间要注意的点有这几个：</p>
+<ol>
+<li>要记得乘上w[i]这个函数</li>
+<li>最开始记得清空c[]这个系数向量</li>
+<li>过程中生成Pol2这个多项式的时候记得清空其中的内容，再去做叠加的修改</li>
+<li>过程中用到的C[]向量和传入的参数c[]不要重名（我就因为这个调了半天bug）</li>
+</ol>
+<p>最后就没什么特别的了，样例一过，提交直接成功</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h8a5xbfvvjj31md058dhe.jpg" alt="image"></p>
 ]]></content>
       <tags>
         <tag>Courses</tag>
