@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++ sort自定义cmp的细节</title>
+    <url>/posts/18623/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<p><font color=red>cmp函数在书写时，一定不要写出“return a &lt;= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。</p>
+<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ASCII的最大值</title>
     <url>/posts/24838/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -40,18 +52,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++ sort自定义cmp的细节</title>
-    <url>/posts/18623/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<p><font color=red>cmp函数在书写时，一定不要写出“return a &lt;= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。</p>
-<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSDN传送门</title>
     <url>/posts/22989/</url>
     <content><![CDATA[<p>之前在CSDN上写过笔记和题解，这里写一个传送门过去</p>
@@ -85,15 +85,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Chrome的headless配置语句（可粘贴）</title>
-    <url>/posts/50872/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言中的内部名和外部名</title>
     <url>/posts/63593/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span><br>​    最近在看C语言的经典书籍——《The C Programming Language》，其中第二章讲到变量名时有这么一段话：“对于内部名而言，至少前31个字符是有效的。函数名与外部变量名包含的字符数目可能小于31，这是因为汇编程序和加载程序可能会使用这些外部名，而语言本身是无法控制加载和汇编程序的。对于外部名，ANSI标准仅保证前6个字符的唯一性，并且不区分大小写。” 怎么也读不懂，于是Google之，得到如下解释：</p>
@@ -103,6 +94,15 @@
       <tags>
         <tag>C</tag>
         <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome的headless配置语句（可粘贴）</title>
+    <url>/posts/50872/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"><span class="comment">#path为自己的chrome.exe位置，我这里写的是我自己电脑中的位置</span></span><br><span class="line">path = <span class="string">r&#x27;C:\Users\86185\AppData\Local\Google\Chrome\Application\chrome.exe&#x27;</span></span><br><span class="line">chrome_options.binary_location = path</span><br><span class="line">browser = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -176,6 +176,20 @@
       <tags>
         <tag>algorithm</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>PTA基础题错题集</title>
@@ -293,18 +307,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>windows批处理学习</title>
+    <url>/posts/24536/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br><a href="https://www.cnblogs.com/xpwi/p/9626959.html">转载链接</a><br><a href="https://blog.csdn.net/qq_38199187/article/details/84642491">转载链接</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>最短路算法总结</title>
+    <url>/posts/21495/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="最短路算法总结"><a href="#最短路算法总结" class="headerlink" title="最短路算法总结"></a>最短路算法总结</h1><h3 id="一、目录"><a href="#一、目录" class="headerlink" title="一、目录"></a>一、目录</h3><h5 id="1-Floyd（n-3-n：点数"><a href="#1-Floyd（n-3-n：点数" class="headerlink" title="1.Floyd（n^3) n：点数"></a>1.Floyd（n^3) n：点数</h5><h5 id="2-dijikstra-n-2-gt-mlogm-n：点数-m-边数"><a href="#2-dijikstra-n-2-gt-mlogm-n：点数-m-边数" class="headerlink" title="2.dijikstra( n^2 -&gt; mlogm) n：点数 m:边数"></a>2.dijikstra( n^2 -&gt; mlogm) n：点数 m:边数</h5><h5 id="3-bellman-ford-nm-n-点数-m-边数"><a href="#3-bellman-ford-nm-n-点数-m-边数" class="headerlink" title="3.bellman-ford(nm) n: 点数 m:边数"></a>3.bellman-ford(nm) n: 点数 m:边数</h5><h5 id="4-spfa-Km-K-约为2的常数-m-边数"><a href="#4-spfa-Km-K-约为2的常数-m-边数" class="headerlink" title="4.spfa(Km)  K:约为2的常数 m:边数"></a>4.spfa(Km)  K:约为2的常数 m:边数</h5><h5 id="5-Johnson-nmlogm"><a href="#5-Johnson-nmlogm" class="headerlink" title="5.Johnson (nmlogm)"></a>5.Johnson (nmlogm)</h5><h3 id="二、实现的代码"><a href="#二、实现的代码" class="headerlink" title="二、实现的代码"></a>二、实现的代码</h3><h3 id="1-floyd-全源最短路（可以解决负权边，但不能解决负权回路）"><a href="#1-floyd-全源最短路（可以解决负权边，但不能解决负权回路）" class="headerlink" title="1.floyd  全源最短路（可以解决负权边，但不能解决负权回路）"></a>1.floyd  全源最短路（可以解决负权边，但不能解决负权回路）</h3><p>代码的核心：从第i点到第j点的过程中，寻找是否有第k点（k ！= i &amp;&amp; k ！= j）作为中转点，使得i点和j点之间的最短路可以更新，从而完成代码。</p>
+<h2 id="要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！"><a href="#要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！" class="headerlink" title="要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！"></a>要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 200<span class="comment">//基本为最大数据范围</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> f[N][N];<span class="comment">//两个点之间的最短距离 </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;<span class="comment">//n为点的数目，m为边的数目</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="built_in">memset</span>(f, <span class="number">0x3f</span>, <span class="built_in">sizeof</span>(f));<span class="comment">//初始化为无穷大</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		f[i][i] = <span class="number">0</span>;<span class="comment">//自己到自己的距离初始化为0</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ m)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		<span class="keyword">if</span>(z &lt; f[x][y]) f[x][y] = f[y][x] = z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; ++ k)<span class="comment">//k必须在最外层循环，作为动态转移的状态</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++ j)</span><br><span class="line">				<span class="keyword">if</span>(i != k &amp;&amp; i != j &amp;&amp; k != j &amp;&amp; f[x][k] + f[k][y] &lt; f[x][y]) f[x][y] = f[y][x] = f[x][k] + f[k][y];</span><br><span class="line">	f[a][b]即为a,b两点之间的最短距离</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-dijikstra-单源最短路（不能解决负权边）"><a href="#2-dijikstra-单源最短路（不能解决负权边）" class="headerlink" title="2.dijikstra 单源最短路（不能解决负权边）"></a>2.dijikstra 单源最短路（不能解决负权边）</h3><p>使用 优先队列 + vector双重优化，复杂度低于mlogn<br>代码的核心：松弛操作若能实现，将点加入到优先队列中，每次取出距离起点最短距离的点进行拓展，并且保证每个点只进行一次遍历它所有相邻的点。</p>
+<p>此处代码直接用堆优化，因为不优化的dijikstra意义不大（时间复杂度高）<br>补充：如何求最短路条数？<br>修改为如下代码即可：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">	dis[v] = dis[u] + w;</span><br><span class="line">	num[v] = num[u];</span><br><span class="line">	que.push(make_pair(-dis[v], v));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(dis[u] + w == dis[v])</span><br><span class="line">	num[v] += num[u];</span><br></pre></td></tr></table></figure>
+<h2 id="注意：压入队列时，要压边权的相反数！（默认大根堆）"><a href="#注意：压入队列时，要压边权的相反数！（默认大根堆）" class="headerlink" title="注意：压入队列时，要压边权的相反数！（默认大根堆）"></a>注意：压入队列时，要压边权的相反数！（默认大根堆）</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1050</span>;<span class="comment">//基本为最大数据范围 </span></span><br><span class="line"><span class="type">int</span> dis[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line">vector&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">priority_queue&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;que;<span class="comment">//大根堆 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijikstra</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, x));</span><br><span class="line">	dis[x] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">top</span>().second;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">		vis[u] = <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> len = vec[u].<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[v], v));<span class="comment">//压</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x, y, v;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;v);</span><br><span class="line">		vec[x].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(y, v));</span><br><span class="line">		vec[y].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(x, v));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> center;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;center);</span><br><span class="line">	<span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">	<span class="built_in">dijikstra</span>(center);<span class="comment">//求出以center为起点的各点的最短路，存储在dis数组中 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, dis[目标点]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-bellman-ford-单源最短路（能解决负权边-不能解决负环，但可以判断负环）"><a href="#3-bellman-ford-单源最短路（能解决负权边-不能解决负环，但可以判断负环）" class="headerlink" title="3.bellman-ford 单源最短路（能解决负权边,不能解决负环，但可以判断负环）"></a>3.bellman-ford 单源最短路（能解决负权边,不能解决负环，但可以判断负环）</h3><p>代码核心：跑n次循环，每次跑m条边的首尾点之间的距离，如果能更新就及时更新。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="title">std</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 3050</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Edge&#123;</span><br><span class="line">	<span class="built_in">int</span> u, v;</span><br><span class="line">	<span class="built_in">int</span> w;</span><br><span class="line">&#125;edge[N];<span class="comment">//结构体数组用来存边 </span></span><br><span class="line"><span class="built_in">int</span> dis[N];</span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">main</span>()</span>&#123;</span><br><span class="line">	<span class="built_in">int</span> U, V;<span class="comment">//起点和终点 </span></span><br><span class="line">	scanf(<span class="string">&quot;%d%d&quot;</span>, &amp;U, &amp;V);</span><br><span class="line">	memset(dis, <span class="number">63</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">	dis[U] = <span class="number">0</span>;<span class="comment">//初始化 </span></span><br><span class="line">	<span class="built_in">int</span> n, m;</span><br><span class="line">	scanf(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">		scanf(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, edge[i].w);</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[edge[j].u] + edge[j].w &lt; dis[edge[j].v])</span><br><span class="line">				dis[edge[j].v] = dis[edge[j].u] + edge[j].w;</span><br><span class="line">			<span class="keyword">if</span>(dis[edge[j].v] + edge[j].w &lt; dis[edge[j].u])</span><br><span class="line">				dis[edge[j].u] = dis[edge[j].v] + edge[j].w;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)</span><br><span class="line">		<span class="keyword">if</span>(dis[edge[j].u] + edge[j].w &lt; dis[edge[j].v] || dis[edge[j].v] + edge[j].w &lt; dis[edge[j].u])</span><br><span class="line">			printf(<span class="string">&quot;存在负环！！！&quot;</span>)</span><br><span class="line">	printf(<span class="string">&quot;%d&quot;</span>, dis[V]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）"><a href="#4-spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）" class="headerlink" title="4.spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）"></a>4.spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）</h3><p>代码核心：用队列优化后的bellman-Ford算法，省去了冗余的循环，大大极高运行效率。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line">vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">queue&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;que;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dis[N], d[N];<span class="comment">//d[N]为走最短路到达某点所需步数 </span></span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">spfa</span><span class="params">(<span class="type">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">	dis[s] = <span class="number">0</span>;</span><br><span class="line">	vis[s] = <span class="number">1</span>;</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, s));</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">front</span>().second;</span><br><span class="line">		vis[u] = <span class="number">0</span>;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; vec[u].<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				d[v] = d[u] + <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(d[v] &gt;= n) <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//若无负环，走最短路到达某点最多用n-1条边 </span></span><br><span class="line">				<span class="keyword">if</span>(!vis[v])&#123;</span><br><span class="line">					vis[v] = <span class="number">1</span>;</span><br><span class="line">					que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(dis[v], v));</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);	</span><br><span class="line">	<span class="type">int</span> x, y, z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		vec[x].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(y, z));</span><br><span class="line">		vec[y].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(x, z));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> U, V;<span class="comment">//U:起点 V：终点 </span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;U, &amp;V);</span><br><span class="line">	<span class="type">int</span> judge = <span class="built_in">spfa</span>(U);</span><br><span class="line">	<span class="keyword">if</span>(judge == <span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">&quot;存在负环！！！&quot;</span>)</span><br><span class="line">	<span class="keyword">else</span>	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, dis[V]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）"><a href="#5-johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）" class="headerlink" title="5.johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）"></a>5.johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）</h3><p>代码关键：bellman-ford与dijikstra的配合使用，大数据范围下优于spfa算法跑n次。</p>
+<p>转载【洛谷日报#242】Johnson 全源最短路径算法学习笔记<br>链接：<a href="https://zhuanlan.zhihu.com/p/99802850">https://zhuanlan.zhihu.com/p/99802850</a></p>
+<p>练习题：P5905 【模板】Johnson 全源最短路<br>链接：<a href="https://www.luogu.com.cn/problem/P5905">https://www.luogu.com.cn/problem/P5905</a></p>
+<h2 id="建议先看笔记，后做题，下面是本题题解"><a href="#建议先看笔记，后做题，下面是本题题解" class="headerlink" title="建议先看笔记，后做题，下面是本题题解"></a>建议先看笔记，后做题，下面是本题题解</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 3005</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], vis[N];</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> dis[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span>&#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N * <span class="number">2</span>];<span class="comment">//结构体数组用来存边</span></span><br><span class="line">vector&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">priority_queue&lt;pair &lt;<span class="type">long</span> <span class="type">long</span> , <span class="type">int</span>&gt; &gt;que;<span class="comment">//大根堆 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijikstra</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		dis[i] = <span class="number">1e9</span>;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in">sizeof</span>(vis));</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, x));</span><br><span class="line">	dis[x] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">top</span>().second;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">		vis[u] = <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> len = vec[u].<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[v], v));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="type">int</span> x, y, z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		edge[i].u = x;</span><br><span class="line">		edge[i].v = y;</span><br><span class="line">		edge[i].w = z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; ++ i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(h[edge[j].u] + edge[j].w &lt; h[edge[j].v])</span><br><span class="line">				h[edge[j].v] = h[edge[j].u] + edge[j].w;			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)</span><br><span class="line">		<span class="keyword">if</span>(h[edge[j].u] + edge[j].w &lt; h[edge[j].v])&#123;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">		vec[edge[i].u].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(edge[i].v, edge[i].w + h[edge[i].u] - h[edge[i].v]));</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">dijikstra</span>(i);</span><br><span class="line">		<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j] == <span class="number">1e9</span>) tot += j * <span class="number">1e9</span>;</span><br><span class="line">			<span class="keyword">else</span> tot += j * (dis[j] + h[j] - h[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！"><a href="#以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！" class="headerlink" title="以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！"></a>以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！</h1>]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>algorithm</tag>
+        <tag>最短路</tag>
+      </tags>
   </entry>
   <entry>
     <title>printf输出如何用变量控制位宽</title>
@@ -313,15 +344,29 @@
 <h1 id="看代码"><a href="#看代码" class="headerlink" title="看代码"></a>看代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">2</span>, y = <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%*d %0*d&quot;</span>, x, y, x, y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>C</tag>
         <tag>tips</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
-    <title>windows批处理学习</title>
-    <url>/posts/24536/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span><br><a href="https://www.cnblogs.com/xpwi/p/9626959.html">转载链接</a><br><a href="https://blog.csdn.net/qq_38199187/article/details/84642491">转载链接</a></p>
+    <title>使用hexo+github搭建属于自己的博客</title>
+    <url>/posts/50751/</url>
+    <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。<br><span id="more"></span></p>
+<h2 id="搭建自己的博客网站"><a href="#搭建自己的博客网站" class="headerlink" title="搭建自己的博客网站"></a>搭建自己的博客网站</h2><p>全流程参考知乎文章<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
+<p>如果想要更换主题，不要用上面那篇文章里的教程</p>
+<p>用这一个<a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)_Z小旋的博客-CSDN博客_hexo next主题配置</a></p>
+<p>最后，再说一个我配置的时候遇到的最大的问题，为什么本地预览成功，但是部署到github上后却显示不出来，这里可以这样处理：</p>
+<p>首先打开你的github项目</p>
+<p>点击settings</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5nq4ca5hbj3062042mx3.jpg" alt="image-20220829162224708"></p>
+<p>然后打开pages选项</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
+<p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
 ]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
   </entry>
   <entry>
     <title>一文搞懂结构体变量占用多大的内存空间</title>
@@ -382,48 +427,26 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
-    <title>最短路算法总结</title>
-    <url>/posts/21495/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="最短路算法总结"><a href="#最短路算法总结" class="headerlink" title="最短路算法总结"></a>最短路算法总结</h1><h3 id="一、目录"><a href="#一、目录" class="headerlink" title="一、目录"></a>一、目录</h3><h5 id="1-Floyd（n-3-n：点数"><a href="#1-Floyd（n-3-n：点数" class="headerlink" title="1.Floyd（n^3) n：点数"></a>1.Floyd（n^3) n：点数</h5><h5 id="2-dijikstra-n-2-gt-mlogm-n：点数-m-边数"><a href="#2-dijikstra-n-2-gt-mlogm-n：点数-m-边数" class="headerlink" title="2.dijikstra( n^2 -&gt; mlogm) n：点数 m:边数"></a>2.dijikstra( n^2 -&gt; mlogm) n：点数 m:边数</h5><h5 id="3-bellman-ford-nm-n-点数-m-边数"><a href="#3-bellman-ford-nm-n-点数-m-边数" class="headerlink" title="3.bellman-ford(nm) n: 点数 m:边数"></a>3.bellman-ford(nm) n: 点数 m:边数</h5><h5 id="4-spfa-Km-K-约为2的常数-m-边数"><a href="#4-spfa-Km-K-约为2的常数-m-边数" class="headerlink" title="4.spfa(Km)  K:约为2的常数 m:边数"></a>4.spfa(Km)  K:约为2的常数 m:边数</h5><h5 id="5-Johnson-nmlogm"><a href="#5-Johnson-nmlogm" class="headerlink" title="5.Johnson (nmlogm)"></a>5.Johnson (nmlogm)</h5><h3 id="二、实现的代码"><a href="#二、实现的代码" class="headerlink" title="二、实现的代码"></a>二、实现的代码</h3><h3 id="1-floyd-全源最短路（可以解决负权边，但不能解决负权回路）"><a href="#1-floyd-全源最短路（可以解决负权边，但不能解决负权回路）" class="headerlink" title="1.floyd  全源最短路（可以解决负权边，但不能解决负权回路）"></a>1.floyd  全源最短路（可以解决负权边，但不能解决负权回路）</h3><p>代码的核心：从第i点到第j点的过程中，寻找是否有第k点（k ！= i &amp;&amp; k ！= j）作为中转点，使得i点和j点之间的最短路可以更新，从而完成代码。</p>
-<h2 id="要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！"><a href="#要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！" class="headerlink" title="要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！"></a>要注意：k要放在最外层循环（本质与动规状态转移有关）否则对于一些神奇的数据点，会出错！！！</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 200<span class="comment">//基本为最大数据范围</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> f[N][N];<span class="comment">//两个点之间的最短距离 </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;<span class="comment">//n为点的数目，m为边的数目</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="built_in">memset</span>(f, <span class="number">0x3f</span>, <span class="built_in">sizeof</span>(f));<span class="comment">//初始化为无穷大</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		f[i][i] = <span class="number">0</span>;<span class="comment">//自己到自己的距离初始化为0</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ m)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		<span class="keyword">if</span>(z &lt; f[x][y]) f[x][y] = f[y][x] = z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; ++ k)<span class="comment">//k必须在最外层循环，作为动态转移的状态</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++ j)</span><br><span class="line">				<span class="keyword">if</span>(i != k &amp;&amp; i != j &amp;&amp; k != j &amp;&amp; f[x][k] + f[k][y] &lt; f[x][y]) f[x][y] = f[y][x] = f[x][k] + f[k][y];</span><br><span class="line">	f[a][b]即为a,b两点之间的最短距离</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-dijikstra-单源最短路（不能解决负权边）"><a href="#2-dijikstra-单源最短路（不能解决负权边）" class="headerlink" title="2.dijikstra 单源最短路（不能解决负权边）"></a>2.dijikstra 单源最短路（不能解决负权边）</h3><p>使用 优先队列 + vector双重优化，复杂度低于mlogn<br>代码的核心：松弛操作若能实现，将点加入到优先队列中，每次取出距离起点最短距离的点进行拓展，并且保证每个点只进行一次遍历它所有相邻的点。</p>
-<p>此处代码直接用堆优化，因为不优化的dijikstra意义不大（时间复杂度高）<br>补充：如何求最短路条数？<br>修改为如下代码即可：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">	dis[v] = dis[u] + w;</span><br><span class="line">	num[v] = num[u];</span><br><span class="line">	que.push(make_pair(-dis[v], v));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(dis[u] + w == dis[v])</span><br><span class="line">	num[v] += num[u];</span><br></pre></td></tr></table></figure>
-<h2 id="注意：压入队列时，要压边权的相反数！（默认大根堆）"><a href="#注意：压入队列时，要压边权的相反数！（默认大根堆）" class="headerlink" title="注意：压入队列时，要压边权的相反数！（默认大根堆）"></a>注意：压入队列时，要压边权的相反数！（默认大根堆）</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1050</span>;<span class="comment">//基本为最大数据范围 </span></span><br><span class="line"><span class="type">int</span> dis[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line">vector&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">priority_queue&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;que;<span class="comment">//大根堆 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijikstra</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, x));</span><br><span class="line">	dis[x] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">top</span>().second;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">		vis[u] = <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> len = vec[u].<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[v], v));<span class="comment">//压</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x, y, v;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;v);</span><br><span class="line">		vec[x].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(y, v));</span><br><span class="line">		vec[y].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(x, v));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> center;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;center);</span><br><span class="line">	<span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">	<span class="built_in">dijikstra</span>(center);<span class="comment">//求出以center为起点的各点的最短路，存储在dis数组中 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, dis[目标点]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-bellman-ford-单源最短路（能解决负权边-不能解决负环，但可以判断负环）"><a href="#3-bellman-ford-单源最短路（能解决负权边-不能解决负环，但可以判断负环）" class="headerlink" title="3.bellman-ford 单源最短路（能解决负权边,不能解决负环，但可以判断负环）"></a>3.bellman-ford 单源最短路（能解决负权边,不能解决负环，但可以判断负环）</h3><p>代码核心：跑n次循环，每次跑m条边的首尾点之间的距离，如果能更新就及时更新。</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#include&lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="title">std</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 3050</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Edge&#123;</span><br><span class="line">	<span class="built_in">int</span> u, v;</span><br><span class="line">	<span class="built_in">int</span> w;</span><br><span class="line">&#125;edge[N];<span class="comment">//结构体数组用来存边 </span></span><br><span class="line"><span class="built_in">int</span> dis[N];</span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">main</span>()</span>&#123;</span><br><span class="line">	<span class="built_in">int</span> U, V;<span class="comment">//起点和终点 </span></span><br><span class="line">	scanf(<span class="string">&quot;%d%d&quot;</span>, &amp;U, &amp;V);</span><br><span class="line">	memset(dis, <span class="number">63</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">	dis[U] = <span class="number">0</span>;<span class="comment">//初始化 </span></span><br><span class="line">	<span class="built_in">int</span> n, m;</span><br><span class="line">	scanf(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">		scanf(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, edge[i].w);</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[edge[j].u] + edge[j].w &lt; dis[edge[j].v])</span><br><span class="line">				dis[edge[j].v] = dis[edge[j].u] + edge[j].w;</span><br><span class="line">			<span class="keyword">if</span>(dis[edge[j].v] + edge[j].w &lt; dis[edge[j].u])</span><br><span class="line">				dis[edge[j].u] = dis[edge[j].v] + edge[j].w;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="built_in">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)</span><br><span class="line">		<span class="keyword">if</span>(dis[edge[j].u] + edge[j].w &lt; dis[edge[j].v] || dis[edge[j].v] + edge[j].w &lt; dis[edge[j].u])</span><br><span class="line">			printf(<span class="string">&quot;存在负环！！！&quot;</span>)</span><br><span class="line">	printf(<span class="string">&quot;%d&quot;</span>, dis[V]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）"><a href="#4-spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）" class="headerlink" title="4.spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）"></a>4.spfa求单源最短路（能解决负权边，不能解决负环，可判断负环）</h3><p>代码核心：用队列优化后的bellman-Ford算法，省去了冗余的循环，大大极高运行效率。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line">vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">queue&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt;que;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dis[N], d[N];<span class="comment">//d[N]为走最短路到达某点所需步数 </span></span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">spfa</span><span class="params">(<span class="type">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">	dis[s] = <span class="number">0</span>;</span><br><span class="line">	vis[s] = <span class="number">1</span>;</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, s));</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">front</span>().second;</span><br><span class="line">		vis[u] = <span class="number">0</span>;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; vec[u].<span class="built_in">size</span>(); ++i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				d[v] = d[u] + <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(d[v] &gt;= n) <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//若无负环，走最短路到达某点最多用n-1条边 </span></span><br><span class="line">				<span class="keyword">if</span>(!vis[v])&#123;</span><br><span class="line">					vis[v] = <span class="number">1</span>;</span><br><span class="line">					que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(dis[v], v));</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);	</span><br><span class="line">	<span class="type">int</span> x, y, z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		vec[x].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(y, z));</span><br><span class="line">		vec[y].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(x, z));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> U, V;<span class="comment">//U:起点 V：终点 </span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;U, &amp;V);</span><br><span class="line">	<span class="type">int</span> judge = <span class="built_in">spfa</span>(U);</span><br><span class="line">	<span class="keyword">if</span>(judge == <span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">&quot;存在负环！！！&quot;</span>)</span><br><span class="line">	<span class="keyword">else</span>	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, dis[V]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）"><a href="#5-johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）" class="headerlink" title="5.johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）"></a>5.johnson全源最短路（能解决负权边，不能解决负环，可以判断负环）</h3><p>代码关键：bellman-ford与dijikstra的配合使用，大数据范围下优于spfa算法跑n次。</p>
-<p>转载【洛谷日报#242】Johnson 全源最短路径算法学习笔记<br>链接：<a href="https://zhuanlan.zhihu.com/p/99802850">https://zhuanlan.zhihu.com/p/99802850</a></p>
-<p>练习题：P5905 【模板】Johnson 全源最短路<br>链接：<a href="https://www.luogu.com.cn/problem/P5905">https://www.luogu.com.cn/problem/P5905</a></p>
-<h2 id="建议先看笔记，后做题，下面是本题题解"><a href="#建议先看笔记，后做题，下面是本题题解" class="headerlink" title="建议先看笔记，后做题，下面是本题题解"></a>建议先看笔记，后做题，下面是本题题解</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 3005</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], vis[N];</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> dis[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span>&#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N * <span class="number">2</span>];<span class="comment">//结构体数组用来存边</span></span><br><span class="line">vector&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">priority_queue&lt;pair &lt;<span class="type">long</span> <span class="type">long</span> , <span class="type">int</span>&gt; &gt;que;<span class="comment">//大根堆 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijikstra</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		dis[i] = <span class="number">1e9</span>;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in">sizeof</span>(vis));</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, x));</span><br><span class="line">	dis[x] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">top</span>().second;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">		vis[u] = <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> len = vec[u].<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[v], v));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="type">int</span> x, y, z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		edge[i].u = x;</span><br><span class="line">		edge[i].v = y;</span><br><span class="line">		edge[i].w = z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; ++ i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(h[edge[j].u] + edge[j].w &lt; h[edge[j].v])</span><br><span class="line">				h[edge[j].v] = h[edge[j].u] + edge[j].w;			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)</span><br><span class="line">		<span class="keyword">if</span>(h[edge[j].u] + edge[j].w &lt; h[edge[j].v])&#123;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">		vec[edge[i].u].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(edge[i].v, edge[i].w + h[edge[i].u] - h[edge[i].v]));</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">dijikstra</span>(i);</span><br><span class="line">		<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j] == <span class="number">1e9</span>) tot += j * <span class="number">1e9</span>;</span><br><span class="line">			<span class="keyword">else</span> tot += j * (dis[j] + h[j] - h[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！"><a href="#以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！" class="headerlink" title="以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！"></a>以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！</h1>]]></content>
-      <tags>
-        <tag>CS</tag>
-        <tag>algorithm</tag>
-        <tag>最短路</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo+github搭建属于自己的博客</title>
-    <url>/posts/50751/</url>
-    <content><![CDATA[<p>自己最近在学CG（computer graphics）,想到能和前端联系起来，所以就一方面搭建个人网站，另一方面开始学习前端三宝（HTML，CSS，JS），这篇文章是自己搭建这个博客的方法。<br><span id="more"></span></p>
-<h2 id="搭建自己的博客网站"><a href="#搭建自己的博客网站" class="headerlink" title="搭建自己的博客网站"></a>搭建自己的博客网站</h2><p>全流程参考知乎文章<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程 - 知乎 (zhihu.com)</a></p>
-<p>如果想要更换主题，不要用上面那篇文章里的教程</p>
-<p>用这一个<a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)_Z小旋的博客-CSDN博客_hexo next主题配置</a></p>
-<p>最后，再说一个我配置的时候遇到的最大的问题，为什么本地预览成功，但是部署到github上后却显示不出来，这里可以这样处理：</p>
-<p>首先打开你的github项目</p>
-<p>点击settings</p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5nq4ca5hbj3062042mx3.jpg" alt="image-20220829162224708"></p>
-<p>然后打开pages选项</p>
-<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5nq4cg87gj30ed0s5juo.jpg" alt="image-20220829162348247"></p>
-<p>然后修改page site从原来的main改为master（如果你是把代码全都部署在master分支上的话，这样可以修改成功</p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5nq4clf4mj30ne0fnwiz.jpg" alt="image-20220829162454395"></p>
+    <title>分辨率的认识</title>
+    <url>/posts/28341/</url>
+    <content><![CDATA[<p>今天看到了《网页制作从新手到高手》的第四章P50，看到了图像分辨率的介绍，感觉讲的不是很清楚，于是自己搜索，对这个概念有了一些认识，记录为这篇博客</p>
+<span id="more"></span>
+<h1 id="分辨率的认识"><a href="#分辨率的认识" class="headerlink" title="分辨率的认识"></a>分辨率的认识</h1><h2 id="像素（pixel）"><a href="#像素（pixel）" class="headerlink" title="像素（pixel）"></a>像素（pixel）</h2><p>平时我们经常会接触到一个概念叫做 像素，如何去理解它呢，我们放大一张图片，当放到很大的时候，我们会发现图中变成了各种颜色的色块的组合，这样的每一个色块就叫做一个像素（pixel，简称px）其实我们平时接触到所有的图像都是这样组成的，只不过是我们看一张图片时，通常是从整体来看的，所以我们也不会感觉到有什么异常。</p>
+<p>比如我们放大下面这张图里的篮球，就会看到一个个色块，所以其实从更小的角度来看，颜色是离散的（不连续的）</p>
+<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5uvbbpsifj30cf0bg42t.jpg" alt="屏幕截图 2022-09-04 205358"></p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5uvbc0yhcj31z418g4qp.jpg" alt="屏幕截图 2022-09-04 205629"></p>
+<h2 id="图像分辨率与屏幕分辨率"><a href="#图像分辨率与屏幕分辨率" class="headerlink" title="图像分辨率与屏幕分辨率"></a>图像分辨率与屏幕分辨率</h2><h3 id="图像分辨率"><a href="#图像分辨率" class="headerlink" title="图像分辨率"></a>图像分辨率</h3><p>这个概念其实我们平时接触的并不多，当我们说一个图片“像素高” “看起来很清晰”时，其实是在说图像分辨率大，图像分辨率的概念是一英寸正方形内一条边上像素的个数。比如我们在一张图（原始无放大的状态下）画出一个1英寸×1英寸的正方形，然后我们数一下其中的像素个数，如果是72px*72px，那么这个图像的分辨率就是72 ppi（pixels per inch）</p>
+<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5uvi0zpa8j30t90f4dmh.jpg" alt="image"></p>
+<center>图片来源 [B站da西先生]([4.分辨率和图像大小_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UC4y1a7Fx?spm_id_from=333.880.my_history.page.click&vd_source=64137ec6dfc52353d4c023a37a16203e))</center>
+
+<h3 id="屏幕分辨率"><a href="#屏幕分辨率" class="headerlink" title="屏幕分辨率"></a>屏幕分辨率</h3><p>这个我们生活中用的还挺多的，比如我们说这个平板的分辨率是4k的，其实是说这个屏幕的宽上有4000左右个像素点（不同设备会有所区别），还有一种说法是这个屏幕的分辨率是1920 × 1280的，也就是说宽上有1920个像素点，高上有1280个像素点。<br></p>
+<p>当屏幕尺寸一定时，分辨率越大，显示效果越好；当分辨率一定时，屏幕越小，显示效果越好。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5uvqccveaj307s04qjs2.jpg" alt="image" style="zoom:200%;" /></p>
+<h2 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h2><p>要注意的是，分辨率并不是图像的文件大小和传输时间最主要的决定因素，因为网页使用的图像是以压缩形式存储的，而且分辨率高 ≠ 图像文件大，像素点越多，图像文件才会越大。</p>
+<p>希望能对你有所帮助，如果问题请您批评指出！</p>
 ]]></content>
       <tags>
-        <tag>tips</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -437,6 +460,43 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 ]]></content>
       <tags>
         <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复杂度的渐进表示</title>
+    <url>/posts/25658/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="复杂度的渐进表示"><a href="#复杂度的渐进表示" class="headerlink" title="复杂度的渐进表示"></a>复杂度的渐进表示</h1><h2 id="1-O（n）（常用）"><a href="#1-O（n）（常用）" class="headerlink" title="1. O（n）（常用）"></a>1. O（n）（常用）</h2><script type="math/tex; mode=display">T(n)=O(f(n))</script><p>这个式子表示存在常数$C&gt;0$ $n_0 &gt;0$使得当 $n&gt;=n_0$ 时，$T(n)&lt;=C<em>O(f(n))$<br>简单来说，$O(f(n))$ 表示的就是$f(n)$的复杂度中的某个上界<br>例如，$f(n)=(n</em>(n+1))/2$ 则$O(f(n))=n^2$（不唯一）</p>
+<h2 id="2-Ω（n）"><a href="#2-Ω（n）" class="headerlink" title="2. Ω（n）"></a>2. Ω（n）</h2><script type="math/tex; mode=display">T(n)=Ω(f(n))</script><p>这个式子表示存在常数$C&gt;0$ $n_0 &gt;0$使得当 $n&gt;=n_0$ 时，$T(n)&gt;=C<em>Ω(f(n))$<br>简单来说，$Ω(f(n))$ 表示的就是$f(n)$的复杂度的某个下界<br>例如，$f(n)=(n</em>(n+1))/2$ 则$Ω(f(n))=n^2/2$（不唯一）</p>
+<h2 id="3-Θ（n）"><a href="#3-Θ（n）" class="headerlink" title="3. Θ（n）"></a>3. Θ（n）</h2><script type="math/tex; mode=display">T(n)=Θ(f(n))</script><p>这个式子表示同时有以下两个式子成立<script type="math/tex">T(n)=O(f(n))$$$$T(n)=Ω(f(n))</script></p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>判断最小生成树是否唯一</title>
+    <url>/posts/1041600e/</url>
+    <content><![CDATA[<p>今天做DS作业的时候遇到了这样一个问题，如何判断最小生成树是否唯一</p>
+<p>其实正常的最小生成树的判断方法就使用并查集 + sort排序即可，不过如何判断最小生成树唯一性</p>
+<p>我分析这个问题，关键就在于找到一个充分条件：</p>
+<p><strong>当前这条边可以添加到集合中 + 存在边长相等的边 + 且那一条边在这条边添加前可以添加，而添加后就不可以添加了</strong></p>
+<p>如果可以满足这个条件，我们就用judge标志位记下来</p>
+<p>最后也可以实现（差点就去写搜索了www</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 510</span></span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">EDGE</span> &#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">const</span> EDGE&amp; a, <span class="type">const</span> EDGE&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.w &lt; b.w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">FIND</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] == x) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> fa[x] = <span class="built_in">FIND</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		fa[i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, &amp;edge[i].w);</span><br><span class="line">	<span class="built_in">sort</span>(edge, edge + m, cmp);</span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>, k = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="type">bool</span> judge = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (k &lt; m) &#123;</span><br><span class="line">		<span class="type">int</span> fax = <span class="built_in">FIND</span>(edge[k].u);</span><br><span class="line">		<span class="type">int</span> fay = <span class="built_in">FIND</span>(edge[k].v);</span><br><span class="line">		<span class="keyword">if</span> (fax != fay) &#123;</span><br><span class="line">			<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx != fayy) t++;<span class="comment">//还可以合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			fa[fax] = fay;</span><br><span class="line">			sum += edge[k].w;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx == fayy) t++;<span class="comment">//变得不能合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (t == <span class="number">2</span>) judge = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">		<span class="keyword">if</span> (!judge) <span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="keyword">if</span> (fa[i] == i) cnt++;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;No MST\n%d&quot;</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>alogorithms</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复数变量的声明</title>
+    <url>/posts/803/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -496,29 +556,6 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
-    <title>分辨率的认识</title>
-    <url>/posts/28341/</url>
-    <content><![CDATA[<p>今天看到了《网页制作从新手到高手》的第四章P50，看到了图像分辨率的介绍，感觉讲的不是很清楚，于是自己搜索，对这个概念有了一些认识，记录为这篇博客</p>
-<span id="more"></span>
-<h1 id="分辨率的认识"><a href="#分辨率的认识" class="headerlink" title="分辨率的认识"></a>分辨率的认识</h1><h2 id="像素（pixel）"><a href="#像素（pixel）" class="headerlink" title="像素（pixel）"></a>像素（pixel）</h2><p>平时我们经常会接触到一个概念叫做 像素，如何去理解它呢，我们放大一张图片，当放到很大的时候，我们会发现图中变成了各种颜色的色块的组合，这样的每一个色块就叫做一个像素（pixel，简称px）其实我们平时接触到所有的图像都是这样组成的，只不过是我们看一张图片时，通常是从整体来看的，所以我们也不会感觉到有什么异常。</p>
-<p>比如我们放大下面这张图里的篮球，就会看到一个个色块，所以其实从更小的角度来看，颜色是离散的（不连续的）</p>
-<p><img src="https://tva2.sinaimg.cn/large/008cRf41ly1h5uvbbpsifj30cf0bg42t.jpg" alt="屏幕截图 2022-09-04 205358"></p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5uvbc0yhcj31z418g4qp.jpg" alt="屏幕截图 2022-09-04 205629"></p>
-<h2 id="图像分辨率与屏幕分辨率"><a href="#图像分辨率与屏幕分辨率" class="headerlink" title="图像分辨率与屏幕分辨率"></a>图像分辨率与屏幕分辨率</h2><h3 id="图像分辨率"><a href="#图像分辨率" class="headerlink" title="图像分辨率"></a>图像分辨率</h3><p>这个概念其实我们平时接触的并不多，当我们说一个图片“像素高” “看起来很清晰”时，其实是在说图像分辨率大，图像分辨率的概念是一英寸正方形内一条边上像素的个数。比如我们在一张图（原始无放大的状态下）画出一个1英寸×1英寸的正方形，然后我们数一下其中的像素个数，如果是72px*72px，那么这个图像的分辨率就是72 ppi（pixels per inch）</p>
-<p><img src="https://tvax4.sinaimg.cn/large/008cRf41ly1h5uvi0zpa8j30t90f4dmh.jpg" alt="image"></p>
-<center>图片来源 [B站da西先生]([4.分辨率和图像大小_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UC4y1a7Fx?spm_id_from=333.880.my_history.page.click&vd_source=64137ec6dfc52353d4c023a37a16203e))</center>
-
-<h3 id="屏幕分辨率"><a href="#屏幕分辨率" class="headerlink" title="屏幕分辨率"></a>屏幕分辨率</h3><p>这个我们生活中用的还挺多的，比如我们说这个平板的分辨率是4k的，其实是说这个屏幕的宽上有4000左右个像素点（不同设备会有所区别），还有一种说法是这个屏幕的分辨率是1920 × 1280的，也就是说宽上有1920个像素点，高上有1280个像素点。<br></p>
-<p>当屏幕尺寸一定时，分辨率越大，显示效果越好；当分辨率一定时，屏幕越小，显示效果越好。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h5uvqccveaj307s04qjs2.jpg" alt="image" style="zoom:200%;" /></p>
-<h2 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h2><p>要注意的是，分辨率并不是图像的文件大小和传输时间最主要的决定因素，因为网页使用的图像是以压缩形式存储的，而且分辨率高 ≠ 图像文件大，像素点越多，图像文件才会越大。</p>
-<p>希望能对你有所帮助，如果问题请您批评指出！</p>
-]]></content>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>栈和队列（手动与STL实现）</title>
     <url>/posts/24344/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -537,77 +574,8 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 <p>作者初步整理这些，用于自己日常复习，希望对大家有所帮助。</p>
 ]]></content>
       <tags>
+        <tag>C++</tag>
         <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复杂度的渐进表示</title>
-    <url>/posts/25658/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="复杂度的渐进表示"><a href="#复杂度的渐进表示" class="headerlink" title="复杂度的渐进表示"></a>复杂度的渐进表示</h1><h2 id="1-O（n）（常用）"><a href="#1-O（n）（常用）" class="headerlink" title="1. O（n）（常用）"></a>1. O（n）（常用）</h2><script type="math/tex; mode=display">T(n)=O(f(n))</script><p>这个式子表示存在常数$C&gt;0$ $n_0 &gt;0$使得当 $n&gt;=n_0$ 时，$T(n)&lt;=C<em>O(f(n))$<br>简单来说，$O(f(n))$ 表示的就是$f(n)$的复杂度中的某个上界<br>例如，$f(n)=(n</em>(n+1))/2$ 则$O(f(n))=n^2$（不唯一）</p>
-<h2 id="2-Ω（n）"><a href="#2-Ω（n）" class="headerlink" title="2. Ω（n）"></a>2. Ω（n）</h2><script type="math/tex; mode=display">T(n)=Ω(f(n))</script><p>这个式子表示存在常数$C&gt;0$ $n_0 &gt;0$使得当 $n&gt;=n_0$ 时，$T(n)&gt;=C<em>Ω(f(n))$<br>简单来说，$Ω(f(n))$ 表示的就是$f(n)$的复杂度的某个下界<br>例如，$f(n)=(n</em>(n+1))/2$ 则$Ω(f(n))=n^2/2$（不唯一）</p>
-<h2 id="3-Θ（n）"><a href="#3-Θ（n）" class="headerlink" title="3. Θ（n）"></a>3. Θ（n）</h2><script type="math/tex; mode=display">T(n)=Θ(f(n))</script><p>这个式子表示同时有以下两个式子成立<script type="math/tex">T(n)=O(f(n))$$$$T(n)=Ω(f(n))</script></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>course</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何批量word转pdf</title>
-    <url>/posts/53104/</url>
-    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br><span id="more"></span></p>
-<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
-<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
-<p>然后按下F5即可运行</p>
-<p>之后选择好根目录文件夹就可以了</p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复数变量的声明</title>
-    <url>/posts/803/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>异或的巧妙使用</title>
-    <url>/posts/1322/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
-<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
-</blockquote>
-<p><br/><br><br/><br><br/></p>
-<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
-</blockquote>
-<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
-<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
-<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
-</blockquote>
-<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
-</blockquote>
-<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
-<blockquote>
-<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-        <tag>interview</tag>
       </tags>
   </entry>
   <entry>
@@ -624,58 +592,17 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
-    <title>怎样自己亲手搭建一个四比特加法器</title>
-    <url>/posts/34487/</url>
-    <content><![CDATA[<p><center>大一上《信息与电子工程导论》大作业</center><br><span id="more"></span></p>
-<h1 id="怎样自己亲手搭建一个四比特加法器"><a href="#怎样自己亲手搭建一个四比特加法器" class="headerlink" title="怎样自己亲手搭建一个四比特加法器"></a>怎样自己亲手搭建一个四比特加法器</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p><font color=green>作为大一上学期第一个大作业，最终还是拖到了冬学期的第八周，从第七周的周六开始，一直到第八周周五上午课上展示，中间连续熬了好几天的夜，另外，白天凡是有时间都用在研究它了，最终大约是用了30个小时，完成了这个四比特加法器的“从零到一”。<br>最终，小组得分92，个人分数100（贡献比35%），也不枉自己投入的心血<br><img src="https://img-blog.csdnimg.cn/a5ced433f0e44b12adf4f1f6b04bc4b7.png" alt="在这里插入图片描述"></p>
-<h2 id="二、器材"><a href="#二、器材" class="headerlink" title="二、器材"></a>二、器材</h2><p>电阻 1 包（10kΩ×100，1kΩ×50）<br>三极管 1 包（9013×100，LED×6）<br>跳线 3 短 1.5 长<br>电源 1 个<br>USB 线 1 条<br>面包板 1 块<br>万用表 1 只<br><img src="https://img-blog.csdnimg.cn/8ff0c2bcc7014108866f0512eae094b5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="三、步骤"><a href="#三、步骤" class="headerlink" title="三、步骤"></a>三、步骤</h2><p><font color = green><br>1) 利用三极管搭建逻辑门（与或非）并进行仿真测试；<br><br>2) 利用逻辑门搭建一位半加器并进行仿真测试；<br><br>3) 在一位半加器的基础上搭建一位全加器并进行仿真测试；<br><br>4) 利用一位全加器进行适当地级联，搭建 4-bit 加法器，并进行仿真测试；<br><br>5) 进行实物搭建并测试；</p>
-<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><h3 id="1-简单逻辑门的搭建"><a href="#1-简单逻辑门的搭建" class="headerlink" title="1.简单逻辑门的搭建"></a>1.简单逻辑门的搭建</h3><p><img src="https://img-blog.csdnimg.cn/9ae8f673639d43ec887013875bcae933.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/79e28736999644fb9e1895daa5b2cf14.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83952eb48f1b4535bc6c8eb6eac63e93.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e72f8d73792541ec99c2643613ddb962.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h3 id="2-半加器的搭建"><a href="#2-半加器的搭建" class="headerlink" title="2.半加器的搭建"></a>2.半加器的搭建</h3><p><img src="https://img-blog.csdnimg.cn/42005dcedeb7493f9cd11dd05dc3c687.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="最初选择"><br>本质上多了的就是异或门，如何搭建异或门呢？<br>这中间经历了好几代的迭代</p>
-<p><font color=red>第一代<br><img src="https://img-blog.csdnimg.cn/ad48b3cbb77f4c5e887f3e46d5d0422b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=black>我们清点一下三极管的数目，发现总共用到七个，而且有很大的损失，必须得改进</p>
-<p><font color=red>第二代</p>
-<p><font color=black>我们考虑对与非门进行改进(节省一个三极管)<br><img src="https://img-blog.csdnimg.cn/a5b189af6a6d470bbc3635aba681c498.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>仿真结果可知，这样的与非门效果很好，同样的思路我们得到了或非门的改进版，将来在进位中可能会用到。<br><img src="https://img-blog.csdnimg.cn/0c9549156c134c639962ab92d11eb33f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red>接下来我们搭建半加器</p>
-<p><font color=black>考虑到进位的与门有损失的问题，我们搭建时，进位采用了无损与门</p>
-<p><font color=blac>无损与门与无损或门<br><img src="https://img-blog.csdnimg.cn/43e631ec8a154e67ab35877a54515ba3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red>然后我们得到了半加器的电路</p>
-<p><img src="https://img-blog.csdnimg.cn/9cc5acb2b24240829b37f6c2edfbd4b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>总共是用到了<strong>七个</strong>三极管，能够完成计算本位（上面的电压表）和进位（下面的电压表）</p>
-<p><font color=red>考虑到整个电路的简洁性（三极管越多，电路搭建难度越大），我们对半加器进行进一步的改进<br>本位：或非门结果和与门结果进行或非<br>进位：与门结果<br><img src="https://img-blog.csdnimg.cn/175c804bfe60486db8c2f6c300da06f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现只用到了四个三级管，这也是我们最终加法器里面用的半加器方案。</p>
-<h3 id="3-全加器的搭建"><a href="#3-全加器的搭建" class="headerlink" title="3.全加器的搭建"></a>3.全加器的搭建</h3><p>在上面四个三极管的基础上，我们进行相应的改进，得到最终的全加器。</p>
-<p><font color=blac>本位：两次半加器的本位计算结果（A和B的本位计算结果再与C进位进行本位计算）<br>进位：无损与门（考虑后面的级联问题——损失可能导致结果错误）<br><img src="https://img-blog.csdnimg.cn/2a35aa5463bf45b38a3b9b45873ad1c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red>清点一下，我们发现总共用到了10个三极管，同样也是我们的最终版本。</p>
-<h3 id="4-半加器与全加器级联实现两位加法器"><a href="#4-半加器与全加器级联实现两位加法器" class="headerlink" title="4.半加器与全加器级联实现两位加法器"></a>4.半加器与全加器级联实现两位加法器</h3><p>其实就是把半加器的进位结果作为全加器的C输入即可。<br><img src="https://img-blog.csdnimg.cn/d6a4361543094fd0a698a06832d622cf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red>仿真结果<br><img src="https://img-blog.csdnimg.cn/1961b1e2920a4c8aad7dadb189706bce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/6db05306d96d4dfda4cb4f62ecb4078e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/338d1beef189445cbfdfe70624cd1e07.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现结果完全正确！<br>两位加法器完成！</p>
-<h3 id="5-四位加法器的搭建"><a href="#5-四位加法器的搭建" class="headerlink" title="5.四位加法器的搭建"></a>5.四位加法器的搭建</h3><p>其实就是半加器+三个全加器，由于我们之前考虑到了进位有损的问题，所以这里搭建起来也是非常的容易。<br><img src="https://img-blog.csdnimg.cn/e88db013db6e406db97e01bc7c2b8c4c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=red>经仿真，我们发现结果依旧完全正确！<br>至此，我们就完成了四位加法器的搭建</p>
-<h2 id="五、实物图"><a href="#五、实物图" class="headerlink" title="五、实物图"></a>五、实物图</h2><p><font color=orange></p>
-<ol>
-<li>与门、或门和非门</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/39e8f333521742149d41dc44fb903f04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p><font color=orange></p>
-<ol>
-<li>异或门<br><img src="https://img-blog.csdnimg.cn/94fd5b21a7d34ca5be701dc012e9a65e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
-<li>与非门<br><img src="https://img-blog.csdnimg.cn/89da0c1d181f41b494347cf098572afc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4.无损与门<br><img src="https://img-blog.csdnimg.cn/16e220237fe8411c88bf0ccab2763702.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
-<li>半加器<br><img src="https://img-blog.csdnimg.cn/44c4042a80b542c29cde2ca7ece8478a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
-<li>全加器<br><img src="https://img-blog.csdnimg.cn/7f15dc4765c74f4d9ac836e071a46a36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
-<li>两位加法器<br><img src="https://img-blog.csdnimg.cn/c325bbdbbc024b2394ddae72dca67a9a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>7.四位加法器<br><img src="https://img-blog.csdnimg.cn/372d7fa9c2714b68ac36e00bbd4d2e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
-</ol>
-<h2 id="六、总结与思考"><a href="#六、总结与思考" class="headerlink" title="六、总结与思考"></a>六、总结与思考</h2><p><font color=pink></p>
-<ol>
-<li>完成一个大作业，需要小组成员合理的分工，这对工作的完成十分重要。<br></li>
-<li>建议遵循先仿真后搭建的思路，如果反过来，完成难度大（进位损失须提前考虑）<br></li>
-<li>电阻的使用：排电阻用剪刀在红线位置（如下图）剪下，如果拔下的话，管脚会留有胶，易造成接触不良</li>
-</ol>
-<blockquote>
-<p><img src="https://img-blog.csdnimg.cn/a00ba0908aee438885aefa44af4111c0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里是引用"></p>
-<p><font color=pink><br>4.搭建电路时，可以考虑把一些电阻、三极管的金属段同时插在面包板的同一个孔内，防止因松动导致接触不良。<br><br>5.完成这项作业，也算是帮助我对计算机底层原理有了新的认识，收获满满！</p>
-</blockquote>
-<h1 id="希望这篇文章对你有所帮助，奥里给QWQ！"><a href="#希望这篇文章对你有所帮助，奥里给QWQ！" class="headerlink" title="希望这篇文章对你有所帮助，奥里给QWQ！"></a>希望这篇文章对你有所帮助，奥里给QWQ！</h1>]]></content>
+    <title>如何批量word转pdf</title>
+    <url>/posts/53104/</url>
+    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br><span id="more"></span></p>
+<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
+<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>然后按下F5即可运行</p>
+<p>之后选择好根目录文件夹就可以了</p>
+]]></content>
       <tags>
         <tag>tips</tag>
-        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
@@ -771,6 +698,13 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 </ol>
 <p>最后就没什么特别的了，样例一过，提交直接成功</p>
 <p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h8a5xbfvvjj31md058dhe.jpg" alt="image"></p>
+<h2 id="LAB8-6-8-Shape-Roof"><a href="#LAB8-6-8-Shape-Roof" class="headerlink" title="LAB8 6-8 Shape Roof"></a>LAB8 <strong>6-8 Shape Roof</strong></h2><p>这次的LAB主要做的是<strong>积分估计</strong></p>
+<p>采用的方法为<strong>Romberg算法</strong>，这个在书中有写</p>
+<p>不过书中的循环次数是给定的，所以我们需要加一个收敛边界</p>
+<p>不过我交过去后发现有两个点超时，后来就把循环次数改为<strong>25</strong>，如果误差足够小，就提前终止</p>
+<p>然后就成功AC了</p>
+<p>（分析超时原因：内层循环有一个跑2的n次方次，所以n太大的话肯定是不行的，所以选择一个n的上限就可</p>
+<p>网上还有一种做法是对整个区间进行划分操作，然后再分开计算，可以成功收敛，我想原因可能是如果用那种<strong>划分次数*周期</strong>的方式计算，可以减小一定的误差，所以可以成功收敛。</p>
 ]]></content>
       <tags>
         <tag>Courses</tag>
@@ -791,6 +725,139 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 ]]></content>
       <tags>
         <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>怎样自己亲手搭建一个四比特加法器</title>
+    <url>/posts/34487/</url>
+    <content><![CDATA[<p><center>大一上《信息与电子工程导论》大作业</center><br><span id="more"></span></p>
+<h1 id="怎样自己亲手搭建一个四比特加法器"><a href="#怎样自己亲手搭建一个四比特加法器" class="headerlink" title="怎样自己亲手搭建一个四比特加法器"></a>怎样自己亲手搭建一个四比特加法器</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p><font color=green>作为大一上学期第一个大作业，最终还是拖到了冬学期的第八周，从第七周的周六开始，一直到第八周周五上午课上展示，中间连续熬了好几天的夜，另外，白天凡是有时间都用在研究它了，最终大约是用了30个小时，完成了这个四比特加法器的“从零到一”。<br>最终，小组得分92，个人分数100（贡献比35%），也不枉自己投入的心血<br><img src="https://img-blog.csdnimg.cn/a5ced433f0e44b12adf4f1f6b04bc4b7.png" alt="在这里插入图片描述"></p>
+<h2 id="二、器材"><a href="#二、器材" class="headerlink" title="二、器材"></a>二、器材</h2><p>电阻 1 包（10kΩ×100，1kΩ×50）<br>三极管 1 包（9013×100，LED×6）<br>跳线 3 短 1.5 长<br>电源 1 个<br>USB 线 1 条<br>面包板 1 块<br>万用表 1 只<br><img src="https://img-blog.csdnimg.cn/8ff0c2bcc7014108866f0512eae094b5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="三、步骤"><a href="#三、步骤" class="headerlink" title="三、步骤"></a>三、步骤</h2><p><font color = green><br>1) 利用三极管搭建逻辑门（与或非）并进行仿真测试；<br><br>2) 利用逻辑门搭建一位半加器并进行仿真测试；<br><br>3) 在一位半加器的基础上搭建一位全加器并进行仿真测试；<br><br>4) 利用一位全加器进行适当地级联，搭建 4-bit 加法器，并进行仿真测试；<br><br>5) 进行实物搭建并测试；</p>
+<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><h3 id="1-简单逻辑门的搭建"><a href="#1-简单逻辑门的搭建" class="headerlink" title="1.简单逻辑门的搭建"></a>1.简单逻辑门的搭建</h3><p><img src="https://img-blog.csdnimg.cn/9ae8f673639d43ec887013875bcae933.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/79e28736999644fb9e1895daa5b2cf14.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83952eb48f1b4535bc6c8eb6eac63e93.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e72f8d73792541ec99c2643613ddb962.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h3 id="2-半加器的搭建"><a href="#2-半加器的搭建" class="headerlink" title="2.半加器的搭建"></a>2.半加器的搭建</h3><p><img src="https://img-blog.csdnimg.cn/42005dcedeb7493f9cd11dd05dc3c687.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="最初选择"><br>本质上多了的就是异或门，如何搭建异或门呢？<br>这中间经历了好几代的迭代</p>
+<p><font color=red>第一代<br><img src="https://img-blog.csdnimg.cn/ad48b3cbb77f4c5e887f3e46d5d0422b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=black>我们清点一下三极管的数目，发现总共用到七个，而且有很大的损失，必须得改进</p>
+<p><font color=red>第二代</p>
+<p><font color=black>我们考虑对与非门进行改进(节省一个三极管)<br><img src="https://img-blog.csdnimg.cn/a5b189af6a6d470bbc3635aba681c498.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>仿真结果可知，这样的与非门效果很好，同样的思路我们得到了或非门的改进版，将来在进位中可能会用到。<br><img src="https://img-blog.csdnimg.cn/0c9549156c134c639962ab92d11eb33f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red>接下来我们搭建半加器</p>
+<p><font color=black>考虑到进位的与门有损失的问题，我们搭建时，进位采用了无损与门</p>
+<p><font color=blac>无损与门与无损或门<br><img src="https://img-blog.csdnimg.cn/43e631ec8a154e67ab35877a54515ba3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red>然后我们得到了半加器的电路</p>
+<p><img src="https://img-blog.csdnimg.cn/9cc5acb2b24240829b37f6c2edfbd4b6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>总共是用到了<strong>七个</strong>三极管，能够完成计算本位（上面的电压表）和进位（下面的电压表）</p>
+<p><font color=red>考虑到整个电路的简洁性（三极管越多，电路搭建难度越大），我们对半加器进行进一步的改进<br>本位：或非门结果和与门结果进行或非<br>进位：与门结果<br><img src="https://img-blog.csdnimg.cn/175c804bfe60486db8c2f6c300da06f6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现只用到了四个三级管，这也是我们最终加法器里面用的半加器方案。</p>
+<h3 id="3-全加器的搭建"><a href="#3-全加器的搭建" class="headerlink" title="3.全加器的搭建"></a>3.全加器的搭建</h3><p>在上面四个三极管的基础上，我们进行相应的改进，得到最终的全加器。</p>
+<p><font color=blac>本位：两次半加器的本位计算结果（A和B的本位计算结果再与C进位进行本位计算）<br>进位：无损与门（考虑后面的级联问题——损失可能导致结果错误）<br><img src="https://img-blog.csdnimg.cn/2a35aa5463bf45b38a3b9b45873ad1c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red>清点一下，我们发现总共用到了10个三极管，同样也是我们的最终版本。</p>
+<h3 id="4-半加器与全加器级联实现两位加法器"><a href="#4-半加器与全加器级联实现两位加法器" class="headerlink" title="4.半加器与全加器级联实现两位加法器"></a>4.半加器与全加器级联实现两位加法器</h3><p>其实就是把半加器的进位结果作为全加器的C输入即可。<br><img src="https://img-blog.csdnimg.cn/d6a4361543094fd0a698a06832d622cf.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red>仿真结果<br><img src="https://img-blog.csdnimg.cn/1961b1e2920a4c8aad7dadb189706bce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/6db05306d96d4dfda4cb4f62ecb4078e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/338d1beef189445cbfdfe70624cd1e07.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>我们发现结果完全正确！<br>两位加法器完成！</p>
+<h3 id="5-四位加法器的搭建"><a href="#5-四位加法器的搭建" class="headerlink" title="5.四位加法器的搭建"></a>5.四位加法器的搭建</h3><p>其实就是半加器+三个全加器，由于我们之前考虑到了进位有损的问题，所以这里搭建起来也是非常的容易。<br><img src="https://img-blog.csdnimg.cn/e88db013db6e406db97e01bc7c2b8c4c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=red>经仿真，我们发现结果依旧完全正确！<br>至此，我们就完成了四位加法器的搭建</p>
+<h2 id="五、实物图"><a href="#五、实物图" class="headerlink" title="五、实物图"></a>五、实物图</h2><p><font color=orange></p>
+<ol>
+<li>与门、或门和非门</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/39e8f333521742149d41dc44fb903f04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><font color=orange></p>
+<ol>
+<li>异或门<br><img src="https://img-blog.csdnimg.cn/94fd5b21a7d34ca5be701dc012e9a65e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
+<li>与非门<br><img src="https://img-blog.csdnimg.cn/89da0c1d181f41b494347cf098572afc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>4.无损与门<br><img src="https://img-blog.csdnimg.cn/16e220237fe8411c88bf0ccab2763702.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
+<li>半加器<br><img src="https://img-blog.csdnimg.cn/44c4042a80b542c29cde2ca7ece8478a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
+<li>全加器<br><img src="https://img-blog.csdnimg.cn/7f15dc4765c74f4d9ac836e071a46a36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><font color=orange></li>
+<li>两位加法器<br><img src="https://img-blog.csdnimg.cn/c325bbdbbc024b2394ddae72dca67a9a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><font color=orange><br>7.四位加法器<br><img src="https://img-blog.csdnimg.cn/372d7fa9c2714b68ac36e00bbd4d2e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></li>
+</ol>
+<h2 id="六、总结与思考"><a href="#六、总结与思考" class="headerlink" title="六、总结与思考"></a>六、总结与思考</h2><p><font color=pink></p>
+<ol>
+<li>完成一个大作业，需要小组成员合理的分工，这对工作的完成十分重要。<br></li>
+<li>建议遵循先仿真后搭建的思路，如果反过来，完成难度大（进位损失须提前考虑）<br></li>
+<li>电阻的使用：排电阻用剪刀在红线位置（如下图）剪下，如果拔下的话，管脚会留有胶，易造成接触不良</li>
+</ol>
+<blockquote>
+<p><img src="https://img-blog.csdnimg.cn/a00ba0908aee438885aefa44af4111c0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="这里是引用"></p>
+<p><font color=pink><br>4.搭建电路时，可以考虑把一些电阻、三极管的金属段同时插在面包板的同一个孔内，防止因松动导致接触不良。<br><br>5.完成这项作业，也算是帮助我对计算机底层原理有了新的认识，收获满满！</p>
+</blockquote>
+<h1 id="希望这篇文章对你有所帮助，奥里给QWQ！"><a href="#希望这篇文章对你有所帮助，奥里给QWQ！" class="headerlink" title="希望这篇文章对你有所帮助，奥里给QWQ！"></a>希望这篇文章对你有所帮助，奥里给QWQ！</h1>]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>hardware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>异或的巧妙使用</title>
+    <url>/posts/1322/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
+<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
+</blockquote>
+<p><br/><br><br/><br><br/></p>
+<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
+</blockquote>
+<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
+<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
+<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
+</blockquote>
+<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
+</blockquote>
+<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
+<blockquote>
+<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欧拉筛法及其改进方法（素数的判断）</title>
+    <url>/posts/5593/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="素数的筛法（欧拉筛法）及其改进"><a href="#素数的筛法（欧拉筛法）及其改进" class="headerlink" title="素数的筛法（欧拉筛法）及其改进"></a>素数的筛法（欧拉筛法）及其改进</h1><h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
+<pre><code>1.使用一个prime[N]存下当前素数 
+2.使用一个on[N]数组标志i 是不是素数。
+3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
+</code></pre><h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2></blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
+<p>i % prime[j] == 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] = 0</strong>成立，那么设<strong>k = i / prime[j]</strong> 则prime[j]<em>k = i成立<br>那么对于下一个需要筛选的 i </em> prime[j+1]=prime[j]<em>k</em>prime[j+1]<br>我们令m = k <em>prime[j+1]&gt;  i<br>因此当i增大时，k </em> prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
+</blockquote>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
+<p>求1,2,⋯,N 中素数的个数。</p>
+</blockquote>
+<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
+<p>【输入】：<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据    1≤ N ≤10 ^8^</p>
+</blockquote>
+<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
+<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-1-表示不是素数-on-0表示是素数"><a href="#on-1-表示不是素数-on-0表示是素数" class="headerlink" title="(on[] == 1 表示不是素数 on[] ==0表示是素数)"></a>(on[] == 1 表示不是素数 on[] ==0表示是素数)</h3><hr>
+<h1 id="2021年后续-欧拉筛法的优化-O-n-2"><a href="#2021年后续-欧拉筛法的优化-O-n-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n / 2))"></a>2021年后续(欧拉筛法的优化 O(n / 2))</h1><p>此处只给出处理的函数代码</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>==(所有的素数中只有2一个偶数)==</p>
+]]></content>
+      <tags>
+        <tag>素数筛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>求一个数组的所有子集</title>
+    <url>/posts/29338/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="求一个数组的所有子集（经典面试题）"><a href="#求一个数组的所有子集（经典面试题）" class="headerlink" title="求一个数组的所有子集（经典面试题）"></a>求一个数组的所有子集（经典面试题）</h1><h2 id="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"><a href="#偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法" class="headerlink" title="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"></a>偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法</h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在给定一个包含N个数的集合，请你输出它的所有子集。<br>注意：题目保证 0 &lt;= N &lt;= 1000000</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>3<br>1 3 5</p>
+<h2 id="输出样例（前后顺序不固定）"><a href="#输出样例（前后顺序不固定）" class="headerlink" title="输出样例（前后顺序不固定）"></a>输出样例（前后顺序不固定）</h2><p>16<br>(空行)<br>1<br>3<br>5<br>1 3<br>1 5<br>3 5<br>1 3 5</p>
+<h2 id="得到的思考"><a href="#得到的思考" class="headerlink" title="得到的思考"></a>得到的思考</h2><p>如果我们考虑一个O（N^2）的算法，肯定是过不去的，所以我们来想想其他办法<br>我们高中时学过：一个含有n个元素的集合的子集个数为$2^n$，因此我们联系二进制<br>从$000-111$一共八个数，分别是：<br>$000,001,010,011,100,101,110,111$<br>所以我们就明白了：用1表示这个元素要取，0表示不取，这样我们就完成了输出。</p>
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p>让$i$从$0 - &gt;n-1$跑一趟循环，配合&gt;&gt;和&amp;1把最低二进制位取出来，然后判断对应的元素是否输出就好。</p>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>interview</tag>
       </tags>
   </entry>
   <entry>
@@ -845,36 +912,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
-    <title>欧拉筛法及其改进方法（素数的判断）</title>
-    <url>/posts/5593/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="素数的筛法（欧拉筛法）及其改进"><a href="#素数的筛法（欧拉筛法）及其改进" class="headerlink" title="素数的筛法（欧拉筛法）及其改进"></a>素数的筛法（欧拉筛法）及其改进</h1><h2 id="欧拉筛法的算法分析："><a href="#欧拉筛法的算法分析：" class="headerlink" title="欧拉筛法的算法分析："></a>欧拉筛法的算法分析：</h2><blockquote>
-<pre><code>1.使用一个prime[N]存下当前素数 
-2.使用一个on[N]数组标志i 是不是素数。
-3.每一个素数都将其当前的i倍数标记为非素数（凡是有因子的数一定不是素数）。
-</code></pre><h2 id="处理函数"><a href="#处理函数" class="headerlink" title="处理函数"></a>处理函数</h2></blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">				素数存入栈中</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				标记为不是素数</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">	此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，</span><br><span class="line">		（欧拉筛法的关键）</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="欧拉筛法的关键"><a href="#欧拉筛法的关键" class="headerlink" title="欧拉筛法的关键"></a>欧拉筛法的关键</h2><blockquote>
-<p>i % prime[j] == 0 这一步到底有什么用？<br> 答：保证每个数只被它的最小质因子筛一次。（比较难以理解）<br> 我们假设 <strong>i % prime[j] = 0</strong>成立，那么设<strong>k = i / prime[j]</strong> 则prime[j]<em>k = i成立<br>那么对于下一个需要筛选的 i </em> prime[j+1]=prime[j]<em>k</em>prime[j+1]<br>我们令m = k <em>prime[j+1]&gt;  i<br>因此当i增大时，k </em> prime[j+1]肯定会被筛出来的，因此我们这一次就不用处理了<br> 进而我们就保证了每一个非素数只被它的最小质因子筛选一次。</p>
-</blockquote>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a><strong>例题</strong></h1><h2 id="【题目描述】"><a href="#【题目描述】" class="headerlink" title="【题目描述】"></a>【题目描述】</h2><blockquote>
-<p>求1,2,⋯,N 中素数的个数。</p>
-</blockquote>
-<h2 id="【输入输出格式】"><a href="#【输入输出格式】" class="headerlink" title="【输入输出格式】"></a>【输入输出格式】</h2><blockquote>
-<p>【输入】：<br>一个整数N。<br>【输出】：<br>1 个整数，表示素数的个数。<br><strong>注意</strong>:<br>• 对于40% 的数据，1≤ N ≤10 ^6^<br>• 对于80% 的数据，1≤ N ≤10 ^7^<br>• 对于100% 的数据    1≤ N ≤10 ^8^</p>
-</blockquote>
-<h2 id="【算法分析】"><a href="#【算法分析】" class="headerlink" title="【算法分析】"></a>【算法分析】</h2><p>这么大的数据如果真的要让普通判断方法，那么一定会超时(O（n^2^）).那么就需要一个黑科技来解决——<strong>欧拉筛法</strong>。</p>
-<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100000100</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt, n;</span><br><span class="line"><span class="type">int</span> prime[N];</span><br><span class="line"><span class="type">bool</span> on[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//0和1不是素数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!on[i])	prime[++cnt] = i;</span><br><span class="line">			<span class="comment">//素数存入栈中</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * prime[j] &lt;= n; ++j)&#123;</span><br><span class="line">			on[i * prime[j]] = <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//标记为不是素数</span></span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">				<span class="comment">//此处是精髓，如果当前的i能够被整除，那么这个数之前一定已经被处理过了，然后直接跳过。（欧拉筛法的关键）</span></span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">  	<span class="keyword">if</span>(!on[i]) tot++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);  <span class="comment">//计算数量</span></span><br><span class="line">							<span class="comment">//不过作者此处还有一个思路，就是由于存进去时候是有序的，所以使用一下low_bound()[上一篇博客有使用方法]，或者二分查找也可以的。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="上述代码中on数组和prime数组均为准确的"><a href="#上述代码中on数组和prime数组均为准确的" class="headerlink" title="上述代码中on数组和prime数组均为准确的"></a>上述代码中on数组和prime数组均为准确的</h3><h3 id="on-1-表示不是素数-on-0表示是素数"><a href="#on-1-表示不是素数-on-0表示是素数" class="headerlink" title="(on[] == 1 表示不是素数 on[] ==0表示是素数)"></a>(on[] == 1 表示不是素数 on[] ==0表示是素数)</h3><hr>
-<h1 id="2021年后续-欧拉筛法的优化-O-n-2"><a href="#2021年后续-欧拉筛法的优化-O-n-2" class="headerlink" title="2021年后续(欧拉筛法的优化 O(n / 2))"></a>2021年后续(欧拉筛法的优化 O(n / 2))</h1><p>此处只给出处理的函数代码</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ct, prime[<span class="number">100010</span>];</span><br><span class="line"><span class="type">int</span> on[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pre</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(on, <span class="number">1</span>, <span class="built_in">sizeof</span>(on));</span><br><span class="line">	on[<span class="number">0</span>] = on[<span class="number">1</span>] = on[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">	on[<span class="number">2</span>] = <span class="number">1</span>; prime[++ ct] = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(on[i])	prime[++ ct] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;=ct &amp;&amp; prime[j] * i &lt;= n; ++ j)&#123;</span><br><span class="line">			on[prime[j] * i] = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	<span class="built_in">pre</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ct);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。"><a href="#要注意优化后的代码中on数组对于偶数的标记不准确-但是prime数组依旧准确。" class="headerlink" title="要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。"></a>要注意优化后的代码中on数组对于偶数的标记不准确,但是prime数组依旧准确。</h1><p>==(所有的素数中只有2一个偶数)==</p>
-]]></content>
-      <tags>
-        <tag>素数筛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>求凸包的算法</title>
     <url>/posts/ec5e156b/</url>
     <content><![CDATA[<p>今天认真学习了一下求凸包的一种算法，总结在这篇博客中<br><span id="more"></span></p>
@@ -890,21 +927,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       <tags>
         <tag>CG</tag>
         <tag>algorithms</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>求一个数组的所有子集</title>
-    <url>/posts/29338/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="求一个数组的所有子集（经典面试题）"><a href="#求一个数组的所有子集（经典面试题）" class="headerlink" title="求一个数组的所有子集（经典面试题）"></a>求一个数组的所有子集（经典面试题）</h1><h2 id="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"><a href="#偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法" class="headerlink" title="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"></a>偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法</h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在给定一个包含N个数的集合，请你输出它的所有子集。<br>注意：题目保证 0 &lt;= N &lt;= 1000000</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>3<br>1 3 5</p>
-<h2 id="输出样例（前后顺序不固定）"><a href="#输出样例（前后顺序不固定）" class="headerlink" title="输出样例（前后顺序不固定）"></a>输出样例（前后顺序不固定）</h2><p>16<br>(空行)<br>1<br>3<br>5<br>1 3<br>1 5<br>3 5<br>1 3 5</p>
-<h2 id="得到的思考"><a href="#得到的思考" class="headerlink" title="得到的思考"></a>得到的思考</h2><p>如果我们考虑一个O（N^2）的算法，肯定是过不去的，所以我们来想想其他办法<br>我们高中时学过：一个含有n个元素的集合的子集个数为$2^n$，因此我们联系二进制<br>从$000-111$一共八个数，分别是：<br>$000,001,010,011,100,101,110,111$<br>所以我们就明白了：用1表示这个元素要取，0表示不取，这样我们就完成了输出。</p>
-<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p>让$i$从$0 - &gt;n-1$跑一趟循环，配合&gt;&gt;和&amp;1把最低二进制位取出来，然后判断对应的元素是否输出就好。</p>
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-        <tag>interview</tag>
       </tags>
   </entry>
   <entry>
@@ -930,33 +952,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
-    <title>结构体类型的三种声明方式</title>
-    <url>/posts/40650/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure></p>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure></p>
-<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>获取Xpath的两种方法</title>
-    <url>/posts/44935/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="方法一：利用chrome插件Xpath-Helper"><a href="#方法一：利用chrome插件Xpath-Helper" class="headerlink" title="方法一：利用chrome插件Xpath Helper"></a>方法一：利用chrome插件Xpath Helper</h1><p>打开一个网页，按下ctrl+shift+x显示插件<br><img src="https://img-blog.csdnimg.cn/934cd2dc164c470b80ecc4621bcb1d2e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>按F12在“检查”中找到特殊的标签，并在QUERY内输入想要验证的标签<br><img src="https://img-blog.csdnimg.cn/bab147ace3fc4724bf6b11d8747873f3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>当result显示为1时，即表明该标签唯一确定你想要的元素</p>
-<h1 id="方法二：直接在“检查”页中定位"><a href="#方法二：直接在“检查”页中定位" class="headerlink" title="方法二：直接在“检查”页中定位"></a>方法二：直接在“检查”页中定位</h1><p>按F12打开检查页，然后点击右上角定位键<br><img src="https://img-blog.csdnimg.cn/6f781872a2c74967bb2c9f864462a6ad.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>之后在网页中找到你想要的元素并点击<br><img src="https://img-blog.csdnimg.cn/92a0f34c2a6749629d4fb524a67667ae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>然后对高亮部分按下鼠标右键，找到copy，然后选择xpath即可<br><img src="https://img-blog.csdnimg.cn/775413910728422281b85bbe9642f8b9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自下而上与自上而下的归并排序</title>
     <url>/posts/46627/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -969,6 +964,33 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       <tags>
         <tag>C</tag>
         <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>结构体类型的三种声明方式</title>
+    <url>/posts/40650/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>有类型名称且声明的结构体变量直接跟在后面。<br>如果不直接跟在后面声明，接下来就无法声明结构体变量。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>有类型名称，声明的结构体变量不直接跟在后面。<br>弥补了方法一的缺陷，可以不直接在结构体定义时声明。<br>当然，也可以直接跟在后面声明。<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;b;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> a;</span><br></pre></td></tr></table></figure></p>
+<p><font color=red>注意：上述代码在C或C++编译环境下都不报错。但是如果写成下面这种形式，在C编译环境下会报错,而在C++下不报错。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>自定义变量名称（常用于复杂名称的简化）<br>进阶用法，建议掌握。<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line">&#125;node;</span><br><span class="line">node a;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>获取Xpath的两种方法</title>
+    <url>/posts/44935/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="方法一：利用chrome插件Xpath-Helper"><a href="#方法一：利用chrome插件Xpath-Helper" class="headerlink" title="方法一：利用chrome插件Xpath Helper"></a>方法一：利用chrome插件Xpath Helper</h1><p>打开一个网页，按下ctrl+shift+x显示插件<br><img src="https://img-blog.csdnimg.cn/934cd2dc164c470b80ecc4621bcb1d2e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>按F12在“检查”中找到特殊的标签，并在QUERY内输入想要验证的标签<br><img src="https://img-blog.csdnimg.cn/bab147ace3fc4724bf6b11d8747873f3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>当result显示为1时，即表明该标签唯一确定你想要的元素</p>
+<h1 id="方法二：直接在“检查”页中定位"><a href="#方法二：直接在“检查”页中定位" class="headerlink" title="方法二：直接在“检查”页中定位"></a>方法二：直接在“检查”页中定位</h1><p>按F12打开检查页，然后点击右上角定位键<br><img src="https://img-blog.csdnimg.cn/6f781872a2c74967bb2c9f864462a6ad.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>之后在网页中找到你想要的元素并点击<br><img src="https://img-blog.csdnimg.cn/92a0f34c2a6749629d4fb524a67667ae.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>然后对高亮部分按下鼠标右键，找到copy，然后选择xpath即可<br><img src="https://img-blog.csdnimg.cn/775413910728422281b85bbe9642f8b9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQ3Jlcl9sdQ==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -1384,6 +1406,16 @@ B=\begin{bmatrix}
       </tags>
   </entry>
   <entry>
+    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
+    <url>/posts/19585/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h2 id="转载两篇博客，说的很清楚。"><a href="#转载两篇博客，说的很清楚。" class="headerlink" title="转载两篇博客，说的很清楚。"></a>转载两篇博客，说的很清楚。</h2><p> <a href="https://blog.csdn.net/qq_45849888/article/details/104562038">关于fets与gets</a><br> <a href="https://blog.csdn.net/qq_21835111/article/details/84445302">关于fputs与puts</a></p>
+]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>高精度模板合集与优化</title>
     <url>/posts/40625/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -1400,31 +1432,6 @@ B=\begin{bmatrix}
         <tag>C</tag>
         <tag>高精度</tag>
         <tag>模板</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（对于换行符）gets和fgets的区别，puts和fputs的区别</title>
-    <url>/posts/19585/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h2 id="转载两篇博客，说的很清楚。"><a href="#转载两篇博客，说的很清楚。" class="headerlink" title="转载两篇博客，说的很清楚。"></a>转载两篇博客，说的很清楚。</h2><p> <a href="https://blog.csdn.net/qq_45849888/article/details/104562038">关于fets与gets</a><br> <a href="https://blog.csdn.net/qq_21835111/article/details/84445302">关于fputs与puts</a></p>
-]]></content>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>判断最小生成树是否唯一</title>
-    <url>/posts/1041600e/</url>
-    <content><![CDATA[<p>今天做DS作业的时候遇到了这样一个问题，如何判断最小生成树是否唯一</p>
-<p>其实正常的最小生成树的判断方法就使用并查集 + sort排序即可，不过如何判断最小生成树唯一性</p>
-<p>我分析这个问题，关键就在于找到一个充分条件：</p>
-<p><strong>当前这条边可以添加到集合中 + 存在边长相等的边 + 且那一条边在这条边添加前可以添加，而添加后就不可以添加了</strong></p>
-<p>如果可以满足这个条件，我们就用judge标志位记下来</p>
-<p>最后也可以实现（差点就去写搜索了www</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 510</span></span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">EDGE</span> &#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">const</span> EDGE&amp; a, <span class="type">const</span> EDGE&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.w &lt; b.w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">FIND</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] == x) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> fa[x] = <span class="built_in">FIND</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		fa[i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, &amp;edge[i].w);</span><br><span class="line">	<span class="built_in">sort</span>(edge, edge + m, cmp);</span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>, k = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="type">bool</span> judge = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (k &lt; m) &#123;</span><br><span class="line">		<span class="type">int</span> fax = <span class="built_in">FIND</span>(edge[k].u);</span><br><span class="line">		<span class="type">int</span> fay = <span class="built_in">FIND</span>(edge[k].v);</span><br><span class="line">		<span class="keyword">if</span> (fax != fay) &#123;</span><br><span class="line">			<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx != fayy) t++;<span class="comment">//还可以合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			fa[fax] = fay;</span><br><span class="line">			sum += edge[k].w;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx == fayy) t++;<span class="comment">//变得不能合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (t == <span class="number">2</span>) judge = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">		<span class="keyword">if</span> (!judge) <span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="keyword">if</span> (fa[i] == i) cnt++;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;No MST\n%d&quot;</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>alogorithms</tag>
       </tags>
   </entry>
 </search>
