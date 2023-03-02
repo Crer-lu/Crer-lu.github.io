@@ -189,6 +189,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/dafcd8ee/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mouse.jpg">
+      <meta itemprop="name" content="Fengjie Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog by Crer_lu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/dafcd8ee/" class="post-title-link" itemprop="url">扩展欧几里得算法的证明与实现</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-02 21:47:00 / Modified: 22:01:10" itemprop="dateCreated datePublished" datetime="2023-03-02T21:47:00+08:00">2023-03-02</time>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下</p>
+<h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p><strong>扩展欧几里得算法</strong>是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/欧几里得算法/1647675?fromModule=lemma_inlink">欧几里得算法</a>（又叫辗转相除法）的扩展。除了计算a、b两个整数的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公因子/6760265?fromModule=lemma_inlink">最大公因子</a>时, 我们都会提到一个非常基本的事实: <strong>给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by = gcd(a,b)</strong>。有两个数a,b，对它们进行<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/辗转相除法/4625352?fromModule=lemma_inlink">辗转相除法</a>，可得它们的最大公约数——这是众所周知的。然后，收集辗转相除法中产生的式子，倒回去，可以得到ax+by=gcd(a,b)的整数解。</p>
+<p>【来源：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/2029414">百度百科</a>】</p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>这里提一嘴<strong>裴蜀定理</strong></p>
+<p>它得名于法国数学家艾蒂安·裴蜀，说明了对任何整数a、b和它们的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>d，关于未知数x和y的线性<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/不定方程/6815217?fromModule=lemma_inlink">不定方程</a>（称为裴蜀等式）：若a,b是整数,且<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/gcd/24166657?fromModule=lemma_inlink">gcd</a>(a,b)=d，那么对于任意的整数x,y,ax+by都一定是d的倍数，特别地，一定存在整数x,y，使ax+by=d成立。</p>
+<p>上面也就间接地证明了扩展欧几里得算法的正确性，我们要做的就是如何去找到对应的x和y</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>首先我们要有方法论的指导</p>
+<p><img src="..\imgs\20230302-1.png" alt="20230302-1" style="zoom: 80%;" /></p>
+<p>代码实现如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">GetExpandGCD</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span>&amp; x, <span class="type">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">		x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> r = <span class="built_in">GetExpandGCD</span>(b, a % b, x, y);</span><br><span class="line">	<span class="type">int</span> temp_x = x;</span><br><span class="line">	x = y;</span><br><span class="line">	y = temp_x - (a / b) * y;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> a, b;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">		<span class="type">int</span> temp = b;</span><br><span class="line">		b = a;</span><br><span class="line">		a = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="type">int</span> gcd = <span class="built_in">GetExpandGCD</span>(a, b, x, y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d*%d+%d*%d=%d&quot;</span>, a, x, b, y, gcd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/1041600e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -830,80 +900,6 @@ F(x) = 3F(x / 3) + 1</script>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/53104/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/53104/" class="post-title-link" itemprop="url">如何批量word转pdf</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-14 23:08:17" itemprop="dateCreated datePublished" datetime="2022-09-14T23:08:17+08:00">2022-09-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-21 19:50:02" itemprop="dateModified" datetime="2022-09-21T19:50:02+08:00">2022-09-21</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/53104/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -974,7 +970,7 @@ F(x) = 3F(x / 3) + 1</script>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1015,7 +1011,7 @@ F(x) = 3F(x / 3) + 1</script>
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="C++ sort自定义cmp的细节">
-<meta property="og:url" content="https://fengjielu.top/posts/18623/index.html">
+  <meta name="description" content="今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下 扩展欧几里得算法含义扩展欧几里得算法是欧几里得算法（又叫辗转相除法）的扩展。除了计算a、b两个整数的最大公约数，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到最大公因子时, 我们都会提到一个非常基本的事实: 给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by &#x3D; gcd(a,b)。有两个数a,b，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扩展欧几里得算法的证明与实现">
+<meta property="og:url" content="https://fengjielu.top/posts/dafcd8ee/index.html">
 <meta property="og:site_name" content="Blog by Crer_lu">
+<meta property="og:description" content="今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下 扩展欧几里得算法含义扩展欧几里得算法是欧几里得算法（又叫辗转相除法）的扩展。除了计算a、b两个整数的最大公约数，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到最大公因子时, 我们都会提到一个非常基本的事实: 给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by &#x3D; gcd(a,b)。有两个数a,b，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-31T11:15:45.885Z">
-<meta property="article:modified_time" content="2022-09-21T11:50:02.247Z">
+<meta property="og:image" content="https://fengjielu.top/posts/imgs/20230302-1.png">
+<meta property="article:published_time" content="2023-03-02T13:47:00.000Z">
+<meta property="article:modified_time" content="2023-03-02T14:01:10.006Z">
 <meta property="article:author" content="Fengjie Lu">
-<meta property="article:tag" content="C++">
-<meta property="article:tag" content="tips">
+<meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fengjielu.top/posts/imgs/20230302-1.png">
 
-<link rel="canonical" href="https://fengjielu.top/posts/18623/">
+<link rel="canonical" href="https://fengjielu.top/posts/dafcd8ee/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>C++ sort自定义cmp的细节 | Blog by Crer_lu</title>
+  <title>扩展欧几里得算法的证明与实现 | Blog by Crer_lu</title>
   
 
 
@@ -194,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/18623/">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/dafcd8ee/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mouse.jpg">
@@ -207,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++ sort自定义cmp的细节
+          扩展欧几里得算法的证明与实现
         </h1>
 
         <div class="post-meta">
@@ -216,16 +219,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-08-31 19:15:45" itemprop="dateCreated datePublished" datetime="2022-08-31T19:15:45+08:00">2022-08-31</time>
+              <time title="Created: 2023-03-02 21:47:00 / Modified: 22:01:10" itemprop="dateCreated datePublished" datetime="2023-03-02T21:47:00+08:00">2023-03-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-21 19:50:02" itemprop="dateModified" datetime="2022-09-21T19:50:02+08:00">2022-09-21</time>
-              </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -243,8 +240,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/posts/18623/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/18623/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/dafcd8ee/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/dafcd8ee/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -259,9 +256,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br><span id="more"></span></p>
-<p><font color=red>cmp函数在书写时，一定不要写出“return a &lt;= b”的语句，否则程序就有崩溃的风险，这种错误极难观察出来，所以一定要注意。</p>
-<p>关于原因，我看了好多好多博客，这一篇最终解决了我的困惑<br>关键就是一个词：<font color=red>严格弱序比较<font color=black><br>链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/llz62378/article/details/88937139">https://blog.csdn.net/llz62378/article/details/88937139</a></p>
+        <p>今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下</p>
+<h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p><strong>扩展欧几里得算法</strong>是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/欧几里得算法/1647675?fromModule=lemma_inlink">欧几里得算法</a>（又叫辗转相除法）的扩展。除了计算a、b两个整数的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公因子/6760265?fromModule=lemma_inlink">最大公因子</a>时, 我们都会提到一个非常基本的事实: <strong>给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by = gcd(a,b)</strong>。有两个数a,b，对它们进行<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/辗转相除法/4625352?fromModule=lemma_inlink">辗转相除法</a>，可得它们的最大公约数——这是众所周知的。然后，收集辗转相除法中产生的式子，倒回去，可以得到ax+by=gcd(a,b)的整数解。</p>
+<p>【来源：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/2029414">百度百科</a>】</p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>这里提一嘴<strong>裴蜀定理</strong></p>
+<p>它得名于法国数学家艾蒂安·裴蜀，说明了对任何整数a、b和它们的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>d，关于未知数x和y的线性<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/不定方程/6815217?fromModule=lemma_inlink">不定方程</a>（称为裴蜀等式）：若a,b是整数,且<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/gcd/24166657?fromModule=lemma_inlink">gcd</a>(a,b)=d，那么对于任意的整数x,y,ax+by都一定是d的倍数，特别地，一定存在整数x,y，使ax+by=d成立。</p>
+<p>上面也就间接地证明了扩展欧几里得算法的正确性，我们要做的就是如何去找到对应的x和y</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>首先我们要有方法论的指导</p>
+<p><img src="..\imgs\20230302-1.png" alt="20230302-1" style="zoom: 80%;" /></p>
+<p>代码实现如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">GetExpandGCD</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span>&amp; x, <span class="type">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">		x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> r = <span class="built_in">GetExpandGCD</span>(b, a % b, x, y);</span><br><span class="line">	<span class="type">int</span> temp_x = x;</span><br><span class="line">	x = y;</span><br><span class="line">	y = temp_x - (a / b) * y;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> a, b;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">		<span class="type">int</span> temp = b;</span><br><span class="line">		b = a;</span><br><span class="line">		a = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="type">int</span> gcd = <span class="built_in">GetExpandGCD</span>(a, b, x, y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d*%d+%d*%d=%d&quot;</span>, a, x, b, y, gcd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -291,8 +295,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C++</a>
-              <a href="/tags/tips/" rel="tag"># tips</a>
+              <a href="/tags/algorithm/" rel="tag"># algorithm</a>
           </div>
 
         
@@ -301,13 +304,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/24838/" rel="prev" title="ASCII的最大值">
-      <i class="fa fa-chevron-left"></i> ASCII的最大值
+    <a href="/posts/1041600e/" rel="prev" title="判断最小生成树是否唯一">
+      <i class="fa fa-chevron-left"></i> 判断最小生成树是否唯一
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/20964/" rel="next" title="C++ string 的substr的使用方法">
-      C++ string 的substr的使用方法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -367,6 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="nav-text">扩展欧几里得算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AB%E4%B9%89"><span class="nav-text">含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-text">证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
