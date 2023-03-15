@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog by Crer_lu">
-<meta property="og:url" content="https://fengjielu.top/index.html">
+  <meta name="description" content="最近学习了红黑树、B树和B+树的一些知识，这里做一个简单的小结吧。这两种数据结构都是用来改进二叉搜索的，比起原有的BST和splay Tree，虽然设计复杂了些，但是在增删改查的综合表现上有显著的提升，但是代价是理解和实现会比较困难。 关于红黑树，可以参考这两篇文章  红黑树的删除操作详解红黑树删除二月风格的博客-CSDN博客 死磕红黑树——聊聊红黑树的删除红黑树删除极客子羽的博客-CSDN博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红黑树、B树和B+树总结（附B+树实现）">
+<meta property="og:url" content="https://fengjielu.top/posts/4c6cc743/index.html">
 <meta property="og:site_name" content="Blog by Crer_lu">
+<meta property="og:description" content="最近学习了红黑树、B树和B+树的一些知识，这里做一个简单的小结吧。这两种数据结构都是用来改进二叉搜索的，比起原有的BST和splay Tree，虽然设计复杂了些，但是在增删改查的综合表现上有显著的提升，但是代价是理解和实现会比较困难。 关于红黑树，可以参考这两篇文章  红黑树的删除操作详解红黑树删除二月风格的博客-CSDN博客 死磕红黑树——聊聊红黑树的删除红黑树删除极客子羽的博客-CSDN博客">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-15T12:19:29.000Z">
+<meta property="article:modified_time" content="2023-03-15T12:30:56.055Z">
 <meta property="article:author" content="Fengjie Lu">
+<meta property="article:tag" content="algorithms">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://fengjielu.top/">
+<link rel="canonical" href="https://fengjielu.top/posts/4c6cc743/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Blog by Crer_lu</title>
+  <title>红黑树、B树和B+树总结（附B+树实现） | Blog by Crer_lu</title>
   
 
 
@@ -183,9 +188,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -201,10 +207,9 @@
       <meta itemprop="name" content="Blog by Crer_lu">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4c6cc743/" class="post-title-link" itemprop="url">红黑树、B树和B+树总结（附B+树实现）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          红黑树、B树和B+树总结（附B+树实现）
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -218,6 +223,25 @@
             </span>
 
           
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/posts/4c6cc743/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/4c6cc743/" itemprop="commentCount"></span>
+    </a>
+  </span>
   
   
 
@@ -230,7 +254,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近学习了红黑树、B树和B+树的一些知识，这里做一个简单的小结吧。<br>这两种数据结构都是用来改进二叉搜索的，比起原有的BST和splay Tree，虽然设计复杂了些，但是在增删改查的综合表现上有显著的提升，但是代价是理解和实现会比较困难。</p>
+        <p>最近学习了红黑树、B树和B+树的一些知识，这里做一个简单的小结吧。<br>这两种数据结构都是用来改进二叉搜索的，比起原有的BST和splay Tree，虽然设计复杂了些，但是在增删改查的综合表现上有显著的提升，但是代价是理解和实现会比较困难。</p>
 <p>关于红黑树，可以参考这两篇文章</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44153921/article/details/123152622"> 红黑树的删除操作详解<em>红黑树删除</em>二月风格的博客-CSDN博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zzy893037505/article/details/115177354">死磕红黑树——聊聊红黑树的删除<em>红黑树删除</em>极客子羽的博客-CSDN博客</a></p>
@@ -240,669 +264,60 @@
 <p>实现源码</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">BPlusNode</span>* BPlusTree;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">BPlusMediaNode</span> &#123;</span><br><span class="line">	<span class="type">int</span> key;<span class="comment">//save data</span></span><br><span class="line">	BPlusTree left, right;<span class="comment">//save left and right pointer</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">BPlusNode</span> &#123;</span><br><span class="line">	<span class="type">int</span> flag = <span class="number">0</span>;<span class="comment">//flag = 0 -&gt; leaf node || flag = 1 -&gt; inner node</span></span><br><span class="line">	<span class="type">int</span> Num = <span class="number">0</span>;<span class="comment">//the number of nodes</span></span><br><span class="line">	BPlusMediaNode* media[<span class="number">4</span>];<span class="comment">//save index or leaf data</span></span><br><span class="line">	BPlusTree ParTree;<span class="comment">//save parent pointer</span></span><br><span class="line">&#125;;</span><br><span class="line">queue&lt; pair&lt;BPlusTree, <span class="type">int</span>&gt; &gt;pri;</span><br><span class="line">BPlusTree bpTree;</span><br><span class="line"><span class="function">BPlusTree <span class="title">GetRoot</span><span class="params">(BPlusTree tree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (tree-&gt;ParTree != <span class="literal">NULL</span>)</span><br><span class="line">		tree = tree-&gt;ParTree;</span><br><span class="line">	<span class="keyword">return</span> tree;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">UpdateBPlusTree</span><span class="params">(BPlusTree tree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (tree-&gt;ParTree == <span class="literal">NULL</span>) &#123;</span><br><span class="line">		BPlusTree par = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">		BPlusTree sib = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">		par-&gt;flag = <span class="number">1</span>;</span><br><span class="line">		par-&gt;media[<span class="number">0</span>] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">		par-&gt;media[<span class="number">0</span>]-&gt;key = tree-&gt;media[tree-&gt;Num/<span class="number">2</span>]-&gt;key;</span><br><span class="line">		par-&gt;Num = <span class="number">1</span>;</span><br><span class="line">		par-&gt;ParTree = <span class="literal">NULL</span>;</span><br><span class="line">		par-&gt;media[<span class="number">0</span>]-&gt;left = tree;</span><br><span class="line">		par-&gt;media[<span class="number">0</span>]-&gt;right = sib;</span><br><span class="line">		sib-&gt;media[<span class="number">0</span>] = tree-&gt;media[tree-&gt;Num/<span class="number">2</span>];</span><br><span class="line">		sib-&gt;media[<span class="number">1</span>] = tree-&gt;media[tree-&gt;Num/<span class="number">2</span>+<span class="number">1</span>];</span><br><span class="line">		sib-&gt;ParTree = par;</span><br><span class="line">		tree-&gt;ParTree = par;</span><br><span class="line">		sib-&gt;Num = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (tree-&gt;flag) &#123;</span><br><span class="line">			sib-&gt;flag = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;Num = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>] = sib-&gt;media[<span class="number">1</span>];</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;left-&gt;ParTree = sib;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;right-&gt;ParTree = sib;</span><br><span class="line">			tree-&gt;Num = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			sib-&gt;flag = <span class="number">0</span>;</span><br><span class="line">			tree-&gt;Num = <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		BPlusTree par = tree-&gt;ParTree;</span><br><span class="line">		BPlusTree sib = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">		<span class="type">int</span> t = tree-&gt;media[tree-&gt;Num / <span class="number">2</span>]-&gt;key;</span><br><span class="line">		sib-&gt;media[<span class="number">0</span>] = tree-&gt;media[tree-&gt;Num / <span class="number">2</span>];</span><br><span class="line">		sib-&gt;media[<span class="number">1</span>] = tree-&gt;media[tree-&gt;Num / <span class="number">2</span> + <span class="number">1</span>];</span><br><span class="line">		sib-&gt;ParTree = par;</span><br><span class="line">		sib-&gt;Num = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (tree-&gt;flag) &#123;</span><br><span class="line">			tree-&gt;Num = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;flag = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;Num = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>] = sib-&gt;media[<span class="number">1</span>];</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;left-&gt;ParTree = sib;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;right-&gt;ParTree = sib;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			tree-&gt;Num = <span class="number">2</span>;</span><br><span class="line">			sib-&gt;flag = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> v = sib-&gt;media[<span class="number">0</span>]-&gt;key;</span><br><span class="line">		<span class="type">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; par-&gt;Num; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (par-&gt;media[i]-&gt;key &gt; v) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		par-&gt;Num++;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = par-&gt;Num - <span class="number">1</span>; j &gt;= i + <span class="number">1</span>; --j)</span><br><span class="line">			par-&gt;media[j] = par-&gt;media[j - <span class="number">1</span>];</span><br><span class="line">		par-&gt;media[i] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">		par-&gt;media[i]-&gt;key = t;</span><br><span class="line">		par-&gt;media[i]-&gt;left = tree;</span><br><span class="line">		par-&gt;media[i]-&gt;right = sib;</span><br><span class="line">		<span class="keyword">if</span> (i != <span class="number">0</span>) par-&gt;media[i<span class="number">-1</span>]-&gt;right = tree;</span><br><span class="line">		<span class="keyword">if</span>(i != par-&gt;Num<span class="number">-1</span>) par-&gt;media[i+<span class="number">1</span>]-&gt;left = sib;</span><br><span class="line">		<span class="keyword">if</span> (par-&gt;Num == <span class="number">3</span>) <span class="built_in">UpdateBPlusTree</span>(par);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BPlusInsert</span><span class="params">(BPlusTree bpTree, <span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;bpTree-&gt;Num; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (bpTree-&gt;media[i]-&gt;key &gt; value) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (bpTree-&gt;media[i]-&gt;key == value) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Key %d is duplicated\n&quot;</span>, value);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// i is the index of position to insert</span></span><br><span class="line">	<span class="keyword">if</span> (bpTree-&gt;flag == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">//Directly insert it into this node</span></span><br><span class="line">		bpTree-&gt;Num++;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = bpTree-&gt;Num<span class="number">-1</span>; j &gt;= i+<span class="number">1</span>; --j)</span><br><span class="line">			bpTree-&gt;media[j] = bpTree-&gt;media[j - <span class="number">1</span>];</span><br><span class="line">		bpTree-&gt;media[i] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">		bpTree-&gt;media[i]-&gt;left = bpTree-&gt;media[i]-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">		bpTree-&gt;media[i]-&gt;key = value;</span><br><span class="line">		<span class="keyword">if</span> (bpTree-&gt;Num == <span class="number">4</span>) &#123;</span><br><span class="line">			<span class="built_in">UpdateBPlusTree</span>(bpTree);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">//insert or find it into one of subtrees of this node</span></span><br><span class="line">		<span class="keyword">if</span> (i &lt; bpTree-&gt;Num) <span class="comment">//left Tree to insert</span></span><br><span class="line">			<span class="built_in">BPlusInsert</span>(bpTree-&gt;media[i]-&gt;left, value);</span><br><span class="line">		<span class="keyword">else</span> <span class="comment">//Right Tree to insert&#123;</span></span><br><span class="line">			<span class="keyword">if</span> (bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right == <span class="literal">NULL</span>) &#123;</span><br><span class="line">				bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">				BPlusTree r = bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right;</span><br><span class="line">				r-&gt;flag = <span class="number">0</span>;</span><br><span class="line">				r-&gt;media[<span class="number">0</span>] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">				r-&gt;media[<span class="number">0</span>]-&gt;left = r-&gt;media[<span class="number">0</span>]-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">				r-&gt;media[<span class="number">0</span>]-&gt;key = value;</span><br><span class="line">				r-&gt;Num = <span class="number">1</span>;</span><br><span class="line">				r-&gt;ParTree = bpTree;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">BPlusInsert</span>(bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right, value);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintBPlusNode</span><span class="params">(BPlusTree node)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;[%d&quot;</span>, node-&gt;media[<span class="number">0</span>]-&gt;key);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; node-&gt;Num; ++i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;,%d&quot;</span>, node-&gt;media[i]-&gt;key);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;]&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintBPlusTree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	pri.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(bpTree, <span class="number">1</span>));</span><br><span class="line">	<span class="type">int</span> last_level = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (!pri.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">		BPlusTree node = pri.<span class="built_in">front</span>().first;</span><br><span class="line">		<span class="type">int</span> level = pri.<span class="built_in">front</span>().second;</span><br><span class="line">		pri.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span> (node == <span class="literal">NULL</span> || node-&gt;flag == <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span> (level - last_level) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			last_level = level;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">PrintBPlusNode</span>(node);</span><br><span class="line">		<span class="keyword">if</span> (node-&gt;flag) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; node-&gt;Num; ++i)</span><br><span class="line">				pri.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(node-&gt;media[i]-&gt;left, level+<span class="number">1</span>));</span><br><span class="line">			pri.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(node-&gt;media[node-&gt;Num<span class="number">-1</span>]-&gt;right, level + <span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		node-&gt;flag = <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, x;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	bpTree = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">	bpTree-&gt;flag = <span class="number">0</span>;</span><br><span class="line">	bpTree-&gt;Num = <span class="number">0</span>;</span><br><span class="line">	bpTree-&gt;ParTree = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">		<span class="built_in">BPlusInsert</span>(bpTree, x);</span><br><span class="line">		bpTree = <span class="built_in">GetRoot</span>(bpTree);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">PrintBPlusTree</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Fengjie Lu WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Fengjie Lu Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/dafcd8ee/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/dafcd8ee/" class="post-title-link" itemprop="url">扩展欧几里得算法的证明与实现</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-02 21:47:00 / Modified: 22:01:56" itemprop="dateCreated datePublished" datetime="2023-03-02T21:47:00+08:00">2023-03-02</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下</p>
-<h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p><strong>扩展欧几里得算法</strong>是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/欧几里得算法/1647675?fromModule=lemma_inlink">欧几里得算法</a>（又叫辗转相除法）的扩展。除了计算a、b两个整数的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公因子/6760265?fromModule=lemma_inlink">最大公因子</a>时, 我们都会提到一个非常基本的事实: <strong>给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by = gcd(a,b)</strong>。有两个数a,b，对它们进行<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/辗转相除法/4625352?fromModule=lemma_inlink">辗转相除法</a>，可得它们的最大公约数——这是众所周知的。然后，收集辗转相除法中产生的式子，倒回去，可以得到ax+by=gcd(a,b)的整数解。</p>
-<p>【来源：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/2029414">百度百科</a>】</p>
-<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>这里提一嘴<strong>裴蜀定理</strong></p>
-<p>它得名于法国数学家艾蒂安·裴蜀，说明了对任何整数a、b和它们的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>d，关于未知数x和y的线性<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/不定方程/6815217?fromModule=lemma_inlink">不定方程</a>（称为裴蜀等式）：若a,b是整数,且<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/gcd/24166657?fromModule=lemma_inlink">gcd</a>(a,b)=d，那么对于任意的整数x,y,ax+by都一定是d的倍数，特别地，一定存在整数x,y，使ax+by=d成立。</p>
-<p>上面也就间接地证明了扩展欧几里得算法的正确性，我们要做的就是如何去找到对应的x和y</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>首先我们要有方法论的指导</p>
-<p><img src="..\imgs\20230302-1.png" alt="20230302-1" style="zoom: 80%;" /></p>
-<p>代码实现如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">GetExpandGCD</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span>&amp; x, <span class="type">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">		x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> r = <span class="built_in">GetExpandGCD</span>(b, a % b, x, y);</span><br><span class="line">	<span class="type">int</span> temp_x = x;</span><br><span class="line">	x = y;</span><br><span class="line">	y = temp_x - (a / b) * y;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> a, b;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">		<span class="type">int</span> temp = b;</span><br><span class="line">		b = a;</span><br><span class="line">		a = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="type">int</span> gcd = <span class="built_in">GetExpandGCD</span>(a, b, x, y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d*%d+%d*%d=%d&quot;</span>, a, x, b, y, gcd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/1041600e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1041600e/" class="post-title-link" itemprop="url">判断最小生成树是否唯一</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-11-21 09:40:13 / Modified: 09:44:57" itemprop="dateCreated datePublished" datetime="2022-11-21T09:40:13+08:00">2022-11-21</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天做DS作业的时候遇到了这样一个问题，如何判断最小生成树是否唯一</p>
-<p>其实正常的最小生成树的判断方法就使用并查集 + sort排序即可，不过如何判断最小生成树唯一性</p>
-<p>我分析这个问题，关键就在于找到一个充分条件：</p>
-<p><strong>当前这条边可以添加到集合中 + 存在边长相等的边 + 且那一条边在这条边添加前可以添加，而添加后就不可以添加了</strong></p>
-<p>如果可以满足这个条件，我们就用judge标志位记下来</p>
-<p>最后也可以实现（差点就去写搜索了www</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 510</span></span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">EDGE</span> &#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">const</span> EDGE&amp; a, <span class="type">const</span> EDGE&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.w &lt; b.w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">FIND</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] == x) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> fa[x] = <span class="built_in">FIND</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		fa[i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, &amp;edge[i].w);</span><br><span class="line">	<span class="built_in">sort</span>(edge, edge + m, cmp);</span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>, k = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="type">bool</span> judge = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (k &lt; m) &#123;</span><br><span class="line">		<span class="type">int</span> fax = <span class="built_in">FIND</span>(edge[k].u);</span><br><span class="line">		<span class="type">int</span> fay = <span class="built_in">FIND</span>(edge[k].v);</span><br><span class="line">		<span class="keyword">if</span> (fax != fay) &#123;</span><br><span class="line">			<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx != fayy) t++;<span class="comment">//还可以合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			fa[fax] = fay;</span><br><span class="line">			sum += edge[k].w;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx == fayy) t++;<span class="comment">//变得不能合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (t == <span class="number">2</span>) judge = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">		<span class="keyword">if</span> (!judge) <span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="keyword">if</span> (fa[i] == i) cnt++;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;No MST\n%d&quot;</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/849f6e42/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/849f6e42/" class="post-title-link" itemprop="url">汇编语言结尾为什么是end main</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-11-09 20:30:58 / Modified: 20:56:25" itemprop="dateCreated datePublished" datetime="2022-11-09T20:30:58+08:00">2022-11-09</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天学习汇编的时候发现了一个小细节<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/849f6e42/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/fb4be677/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/fb4be677/" class="post-title-link" itemprop="url">ISE14.7在win10安装教程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-10 15:13:29" itemprop="dateCreated datePublished" datetime="2022-10-10T15:13:29+08:00">2022-10-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-19 20:15:11" itemprop="dateModified" datetime="2022-10-19T20:15:11+08:00">2022-10-19</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>ISE安装了好久才好，中间遇到不少问题，写下这篇帮助大家安装！<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/fb4be677/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/dafcd8ee/" rel="prev" title="扩展欧几里得算法的证明与实现">
+      <i class="fa fa-chevron-left"></i> 扩展欧几里得算法的证明与实现
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/abb71367/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/abb71367/" class="post-title-link" itemprop="url">Catmull-Rom样条的实现</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-09 18:35:57" itemprop="dateCreated datePublished" datetime="2022-10-09T18:35:57+08:00">2022-10-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-10 15:26:39" itemprop="dateModified" datetime="2022-10-10T15:26:39+08:00">2022-10-10</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天用两种方式实现了一下Catmull-Rom算法，还花了不少时间，记录在这篇博客里<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/abb71367/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/ec5e156b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/ec5e156b/" class="post-title-link" itemprop="url">求凸包的算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-10-06 12:48:03 / Modified: 14:08:02" itemprop="dateCreated datePublished" datetime="2022-10-06T12:48:03+08:00">2022-10-06</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天认真学习了一下求凸包的一种算法，总结在这篇博客中<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/ec5e156b/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/5a60474d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/5a60474d/" class="post-title-link" itemprop="url">贝塞尔曲线的实现</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-10-05 22:07:44 / Modified: 22:39:45" itemprop="dateCreated datePublished" datetime="2022-10-05T22:07:44+08:00">2022-10-05</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天简单实现了一下贝塞尔曲线，用到了Eigen库，简单配置之后把普通实现法和de Casteljau法都实现了一下，总结在这篇博客里面<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/5a60474d/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/30513/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/30513/" class="post-title-link" itemprop="url">一种特殊的算法复杂度分析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-20 18:32:10" itemprop="dateCreated datePublished" datetime="2022-09-20T18:32:10+08:00">2022-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-21 19:50:02" itemprop="dateModified" datetime="2022-09-21T19:50:02+08:00">2022-09-21</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天看到了DS的HW1拿到了满分，总结一下这次作业学到的：如何分析一种特殊递归函数的复杂度</p>
-<script type="math/tex; mode=display">
-F(x) = 3F(x / 3) + 1</script>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/30513/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/4ad48bbb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4ad48bbb/" class="post-title-link" itemprop="url">数值分析 LAB总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-19 18:02:17" itemprop="dateCreated datePublished" datetime="2022-09-19T18:02:17+08:00">2022-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-28 18:34:32" itemprop="dateModified" datetime="2022-11-28T18:34:32+08:00">2022-11-28</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是自己一个学期对数值分析这门课所有LAB的总结，讲真的我觉得难度还是不小的，需要很多时间来钻研。首先声明的是，这里不会粘贴源代码，但是会有一些自己对问题的记录，希望能对其他同学的学习有所帮助（更新ing</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/4ad48bbb/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1107,59 +522,6 @@ F(x) = 3F(x / 3) + 1</script>
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
