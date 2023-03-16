@@ -52,18 +52,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CSDN传送门</title>
-    <url>/posts/22989/</url>
-    <content><![CDATA[<p>之前在CSDN上写过笔记和题解，这里写一个传送门过去</p>
-<p><a href="https://blog.csdn.net/qq_34771124?spm=1000.2115.3001.5343">传送门</a></p>
-<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
-]]></content>
-      <tags>
-        <tag>PAT题解</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Catmull-Rom样条的实现</title>
     <url>/posts/abb71367/</url>
     <content><![CDATA[<p>今天用两种方式实现了一下Catmull-Rom算法，还花了不少时间，记录在这篇博客里<br><span id="more"></span></p>
@@ -81,7 +69,19 @@
 ]]></content>
       <tags>
         <tag>CG</tag>
-        <tag>algorithms</tag>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSDN传送门</title>
+    <url>/posts/22989/</url>
+    <content><![CDATA[<p>之前在CSDN上写过笔记和题解，这里写一个传送门过去</p>
+<p><a href="https://blog.csdn.net/qq_34771124?spm=1000.2115.3001.5343">传送门</a></p>
+<p><img src="https://tvax1.sinaimg.cn/large/008cRf41ly1h5xs6d5m2hj30gm0nxq9z.jpg" alt="image"></p>
+]]></content>
+      <tags>
+        <tag>PAT题解</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -176,6 +176,20 @@
       <tags>
         <tag>algorithm</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>PTA基础题错题集</title>
@@ -293,20 +307,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>printf输出如何用变量控制位宽</title>
     <url>/posts/23429/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -314,6 +314,21 @@
 ]]></content>
       <tags>
         <tag>C</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ssh配置公钥私钥</title>
+    <url>/posts/fae83b3/</url>
+    <content><![CDATA[<p>今天心血来潮，于是就想搞一台linux服务器玩玩<br>在阿里云的白嫖一波后，我拥有了第一台自己的服务器</p>
+<p><img src="..\imgs\20230316-1.png" alt="image-20230316094701836"></p>
+<p>然后就结合下面两个教程，方便地实现了远端登录linux</p>
+<p><a href="https://blog.csdn.net/qq_63844103/article/details/127394389">【安全知识】——SSH的两种远程登录方法详解<em>ssh登录</em>白昼安全的博客-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/weixin_42907822/article/details/125237307">【设置ssh免密不起作用？彻底搞懂密钥】vscode在remote SSH免密远程登录<em>authorized_keys不存在</em>几叶知期的博客-CSDN博客</a></p>
+<p>然后就可以方便地使用Linux啦！</p>
+<p>阿里云的学生服务器可以白嫖七个月！</p>
+]]></content>
+      <tags>
         <tag>tips</tag>
       </tags>
   </entry>
@@ -401,8 +416,8 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 <h2 id="建议先看笔记，后做题，下面是本题题解"><a href="#建议先看笔记，后做题，下面是本题题解" class="headerlink" title="建议先看笔记，后做题，下面是本题题解"></a>建议先看笔记，后做题，下面是本题题解</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 3005</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], vis[N];</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> dis[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span>&#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N * <span class="number">2</span>];<span class="comment">//结构体数组用来存边</span></span><br><span class="line">vector&lt;pair &lt;<span class="type">int</span> , <span class="type">int</span>&gt; &gt;vec[N];</span><br><span class="line">priority_queue&lt;pair &lt;<span class="type">long</span> <span class="type">long</span> , <span class="type">int</span>&gt; &gt;que;<span class="comment">//大根堆 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijikstra</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">		dis[i] = <span class="number">1e9</span>;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in">sizeof</span>(vis));</span><br><span class="line">	que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>, x));</span><br><span class="line">	dis[x] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="type">int</span> u = que.<span class="built_in">top</span>().second;</span><br><span class="line">		que.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">		vis[u] = <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> len = vec[u].<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; ++ i)&#123;</span><br><span class="line">			<span class="type">int</span> v = vec[u][i].first;</span><br><span class="line">			<span class="type">int</span> w = vec[u][i].second;</span><br><span class="line">			<span class="keyword">if</span>(dis[u] + w &lt; dis[v])&#123;</span><br><span class="line">				dis[v] = dis[u] + w;</span><br><span class="line">				que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dis[v], v));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="type">int</span> x, y, z;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		edge[i].u = x;</span><br><span class="line">		edge[i].v = y;</span><br><span class="line">		edge[i].w = z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; ++ i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(h[edge[j].u] + edge[j].w &lt; h[edge[j].v])</span><br><span class="line">				h[edge[j].v] = h[edge[j].u] + edge[j].w;			</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++ j)</span><br><span class="line">		<span class="keyword">if</span>(h[edge[j].u] + edge[j].w &lt; h[edge[j].v])&#123;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">		vec[edge[i].u].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(edge[i].v, edge[i].w + h[edge[i].u] - h[edge[i].v]));</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)&#123;</span><br><span class="line">		<span class="built_in">dijikstra</span>(i);</span><br><span class="line">		<span class="type">long</span> <span class="type">long</span> tot = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++ j)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j] == <span class="number">1e9</span>) tot += j * <span class="number">1e9</span>;</span><br><span class="line">			<span class="keyword">else</span> tot += j * (dis[j] + h[j] - h[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！"><a href="#以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！" class="headerlink" title="以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！"></a>以上就是最短路算法的总结了，或许还是有一些错误的存在，欢迎大家在评论区批评指正，谢谢！</h1>]]></content>
       <tags>
-        <tag>CS</tag>
         <tag>algorithm</tag>
+        <tag>CS</tag>
         <tag>最短路</tag>
       </tags>
   </entry>
@@ -496,6 +511,21 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
+    <title>判断最小生成树是否唯一</title>
+    <url>/posts/1041600e/</url>
+    <content><![CDATA[<p>今天做DS作业的时候遇到了这样一个问题，如何判断最小生成树是否唯一</p>
+<p>其实正常的最小生成树的判断方法就使用并查集 + sort排序即可，不过如何判断最小生成树唯一性</p>
+<p>我分析这个问题，关键就在于找到一个充分条件：</p>
+<p><strong>当前这条边可以添加到集合中 + 存在边长相等的边 + 且那一条边在这条边添加前可以添加，而添加后就不可以添加了</strong></p>
+<p>如果可以满足这个条件，我们就用judge标志位记下来</p>
+<p>最后也可以实现（差点就去写搜索了www</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 510</span></span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">EDGE</span> &#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">const</span> EDGE&amp; a, <span class="type">const</span> EDGE&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.w &lt; b.w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">FIND</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] == x) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> fa[x] = <span class="built_in">FIND</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		fa[i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, &amp;edge[i].w);</span><br><span class="line">	<span class="built_in">sort</span>(edge, edge + m, cmp);</span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>, k = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="type">bool</span> judge = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (k &lt; m) &#123;</span><br><span class="line">		<span class="type">int</span> fax = <span class="built_in">FIND</span>(edge[k].u);</span><br><span class="line">		<span class="type">int</span> fay = <span class="built_in">FIND</span>(edge[k].v);</span><br><span class="line">		<span class="keyword">if</span> (fax != fay) &#123;</span><br><span class="line">			<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx != fayy) t++;<span class="comment">//还可以合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			fa[fax] = fay;</span><br><span class="line">			sum += edge[k].w;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx == fayy) t++;<span class="comment">//变得不能合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (t == <span class="number">2</span>) judge = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">		<span class="keyword">if</span> (!judge) <span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="keyword">if</span> (fa[i] == i) cnt++;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;No MST\n%d&quot;</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>alogorithms</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>十分钟搞懂C语言文件操作</title>
     <url>/posts/34164/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -552,6 +582,15 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
+    <title>复数变量的声明</title>
+    <url>/posts/803/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>栈和队列（手动与STL实现）</title>
     <url>/posts/24344/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -575,27 +614,17 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
-    <title>判断最小生成树是否唯一</title>
-    <url>/posts/1041600e/</url>
-    <content><![CDATA[<p>今天做DS作业的时候遇到了这样一个问题，如何判断最小生成树是否唯一</p>
-<p>其实正常的最小生成树的判断方法就使用并查集 + sort排序即可，不过如何判断最小生成树唯一性</p>
-<p>我分析这个问题，关键就在于找到一个充分条件：</p>
-<p><strong>当前这条边可以添加到集合中 + 存在边长相等的边 + 且那一条边在这条边添加前可以添加，而添加后就不可以添加了</strong></p>
-<p>如果可以满足这个条件，我们就用judge标志位记下来</p>
-<p>最后也可以实现（差点就去写搜索了www</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 510</span></span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">EDGE</span> &#123;</span><br><span class="line">	<span class="type">int</span> u, v;</span><br><span class="line">	<span class="type">int</span> w;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">const</span> EDGE&amp; a, <span class="type">const</span> EDGE&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.w &lt; b.w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">FIND</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] == x) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> fa[x] = <span class="built_in">FIND</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		fa[i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;edge[i].u, &amp;edge[i].v, &amp;edge[i].w);</span><br><span class="line">	<span class="built_in">sort</span>(edge, edge + m, cmp);</span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>, k = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="type">bool</span> judge = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (k &lt; m) &#123;</span><br><span class="line">		<span class="type">int</span> fax = <span class="built_in">FIND</span>(edge[k].u);</span><br><span class="line">		<span class="type">int</span> fay = <span class="built_in">FIND</span>(edge[k].v);</span><br><span class="line">		<span class="keyword">if</span> (fax != fay) &#123;</span><br><span class="line">			<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k+<span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx != fayy) t++;<span class="comment">//还可以合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			fa[fax] = fay;</span><br><span class="line">			sum += edge[k].w;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span> (edge[k].w == edge[k + <span class="number">1</span>].w) &#123;</span><br><span class="line">				<span class="type">int</span> faxx = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].u);</span><br><span class="line">				<span class="type">int</span> fayy = <span class="built_in">FIND</span>(edge[k + <span class="number">1</span>].v);</span><br><span class="line">				<span class="keyword">if</span> (faxx == fayy) t++;<span class="comment">//变得不能合并</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (t == <span class="number">2</span>) judge = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		k++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (cnt == n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">		<span class="keyword">if</span> (!judge) <span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="keyword">if</span> (fa[i] == i) cnt++;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;No MST\n%d&quot;</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>如何批量word转pdf</title>
+    <url>/posts/53104/</url>
+    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br><span id="more"></span></p>
+<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
+<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>然后按下F5即可运行</p>
+<p>之后选择好根目录文件夹就可以了</p>
 ]]></content>
       <tags>
-        <tag>alogorithms</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复数变量的声明</title>
-    <url>/posts/803/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">头文件 <span class="meta">#include&lt;complex&gt;和using namespace std;</span></span><br><span class="line">complex &lt;<span class="built_in">double</span>&gt; x;</span><br><span class="line">实部：x.real();</span><br><span class="line">虚部：x.imag();</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -609,20 +638,6 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       <tags>
         <tag>tips</tag>
         <tag>course</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何批量word转pdf</title>
-    <url>/posts/53104/</url>
-    <content><![CDATA[<p>今天下载bhh老师的PPT，由于都是word格式下载下来的，所以就要统一转化成pdf格式，但是一个个转起来也太麻烦了，所以我上网找到了一个教程，这里做一个简单的搬运和记录<br>原文链接：<a href="https://zhuanlan.zhihu.com/p/368090522">https://zhuanlan.zhihu.com/p/368090522</a><br><span id="more"></span></p>
-<h1 id="如何批量word转pdf"><a href="#如何批量word转pdf" class="headerlink" title="如何批量word转pdf"></a>如何批量word转pdf</h1><p>具体流程请参考原文</p>
-<p>大概的流程是要在一个空的word文档里打开word的开发者模式，然后打开Virtual Basic，插入模块后，粘上如下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub ConvertWordsToPdfs()</span><br><span class="line">&#x27;Updated by Extendoffice 20181123</span><br><span class="line">Dim xIndex As String</span><br><span class="line">Dim xDlg As FileDialog</span><br><span class="line">Dim xFolder As Variant</span><br><span class="line">Dim xNewName As String</span><br><span class="line">Dim xFileName As String</span><br><span class="line">Set xDlg = Application.FileDialog(msoFileDialogFolderPicker)</span><br><span class="line">If xDlg.Show &lt;&gt; -1 Then Exit Sub</span><br><span class="line">xFolder = xDlg.SelectedItems(1) + &quot;\&quot;</span><br><span class="line">xFileName = Dir(xFolder &amp; &quot;*.*&quot;, vbNormal)</span><br><span class="line">While xFileName &lt;&gt; &quot;&quot;</span><br><span class="line">If ((Right(xFileName, 4)) &lt;&gt; &quot;.doc&quot; Or Right(xFileName, 4) &lt;&gt; &quot;.docx&quot;) Then</span><br><span class="line">xIndex = InStr(xFileName, &quot;.&quot;) + 1</span><br><span class="line">xNewName = Replace(xFileName, Mid(xFileName, xIndex), &quot;pdf&quot;)</span><br><span class="line">Documents.Open FileName:=xFolder &amp; xFileName, _</span><br><span class="line">ConfirmConversions:=False, ReadOnly:=False, AddToRecentFiles:=False, _</span><br><span class="line">PasswordDocument:=&quot;&quot;, PasswordTemplate:=&quot;&quot;, Revert:=False, _</span><br><span class="line">WritePasswordDocument:=&quot;&quot;, WritePasswordTemplate:=&quot;&quot;, Format:= _</span><br><span class="line">wdOpenFormatAuto, XMLTransform:=&quot;&quot;</span><br><span class="line">ActiveDocument.ExportAsFixedFormat OutputFileName:=xFolder &amp; xNewName, _</span><br><span class="line">ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:= _</span><br><span class="line">wdExportOptimizeForPrint, Range:=wdExportAllDocument, From:=1, To:=1, _</span><br><span class="line">Item:=wdExportDocumentContent, IncludeDocProps:=True, KeepIRM:=True, _</span><br><span class="line">CreateBookmarks:=wdExportCreateNoBookmarks, DocStructureTags:=True, _</span><br><span class="line">BitmapMissingFonts:=True, UseISO19005_1:=False</span><br><span class="line">ActiveDocument.Close</span><br><span class="line">End If</span><br><span class="line">xFileName = Dir()</span><br><span class="line">Wend</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
-<p>然后按下F5即可运行</p>
-<p>之后选择好根目录文件夹就可以了</p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -709,39 +724,6 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
 ]]></content>
       <tags>
         <tag>algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>异或的巧妙使用</title>
-    <url>/posts/1322/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
-<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
-</blockquote>
-<p><br/><br><br/><br><br/></p>
-<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
-</blockquote>
-<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
-<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
-<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
-</blockquote>
-<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
-<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
-</blockquote>
-<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
-<blockquote>
-<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-        <tag>interview</tag>
       </tags>
   </entry>
   <entry>
@@ -850,6 +832,39 @@ T(N)=3^k * 1+3^{k-1}+...+3+1=O(3^k)=O(N)</script><hr>
       </tags>
   </entry>
   <entry>
+    <title>异或的巧妙使用</title>
+    <url>/posts/1322/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="异或的巧妙使用"><a href="#异或的巧妙使用" class="headerlink" title="异或的巧妙使用"></a>异或的巧妙使用</h1><h2 id="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"><a href="#题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了" class="headerlink" title="题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了"></a>题目来源：偶然在网上看到这样一个题目，有很大的学习价值，于是就收录在此了</h2><p> <a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247484505&amp;idx=1&amp;sn=4c1c056dd4852c3b4b1ead51c90a9b2d&amp;chksm=fa0e6bd8cd79e2ce8188dcdd8843a5d071248906bfb8971c62d513dbd69b816acc191a78e4b2&amp;scene=21#wechat_redirect">原文链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p> 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
+<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
+</blockquote>
+<p><br/><br><br/><br><br/></p>
+<h3 id="看答案之前，独立思考一下哦！"><a href="#看答案之前，独立思考一下哦！" class="headerlink" title="看答案之前，独立思考一下哦！"></a>看答案之前，独立思考一下哦！</h3><p><br/><br><br/><br><br/></p>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>时间复杂度不难想O（n），但是能不能用空间复杂度为O（1）的算法解决呢？<br>我们发现，题目中告诉我们，出现的次数只有两种情况：两次和一次。<br>因此我们来想两个相同的数异或结果是多少呢？是0<br>那0和一个非0的数异或呢？就是那个非0的数。<br>所以我们就得到了这样的算法：（⊕ ：异或）<br>将所有元素做异或运算，即a[1] ⊕  a[2] ⊕  a[3] ⊕ …⊕  a[n]，所得的结果就是那个只出现一次的数字。</p>
+</blockquote>
+<h4 id="是不是非常巧妙？？？"><a href="#是不是非常巧妙？？？" class="headerlink" title="是不是非常巧妙？？？"></a>是不是非常巧妙？？？</h4><h4 id="我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。"><a href="#我们不难得到进一步的思考，只要是-偶数次-和-奇数次-的类似问题，都可以这样解决的。" class="headerlink" title="我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。"></a>我们不难得到进一步的思考，只要是==偶数次==和==奇数次==的类似问题，都可以这样解决的。</h4><p><br/><br><br/></p>
+<h2 id="题目的进阶"><a href="#题目的进阶" class="headerlink" title="题目的进阶"></a>题目的进阶</h2><blockquote>
+<p>有一个 n 个元素的数组，除了两个数只出现一次外，其余元素都出现两次，让你找出这两个只出现一次的数分别是几，要求时间复杂度为 O(n) 且再开辟的内存空间固定(与 n 无关)。<br>示例 :<br>输入: [1,2,2,1,3,4]<br>输出: [3,4]</p>
+</blockquote>
+<h3 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h3><blockquote>
+<p>我们发现不像刚刚那个题那么简单了，那我们要怎么解决呢？<br>我们本质上考虑一件事情，如果能让这两个数分开来和其它数进行异或<br>那各自的结果不就是我们所求的答案了吗？<br>那我们就来想一个把两个数分开来的方法<br>因为这两个数肯定是互不相同的，所以它们的异或结果一定不为0，我们选择其中一位出来<br>接下来对所有的数跑一次循环，与这一位异或结果为1的所有数进行异或，与这一位抑或结果为0的所有数进行异或，那结果就是我们想要的那两个数了</p>
+</blockquote>
+<h3 id="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"><a href="#同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。" class="headerlink" title="同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。"></a>同样，这个算法也是非常巧妙，也同样可以扩展到所有的奇数和偶数次的情况。</h3><h2 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h2><p>比如两个数的交换（a和b）<br>如何不用另外的变量就实现呢？</p>
+<blockquote>
+<p>a = a ^ b;<br>b = a ^ b;<br>a = a ^ b;</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>整除光棍（20分）</title>
     <url>/posts/17378/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -918,6 +933,21 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
+    <title>求一个数组的所有子集</title>
+    <url>/posts/29338/</url>
+    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
+<h1 id="求一个数组的所有子集（经典面试题）"><a href="#求一个数组的所有子集（经典面试题）" class="headerlink" title="求一个数组的所有子集（经典面试题）"></a>求一个数组的所有子集（经典面试题）</h1><h2 id="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"><a href="#偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法" class="headerlink" title="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"></a>偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法</h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在给定一个包含N个数的集合，请你输出它的所有子集。<br>注意：题目保证 0 &lt;= N &lt;= 1000000</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>3<br>1 3 5</p>
+<h2 id="输出样例（前后顺序不固定）"><a href="#输出样例（前后顺序不固定）" class="headerlink" title="输出样例（前后顺序不固定）"></a>输出样例（前后顺序不固定）</h2><p>16<br>(空行)<br>1<br>3<br>5<br>1 3<br>1 5<br>3 5<br>1 3 5</p>
+<h2 id="得到的思考"><a href="#得到的思考" class="headerlink" title="得到的思考"></a>得到的思考</h2><p>如果我们考虑一个O（N^2）的算法，肯定是过不去的，所以我们来想想其他办法<br>我们高中时学过：一个含有n个元素的集合的子集个数为$2^n$，因此我们联系二进制<br>从$000-111$一共八个数，分别是：<br>$000,001,010,011,100,101,110,111$<br>所以我们就明白了：用1表示这个元素要取，0表示不取，这样我们就完成了输出。</p>
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p>让$i$从$0 - &gt;n-1$跑一趟循环，配合&gt;&gt;和&amp;1把最低二进制位取出来，然后判断对应的元素是否输出就好。</p>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>欧拉筛法及其改进方法（素数的判断）</title>
     <url>/posts/5593/</url>
     <content><![CDATA[<p><center></center><br><span id="more"></span></p>
@@ -948,21 +978,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       </tags>
   </entry>
   <entry>
-    <title>求一个数组的所有子集</title>
-    <url>/posts/29338/</url>
-    <content><![CDATA[<p><center></center><br><span id="more"></span></p>
-<h1 id="求一个数组的所有子集（经典面试题）"><a href="#求一个数组的所有子集（经典面试题）" class="headerlink" title="求一个数组的所有子集（经典面试题）"></a>求一个数组的所有子集（经典面试题）</h1><h2 id="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"><a href="#偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法" class="headerlink" title="偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法"></a>偶然在网上看到这样一个题，觉得很有意思，总结下来它的算法</h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>现在给定一个包含N个数的集合，请你输出它的所有子集。<br>注意：题目保证 0 &lt;= N &lt;= 1000000</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>3<br>1 3 5</p>
-<h2 id="输出样例（前后顺序不固定）"><a href="#输出样例（前后顺序不固定）" class="headerlink" title="输出样例（前后顺序不固定）"></a>输出样例（前后顺序不固定）</h2><p>16<br>(空行)<br>1<br>3<br>5<br>1 3<br>1 5<br>3 5<br>1 3 5</p>
-<h2 id="得到的思考"><a href="#得到的思考" class="headerlink" title="得到的思考"></a>得到的思考</h2><p>如果我们考虑一个O（N^2）的算法，肯定是过不去的，所以我们来想想其他办法<br>我们高中时学过：一个含有n个元素的集合的子集个数为$2^n$，因此我们联系二进制<br>从$000-111$一共八个数，分别是：<br>$000,001,010,011,100,101,110,111$<br>所以我们就明白了：用1表示这个元素要取，0表示不取，这样我们就完成了输出。</p>
-<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p>让$i$从$0 - &gt;n-1$跑一趟循环，配合&gt;&gt;和&amp;1把最低二进制位取出来，然后判断对应的元素是否输出就好。</p>
-]]></content>
-      <tags>
-        <tag>algorithm</tag>
-        <tag>interview</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>求凸包的算法</title>
     <url>/posts/ec5e156b/</url>
     <content><![CDATA[<p>今天认真学习了一下求凸包的一种算法，总结在这篇博客中<br><span id="more"></span></p>
@@ -977,7 +992,7 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
 ]]></content>
       <tags>
         <tag>CG</tag>
-        <tag>algorithms</tag>
+        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -1016,7 +1031,8 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">BPlusNode</span>* BPlusTree;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">BPlusMediaNode</span> &#123;</span><br><span class="line">	<span class="type">int</span> key;<span class="comment">//save data</span></span><br><span class="line">	BPlusTree left, right;<span class="comment">//save left and right pointer</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">BPlusNode</span> &#123;</span><br><span class="line">	<span class="type">int</span> flag = <span class="number">0</span>;<span class="comment">//flag = 0 -&gt; leaf node || flag = 1 -&gt; inner node</span></span><br><span class="line">	<span class="type">int</span> Num = <span class="number">0</span>;<span class="comment">//the number of nodes</span></span><br><span class="line">	BPlusMediaNode* media[<span class="number">4</span>];<span class="comment">//save index or leaf data</span></span><br><span class="line">	BPlusTree ParTree;<span class="comment">//save parent pointer</span></span><br><span class="line">&#125;;</span><br><span class="line">queue&lt; pair&lt;BPlusTree, <span class="type">int</span>&gt; &gt;pri;</span><br><span class="line">BPlusTree bpTree;</span><br><span class="line"><span class="function">BPlusTree <span class="title">GetRoot</span><span class="params">(BPlusTree tree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (tree-&gt;ParTree != <span class="literal">NULL</span>)</span><br><span class="line">		tree = tree-&gt;ParTree;</span><br><span class="line">	<span class="keyword">return</span> tree;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">UpdateBPlusTree</span><span class="params">(BPlusTree tree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (tree-&gt;ParTree == <span class="literal">NULL</span>) &#123;</span><br><span class="line">		BPlusTree par = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">		BPlusTree sib = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">		par-&gt;flag = <span class="number">1</span>;</span><br><span class="line">		par-&gt;media[<span class="number">0</span>] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">		par-&gt;media[<span class="number">0</span>]-&gt;key = tree-&gt;media[tree-&gt;Num/<span class="number">2</span>]-&gt;key;</span><br><span class="line">		par-&gt;Num = <span class="number">1</span>;</span><br><span class="line">		par-&gt;ParTree = <span class="literal">NULL</span>;</span><br><span class="line">		par-&gt;media[<span class="number">0</span>]-&gt;left = tree;</span><br><span class="line">		par-&gt;media[<span class="number">0</span>]-&gt;right = sib;</span><br><span class="line">		sib-&gt;media[<span class="number">0</span>] = tree-&gt;media[tree-&gt;Num/<span class="number">2</span>];</span><br><span class="line">		sib-&gt;media[<span class="number">1</span>] = tree-&gt;media[tree-&gt;Num/<span class="number">2</span>+<span class="number">1</span>];</span><br><span class="line">		sib-&gt;ParTree = par;</span><br><span class="line">		tree-&gt;ParTree = par;</span><br><span class="line">		sib-&gt;Num = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (tree-&gt;flag) &#123;</span><br><span class="line">			sib-&gt;flag = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;Num = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>] = sib-&gt;media[<span class="number">1</span>];</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;left-&gt;ParTree = sib;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;right-&gt;ParTree = sib;</span><br><span class="line">			tree-&gt;Num = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			sib-&gt;flag = <span class="number">0</span>;</span><br><span class="line">			tree-&gt;Num = <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		BPlusTree par = tree-&gt;ParTree;</span><br><span class="line">		BPlusTree sib = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">		<span class="type">int</span> t = tree-&gt;media[tree-&gt;Num / <span class="number">2</span>]-&gt;key;</span><br><span class="line">		sib-&gt;media[<span class="number">0</span>] = tree-&gt;media[tree-&gt;Num / <span class="number">2</span>];</span><br><span class="line">		sib-&gt;media[<span class="number">1</span>] = tree-&gt;media[tree-&gt;Num / <span class="number">2</span> + <span class="number">1</span>];</span><br><span class="line">		sib-&gt;ParTree = par;</span><br><span class="line">		sib-&gt;Num = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (tree-&gt;flag) &#123;</span><br><span class="line">			tree-&gt;Num = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;flag = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;Num = <span class="number">1</span>;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>] = sib-&gt;media[<span class="number">1</span>];</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;left-&gt;ParTree = sib;</span><br><span class="line">			sib-&gt;media[<span class="number">0</span>]-&gt;right-&gt;ParTree = sib;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			tree-&gt;Num = <span class="number">2</span>;</span><br><span class="line">			sib-&gt;flag = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> v = sib-&gt;media[<span class="number">0</span>]-&gt;key;</span><br><span class="line">		<span class="type">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; par-&gt;Num; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (par-&gt;media[i]-&gt;key &gt; v) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		par-&gt;Num++;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = par-&gt;Num - <span class="number">1</span>; j &gt;= i + <span class="number">1</span>; --j)</span><br><span class="line">			par-&gt;media[j] = par-&gt;media[j - <span class="number">1</span>];</span><br><span class="line">		par-&gt;media[i] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">		par-&gt;media[i]-&gt;key = t;</span><br><span class="line">		par-&gt;media[i]-&gt;left = tree;</span><br><span class="line">		par-&gt;media[i]-&gt;right = sib;</span><br><span class="line">		<span class="keyword">if</span> (i != <span class="number">0</span>) par-&gt;media[i<span class="number">-1</span>]-&gt;right = tree;</span><br><span class="line">		<span class="keyword">if</span>(i != par-&gt;Num<span class="number">-1</span>) par-&gt;media[i+<span class="number">1</span>]-&gt;left = sib;</span><br><span class="line">		<span class="keyword">if</span> (par-&gt;Num == <span class="number">3</span>) <span class="built_in">UpdateBPlusTree</span>(par);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BPlusInsert</span><span class="params">(BPlusTree bpTree, <span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;bpTree-&gt;Num; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (bpTree-&gt;media[i]-&gt;key &gt; value) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (bpTree-&gt;media[i]-&gt;key == value) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Key %d is duplicated\n&quot;</span>, value);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// i is the index of position to insert</span></span><br><span class="line">	<span class="keyword">if</span> (bpTree-&gt;flag == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">//Directly insert it into this node</span></span><br><span class="line">		bpTree-&gt;Num++;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = bpTree-&gt;Num<span class="number">-1</span>; j &gt;= i+<span class="number">1</span>; --j)</span><br><span class="line">			bpTree-&gt;media[j] = bpTree-&gt;media[j - <span class="number">1</span>];</span><br><span class="line">		bpTree-&gt;media[i] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">		bpTree-&gt;media[i]-&gt;left = bpTree-&gt;media[i]-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">		bpTree-&gt;media[i]-&gt;key = value;</span><br><span class="line">		<span class="keyword">if</span> (bpTree-&gt;Num == <span class="number">4</span>) &#123;</span><br><span class="line">			<span class="built_in">UpdateBPlusTree</span>(bpTree);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">//insert or find it into one of subtrees of this node</span></span><br><span class="line">		<span class="keyword">if</span> (i &lt; bpTree-&gt;Num) <span class="comment">//left Tree to insert</span></span><br><span class="line">			<span class="built_in">BPlusInsert</span>(bpTree-&gt;media[i]-&gt;left, value);</span><br><span class="line">		<span class="keyword">else</span> <span class="comment">//Right Tree to insert&#123;</span></span><br><span class="line">			<span class="keyword">if</span> (bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right == <span class="literal">NULL</span>) &#123;</span><br><span class="line">				bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">				BPlusTree r = bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right;</span><br><span class="line">				r-&gt;flag = <span class="number">0</span>;</span><br><span class="line">				r-&gt;media[<span class="number">0</span>] = (BPlusMediaNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusMediaNode));</span><br><span class="line">				r-&gt;media[<span class="number">0</span>]-&gt;left = r-&gt;media[<span class="number">0</span>]-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">				r-&gt;media[<span class="number">0</span>]-&gt;key = value;</span><br><span class="line">				r-&gt;Num = <span class="number">1</span>;</span><br><span class="line">				r-&gt;ParTree = bpTree;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">BPlusInsert</span>(bpTree-&gt;media[i - <span class="number">1</span>]-&gt;right, value);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintBPlusNode</span><span class="params">(BPlusTree node)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;[%d&quot;</span>, node-&gt;media[<span class="number">0</span>]-&gt;key);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; node-&gt;Num; ++i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;,%d&quot;</span>, node-&gt;media[i]-&gt;key);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;]&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintBPlusTree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	pri.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(bpTree, <span class="number">1</span>));</span><br><span class="line">	<span class="type">int</span> last_level = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (!pri.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">		BPlusTree node = pri.<span class="built_in">front</span>().first;</span><br><span class="line">		<span class="type">int</span> level = pri.<span class="built_in">front</span>().second;</span><br><span class="line">		pri.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span> (node == <span class="literal">NULL</span> || node-&gt;flag == <span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span> (level - last_level) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			last_level = level;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">PrintBPlusNode</span>(node);</span><br><span class="line">		<span class="keyword">if</span> (node-&gt;flag) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; node-&gt;Num; ++i)</span><br><span class="line">				pri.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(node-&gt;media[i]-&gt;left, level+<span class="number">1</span>));</span><br><span class="line">			pri.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(node-&gt;media[node-&gt;Num<span class="number">-1</span>]-&gt;right, level + <span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		node-&gt;flag = <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n, x;</span><br><span class="line">	<span class="built_in">scanf_s</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	bpTree = (BPlusTree)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BPlusNode));</span><br><span class="line">	bpTree-&gt;flag = <span class="number">0</span>;</span><br><span class="line">	bpTree-&gt;Num = <span class="number">0</span>;</span><br><span class="line">	bpTree-&gt;ParTree = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf_s</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">		<span class="built_in">BPlusInsert</span>(bpTree, x);</span><br><span class="line">		bpTree = <span class="built_in">GetRoot</span>(bpTree);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">PrintBPlusTree</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>algorithms</tag>
+        <tag>algorithm</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1059,43 +1075,6 @@ Bob 拿到序列 b 之后，希望可以改不超过 k 个位置的值
       <tags>
         <tag>tips</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贝塞尔曲线的实现</title>
-    <url>/posts/5a60474d/</url>
-    <content><![CDATA[<p>今天简单实现了一下贝塞尔曲线，用到了Eigen库，简单配置之后把普通实现法和de Casteljau法都实现了一下，总结在这篇博客里面<br><span id="more"></span></p>
-<h1 id="贝塞尔曲线的实现"><a href="#贝塞尔曲线的实现" class="headerlink" title="贝塞尔曲线的实现"></a>贝塞尔曲线的实现</h1><h2 id="普通实现法"><a href="#普通实现法" class="headerlink" title="普通实现法"></a>普通实现法</h2><p>这里采用了三次贝塞尔曲线为例（因为更高次的M矩阵求起来比较麻烦）</p>
-<p>这里略去具体的推导方法，其实利用了Hermite曲线的形式，唯一的区别就在于贝塞尔曲线头尾节点处由一个方向向量控制，而Hermite曲线有两个正切值来控制。</p>
-<p>当u取0到1之间的值时，对应贝塞尔曲线上的点为</p>
-<script type="math/tex; mode=display">
-P(u)=U^TM_{H}B</script><p>上式中的U，MH，B分别为</p>
-<script type="math/tex; mode=display">
-U=[u^3,u^2,u,1]</script><script type="math/tex; mode=display">
-M_{H}=\begin{bmatrix}
-    -1&3&-3&1\\
-    3&-6&3&0\\
-    -3&3&0&0\\
-    1&0&0&0
-\end{bmatrix}</script><script type="math/tex; mode=display">
-B=\begin{bmatrix}
-    P_0\\
-    P_1\\
-    P_2\\
-    P_3
-\end{bmatrix}</script><p>所以我们代码实现为</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;graphics.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;Eigen\Dense&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">pos</span> &#123;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">&#125;Position[N];</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">initgraph</span>(<span class="number">640</span>, <span class="number">480</span>);</span><br><span class="line">	<span class="built_in">setbkcolor</span>(WHITE);</span><br><span class="line">	<span class="built_in">cleardevice</span>();</span><br><span class="line">	<span class="built_in">setcolor</span>(BLACK);</span><br><span class="line">	<span class="type">char</span> out[] = <span class="string">&quot;鼠标左键顺次设定四个Bezier Point，选择完成后自动绘制Bezier曲线&quot;</span>;</span><br><span class="line">	<span class="built_in">outtextxy</span>(<span class="number">80</span>, <span class="number">20</span>, out);</span><br><span class="line">	ExMessage mes;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (t == <span class="number">4</span>) <span class="keyword">break</span>;</span><br><span class="line">		mes = <span class="built_in">getmessage</span>(EX_MOUSE | EX_KEY);</span><br><span class="line">		<span class="keyword">switch</span>(mes.message)&#123;</span><br><span class="line">			<span class="keyword">case</span> WM_LBUTTONDOWN:</span><br><span class="line">				Position[t].x = mes.x;</span><br><span class="line">				Position[t].y = mes.y;</span><br><span class="line">				<span class="built_in">setfillcolor</span>(BLACK);</span><br><span class="line">				<span class="built_in">solidcircle</span>(mes.x, mes.y, <span class="number">1</span>);</span><br><span class="line">				++t;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	Vector4f Px, Py;</span><br><span class="line">	Px &lt;&lt; Position[<span class="number">0</span>].x, Position[<span class="number">1</span>].x, Position[<span class="number">2</span>].x, Position[<span class="number">3</span>].x;</span><br><span class="line">	Py &lt;&lt; Position[<span class="number">0</span>].y, Position[<span class="number">1</span>].y, Position[<span class="number">2</span>].y, Position[<span class="number">3</span>].y;</span><br><span class="line">	Matrix4f M;</span><br><span class="line">	M &lt;&lt; <span class="number">-1</span>, <span class="number">3</span>, <span class="number">-3</span>, <span class="number">1</span>,</span><br><span class="line">		<span class="number">3</span>, <span class="number">-6</span>, <span class="number">3</span>, <span class="number">0</span>,</span><br><span class="line">		<span class="number">-3</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line">		<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">BeginBatchDraw</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">double</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i += <span class="number">1e-3</span>) &#123;</span><br><span class="line">		Vector4f U;</span><br><span class="line">		U &lt;&lt; i * i * i, i* i, i, <span class="number">1</span>;</span><br><span class="line">		<span class="type">double</span> temp_x = U.<span class="built_in">transpose</span>() * M * Px;</span><br><span class="line">		<span class="type">double</span> temp_y = U.<span class="built_in">transpose</span>() * M * Py;</span><br><span class="line">		<span class="built_in">solidcircle</span>(temp_x, temp_y, <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">EndBatchDraw</span>();</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现效果为</p>
-<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h6us82jshej30qp0lbab5.jpg" alt="image" style="zoom:50%;" /></p>
-<h2 id="de-Casteljau法"><a href="#de-Casteljau法" class="headerlink" title="de Casteljau法"></a>de Casteljau法</h2><p>利用多次线性插值替代普通实现法中的那种重复计算u^n, 还能减低数值误差</p>
-<p>代码实现如下</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;graphics.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;Eigen\Dense&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function">Vector2f <span class="title">GetPos</span><span class="params">(Vector2f* last, <span class="type">double</span> u, <span class="type">int</span> ones)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (ones == <span class="number">1</span>) <span class="keyword">return</span> last[<span class="number">0</span>];</span><br><span class="line">	Vector2f* temp = (Vector2f*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(Vector2f) * t);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ones - <span class="number">1</span>; ++i)</span><br><span class="line">		temp[i] = (<span class="number">1</span> - u) * last[i] + u * last[i + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">GetPos</span>(temp, u, ones - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Vector2f P[N];</span><br><span class="line">	<span class="built_in">initgraph</span>(<span class="number">640</span>, <span class="number">480</span>);</span><br><span class="line">	<span class="built_in">setbkcolor</span>(WHITE);</span><br><span class="line">	<span class="built_in">cleardevice</span>();</span><br><span class="line">	<span class="built_in">setcolor</span>(BLACK);</span><br><span class="line">	<span class="type">char</span> out[] = <span class="string">&quot;鼠标左键顺次设定Bezier Point，按下回车自动绘制Bezier曲线&quot;</span>;</span><br><span class="line">	<span class="built_in">outtextxy</span>(<span class="number">80</span>, <span class="number">20</span>, out);</span><br><span class="line">	ExMessage mes;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		mes = <span class="built_in">getmessage</span>(EX_MOUSE | EX_KEY);</span><br><span class="line">		<span class="keyword">switch</span> (mes.message) &#123;</span><br><span class="line">		<span class="keyword">case</span> WM_LBUTTONDOWN:</span><br><span class="line">			P[t].<span class="built_in">x</span>() = mes.x;</span><br><span class="line">			P[t].<span class="built_in">y</span>() = mes.y;</span><br><span class="line">			<span class="built_in">setfillcolor</span>(BLACK);</span><br><span class="line">			<span class="built_in">solidcircle</span>(mes.x, mes.y, <span class="number">1</span>);</span><br><span class="line">			++t;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> WM_KEYDOWN:</span><br><span class="line">			<span class="keyword">if</span> (mes.vkcode == VK_RETURN)</span><br><span class="line">				<span class="keyword">goto</span> done;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">done:</span><br><span class="line">	<span class="built_in">BeginBatchDraw</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">double</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i += <span class="number">1e-3</span>) &#123;</span><br><span class="line">		Vector2f po = <span class="built_in">GetPos</span>(P, i, t);</span><br><span class="line">		<span class="built_in">solidcircle</span>((<span class="type">int</span>)po.<span class="built_in">x</span>(), (<span class="type">int</span>)po.<span class="built_in">y</span>(), <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">EndBatchDraw</span>();</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现效果如下</p>
-<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6usf28g9bj30qr0lbdgz.jpg" alt="image" style="zoom:50%;" /></p>
-]]></content>
-      <tags>
-        <tag>CG</tag>
-        <tag>algorithms</tag>
       </tags>
   </entry>
   <entry>
@@ -1458,6 +1437,43 @@ B=\begin{bmatrix}
 ]]></content>
       <tags>
         <tag>Courses</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贝塞尔曲线的实现</title>
+    <url>/posts/5a60474d/</url>
+    <content><![CDATA[<p>今天简单实现了一下贝塞尔曲线，用到了Eigen库，简单配置之后把普通实现法和de Casteljau法都实现了一下，总结在这篇博客里面<br><span id="more"></span></p>
+<h1 id="贝塞尔曲线的实现"><a href="#贝塞尔曲线的实现" class="headerlink" title="贝塞尔曲线的实现"></a>贝塞尔曲线的实现</h1><h2 id="普通实现法"><a href="#普通实现法" class="headerlink" title="普通实现法"></a>普通实现法</h2><p>这里采用了三次贝塞尔曲线为例（因为更高次的M矩阵求起来比较麻烦）</p>
+<p>这里略去具体的推导方法，其实利用了Hermite曲线的形式，唯一的区别就在于贝塞尔曲线头尾节点处由一个方向向量控制，而Hermite曲线有两个正切值来控制。</p>
+<p>当u取0到1之间的值时，对应贝塞尔曲线上的点为</p>
+<script type="math/tex; mode=display">
+P(u)=U^TM_{H}B</script><p>上式中的U，MH，B分别为</p>
+<script type="math/tex; mode=display">
+U=[u^3,u^2,u,1]</script><script type="math/tex; mode=display">
+M_{H}=\begin{bmatrix}
+    -1&3&-3&1\\
+    3&-6&3&0\\
+    -3&3&0&0\\
+    1&0&0&0
+\end{bmatrix}</script><script type="math/tex; mode=display">
+B=\begin{bmatrix}
+    P_0\\
+    P_1\\
+    P_2\\
+    P_3
+\end{bmatrix}</script><p>所以我们代码实现为</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;graphics.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;Eigen\Dense&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">pos</span> &#123;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">&#125;Position[N];</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">initgraph</span>(<span class="number">640</span>, <span class="number">480</span>);</span><br><span class="line">	<span class="built_in">setbkcolor</span>(WHITE);</span><br><span class="line">	<span class="built_in">cleardevice</span>();</span><br><span class="line">	<span class="built_in">setcolor</span>(BLACK);</span><br><span class="line">	<span class="type">char</span> out[] = <span class="string">&quot;鼠标左键顺次设定四个Bezier Point，选择完成后自动绘制Bezier曲线&quot;</span>;</span><br><span class="line">	<span class="built_in">outtextxy</span>(<span class="number">80</span>, <span class="number">20</span>, out);</span><br><span class="line">	ExMessage mes;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (t == <span class="number">4</span>) <span class="keyword">break</span>;</span><br><span class="line">		mes = <span class="built_in">getmessage</span>(EX_MOUSE | EX_KEY);</span><br><span class="line">		<span class="keyword">switch</span>(mes.message)&#123;</span><br><span class="line">			<span class="keyword">case</span> WM_LBUTTONDOWN:</span><br><span class="line">				Position[t].x = mes.x;</span><br><span class="line">				Position[t].y = mes.y;</span><br><span class="line">				<span class="built_in">setfillcolor</span>(BLACK);</span><br><span class="line">				<span class="built_in">solidcircle</span>(mes.x, mes.y, <span class="number">1</span>);</span><br><span class="line">				++t;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	Vector4f Px, Py;</span><br><span class="line">	Px &lt;&lt; Position[<span class="number">0</span>].x, Position[<span class="number">1</span>].x, Position[<span class="number">2</span>].x, Position[<span class="number">3</span>].x;</span><br><span class="line">	Py &lt;&lt; Position[<span class="number">0</span>].y, Position[<span class="number">1</span>].y, Position[<span class="number">2</span>].y, Position[<span class="number">3</span>].y;</span><br><span class="line">	Matrix4f M;</span><br><span class="line">	M &lt;&lt; <span class="number">-1</span>, <span class="number">3</span>, <span class="number">-3</span>, <span class="number">1</span>,</span><br><span class="line">		<span class="number">3</span>, <span class="number">-6</span>, <span class="number">3</span>, <span class="number">0</span>,</span><br><span class="line">		<span class="number">-3</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line">		<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">BeginBatchDraw</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">double</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i += <span class="number">1e-3</span>) &#123;</span><br><span class="line">		Vector4f U;</span><br><span class="line">		U &lt;&lt; i * i * i, i* i, i, <span class="number">1</span>;</span><br><span class="line">		<span class="type">double</span> temp_x = U.<span class="built_in">transpose</span>() * M * Px;</span><br><span class="line">		<span class="type">double</span> temp_y = U.<span class="built_in">transpose</span>() * M * Py;</span><br><span class="line">		<span class="built_in">solidcircle</span>(temp_x, temp_y, <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">EndBatchDraw</span>();</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现效果为</p>
+<p><img src="https://tva1.sinaimg.cn/large/008cRf41ly1h6us82jshej30qp0lbab5.jpg" alt="image" style="zoom:50%;" /></p>
+<h2 id="de-Casteljau法"><a href="#de-Casteljau法" class="headerlink" title="de Casteljau法"></a>de Casteljau法</h2><p>利用多次线性插值替代普通实现法中的那种重复计算u^n, 还能减低数值误差</p>
+<p>代码实现如下</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;graphics.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;Eigen\Dense&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> Eigen;</span><br><span class="line"><span class="function">Vector2f <span class="title">GetPos</span><span class="params">(Vector2f* last, <span class="type">double</span> u, <span class="type">int</span> ones)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (ones == <span class="number">1</span>) <span class="keyword">return</span> last[<span class="number">0</span>];</span><br><span class="line">	Vector2f* temp = (Vector2f*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(Vector2f) * t);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ones - <span class="number">1</span>; ++i)</span><br><span class="line">		temp[i] = (<span class="number">1</span> - u) * last[i] + u * last[i + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">GetPos</span>(temp, u, ones - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Vector2f P[N];</span><br><span class="line">	<span class="built_in">initgraph</span>(<span class="number">640</span>, <span class="number">480</span>);</span><br><span class="line">	<span class="built_in">setbkcolor</span>(WHITE);</span><br><span class="line">	<span class="built_in">cleardevice</span>();</span><br><span class="line">	<span class="built_in">setcolor</span>(BLACK);</span><br><span class="line">	<span class="type">char</span> out[] = <span class="string">&quot;鼠标左键顺次设定Bezier Point，按下回车自动绘制Bezier曲线&quot;</span>;</span><br><span class="line">	<span class="built_in">outtextxy</span>(<span class="number">80</span>, <span class="number">20</span>, out);</span><br><span class="line">	ExMessage mes;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		mes = <span class="built_in">getmessage</span>(EX_MOUSE | EX_KEY);</span><br><span class="line">		<span class="keyword">switch</span> (mes.message) &#123;</span><br><span class="line">		<span class="keyword">case</span> WM_LBUTTONDOWN:</span><br><span class="line">			P[t].<span class="built_in">x</span>() = mes.x;</span><br><span class="line">			P[t].<span class="built_in">y</span>() = mes.y;</span><br><span class="line">			<span class="built_in">setfillcolor</span>(BLACK);</span><br><span class="line">			<span class="built_in">solidcircle</span>(mes.x, mes.y, <span class="number">1</span>);</span><br><span class="line">			++t;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> WM_KEYDOWN:</span><br><span class="line">			<span class="keyword">if</span> (mes.vkcode == VK_RETURN)</span><br><span class="line">				<span class="keyword">goto</span> done;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">done:</span><br><span class="line">	<span class="built_in">BeginBatchDraw</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">double</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i += <span class="number">1e-3</span>) &#123;</span><br><span class="line">		Vector2f po = <span class="built_in">GetPos</span>(P, i, t);</span><br><span class="line">		<span class="built_in">solidcircle</span>((<span class="type">int</span>)po.<span class="built_in">x</span>(), (<span class="type">int</span>)po.<span class="built_in">y</span>(), <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">EndBatchDraw</span>();</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现效果如下</p>
+<p><img src="https://tvax3.sinaimg.cn/large/008cRf41ly1h6usf28g9bj30qr0lbdgz.jpg" alt="image" style="zoom:50%;" /></p>
+]]></content>
+      <tags>
+        <tag>CG</tag>
+        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
