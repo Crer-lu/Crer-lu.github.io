@@ -20,22 +20,22 @@
     var CONFIG = {"hostname":"fengjielu.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下 扩展欧几里得算法含义扩展欧几里得算法是欧几里得算法（又叫辗转相除法）的扩展。除了计算a、b两个整数的最大公约数，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到最大公因子时, 我们都会提到一个非常基本的事实: 给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by &#x3D; gcd(a,b)。有两个数a,b，">
+  <meta name="description" content="CMake学习CMake介绍我们平时使用的IDE都是集成过make的，只是不同平台、不同操作系统之间可能会存在差异，所以导致编写Makefile文件时需要遵循的规范就不同。因此，我们如果有一个工具能帮助我们自动生成符合条件的Makefile文件，这就会很方便。 因此CMake应运而生，它是一款可以自动生成Makefile的工具，可以便于我们开发。 一个简单的例子1.安装配置Cmake和make在V">
 <meta property="og:type" content="article">
-<meta property="og:title" content="扩展欧几里得算法的证明与实现">
-<meta property="og:url" content="https://fengjielu.top/posts/dafcd8ee/index.html">
+<meta property="og:title" content="Cmake学习">
+<meta property="og:url" content="https://fengjielu.top/posts/f4275220/index.html">
 <meta property="og:site_name" content="Blog by Crer_lu">
-<meta property="og:description" content="今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下 扩展欧几里得算法含义扩展欧几里得算法是欧几里得算法（又叫辗转相除法）的扩展。除了计算a、b两个整数的最大公约数，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到最大公因子时, 我们都会提到一个非常基本的事实: 给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by &#x3D; gcd(a,b)。有两个数a,b，">
+<meta property="og:description" content="CMake学习CMake介绍我们平时使用的IDE都是集成过make的，只是不同平台、不同操作系统之间可能会存在差异，所以导致编写Makefile文件时需要遵循的规范就不同。因此，我们如果有一个工具能帮助我们自动生成符合条件的Makefile文件，这就会很方便。 因此CMake应运而生，它是一款可以自动生成Makefile的工具，可以便于我们开发。 一个简单的例子1.安装配置Cmake和make在V">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://fengjielu.top/posts/imgs/20230302-1.png">
-<meta property="article:published_time" content="2023-03-02T13:47:00.000Z">
-<meta property="article:modified_time" content="2023-03-02T14:01:56.064Z">
+<meta property="og:image" content="https://fengjielu.top/posts/imgs/20230318-1.png">
+<meta property="article:published_time" content="2023-03-18T03:05:29.000Z">
+<meta property="article:modified_time" content="2023-03-18T04:11:44.763Z">
 <meta property="article:author" content="Fengjie Lu">
-<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://fengjielu.top/posts/imgs/20230302-1.png">
+<meta name="twitter:image" content="https://fengjielu.top/posts/imgs/20230318-1.png">
 
-<link rel="canonical" href="https://fengjielu.top/posts/dafcd8ee/">
+<link rel="canonical" href="https://fengjielu.top/posts/f4275220/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>扩展欧几里得算法的证明与实现 | Blog by Crer_lu</title>
+  <title>Cmake学习 | Blog by Crer_lu</title>
   
 
 
@@ -197,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/dafcd8ee/">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/f4275220/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mouse.jpg">
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          扩展欧几里得算法的证明与实现
+          Cmake学习
         </h1>
 
         <div class="post-meta">
@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-03-02 21:47:00 / Modified: 22:01:56" itemprop="dateCreated datePublished" datetime="2023-03-02T21:47:00+08:00">2023-03-02</time>
+              <time title="Created: 2023-03-18 11:05:29 / Modified: 12:11:44" itemprop="dateCreated datePublished" datetime="2023-03-18T11:05:29+08:00">2023-03-18</time>
             </span>
 
           
@@ -240,8 +240,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/posts/dafcd8ee/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/dafcd8ee/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/f4275220/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/f4275220/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -256,16 +256,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天有时间，就想起来把密码学课上提到的扩展欧几里得算法再好好思考一下</p>
-<h1 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p><strong>扩展欧几里得算法</strong>是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/欧几里得算法/1647675?fromModule=lemma_inlink">欧几里得算法</a>（又叫辗转相除法）的扩展。除了计算a、b两个整数的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公因子/6760265?fromModule=lemma_inlink">最大公因子</a>时, 我们都会提到一个非常基本的事实: <strong>给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by = gcd(a,b)</strong>。有两个数a,b，对它们进行<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/辗转相除法/4625352?fromModule=lemma_inlink">辗转相除法</a>，可得它们的最大公约数——这是众所周知的。然后，收集辗转相除法中产生的式子，倒回去，可以得到ax+by=gcd(a,b)的整数解。</p>
-<p>【来源：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/2029414">百度百科</a>】</p>
-<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>这里提一嘴<strong>裴蜀定理</strong></p>
-<p>它得名于法国数学家艾蒂安·裴蜀，说明了对任何整数a、b和它们的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最大公约数/869308?fromModule=lemma_inlink">最大公约数</a>d，关于未知数x和y的线性<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/不定方程/6815217?fromModule=lemma_inlink">不定方程</a>（称为裴蜀等式）：若a,b是整数,且<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/gcd/24166657?fromModule=lemma_inlink">gcd</a>(a,b)=d，那么对于任意的整数x,y,ax+by都一定是d的倍数，特别地，一定存在整数x,y，使ax+by=d成立。</p>
-<p>上面也就间接地证明了扩展欧几里得算法的正确性，我们要做的就是如何去找到对应的x和y</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>首先我们要有方法论的指导</p>
-<p><img src="..\imgs\20230302-1.png" alt="20230302-1" style="zoom: 80%;" /></p>
-<p>代码实现如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">GetExpandGCD</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span>&amp; x, <span class="type">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">		x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> r = <span class="built_in">GetExpandGCD</span>(b, a % b, x, y);</span><br><span class="line">	<span class="type">int</span> temp_x = x;</span><br><span class="line">	x = y;</span><br><span class="line">	y = temp_x - (a / b) * y;</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> a, b;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">		<span class="type">int</span> temp = b;</span><br><span class="line">		b = a;</span><br><span class="line">		a = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="type">int</span> gcd = <span class="built_in">GetExpandGCD</span>(a, b, x, y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d*%d+%d*%d=%d&quot;</span>, a, x, b, y, gcd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="CMake学习"><a href="#CMake学习" class="headerlink" title="CMake学习"></a>CMake学习</h1><h2 id="CMake介绍"><a href="#CMake介绍" class="headerlink" title="CMake介绍"></a>CMake介绍</h2><p>我们平时使用的IDE都是集成过make的，只是不同平台、不同操作系统之间可能会存在差异，所以导致编写Makefile文件时需要遵循的规范就不同。因此，我们如果有一个工具能帮助我们自动生成符合条件的Makefile文件，这就会很方便。</p>
+<p>因此CMake应运而生，它是一款可以自动生成Makefile的工具，可以便于我们开发。</p>
+<h2 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h2><h3 id="1-安装配置Cmake和make"><a href="#1-安装配置Cmake和make" class="headerlink" title="1.安装配置Cmake和make"></a>1.安装配置Cmake和make</h3><p>在VScode内安装插件：“CMake” “CMake Tools”  “Make” “Makefile Tools” 这四款插件</p>
+<p>然后去安装mingw，可以参考下面这篇，配置好环境</p>
+<p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43460743/article/details/129203048"> MinGW Make CMake安装使用 —Windows 11系统_难拳的博客-CSDN博客</a></p>
+<h3 id="2-创建main-c和CMakeLists-txt"><a href="#2-创建main-c和CMakeLists-txt" class="headerlink" title="2.创建main.c和CMakeLists.txt"></a>2.创建main.c和CMakeLists.txt</h3><p>首先创建一个空文件夹，然后创建</p>
+<p>main.c内容如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>CMakeLists.txt</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(HELLO)</span><br><span class="line"><span class="keyword">add_executable</span>(hello ./main.c)</span><br></pre></td></tr></table></figure>
+<p>然后运行，在vscode下，ctrl + shift + · 启动一个终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ../ -G &quot;Unix Makefiles&quot;</span><br></pre></td></tr></table></figure>
+<p>然后我们发现在文件夹内多出了一个Makefile文件</p>
+<p>然后我们直接输入以下make命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>就会发现生成了hello.exe可执行文件</p>
+<p>最后运行，发现输出成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./hello</span><br></pre></td></tr></table></figure>
+<p><img src="../imgs/20230318-1.png" alt="res"></p>
+<h2 id="CMake语法简单介绍"><a href="#CMake语法简单介绍" class="headerlink" title="CMake语法简单介绍"></a>CMake语法简单介绍</h2><h3 id="刚刚例子的解释"><a href="#刚刚例子的解释" class="headerlink" title="刚刚例子的解释"></a>刚刚例子的解释</h3><p>在我们刚刚那个例子中</p>
+<blockquote>
+<p>project(“name”) // name为工程名，这一行可有可无，不影响最终结果，但是建议写一个，养成好习惯</p>
+<p>add_executable(“exe_filename” “sourceFile”) //生成可执行文件，包含源文件</p>
+</blockquote>
+<p>再比如我们写另一个多文件的，比如main.c hello.c hello.h</p>
+<p>然后我们的CMakeLists编写如下</p>
+<blockquote>
+<p>project(HELLO)</p>
+<p>set(SRC_LIST main.c hello.c) //创建一个源文件集合变量</p>
+<p>add_executable(hello ${SRC_LIST})</p>
+</blockquote>
+<h3 id="一些可能用到的常量"><a href="#一些可能用到的常量" class="headerlink" title="一些可能用到的常量"></a>一些可能用到的常量</h3><blockquote>
+<p>CMAKE_MAJOR_VERSION：cmake 主版本号<br>CMAKE_MINOR_VERSION：cmake 次版本号<br>CMAKE_C_FLAGS：设置 C 编译选项<br>CMAKE_CXX_FLAGS：设置 C++ 编译选项<br>PROJECT_SOURCE_DIR：工程的根目录<br>PROJECT_BINARY_DIR：运行 cmake 命令的目录<br>CMAKE_CURRENT_SOURCE_DIR：当前CMakeLists.txt 所在路径<br>CMAKE_CURRENT_BINARY_DIR：目标文件编译目录<br>EXECUTABLE_OUTPUT_PATH：重新定义目标二进制可执行文件的存放位置<br>LIBRARY_OUTPUT_PATH：重新定义目标链接库文件的存放位置<br>UNIX：如果为真，表示为UNIX-like的系统，包括AppleOSX和CygWin<br>WIN32：如果为真，表示为 Windows 系统，包括 CygWin<br>APPLE：如果为真，表示为 Apple 系统<br>CMAKE_SIZEOF_VOID_P：表示void*的大小（例如为4或者8），可以使用其来判断当前构建为32位还是64位<br>CMAKE_CURRENT_LIST_DIR：表示正在处理的CMakeLists.txt文件所在目录的绝对路径<br>CMAKE_ARCHIVE_OUTPUT_DIRECTORY：用于设置ARCHIVE目标的输出路径<br>CMAKE_LIBRARY_OUTPUT_DIRECTORY：用于设置LIBRARY目标的输出路径<br>CMAKE_RUNTIME_OUTPUT_DIRECTORY：用于设置RUNTIME目标的输出路径</p>
+</blockquote>
+<h3 id="一些其它常用命令"><a href="#一些其它常用命令" class="headerlink" title="一些其它常用命令"></a>一些其它常用命令</h3><blockquote>
+<p>cmake_minimum_requried(VERSION 2.8.3) //设置cmake版本</p>
+<p>aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src  DIR_SRCS)</p>
+<p>unset(var_name) //移除变量</p>
+<p>add_library(Lib $(DIR_SRCS)) // 创建库文件，通常用于子目录，方便主文件引用</p>
+<p>include_directories(dir)  //包含目录</p>
+<p>add_subdirectory(dir subdir) //指定需要进行构建的子目录 ，并且子目录中编译输出在<br>                                                   subdir，如果不设置，默认会建一个build目录作为输出<br>                                                   当执行到add_subdirectory(xx)命令的时候会进入(xx)子<br>                                                   目录并执行其中的CMakeLists.txt文件</p>
+<p>target_link_libraries(Main Lib) // 链接可执行文件所需库文件</p>
+</blockquote>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/geyichongchujianghu/article/details/124781090">CMake语法详解_shawn·xiao的博客-CSDN博客</a></p>
 
     </div>
 
@@ -295,7 +330,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+              <a href="/tags/tools/" rel="tag"># tools</a>
           </div>
 
         
@@ -304,13 +339,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/1041600e/" rel="prev" title="判断最小生成树是否唯一">
-      <i class="fa fa-chevron-left"></i> 判断最小生成树是否唯一
+    <a href="/posts/fae83b3/" rel="prev" title="ssh配置公钥私钥">
+      <i class="fa fa-chevron-left"></i> ssh配置公钥私钥
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/4c6cc743/" rel="next" title="红黑树、B树和B+树总结（附B+树实现）">
-      红黑树、B树和B+树总结（附B+树实现） <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -370,7 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="nav-text">扩展欧几里得算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AB%E4%B9%89"><span class="nav-text">含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-text">证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CMake%E5%AD%A6%E4%B9%A0"><span class="nav-text">CMake学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake%E4%BB%8B%E7%BB%8D"><span class="nav-text">CMake介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-text">一个简单的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AECmake%E5%92%8Cmake"><span class="nav-text">1.安装配置Cmake和make</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAmain-c%E5%92%8CCMakeLists-txt"><span class="nav-text">2.创建main.c和CMakeLists.txt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake%E8%AF%AD%E6%B3%95%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">CMake语法简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9A%E5%88%9A%E4%BE%8B%E5%AD%90%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-text">刚刚例子的解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%88%B0%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="nav-text">一些可能用到的常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">一些其它常用命令</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

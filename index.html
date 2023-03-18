@@ -189,6 +189,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/f4275220/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mouse.jpg">
+      <meta itemprop="name" content="Fengjie Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog by Crer_lu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/f4275220/" class="post-title-link" itemprop="url">Cmake学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-18 11:05:29 / Modified: 12:11:44" itemprop="dateCreated datePublished" datetime="2023-03-18T11:05:29+08:00">2023-03-18</time>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CMake学习"><a href="#CMake学习" class="headerlink" title="CMake学习"></a>CMake学习</h1><h2 id="CMake介绍"><a href="#CMake介绍" class="headerlink" title="CMake介绍"></a>CMake介绍</h2><p>我们平时使用的IDE都是集成过make的，只是不同平台、不同操作系统之间可能会存在差异，所以导致编写Makefile文件时需要遵循的规范就不同。因此，我们如果有一个工具能帮助我们自动生成符合条件的Makefile文件，这就会很方便。</p>
+<p>因此CMake应运而生，它是一款可以自动生成Makefile的工具，可以便于我们开发。</p>
+<h2 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h2><h3 id="1-安装配置Cmake和make"><a href="#1-安装配置Cmake和make" class="headerlink" title="1.安装配置Cmake和make"></a>1.安装配置Cmake和make</h3><p>在VScode内安装插件：“CMake” “CMake Tools”  “Make” “Makefile Tools” 这四款插件</p>
+<p>然后去安装mingw，可以参考下面这篇，配置好环境</p>
+<p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43460743/article/details/129203048"> MinGW Make CMake安装使用 —Windows 11系统_难拳的博客-CSDN博客</a></p>
+<h3 id="2-创建main-c和CMakeLists-txt"><a href="#2-创建main-c和CMakeLists-txt" class="headerlink" title="2.创建main.c和CMakeLists.txt"></a>2.创建main.c和CMakeLists.txt</h3><p>首先创建一个空文件夹，然后创建</p>
+<p>main.c内容如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>CMakeLists.txt</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(HELLO)</span><br><span class="line"><span class="keyword">add_executable</span>(hello ./main.c)</span><br></pre></td></tr></table></figure>
+<p>然后运行，在vscode下，ctrl + shift + · 启动一个终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ../ -G &quot;Unix Makefiles&quot;</span><br></pre></td></tr></table></figure>
+<p>然后我们发现在文件夹内多出了一个Makefile文件</p>
+<p>然后我们直接输入以下make命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>就会发现生成了hello.exe可执行文件</p>
+<p>最后运行，发现输出成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./hello</span><br></pre></td></tr></table></figure>
+<p><img src="../imgs/20230318-1.png" alt="res"></p>
+<h2 id="CMake语法简单介绍"><a href="#CMake语法简单介绍" class="headerlink" title="CMake语法简单介绍"></a>CMake语法简单介绍</h2><h3 id="刚刚例子的解释"><a href="#刚刚例子的解释" class="headerlink" title="刚刚例子的解释"></a>刚刚例子的解释</h3><p>在我们刚刚那个例子中</p>
+<blockquote>
+<p>project(“name”) // name为工程名，这一行可有可无，不影响最终结果，但是建议写一个，养成好习惯</p>
+<p>add_executable(“exe_filename” “sourceFile”) //生成可执行文件，包含源文件</p>
+</blockquote>
+<p>再比如我们写另一个多文件的，比如main.c hello.c hello.h</p>
+<p>然后我们的CMakeLists编写如下</p>
+<blockquote>
+<p>project(HELLO)</p>
+<p>set(SRC_LIST main.c hello.c) //创建一个源文件集合变量</p>
+<p>add_executable(hello ${SRC_LIST})</p>
+</blockquote>
+<h3 id="一些可能用到的常量"><a href="#一些可能用到的常量" class="headerlink" title="一些可能用到的常量"></a>一些可能用到的常量</h3><blockquote>
+<p>CMAKE_MAJOR_VERSION：cmake 主版本号<br>CMAKE_MINOR_VERSION：cmake 次版本号<br>CMAKE_C_FLAGS：设置 C 编译选项<br>CMAKE_CXX_FLAGS：设置 C++ 编译选项<br>PROJECT_SOURCE_DIR：工程的根目录<br>PROJECT_BINARY_DIR：运行 cmake 命令的目录<br>CMAKE_CURRENT_SOURCE_DIR：当前CMakeLists.txt 所在路径<br>CMAKE_CURRENT_BINARY_DIR：目标文件编译目录<br>EXECUTABLE_OUTPUT_PATH：重新定义目标二进制可执行文件的存放位置<br>LIBRARY_OUTPUT_PATH：重新定义目标链接库文件的存放位置<br>UNIX：如果为真，表示为UNIX-like的系统，包括AppleOSX和CygWin<br>WIN32：如果为真，表示为 Windows 系统，包括 CygWin<br>APPLE：如果为真，表示为 Apple 系统<br>CMAKE_SIZEOF_VOID_P：表示void*的大小（例如为4或者8），可以使用其来判断当前构建为32位还是64位<br>CMAKE_CURRENT_LIST_DIR：表示正在处理的CMakeLists.txt文件所在目录的绝对路径<br>CMAKE_ARCHIVE_OUTPUT_DIRECTORY：用于设置ARCHIVE目标的输出路径<br>CMAKE_LIBRARY_OUTPUT_DIRECTORY：用于设置LIBRARY目标的输出路径<br>CMAKE_RUNTIME_OUTPUT_DIRECTORY：用于设置RUNTIME目标的输出路径</p>
+</blockquote>
+<h3 id="一些其它常用命令"><a href="#一些其它常用命令" class="headerlink" title="一些其它常用命令"></a>一些其它常用命令</h3><blockquote>
+<p>cmake_minimum_requried(VERSION 2.8.3) //设置cmake版本</p>
+<p>aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src  DIR_SRCS)</p>
+<p>unset(var_name) //移除变量</p>
+<p>add_library(Lib $(DIR_SRCS)) // 创建库文件，通常用于子目录，方便主文件引用</p>
+<p>include_directories(dir)  //包含目录</p>
+<p>add_subdirectory(dir subdir) //指定需要进行构建的子目录 ，并且子目录中编译输出在<br>                                                   subdir，如果不设置，默认会建一个build目录作为输出<br>                                                   当执行到add_subdirectory(xx)命令的时候会进入(xx)子<br>                                                   目录并执行其中的CMakeLists.txt文件</p>
+<p>target_link_libraries(Main Lib) // 链接可执行文件所需库文件</p>
+</blockquote>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/geyichongchujianghu/article/details/124781090">CMake语法详解_shawn·xiao的博客-CSDN博客</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/fae83b3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -509,10 +614,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-21 09:40:13 / Modified: 09:44:57" itemprop="dateCreated datePublished" datetime="2022-11-21T09:40:13+08:00">2022-11-21</time>
+              <time title="Created: 2022-11-21 09:40:13" itemprop="dateCreated datePublished" datetime="2022-11-21T09:40:13+08:00">2022-11-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-18 11:07:57" itemprop="dateModified" datetime="2023-03-18T11:07:57+08:00">2023-03-18</time>
+              </span>
 
           
   
@@ -839,80 +950,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://fengjielu.top/posts/5a60474d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mouse.jpg">
-      <meta itemprop="name" content="Fengjie Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog by Crer_lu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/5a60474d/" class="post-title-link" itemprop="url">贝塞尔曲线的实现</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-05 22:07:44" itemprop="dateCreated datePublished" datetime="2022-10-05T22:07:44+08:00">2022-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-16 09:44:57" itemprop="dateModified" datetime="2023-03-16T09:44:57+08:00">2023-03-16</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天简单实现了一下贝塞尔曲线，用到了Eigen库，简单配置之后把普通实现法和de Casteljau法都实现了一下，总结在这篇博客里面<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/5a60474d/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -983,13 +1020,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
