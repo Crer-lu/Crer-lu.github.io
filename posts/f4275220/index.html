@@ -22,14 +22,14 @@
 
   <meta name="description" content="CMake学习CMake介绍我们平时使用的IDE都是集成过make的，只是不同平台、不同操作系统之间可能会存在差异，所以导致编写Makefile文件时需要遵循的规范就不同。因此，我们如果有一个工具能帮助我们自动生成符合条件的Makefile文件，这就会很方便。 因此CMake应运而生，它是一款可以自动生成Makefile的工具，可以便于我们开发。 一个简单的例子1.安装配置Cmake和make在V">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cmake学习">
+<meta property="og:title" content="CMake学习">
 <meta property="og:url" content="https://fengjielu.top/posts/f4275220/index.html">
 <meta property="og:site_name" content="Blog by Crer_lu">
 <meta property="og:description" content="CMake学习CMake介绍我们平时使用的IDE都是集成过make的，只是不同平台、不同操作系统之间可能会存在差异，所以导致编写Makefile文件时需要遵循的规范就不同。因此，我们如果有一个工具能帮助我们自动生成符合条件的Makefile文件，这就会很方便。 因此CMake应运而生，它是一款可以自动生成Makefile的工具，可以便于我们开发。 一个简单的例子1.安装配置Cmake和make在V">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fengjielu.top/posts/imgs/20230318-1.png">
 <meta property="article:published_time" content="2023-03-18T03:05:29.000Z">
-<meta property="article:modified_time" content="2023-03-18T04:12:12.655Z">
+<meta property="article:modified_time" content="2023-03-18T15:20:09.454Z">
 <meta property="article:author" content="Fengjie Lu">
 <meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>Cmake学习 | Blog by Crer_lu</title>
+  <title>CMake学习 | Blog by Crer_lu</title>
   
 
 
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Cmake学习
+          CMake学习
         </h1>
 
         <div class="post-meta">
@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-03-18 11:05:29 / Modified: 12:12:12" itemprop="dateCreated datePublished" datetime="2023-03-18T11:05:29+08:00">2023-03-18</time>
+              <time title="Created: 2023-03-18 11:05:29 / Modified: 23:20:09" itemprop="dateCreated datePublished" datetime="2023-03-18T11:05:29+08:00">2023-03-18</time>
             </span>
 
           
@@ -265,7 +265,7 @@
 <p>main.c内容如下</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>CMakeLists.txt</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(HELLO)</span><br><span class="line"><span class="keyword">add_executable</span>(hello ./main.c)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#CMakeLists.txt</span></span><br><span class="line"><span class="keyword">project</span>(HELLO)</span><br><span class="line"><span class="keyword">add_executable</span>(hello ./main.c)</span><br></pre></td></tr></table></figure>
 <p>然后运行，在vscode下，ctrl + shift + · 启动一个终端</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ../ -G &quot;Unix Makefiles&quot;</span><br></pre></td></tr></table></figure>
 <p>然后我们发现在文件夹内多出了一个Makefile文件</p>
@@ -277,6 +277,8 @@
 <p><img src="../imgs/20230318-1.png" alt="res"></p>
 <h2 id="CMake语法简单介绍"><a href="#CMake语法简单介绍" class="headerlink" title="CMake语法简单介绍"></a>CMake语法简单介绍</h2><h3 id="刚刚例子的解释"><a href="#刚刚例子的解释" class="headerlink" title="刚刚例子的解释"></a>刚刚例子的解释</h3><p>在我们刚刚那个例子中</p>
 <blockquote>
+<h1 id="……-CMake语法的单行注释，如果要多行，可以写成以下这种"><a href="#……-CMake语法的单行注释，如果要多行，可以写成以下这种" class="headerlink" title="…… // CMake语法的单行注释，如果要多行，可以写成以下这种"></a>…… // CMake语法的单行注释，如果要多行，可以写成以下这种</h1><h1 id="…"><a href="#…" class="headerlink" title="[[…."></a>[[….</h1><p>…..</p>
+<p>…..]] //多行注释的写法</p>
 <p>project(“name”) // name为工程名，这一行可有可无，不影响最终结果，但是建议写一个，养成好习惯</p>
 <p>add_executable(“exe_filename” “sourceFile”) //生成可执行文件，包含源文件</p>
 </blockquote>
@@ -284,8 +286,10 @@
 <p>然后我们的CMakeLists编写如下</p>
 <blockquote>
 <p>project(HELLO)</p>
-<p>set(SRC_LIST main.c hello.c) //创建一个源文件集合变量</p>
+<p>set(SRC_LIST main.c hello.c) //创建一个源文件集合变量/列表</p>
 <p>add_executable(hello ${SRC_LIST})</p>
+<p>// 如果我们想打印变量, 可以写成下面这个</p>
+<p>message(“var = ${var}”)</p>
 </blockquote>
 <h3 id="一些可能用到的常量"><a href="#一些可能用到的常量" class="headerlink" title="一些可能用到的常量"></a>一些可能用到的常量</h3><blockquote>
 <p>CMAKE_MAJOR_VERSION：cmake 主版本号<br>CMAKE_MINOR_VERSION：cmake 次版本号<br>CMAKE_C_FLAGS：设置 C 编译选项<br>CMAKE_CXX_FLAGS：设置 C++ 编译选项<br>PROJECT_SOURCE_DIR：工程的根目录<br>PROJECT_BINARY_DIR：运行 cmake 命令的目录<br>CMAKE_CURRENT_SOURCE_DIR：当前CMakeLists.txt 所在路径<br>CMAKE_CURRENT_BINARY_DIR：目标文件编译目录<br>EXECUTABLE_OUTPUT_PATH：重新定义目标二进制可执行文件的存放位置<br>LIBRARY_OUTPUT_PATH：重新定义目标链接库文件的存放位置<br>UNIX：如果为真，表示为UNIX-like的系统，包括AppleOSX和CygWin<br>WIN32：如果为真，表示为 Windows 系统，包括 CygWin<br>APPLE：如果为真，表示为 Apple 系统<br>CMAKE_SIZEOF_VOID_P：表示void*的大小（例如为4或者8），可以使用其来判断当前构建为32位还是64位<br>CMAKE_CURRENT_LIST_DIR：表示正在处理的CMakeLists.txt文件所在目录的绝对路径<br>CMAKE_ARCHIVE_OUTPUT_DIRECTORY：用于设置ARCHIVE目标的输出路径<br>CMAKE_LIBRARY_OUTPUT_DIRECTORY：用于设置LIBRARY目标的输出路径<br>CMAKE_RUNTIME_OUTPUT_DIRECTORY：用于设置RUNTIME目标的输出路径</p>
@@ -301,6 +305,8 @@
 </blockquote>
 <p>参考文章：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/geyichongchujianghu/article/details/124781090">CMake语法详解_shawn·xiao的博客-CSDN博客</a></p>
+<p>【参考文章里提到的例子】</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1NcyiZBOWTDVy9bHv8jkQXQ">https://pan.baidu.com/s/1NcyiZBOWTDVy9bHv8jkQXQ</a><br>提取码：n0u2 </p>
 
     </div>
 
@@ -402,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CMake%E5%AD%A6%E4%B9%A0"><span class="nav-text">CMake学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake%E4%BB%8B%E7%BB%8D"><span class="nav-text">CMake介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-text">一个简单的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AECmake%E5%92%8Cmake"><span class="nav-text">1.安装配置Cmake和make</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAmain-c%E5%92%8CCMakeLists-txt"><span class="nav-text">2.创建main.c和CMakeLists.txt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake%E8%AF%AD%E6%B3%95%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">CMake语法简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9A%E5%88%9A%E4%BE%8B%E5%AD%90%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-text">刚刚例子的解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%88%B0%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="nav-text">一些可能用到的常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">一些其它常用命令</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CMake%E5%AD%A6%E4%B9%A0"><span class="nav-text">CMake学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake%E4%BB%8B%E7%BB%8D"><span class="nav-text">CMake介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-text">一个简单的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AECmake%E5%92%8Cmake"><span class="nav-text">1.安装配置Cmake和make</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAmain-c%E5%92%8CCMakeLists-txt"><span class="nav-text">2.创建main.c和CMakeLists.txt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake%E8%AF%AD%E6%B3%95%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">CMake语法简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9A%E5%88%9A%E4%BE%8B%E5%AD%90%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-text">刚刚例子的解释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%A6%E2%80%A6-CMake%E8%AF%AD%E6%B3%95%E7%9A%84%E5%8D%95%E8%A1%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%A6%82%E6%9E%9C%E8%A6%81%E5%A4%9A%E8%A1%8C%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%86%99%E6%88%90%E4%BB%A5%E4%B8%8B%E8%BF%99%E7%A7%8D"><span class="nav-text">…… &#x2F;&#x2F; CMake语法的单行注释，如果要多行，可以写成以下这种</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%A6"><span class="nav-text">[[….</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%8F%AF%E8%83%BD%E7%94%A8%E5%88%B0%E7%9A%84%E5%B8%B8%E9%87%8F"><span class="nav-text">一些可能用到的常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">一些其它常用命令</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
