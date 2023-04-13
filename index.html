@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-04-10 10:16:13 / Modified: 10:32:33" itemprop="dateCreated datePublished" datetime="2023-04-10T10:16:13+08:00">2023-04-10</time>
+              <time title="Created: 2023-04-10 10:16:13 / Modified: 10:33:04" itemprop="dateCreated datePublished" datetime="2023-04-10T10:16:13+08:00">2023-04-10</time>
             </span>
 
           
@@ -541,7 +541,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1b171b8e/" class="post-title-link" itemprop="url">密码学实验总结</a>
+            <a href="/posts/1b171b8e/" class="post-title-link" itemprop="url">仿射密码破解</a>
         </h2>
 
         <div class="post-meta">
@@ -550,10 +550,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-03-15 22:26:41 / Modified: 22:35:48" itemprop="dateCreated datePublished" datetime="2023-03-15T22:26:41+08:00">2023-03-15</time>
+              <time title="Created: 2023-03-15 22:26:41" itemprop="dateCreated datePublished" datetime="2023-03-15T22:26:41+08:00">2023-03-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-04-13 10:10:58" itemprop="dateModified" datetime="2023-04-13T10:10:58+08:00">2023-04-13</time>
+              </span>
 
           
   
@@ -568,32 +574,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这里对自己完成密码学的实验做一个总结</p>
-<h2 id="LAB1"><a href="#LAB1" class="headerlink" title="LAB1"></a>LAB1</h2><h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><blockquote>
-<p>\1. 本题是多文件题，先由judge程序生成输出，再把该输出作为用户程序的输入，用户程序根据输入进行计算产生输出，最后judge程序判断用户程序输出是否正确。<br>\2. judge程序的工作流程如下:<br>❶ judge程序随机生成一对密钥<em>a</em>、<em>b</em>用于以下仿射密码加密算法:<br><em>y</em>=<em>a</em>∗<em>x</em>+<em>b</em> <em>mod</em> 26;​ 其中<em>x</em>为明文, <em>y</em>为密文。<br>该仿射加密算法中的密钥<em>a</em>、<em>b</em>均为正整数, <em>a</em>∈[2,25]，<em>b</em>∈[1,25], 并且<em>a</em>满足条件<em>g<strong>c</strong>d</em>(<em>a</em>,26)==1;​<br>❷ judge程序随机生成一对整数<em>i</em>、<em>j</em>∈[0,25]，再按以下代码生成一个字符数组<em>s</em>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s[0] = i+&#x27;A&#x27;;</span><br><span class="line">s[1] = (a * i + b) % 26 + &#x27;A&#x27;;</span><br><span class="line">s[2] = j+&#x27;A&#x27;;</span><br><span class="line">s[3] = (a * j + b) % 26 + &#x27;A&#x27;;</span><br><span class="line">s[4] = &#x27;\0&#x27;;</span><br></pre></td></tr></table></figure>
-<p>其中<em>s</em>包含的前4个元素满足以下条件:<br><code>gcd((s[1]-s[3]+26) % 26, 26)==1 || gcd((s[0]-s[2]+26) % 26, 26)==1</code><br>❸ judge程序用仿射密码加密算法对一个长度不超过100字节且内容全为大字字母的字符数组设为<em>p</em>进行加密生成另一个字符数组设为<em>c</em>，<em>c</em>[<em>i</em>]的计算过程如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c[i] = ((p[i]-&#x27;A&#x27;) * a + b) % 26 + &#x27;A&#x27;;</span><br></pre></td></tr></table></figure>
-<p>❹ judge程序用<em>p<strong>u</strong>t**s</em>()分别输出<em>s</em>和<em>c</em>作为用户程序的输入<br>\3. 用户程序的工作流程如下:<br>① 用gets()输入一个字符串设为<em>s</em>，再用gets()输入另一个字符串设为c<br>② 用仿射密码解密算法对c中的字符进行解密生成另一个字符数组设为p<br>③ 用puts()输出p</p>
-<p>输入:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ZWYB</span><br><span class="line">RKXBZVNZDENAZFHRKMZKZVNISRDK</span><br></pre></td></tr></table></figure>
-<p>输出:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AREYOUGOINGTOSCARBOROUGHFAIR</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p><strong>方法一：枚举每种情况即可，没有什么特别的</strong></p>
-<p>核心代码</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   <span class="type">int</span> s_num[<span class="number">4</span>];</span><br><span class="line">   <span class="type">char</span> s[<span class="number">5</span>], c[<span class="number">100</span>];</span><br><span class="line">   gets(s);</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(s); ++ i)</span><br><span class="line">      s_num[i] = s[i] - <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">   gets(c);</span><br><span class="line">   <span class="type">int</span> a, b, temp;</span><br><span class="line">   <span class="keyword">for</span>(a = <span class="number">2</span>; a &lt;= <span class="number">25</span>; ++ a)</span><br><span class="line">      <span class="keyword">for</span>(b = <span class="number">1</span>; b &lt;= <span class="number">25</span>; ++ b)&#123;</span><br><span class="line">         <span class="keyword">if</span>(xgcd(a,<span class="number">26</span>,&amp;temp)==<span class="number">1</span> &amp;&amp; ((s_num[<span class="number">1</span>]-b+<span class="number">26</span>)*temp)%<span class="number">26</span> == s_num[<span class="number">0</span>] &amp;&amp; ((s_num[<span class="number">3</span>]-b+<span class="number">26</span>)*temp)%<span class="number">26</span> == s_num[<span class="number">2</span>])&#123;</span><br><span class="line">            <span class="keyword">goto</span> done;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">done:</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(c); ++ i)&#123;</span><br><span class="line">      c[i]=((c[i]-<span class="string">&#x27;A&#x27;</span> - b + <span class="number">26</span>)*temp)%<span class="number">26</span>+<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">puts</span>(c);</span><br></pre></td></tr></table></figure>
-<p><strong>方法二：利用s的四个元素满足的条件</strong></p>
-<p>我们根据条件和原来的式子进行推理</p>
-<p>s[1] = (s[0]*a+b)%26</p>
-<p>s[3] = (s[2]*a+b)%26</p>
-<p>做差后我们发现变成了</p>
-<p>s[1]-s[3]=( (s[0]-s[2])*a )%26</p>
-<p>所以s[0]-s[2]与s[1]-s[3]必定是同时与26互质的</p>
-<p>因此我们直接解出其中一个的逆元，然后就可以得到a，进而求出b，就避免了暴力枚举，十分优雅</p>
-<p>核心代码</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="type">int</span> s_num[<span class="number">4</span>];</span><br><span class="line">   <span class="type">char</span> s[<span class="number">5</span>], c[<span class="number">100</span>];</span><br><span class="line">   gets(s);</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(s); ++ i)</span><br><span class="line">      s_num[i] = s[i] - <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">   gets(c);</span><br><span class="line">   <span class="type">int</span> a, b, temp;</span><br><span class="line">   xgcd((s_num[<span class="number">0</span>]-s_num[<span class="number">2</span>]+<span class="number">26</span>)%<span class="number">26</span>, <span class="number">26</span>, &amp;temp);</span><br><span class="line">   a = ((s_num[<span class="number">1</span>]-s_num[<span class="number">3</span>]+<span class="number">26</span>)*temp)%<span class="number">26</span>;</span><br><span class="line">   b = (s_num[<span class="number">1</span>]-a*(s_num[<span class="number">0</span>])+<span class="number">26</span>)%<span class="number">26</span>;</span><br><span class="line">   xgcd(a, <span class="number">26</span>, &amp;temp);</span><br><span class="line">done:</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(c); ++ i)&#123;</span><br><span class="line">      c[i]=((c[i]-<span class="string">&#x27;A&#x27;</span> - b + <span class="number">26</span>)*temp)%<span class="number">26</span>+<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">puts</span>(c);</span><br></pre></td></tr></table></figure>
-
+          密码提示——T's name
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/1b171b8e/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
